@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c2a00cb82c563304b9f3966702511c5c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - power_Prefab: {fileID: 1639397021179420, guid: 0b5783ad8d3fe3046964397fab233f3e,
+      type: 2}
+  - score_Prefab: {fileID: 1264859126311804, guid: 07da877170a95e44e83e01550c777939,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

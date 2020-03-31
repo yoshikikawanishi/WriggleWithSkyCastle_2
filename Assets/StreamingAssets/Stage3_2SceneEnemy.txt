@@ -1,0 +1,14 @@
+Name	IsExist
+Crow	False
+Crow (1)	False
+WolfAndCrowGen	False
+WolfAndCrowGen (1)	False
+WolfAndCrowGen (2)	False
+Crow (4)	False
+WolfAndCrowGen (3)	False
+Crow	False
+Crow (5)	False
+Crow	False
+Crow (3)	True
+Crow	False
+Crow (2)	True

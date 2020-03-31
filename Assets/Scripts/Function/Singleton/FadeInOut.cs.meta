@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 21fa22012f26ae1408b7ac3e131444a3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

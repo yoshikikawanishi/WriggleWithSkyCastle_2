@@ -1,0 +1,2 @@
+#ID	#NAME	#ICON	#MESSAGE
+1	 	non	体験版終わり
