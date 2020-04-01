@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stage3_BossScene : MonoBehaviour {
 
-    [SerializeField] private Aunn aunn;
+    [SerializeField] private AunnController aunn;
 
     private Stage3_BossMovie _movie;
 

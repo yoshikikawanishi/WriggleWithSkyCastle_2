@@ -7,8 +7,8 @@ public class AunnAttack : MonoBehaviour {
     //コンポーネント
     private AunnAttackFunction _attack_Func;
 
-    public bool[] start_Phase = { true, true };
-    public bool can_Attack = true;
+    [HideInInspector] public bool[] start_Phase = { true, true };
+    [HideInInspector] public bool can_Attack = true;
 
 
     private void Awake() {
@@ -33,7 +33,9 @@ public class AunnAttack : MonoBehaviour {
             case AunnBGMManager.Melody.A:                
                 Attack_In_Melody_A_Cor();
                 break;
-            case AunnBGMManager.Melody.B: break;
+            case AunnBGMManager.Melody.B:
+                Attack_In_Melody_B_Cor();
+                break;
             case AunnBGMManager.Melody.C: break;
             case AunnBGMManager.Melody.main: break;
         }
@@ -58,5 +60,12 @@ public class AunnAttack : MonoBehaviour {
     private void Attack_In_Melody_A_Cor() {
         can_Attack = false;
         _attack_Func.Dive_And_Jump_Shoot();
+    }
+
+
+    //Bメロ攻撃用
+    private void Attack_In_Melody_B_Cor() {
+        can_Attack = false;
+        _attack_Func.Jump_On_Wall_And_Rush();
     }
 }

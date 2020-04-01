@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TracePlayer : MonoBehaviour {
 
-    enum Kind {
+    public enum Kind {
         onlyX,
         onlyY,
         both
     }
-    [SerializeField] private Kind kind;
-    [SerializeField] private float speed = 0.2f;    
+    public Kind kind;
+    public float speed = 0.2f;    
 
     private GameObject player;
 

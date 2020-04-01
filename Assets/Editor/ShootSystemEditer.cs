@@ -109,6 +109,7 @@ public class ShootSystemEditer : Editor {
             }
             obj.velocity_Forward = EditorGUILayout.CurveField("Forward", obj.velocity_Forward);
             obj.velocity_Lateral = EditorGUILayout.CurveField("Lateral", obj.velocity_Lateral);
+            obj.velocity_To_Player = EditorGUILayout.CurveField("AimPlayer", obj.velocity_To_Player);
             EditorGUILayout.EndVertical();
         }
 

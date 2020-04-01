@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aunn : BossEnemy {
+public class AunnController : BossEnemy {
 
     //コンポーネント
     private AunnAttack _attack;    

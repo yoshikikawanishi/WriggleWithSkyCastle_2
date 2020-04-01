@@ -30,6 +30,7 @@ public class ShootSystem : MonoBehaviour {
     public bool is_Acceleration = false;
     public AnimationCurve velocity_Forward;
     public AnimationCurve velocity_Lateral;
+    public AnimationCurve velocity_To_Player = AnimationCurve.Constant(0, 0.1f, 0);
 
     public bool is_Change_Sorting_Order = false;
     public int sorting_Order = -5;
@@ -318,20 +319,35 @@ public class ShootSystem : MonoBehaviour {
 
     //弾の加速(単体)
     public IEnumerator Accelerate_Bullet_Cor(GameObject bullet, float max_Speed) {
+        GameObject player = GameObject.FindWithTag("PlayerTag");
+
         Rigidbody2D bullet_Rigid = Bullet_Rigid(bullet);
         float xt = velocity_Forward.keys[velocity_Forward.keys.Length - 1].time;
         float yt = velocity_Lateral.keys[velocity_Lateral.keys.Length - 1].time;
-        float end_Time = Mathf.Max(xt, yt);
+        float pt = velocity_To_Player.keys[velocity_To_Player.keys.Length - 1].time;
+        float end_Time = Mathf.Max(xt, yt, pt);
 
         float forward = max_Speed;
         float lateral = 0;
+        float p = 0;
+        Vector2 player_Direction = new Vector2();
+
         for(float t = 0; t < end_Time; t += Time.deltaTime) {            
             if(!bullet.activeSelf) {
                 yield break;
             }
+
             forward = max_Speed * velocity_Forward.Evaluate(t);                 //前方向            
             lateral = max_Speed * velocity_Lateral.Evaluate(t);                 //横方向
-            bullet_Rigid.velocity = bullet.transform.right * forward + bullet.transform.up * lateral;     //速度代入
+            bullet_Rigid.velocity = bullet.transform.right * forward +          //速度代入
+                                    bullet.transform.up * lateral;
+            //自機方向
+            if (player != null) {
+                p                     = max_Speed * velocity_To_Player.Evaluate(t);
+                player_Direction      = (player.transform.position - bullet.transform.position).normalized;
+                bullet_Rigid.velocity += player_Direction * p;
+            }
+                                    
             float dirVelocity = Mathf.Atan2(bullet_Rigid.velocity.y, bullet_Rigid.velocity.x) * Mathf.Rad2Deg;    //進行方向に回転
             bullet.transform.rotation = Quaternion.AngleAxis(dirVelocity, new Vector3(0, 0, 1));
             yield return new WaitForSeconds(0.016f);
