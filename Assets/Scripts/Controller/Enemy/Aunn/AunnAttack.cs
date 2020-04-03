@@ -31,12 +31,14 @@ public class AunnAttack : MonoBehaviour {
 
         switch (_BGM.Get_Now_Melody()) {
             case AunnBGMManager.Melody.A:                
-                Attack_In_Melody_A_Cor();
+                Attack_In_Melody_A();
                 break;
             case AunnBGMManager.Melody.B:
-                Attack_In_Melody_B_Cor();
+                Attack_In_Melody_B();
                 break;
-            case AunnBGMManager.Melody.C: break;
+            case AunnBGMManager.Melody.C:
+                Attack_In_Melody_C();
+                break;
             case AunnBGMManager.Melody.main: break;
         }
     }
@@ -57,15 +59,22 @@ public class AunnAttack : MonoBehaviour {
 
 
     //Aメロ攻撃用
-    private void Attack_In_Melody_A_Cor() {
+    private void Attack_In_Melody_A() {
         can_Attack = false;
         _attack_Func.Dive_And_Jump_Shoot();
     }
 
 
     //Bメロ攻撃用
-    private void Attack_In_Melody_B_Cor() {
+    private void Attack_In_Melody_B() {
         can_Attack = false;
         _attack_Func.Jump_On_Wall_And_Rush();
+    }
+
+
+    //Cメロ攻撃用
+    private void Attack_In_Melody_C() {
+        can_Attack = false;
+        _attack_Func.Reciprocate_Jump();
     }
 }

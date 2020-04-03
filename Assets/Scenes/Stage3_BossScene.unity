@@ -6449,7 +6449,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066341010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.1, y: -77.4, z: 0}
+  m_LocalPosition: {x: 113.7, y: -80.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 470691635}
@@ -6498,6 +6498,34 @@ MonoBehaviour:
       m_RotationOrder: 4
     speed: 0.02
     arc_Size: 32
+    is_Local_Position: 0
+  - comment: "\u5F80\u5FA9\u30B8\u30E3\u30F3\u30D7\u7528"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.03
+    arc_Size: 50
     is_Local_Position: 0
 --- !u!114 &2066341017
 MonoBehaviour:
@@ -6610,7 +6638,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      m_PreInfinity: 0
+      m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     apply_Root_Position: 1
@@ -6645,22 +6673,81 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 469.8813
-        outSlope: 469.8813
+        inSlope: 459.73618
+        outSlope: 459.73618
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.046035808
+        outWeight: 0.028132992
       - serializedVersion: 3
         time: 1
-        value: 200
-        inSlope: 41.11467
-        outSlope: 41.11467
+        value: 199.68457
+        inSlope: 30.835987
+        outSlope: 30.835987
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.12276214
+        outWeight: 0.33333334
+      m_PreInfinity: 1
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    apply_Root_Position: 1
+  - comment: "\u7A81\u9032\u524D\u30E2\u30FC\u30B7\u30E7\u30F3"
+    x_Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.3
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+    y_Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 76.57656
+        outSlope: 76.57656
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.3748423
+      - serializedVersion: 3
+        time: 0.2
+        value: 8
+        inSlope: 0
+        outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.09974426
         outWeight: 0.33333334
-      m_PreInfinity: 1
+      - serializedVersion: 3
+        time: 0.3
+        value: 4
+        inSlope: -51.80439
+        outSlope: -51.80439
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.1278773
+        outWeight: 0
+      m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
     apply_Root_Position: 1
@@ -6677,5 +6764,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   param:
   - comment: "\u7AEF\u306B\u30C0\u30C3\u30B7\u30E5\u3059\u308B\u7528"
-    speed: 2
+    speed: 3
     is_Local_Position: 0

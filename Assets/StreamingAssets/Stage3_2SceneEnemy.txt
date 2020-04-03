@@ -4,10 +4,10 @@ Crow (1)	False
 WolfAndCrowGen	False
 WolfAndCrowGen (1)	False
 WolfAndCrowGen (2)	False
-Crow (4)	False
+Crow (4)	True
 WolfAndCrowGen (3)	False
-Crow	False
-Crow (5)	False
+Crow	True
+Crow (5)	True
 Crow	False
 Crow (3)	True
 Crow	False

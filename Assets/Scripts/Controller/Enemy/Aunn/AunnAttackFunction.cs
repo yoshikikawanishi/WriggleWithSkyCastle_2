@@ -50,12 +50,17 @@ public class AunnAttackFunction : MonoBehaviour {
 
 
     //端にダッシュする
-    private IEnumerator Dash_To_Side_Cor() {
+    //direction : 右端に行くとき.1 / 左端に行くとき-1
+    private IEnumerator Dash_To_Side_Cor(int direction) {
         is_End_Move = false;
         _controller.Change_Land_Parameter();
 
-        //方向
-        int direction = transform.position.x.CompareTo(0);
+        //予備動作
+        _move.Start_Move(2);
+        yield return new WaitUntil(_move.Is_End_Move);
+
+        //方向        
+        direction = direction.CompareTo(0);
         if(direction == 0) { direction = 1; }
         transform.localScale = new Vector3(-direction, 1, 1);
         //移動
@@ -105,22 +110,13 @@ public class AunnAttackFunction : MonoBehaviour {
             _trace.kind = TracePlayer.Kind.onlyX;
             _trace.speed = 2.5f;
         }
-        _trace.enabled = false;
-
-
-        //端にダッシュする
-        StartCoroutine("Dash_To_Side_Cor");
-        yield return new WaitUntil(Is_End_Move);
-
-        if(_controller._BGM.Get_Now_Melody() != AunnBGMManager.Melody.A) {
-            _attack.can_Attack = true;
-            yield break;
-        }
+        _trace.enabled = false;               
 
         //地面に潜る
         _controller.Change_Fly_Parameter();
         _move.Start_Move(0);
         yield return new WaitUntil(_move.Is_End_Move);
+        yield return new WaitForSeconds(0.1f);
 
         //当たり判定を消して自機を追いかける
         _collision.Become_Invincible();
@@ -141,7 +137,19 @@ public class AunnAttackFunction : MonoBehaviour {
         _controller.Change_Land_Parameter();
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1.2f);
+
+        //メロディ変わったら終了
+        if (_controller._BGM.Get_Now_Melody() != AunnBGMManager.Melody.A) {
+            _attack.can_Attack = true;
+            yield break;
+        }
+
+        //端にダッシュする
+        int direction = -transform.position.x.CompareTo(0);
+        StartCoroutine("Dash_To_Side_Cor", direction);
+        yield return new WaitUntil(Is_End_Move);
+        yield return new WaitForSeconds(0.1f);
 
         _attack.can_Attack = true;
     }
@@ -157,8 +165,7 @@ public class AunnAttackFunction : MonoBehaviour {
         int direction = (player.transform.position.x - transform.position.x).CompareTo(0);
         if (direction == 0) { direction = 1; }
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * -direction, 48f));
-        yield return new WaitUntil(Is_End_Move);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitUntil(Is_End_Move);        
 
         //弾の配置開始
         _shoot.Start_Deposite_Purple_Bullet();
@@ -182,5 +189,37 @@ public class AunnAttackFunction : MonoBehaviour {
 
         _attack.can_Attack = true;
     }
+
+
+    //両端をジャンプ移動で行き来する
+    public void Reciprocate_Jump() {
+        StartCoroutine("Reciprocate_Jump_Cor");
+    }
+
+
+    private IEnumerator Reciprocate_Jump_Cor() {
+        //方向
+        int direction = transform.position.x.CompareTo(0);
+        if(direction == 0) { direction = 1; }
+        transform.localScale = new Vector3(direction, 1, 1);
+
+        //移動
+        Vector2 next_Pos;
+        do {
+            next_Pos = transform.position + new Vector3(112f * -direction, 0);
+            _move_Two_Points.Start_Move(next_Pos, 1);
+            yield return new WaitUntil(_move_Two_Points.End_Move);
+        } while (Mathf.Abs(transform.position.x) < 90f);
+
+        //最後は場所整える
+        next_Pos = new Vector2(200f * -direction, transform.position.y);
+        _move_Two_Points.Start_Move(next_Pos, 1);
+        yield return new WaitUntil(_move_Two_Points.End_Move);
+
+        yield return new WaitForSeconds(0.5f);
+
+        _attack.can_Attack = true;
+    }
+
 
 }

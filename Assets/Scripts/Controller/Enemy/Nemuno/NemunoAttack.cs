@@ -46,6 +46,7 @@ public class NemunoAttack : MonoBehaviour {
         //フェーズ開始時の処理
         if (start_Phase[0]) {
             start_Phase[0] = false;
+            _controller.Play_Battle_Effect();
         }
         
         if (!can_Attack)
@@ -151,7 +152,7 @@ public class NemunoAttack : MonoBehaviour {
             Stop_Phase1();
             Raise_Move_Speed();
             start_Phase[1] = false;
-            can_Attack = false;
+            can_Attack = false;            
             StartCoroutine("Phase2_Launch_Attack");
         }
 
@@ -198,6 +199,7 @@ public class NemunoAttack : MonoBehaviour {
         _shoot.StartCoroutine("Play_Square_Blocks_Attack");
         yield return new WaitForSeconds(8.0f);
 
+        _controller.Play_Battle_Effect();
         can_Attack = true;
     }
 
