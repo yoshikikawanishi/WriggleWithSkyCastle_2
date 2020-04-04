@@ -8,6 +8,7 @@ public class AunnController : BossEnemy {
     private AunnAttack _attack;    
     private Rigidbody2D _rigid;
     private CapsuleCollider2D _collider;
+    private Animator _anim;
 
     public readonly AunnBGMManager _BGM = new AunnBGMManager();
 
@@ -16,6 +17,10 @@ public class AunnController : BossEnemy {
 
     //初期値
     private float default_Gravity;
+    private readonly Vector2 collider_Size_Standing = new Vector2(28f, 56f);
+    private readonly Vector2 collider_Offset_Standing = new Vector2(1, -2f);
+    private readonly Vector2 collider_Size_Squat = new Vector2(28f, 28f);
+    private readonly Vector2 collider_Offset_Squat = new Vector2(1, -12f);
 
 
     new void Awake() {
@@ -24,6 +29,7 @@ public class AunnController : BossEnemy {
         _attack = GetComponent<AunnAttack>();
         _rigid = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
+        _anim = GetComponent<Animator>();
         default_Gravity = _rigid.gravityScale;
 
     }
@@ -50,6 +56,36 @@ public class AunnController : BossEnemy {
     public void Clear() {
         start_Battle = false;
         _attack.Stop_Phase2();
+    }
+
+
+    //アニメーション変更、アニメーションに合わせて当たり判定のサイズも変更
+    public void Change_Animation(string next_Param) {
+        _anim.SetBool("StandingBool", false);
+        _anim.SetBool("SquatBool", false);
+        _anim.SetBool("DashBool", false);
+        _anim.SetBool("JumpBool", false);
+        _anim.SetBool("HighJumpBool", false);
+        _anim.SetBool("ShootPoseBool", false);
+
+        _anim.SetBool(next_Param, true);
+
+        //当たり判定の変更
+        switch (next_Param) {
+            case "StangingBool":
+                _collider.size = collider_Size_Standing;
+                _collider.offset = collider_Offset_Standing;
+                break;
+            case "ShootPoseBool":
+                _collider.size = collider_Size_Standing;
+                _collider.offset = collider_Offset_Standing;
+                break;
+            default:
+                _collider.size = collider_Size_Squat;
+                _collider.offset = collider_Offset_Squat;
+                break;
+        }
+        
     }
 
 

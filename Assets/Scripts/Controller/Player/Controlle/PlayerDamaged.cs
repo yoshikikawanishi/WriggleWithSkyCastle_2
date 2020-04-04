@@ -75,7 +75,7 @@ public class PlayerDamaged : MonoBehaviour {
         //アイテムの放出
         var power = Resources.Load("Object/Power") as GameObject;
         ObjectPool power_Pool = ObjectPoolManager.Instance.Get_Pool(power);
-        for(int i = 0; i < value; i++) {
+        for(int i = 0; i < value - 4; i++) {
             var p = power_Pool.GetObject();
             p.transform.position = transform.position + new Vector3(0, 64f);
             Vector2 velocity = new Vector2(Random.Range(-15f, 15f) * i, Random.Range(300f, 500f));

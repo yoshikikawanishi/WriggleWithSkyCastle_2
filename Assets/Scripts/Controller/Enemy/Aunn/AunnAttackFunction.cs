@@ -31,11 +31,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _move_Two_Points = GetComponent<MoveTwoPoints>();
         foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
         player = GameObject.FindWithTag("PlayerTag");
-    }
-
-    void Start() {
-            
-    }
+    }    
 
 
     //--------------------------移動用関数------------------------------
@@ -64,8 +60,10 @@ public class AunnAttackFunction : MonoBehaviour {
         if(direction == 0) { direction = 1; }
         transform.localScale = new Vector3(-direction, 1, 1);
         //移動
+        _controller.Change_Animation("DashBool");
         _move_Const_Speed.Start_Move(new Vector2(210f * direction, transform.position.y), 0);
         yield return new WaitUntil(_move_Const_Speed.End_Move);
+        _controller.Change_Animation("SquatBool");
 
         transform.localScale = new Vector3(direction, 1, 1);
 
@@ -83,8 +81,10 @@ public class AunnAttackFunction : MonoBehaviour {
         if(direction == 0) { direction = 1; }
         transform.localScale = new Vector3(-direction, 1, 1);
         //移動
+        _controller.Change_Animation("JumpBool");
         _move_Two_Points.Start_Move(next_Pos, 0);
         yield return new WaitUntil(_move_Two_Points.End_Move);
+        _controller.Change_Animation("ShootPoseBool");
 
         transform.localScale = new Vector3(direction, 1, 1);
 
@@ -128,14 +128,18 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //ジャンプして弾幕発射
         _collision.Release_Invincible();
+        _controller.Change_Animation("HighJumpBool");
         _move.Start_Move(1);
         yield return new WaitUntil(_move.Is_End_Move);
+
+        _controller.Change_Animation("ShootPoseBool");
         _shoot.Shoot_Short_Curve_Laser();
         yield return new WaitForSeconds(0.5f);
 
-        //落下
+        //落下        
         _controller.Change_Land_Parameter();
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
+        _controller.Change_Animation("SquatBool");
 
         yield return new WaitForSeconds(1.2f);
 
@@ -180,10 +184,12 @@ public class AunnAttackFunction : MonoBehaviour {
         yield return new WaitForSeconds(0.5f);
 
         //斜め下に突進する
+        _controller.Change_Animation("JumpBool");
         _rigid.velocity = new Vector2(-transform.localScale.x * 160f, -200f);
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
         //着地
-        _controller.Change_Land_Parameter();                
+        _controller.Change_Land_Parameter();
+        _controller.Change_Animation("SquatBool");
 
         yield return new WaitForSeconds(2.0f);
 
@@ -205,16 +211,23 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //移動
         Vector2 next_Pos;
-        do {
+        _controller.Change_Animation("JumpBool");
+        while(true) {
             next_Pos = transform.position + new Vector3(112f * -direction, 0);
             _move_Two_Points.Start_Move(next_Pos, 1);
             yield return new WaitUntil(_move_Two_Points.End_Move);
-        } while (Mathf.Abs(transform.position.x) < 90f);
+
+            if (direction == 1 && transform.position.x < -88f)
+                break;
+            else if (direction == -1 && transform.position.x > 88f)
+                break;            
+        } 
 
         //最後は場所整える
         next_Pos = new Vector2(200f * -direction, transform.position.y);
         _move_Two_Points.Start_Move(next_Pos, 1);
         yield return new WaitUntil(_move_Two_Points.End_Move);
+        _controller.Change_Animation("SquatBool");
 
         yield return new WaitForSeconds(0.5f);
 

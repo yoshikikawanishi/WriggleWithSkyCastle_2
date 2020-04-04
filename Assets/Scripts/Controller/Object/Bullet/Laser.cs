@@ -19,6 +19,7 @@ public class Laser : MonoBehaviour {
     [SerializeField, Range(0, 30)] public float laserWidth = 5;
     [SerializeField, Range(0, 5f)] float quality = 3;    
     [SerializeField] int length = 200;
+    [SerializeField] int sortingOrder = 5;
     [SerializeField] private bool play_On_Awake = true;
     
     private bool enable = false;
@@ -166,6 +167,7 @@ public class Laser : MonoBehaviour {
         mesh.uv = uvs;
         mesh.triangles = triangles;
         mr.material = laserMat;
+        mr.sortingOrder = sortingOrder;
         //mc.sharedMesh = mesh;        
     }    
 

@@ -131,10 +131,11 @@ public class BossEnemy : MonoBehaviour {
 
     //クリア時の処理
     private void Clear() {
+        is_Cleared = true;
         StartCoroutine("Clear_Cor");
     }
 
-    private IEnumerator Clear_Cor() {
+    private IEnumerator Clear_Cor() {        
         //無敵化
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
 
@@ -156,8 +157,7 @@ public class BossEnemy : MonoBehaviour {
 
         _camera_Shake.Shake(0.8f, new Vector2(1.2f, 1.2f), true);
 
-        clear_Trigger = true;
-        is_Cleared = true;
+        clear_Trigger = true;        
     }
 
 

@@ -467,7 +467,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1795115553721778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -164, y: -84, z: 0}
+  m_LocalPosition: {x: -195.4, y: -80.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4011751453430470}
@@ -846,7 +846,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 16
+  m_Radius: 20
 --- !u!58 &58992136902813412
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -1155,7 +1155,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e9fbb45ddc0ad9542b043f00a88a7d25, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.01
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2294,6 +2294,7 @@ MonoBehaviour:
   is_Ride_Beetle: 0
   start_Attack_Frame_Count: 0
   start_Charge_Attack_Frame_Count: 0
+  SHOOT_INTERVAL: 0.25
 --- !u!114 &114560024852258848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2316,6 +2317,7 @@ MonoBehaviour:
     type: 2}
   charge_Shoot_Obj: {fileID: 1194738067102766, guid: e5fa98d782848274a8883f6f30815195,
     type: 2}
+  shoot_Interval: 0.25
 --- !u!114 &114620319733248870
 MonoBehaviour:
   m_ObjectHideFlags: 1
