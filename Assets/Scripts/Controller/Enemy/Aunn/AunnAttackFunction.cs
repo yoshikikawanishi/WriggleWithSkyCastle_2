@@ -10,7 +10,9 @@ public class AunnAttackFunction : MonoBehaviour {
     private AunnController _controller;
     private AunnAttack _attack;
     private AunnShoot _shoot;
+    private AunnEffect _effect;
     private Rigidbody2D _rigid;
+    private SpriteRenderer _sprite;
     private MoveMotion _move;
     private MoveConstSpeed _move_Const_Speed;
     private MoveTwoPoints _move_Two_Points;
@@ -25,7 +27,9 @@ public class AunnAttackFunction : MonoBehaviour {
         _controller = GetComponent<AunnController>();
         _attack = GetComponent<AunnAttack>();
         _shoot = GetComponentInChildren<AunnShoot>();
+        _effect = GetComponentInChildren<AunnEffect>();
         _rigid = GetComponent<Rigidbody2D>();
+        _sprite = GetComponent<SpriteRenderer>();
         _move = GetComponent<MoveMotion>();
         _move_Const_Speed = GetComponent<MoveConstSpeed>();
         _move_Two_Points = GetComponent<MoveTwoPoints>();
@@ -110,30 +114,38 @@ public class AunnAttackFunction : MonoBehaviour {
             _trace.kind = TracePlayer.Kind.onlyX;
             _trace.speed = 2.5f;
         }
-        _trace.enabled = false;               
+        _trace.enabled = false;
 
         //地面に潜る
+        _collision.Become_Invincible();
         _controller.Change_Fly_Parameter();
+        _sprite.sortingOrder = -6;
+
         _move.Start_Move(0);
         yield return new WaitUntil(_move.Is_End_Move);
-        yield return new WaitForSeconds(0.1f);
 
-        //当たり判定を消して自機を追いかける
-        _collision.Become_Invincible();
+        _controller.Change_Animation("DivingGroundBool");        
+        yield return new WaitForSeconds(0.1f);
+        _sprite.sortingOrder = 3;
+
+        //自機を追いかける        
         _trace.enabled = true;
         yield return new WaitForSeconds(2.2f);
         _trace.enabled = false;
 
         yield return new WaitForSeconds(0.8f);
 
-        //ジャンプして弾幕発射
-        _collision.Release_Invincible();
+        //ジャンプ     
         _controller.Change_Animation("HighJumpBool");
         _move.Start_Move(1);
+        _collision.Release_Invincible();
+        _effect.Play_A_Letter_Effect();
         yield return new WaitUntil(_move.Is_End_Move);
 
+        //弾幕レーザー
         _controller.Change_Animation("ShootPoseBool");
         _shoot.Shoot_Short_Curve_Laser();
+        _effect.Play_Unn_Letter_Effect();
         yield return new WaitForSeconds(0.5f);
 
         //落下        
@@ -173,6 +185,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //弾の配置開始
         _shoot.Start_Deposite_Purple_Bullet();
+        _effect.Play_A_Letter_Effect();
 
         //反対側の壁に飛びつく
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * direction, 80f));
@@ -180,6 +193,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //弾の配置終了
         _shoot.Stop_Deposit_Purple_Bullet();
+        _effect.Play_Unn_Letter_Effect();
 
         yield return new WaitForSeconds(0.5f);
 
@@ -209,9 +223,13 @@ public class AunnAttackFunction : MonoBehaviour {
         if(direction == 0) { direction = 1; }
         transform.localScale = new Vector3(direction, 1, 1);
 
+        //予備動作
+        _effect.Play_A_Letter_Effect();
+        yield return new WaitForSeconds(1.0f);
+
         //移動
         Vector2 next_Pos;
-        _controller.Change_Animation("JumpBool");
+        _controller.Change_Animation("JumpBool");        
         while(true) {
             next_Pos = transform.position + new Vector3(112f * -direction, 0);
             _move_Two_Points.Start_Move(next_Pos, 1);
@@ -228,8 +246,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _move_Two_Points.Start_Move(next_Pos, 1);
         yield return new WaitUntil(_move_Two_Points.End_Move);
         _controller.Change_Animation("SquatBool");
-
-        yield return new WaitForSeconds(0.5f);
+        transform.localScale = new Vector3(-direction, 1, 1);        
 
         _attack.can_Attack = true;
     }

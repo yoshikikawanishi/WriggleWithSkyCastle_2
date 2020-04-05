@@ -11,6 +11,8 @@ public class AunnShoot : MonoBehaviour {
     //------------------------ジャンプショット用 短レーザーショット-------------------------
     public void Shoot_Short_Curve_Laser() {
         short_Curve_Laser.Shoot();
+        UsualSoundManager.Instance.Play_Laser_Sound();
+        UsualSoundManager.Instance.Invoke("Play_Shoot_Sound", 1.2f);
     }
 
 

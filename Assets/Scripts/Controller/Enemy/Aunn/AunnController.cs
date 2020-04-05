@@ -8,7 +8,7 @@ public class AunnController : BossEnemy {
     private AunnAttack _attack;    
     private Rigidbody2D _rigid;
     private CapsuleCollider2D _collider;
-    private Animator _anim;
+    private Animator _anim;    
 
     public readonly AunnBGMManager _BGM = new AunnBGMManager();
 
@@ -30,6 +30,7 @@ public class AunnController : BossEnemy {
         _rigid = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
         _anim = GetComponent<Animator>();
+        
         default_Gravity = _rigid.gravityScale;
 
     }
@@ -67,6 +68,7 @@ public class AunnController : BossEnemy {
         _anim.SetBool("JumpBool", false);
         _anim.SetBool("HighJumpBool", false);
         _anim.SetBool("ShootPoseBool", false);
+        _anim.SetBool("DivingGroundBool", false);
 
         _anim.SetBool(next_Param, true);
 
