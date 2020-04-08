@@ -153,4 +153,10 @@ public class Enemy : MonoBehaviour {
             _sprite.color = default_Color;
     }	
 
+
+    public void Set_Life(int life) {
+        if (life > 0)
+            this.life = life;
+    }
+
 }

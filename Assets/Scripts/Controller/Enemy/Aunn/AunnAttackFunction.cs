@@ -16,10 +16,15 @@ public class AunnAttackFunction : MonoBehaviour {
     private MoveMotion _move;
     private MoveConstSpeed _move_Const_Speed;
     private MoveTwoPoints _move_Two_Points;
+    private AunnCopy _copy;
+    private AunnShoot _copy_Shoot;
+    private TracePlayer _trace;
 
     private ChildColliderTrigger foot_Collision;
 
     private GameObject player;
+
+    public bool generate_Copy = false;
 
 
     void Awake() {
@@ -33,9 +38,28 @@ public class AunnAttackFunction : MonoBehaviour {
         _move = GetComponent<MoveMotion>();
         _move_Const_Speed = GetComponent<MoveConstSpeed>();
         _move_Two_Points = GetComponent<MoveTwoPoints>();
-        foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
+        _copy = GetComponentInChildren<AunnCopy>();
+        _copy_Shoot = _copy.GetComponentInChildren<AunnShoot>();
+        
+        _trace = gameObject.AddComponent<TracePlayer>();
+        _trace.kind = TracePlayer.Kind.onlyX;
+        _trace.speed = 2.5f;
+
+        foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();   
+        
         player = GameObject.FindWithTag("PlayerTag");
     }    
+
+
+    public void Stop_Attack() {
+        StopAllCoroutines();
+        _move.Stop_Move();
+        _move_Const_Speed.Stop_Move();
+        _move_Two_Points.Stop_Move();
+        _shoot.Stop_Deposit_Purple_Bullet();
+        _shoot.Stop_Dog_Bullet();
+        _trace.enabled = false;
+    }
 
 
     //--------------------------移動用関数------------------------------
@@ -86,6 +110,8 @@ public class AunnAttackFunction : MonoBehaviour {
         transform.localScale = new Vector3(-direction, 1, 1);
         //移動
         _controller.Change_Animation("JumpBool");
+        _effect.Jump_And_Landing_Effect();
+        yield return new WaitForSeconds(0.18f);
         _move_Two_Points.Start_Move(next_Pos, 0);
         yield return new WaitUntil(_move_Two_Points.End_Move);
         _controller.Change_Animation("ShootPoseBool");
@@ -94,29 +120,25 @@ public class AunnAttackFunction : MonoBehaviour {
 
         is_End_Move = true;
     }
-   
+      
 
     //--------------------------攻撃用関数------------------------------
     // ※※※※  攻撃終了時に _attack.can_Attack をtrueにすること  ※※※※
 
-
     //潜行、地面から自機追従、ジャンプ、ショット
     public void Dive_And_Jump_Shoot() {
-        StartCoroutine("Dive_And_Jump_Shoot_Cor");
+        StartCoroutine("Dive_And_Trace_Player_Cor");
     }
 
-    private IEnumerator Dive_And_Jump_Shoot_Cor() {
+
+    //潜行、自機追従
+    private IEnumerator Dive_And_Trace_Player_Cor() {
         //取得
-        BossCollisionDetection _collision = GetComponent<BossCollisionDetection>();
-        TracePlayer _trace = GetComponent<TracePlayer>();
-        if(_trace == null) {
-            _trace = gameObject.AddComponent<TracePlayer>();
-            _trace.kind = TracePlayer.Kind.onlyX;
-            _trace.speed = 2.5f;
-        }
-        _trace.enabled = false;
+        BossCollisionDetection _collision = GetComponent<BossCollisionDetection>();                
+        _trace.enabled = false;       
 
         //地面に潜る
+        _effect.Jump_And_Landing_Effect();
         _collision.Become_Invincible();
         _controller.Change_Fly_Parameter();
         _sprite.sortingOrder = -6;
@@ -124,21 +146,33 @@ public class AunnAttackFunction : MonoBehaviour {
         _move.Start_Move(0);
         yield return new WaitUntil(_move.Is_End_Move);
 
-        _controller.Change_Animation("DivingGroundBool");        
+        _controller.Change_Animation("DivingGroundBool");
         yield return new WaitForSeconds(0.1f);
         _sprite.sortingOrder = 3;
+
+        //コピーの生成
+        if (generate_Copy) {
+            _copy.Create_Copy(80, false, new Vector2(-transform.position.x, transform.position.y));
+        }
 
         //自機を追いかける        
         _trace.enabled = true;
         yield return new WaitForSeconds(2.2f);
         _trace.enabled = false;
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.4f);
 
+        //ジャンプショット
+        _collision.Release_Invincible();
+        StartCoroutine("Jump_Shoot_Cor");
+    }
+
+
+    //ジャンプショット
+    private IEnumerator Jump_Shoot_Cor() {       
         //ジャンプ     
         _controller.Change_Animation("HighJumpBool");
-        _move.Start_Move(1);
-        _collision.Release_Invincible();
+        _move.Start_Move(1);        
         _effect.Play_A_Letter_Effect();
         yield return new WaitUntil(_move.Is_End_Move);
 
@@ -146,12 +180,20 @@ public class AunnAttackFunction : MonoBehaviour {
         _controller.Change_Animation("ShootPoseBool");
         _shoot.Shoot_Short_Curve_Laser();
         _effect.Play_Unn_Letter_Effect();
-        yield return new WaitForSeconds(0.5f);
+        if (generate_Copy) {
+            _copy_Shoot.Shoot_Short_Curve_Laser();
+        }
+        yield return new WaitForSeconds(0.5f);        
 
         //落下        
         _controller.Change_Land_Parameter();
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
+        _effect.Jump_And_Landing_Effect();
         _controller.Change_Animation("SquatBool");
+        
+        //コピーの消去
+        if (generate_Copy)
+            _copy.Delete_Copy();
 
         yield return new WaitForSeconds(1.2f);
 
@@ -187,6 +229,12 @@ public class AunnAttackFunction : MonoBehaviour {
         _shoot.Start_Deposite_Purple_Bullet();
         _effect.Play_A_Letter_Effect();
 
+        //コピーの生成
+        if (generate_Copy) {
+            _copy.Create_Copy(80, true, new Vector2(-transform.position.x, transform.position.y));
+            _copy_Shoot.Start_Deposite_Purple_Bullet();
+        }
+
         //反対側の壁に飛びつく
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * direction, 80f));
         yield return new WaitUntil(Is_End_Move);
@@ -194,6 +242,12 @@ public class AunnAttackFunction : MonoBehaviour {
         //弾の配置終了
         _shoot.Stop_Deposit_Purple_Bullet();
         _effect.Play_Unn_Letter_Effect();
+
+        //コピーの消去
+        if (generate_Copy) {
+            _copy.Delete_Copy();
+            _copy_Shoot.Stop_Deposit_Purple_Bullet();
+        }
 
         yield return new WaitForSeconds(0.5f);
 
@@ -204,6 +258,7 @@ public class AunnAttackFunction : MonoBehaviour {
         //着地
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("SquatBool");
+        _effect.Jump_And_Landing_Effect();
 
         yield return new WaitForSeconds(2.0f);
 
@@ -225,12 +280,17 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //予備動作
         _effect.Play_A_Letter_Effect();
-        yield return new WaitForSeconds(1.0f);
+        //コピーの生成
+        if (generate_Copy)
+            _copy.Create_Copy(80, true, new Vector2(-transform.position.x, transform.position.y));
+
+        yield return new WaitForSeconds(0.8f);
 
         //移動
         Vector2 next_Pos;
         _controller.Change_Animation("JumpBool");        
         while(true) {
+            _effect.Jump_And_Landing_Effect();
             next_Pos = transform.position + new Vector3(112f * -direction, 0);
             _move_Two_Points.Start_Move(next_Pos, 1);
             yield return new WaitUntil(_move_Two_Points.End_Move);
@@ -239,14 +299,19 @@ public class AunnAttackFunction : MonoBehaviour {
                 break;
             else if (direction == -1 && transform.position.x > 88f)
                 break;            
-        } 
+        }
 
         //最後は場所整える
+        _effect.Jump_And_Landing_Effect();
         next_Pos = new Vector2(200f * -direction, transform.position.y);
         _move_Two_Points.Start_Move(next_Pos, 1);
         yield return new WaitUntil(_move_Two_Points.End_Move);
         _controller.Change_Animation("SquatBool");
-        transform.localScale = new Vector3(-direction, 1, 1);        
+        transform.localScale = new Vector3(-direction, 1, 1);
+
+        //コピーの消去
+        if (generate_Copy)
+            _copy.Delete_Copy();
 
         _attack.can_Attack = true;
     }

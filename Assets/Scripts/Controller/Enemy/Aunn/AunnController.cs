@@ -8,7 +8,7 @@ public class AunnController : BossEnemy {
     private AunnAttack _attack;    
     private Rigidbody2D _rigid;
     private CapsuleCollider2D _collider;
-    private Animator _anim;    
+    private Animator _anim;
 
     public readonly AunnBGMManager _BGM = new AunnBGMManager();
 
@@ -22,6 +22,9 @@ public class AunnController : BossEnemy {
     private readonly Vector2 collider_Size_Squat = new Vector2(28f, 28f);
     private readonly Vector2 collider_Offset_Squat = new Vector2(1, -12f);
 
+    //trueのアニメータパラメータ
+    private string now_Anim_Param;
+
 
     new void Awake() {
         base.Awake();
@@ -29,8 +32,8 @@ public class AunnController : BossEnemy {
         _attack = GetComponent<AunnAttack>();
         _rigid = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
-        _anim = GetComponent<Animator>();
-        
+        _anim = GetComponent<Animator>();        
+
         default_Gravity = _rigid.gravityScale;
 
     }
@@ -71,6 +74,7 @@ public class AunnController : BossEnemy {
         _anim.SetBool("DivingGroundBool", false);
 
         _anim.SetBool(next_Param, true);
+        now_Anim_Param = next_Param;
 
         //当たり判定の変更
         switch (next_Param) {
@@ -91,6 +95,11 @@ public class AunnController : BossEnemy {
     }
 
 
+    public string Get_Now_Anim_Param() {
+        return now_Anim_Param;
+    }
+
+
     //地上用パラメータに
     public void Change_Land_Parameter() {
         _collider.isTrigger = false;
@@ -104,5 +113,5 @@ public class AunnController : BossEnemy {
         _rigid.gravityScale = 0;
         _rigid.velocity = Vector2.zero;
     }
-     
+ 
 }

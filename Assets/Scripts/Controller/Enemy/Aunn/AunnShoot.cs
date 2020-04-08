@@ -5,7 +5,9 @@ using UnityEngine;
 public class AunnShoot : MonoBehaviour {
 
     [SerializeField] private ShootSystem short_Curve_Laser;
-    [SerializeField] private GameObject purple_Rice_Shoot_Obj;    
+    [SerializeField] private GameObject purple_Rice_Shoot_Obj;
+    [SerializeField] private ShootSystem dog_Bullet_Shoot;
+    [SerializeField] private ShootSystem dog_Bullet_Big_Shoot;
 
 
     //------------------------ジャンプショット用 短レーザーショット-------------------------
@@ -42,4 +44,18 @@ public class AunnShoot : MonoBehaviour {
     }
 
 
+    //-------------------------------------山犬の散歩用-------------------------------------
+    public void Shoot_Dog_Bullet() {
+        dog_Bullet_Shoot.Shoot();
+    }
+
+
+    public void Shoot_Dog_Bullet_Big() {
+        dog_Bullet_Big_Shoot.Shoot();
+    }
+
+
+    public void Stop_Dog_Bullet() {
+        dog_Bullet_Shoot.Stop_Shoot();
+    }
 }

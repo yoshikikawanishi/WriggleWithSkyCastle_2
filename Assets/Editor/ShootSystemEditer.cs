@@ -33,6 +33,7 @@ public class ShootSystemEditer : Editor {
             EditorGUILayout.BeginVertical(GUI.skin.box);
 
             obj.max_Speed = EditorGUILayout.FloatField("MaxSpeed", obj.max_Speed);
+            obj.radius = EditorGUILayout.FloatField("Radius", obj.radius);
 
             switch (obj.kind) {
                 case ShootSystem.KIND.Odd:
