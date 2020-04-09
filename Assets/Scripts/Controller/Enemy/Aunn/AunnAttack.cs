@@ -8,6 +8,7 @@ public class AunnAttack : MonoBehaviour {
     private AunnController _controller;
     private AunnAttackFunction _attack_Func;
     private AunnShoot _shoot;
+    private AunnEffect _effect;
 
     [HideInInspector] public bool[] start_Phase = { true, true };
     [HideInInspector] public bool can_Attack = true;
@@ -18,6 +19,7 @@ public class AunnAttack : MonoBehaviour {
         _controller = GetComponent<AunnController>();
         _attack_Func = GetComponent<AunnAttackFunction>();
         _shoot = GetComponentInChildren<AunnShoot>();
+        _effect = GetComponentInChildren<AunnEffect>();
     }    
 	
 	
@@ -50,11 +52,13 @@ public class AunnAttack : MonoBehaviour {
 
     public void Stop_Phase1() {
         _attack_Func.Stop_Attack();
+        StopAllCoroutines();
         if(_controller.Get_Now_Anim_Param() == "DivingGroundBool") {
             transform.position += new Vector3(0, 50f);
         }
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("StandingBool");
+        _effect.Stop_Charge_Effect();
     }
 
 
@@ -147,9 +151,15 @@ public class AunnAttack : MonoBehaviour {
         _move_Const.Start_Move(new Vector3(180f, 0), 1);
         yield return new WaitForSeconds(wait_Time);
 
+        //弾幕
         while (_BGM.Get_Now_Melody() == AunnBGMManager.Melody.main) {
+            _effect.Play_Yellow_Circle_Effect();
+            _effect.Play_Burst_Effect_Red();
             _shoot.Shoot_Dog_Bullet();
             yield return new WaitForSeconds(10.0f);
+
+            _effect.Play_Yellow_Circle_Effect();
+            _effect.Play_Burst_Effect_Red();
             _shoot.Shoot_Dog_Bullet_Big();
             yield return new WaitForSeconds(8.0f);
         }

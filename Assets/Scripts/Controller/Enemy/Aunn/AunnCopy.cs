@@ -95,7 +95,7 @@ public class AunnCopy : Enemy {
 
     //消滅時の処理
     public override void Vanish() {        
-        Play_Vanish_Effect();
+        base.Play_Vanish_Effect();
         gameObject.SetActive(false);
     }
 

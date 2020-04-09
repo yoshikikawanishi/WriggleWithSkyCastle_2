@@ -8,6 +8,9 @@ public class AunnEffect : MonoBehaviour {
     [SerializeField] private ParticleSystem unn_Letter_Effect;
     [SerializeField] private GameObject power_Charge_Effect;
     [SerializeField] private GameObject jump_Effect;
+    [SerializeField] private GameObject yellow_Circle_Effect;
+    [SerializeField] private GameObject purple_Circle_Effect;
+    [SerializeField] private ParticleSystem burst_Effect_Red;
 
 
 	public void Play_Battle_Effect() {
@@ -46,4 +49,22 @@ public class AunnEffect : MonoBehaviour {
         Destroy(effect, 1.0f);
     }
 
+
+    public void Play_Yellow_Circle_Effect() {
+        GameObject effect = Instantiate(yellow_Circle_Effect);
+        effect.SetActive(true);
+        effect.transform.position = yellow_Circle_Effect.transform.position;        
+    }
+
+
+    public void Play_Purple_Circle_Effect() {
+        GameObject effect = Instantiate(purple_Circle_Effect);
+        effect.SetActive(true);
+        effect.transform.position = purple_Circle_Effect.transform.position;
+    }
+
+
+    public void Play_Burst_Effect_Red() {
+        burst_Effect_Red.Play();
+    }
 }

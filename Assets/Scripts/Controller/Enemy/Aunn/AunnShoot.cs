@@ -57,5 +57,6 @@ public class AunnShoot : MonoBehaviour {
 
     public void Stop_Dog_Bullet() {
         dog_Bullet_Shoot.Stop_Shoot();
+        dog_Bullet_Big_Shoot.Stop_Shoot();
     }
 }

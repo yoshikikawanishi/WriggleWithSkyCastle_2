@@ -120,12 +120,14 @@ public class AunnAttackFunction : MonoBehaviour {
 
         is_End_Move = true;
     }
-      
+
 
     //--------------------------攻撃用関数------------------------------
     // ※※※※  攻撃終了時に _attack.can_Attack をtrueにすること  ※※※※
-
-    //潜行、地面から自機追従、ジャンプ、ショット
+    
+    /// <summary>
+    /// 潜行、地面から自機追従、ジャンプ、ショット
+    /// </summary>
     public void Dive_And_Jump_Shoot() {
         StartCoroutine("Dive_And_Trace_Player_Cor");
     }
@@ -180,6 +182,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _controller.Change_Animation("ShootPoseBool");
         _shoot.Shoot_Short_Curve_Laser();
         _effect.Play_Unn_Letter_Effect();
+        _effect.Play_Burst_Effect_Red();
         if (generate_Copy) {
             _copy_Shoot.Shoot_Short_Curve_Laser();
         }
@@ -213,7 +216,10 @@ public class AunnAttackFunction : MonoBehaviour {
     }
 
 
-    //壁に張り付いて突進、弾を配置
+    
+    /// <summary>
+    /// 壁に張り付いてジャンプ、弾を配置
+    /// </summary>
     public void Jump_On_Wall_And_Rush() {
         StartCoroutine("Jump_On_Wall_And_Rush_Cor");
     }
@@ -227,7 +233,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //弾の配置開始
         _shoot.Start_Deposite_Purple_Bullet();
-        _effect.Play_A_Letter_Effect();
+        _effect.Play_A_Letter_Effect();        
 
         //コピーの生成
         if (generate_Copy) {
@@ -242,6 +248,7 @@ public class AunnAttackFunction : MonoBehaviour {
         //弾の配置終了
         _shoot.Stop_Deposit_Purple_Bullet();
         _effect.Play_Unn_Letter_Effect();
+        _effect.Play_Purple_Circle_Effect();
 
         //コピーの消去
         if (generate_Copy) {
@@ -265,8 +272,10 @@ public class AunnAttackFunction : MonoBehaviour {
         _attack.can_Attack = true;
     }
 
-
-    //両端をジャンプ移動で行き来する
+    
+    /// <summary>
+    /// 両端をジャンプ移動で行き来する
+    /// </summary>
     public void Reciprocate_Jump() {
         StartCoroutine("Reciprocate_Jump_Cor");
     }
