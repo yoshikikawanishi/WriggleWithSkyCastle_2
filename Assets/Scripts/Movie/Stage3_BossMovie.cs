@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Stage3_BossMovie : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class Stage3_BossMovie : MonoBehaviour {
     }
 
     private IEnumerator Before_Boss_Movie_Cor() {
-        yield return null;
+        yield return new WaitForSeconds(1.0f);
         aunn.Start_Battle();
     }
 
@@ -34,6 +35,9 @@ public class Stage3_BossMovie : MonoBehaviour {
     }
 
     private IEnumerator Clear_Movie_Cor() {
-        yield return null;
+        yield return new WaitForSeconds(2.0f);
+        FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("Stage4_1Scene");
     }
 }

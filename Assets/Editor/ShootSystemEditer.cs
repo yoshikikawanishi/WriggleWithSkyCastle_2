@@ -101,7 +101,7 @@ public class ShootSystemEditer : Editor {
         }        
 
         //加速度
-        obj.is_Acceleration = EditorGUILayout.Toggle("VelocityOverTime", obj.is_Acceleration);        
+        obj.is_Acceleration = EditorGUILayout.Toggle("VelocityOverTime", obj.is_Acceleration);
         if (obj.is_Acceleration) {
             EditorGUILayout.BeginVertical(GUI.skin.box);
             if (obj.velocity_Forward == null) {
@@ -110,9 +110,18 @@ public class ShootSystemEditer : Editor {
             }
             obj.velocity_Forward = EditorGUILayout.CurveField("Forward", obj.velocity_Forward);
             obj.velocity_Lateral = EditorGUILayout.CurveField("Lateral", obj.velocity_Lateral);
-            obj.velocity_To_Player = EditorGUILayout.CurveField("AimPlayer", obj.velocity_To_Player);
+            obj.velocity_To_Player = EditorGUILayout.CurveField("AimPlayer", obj.velocity_To_Player);            
             EditorGUILayout.EndVertical();
         }
+        
+        //角度の固定        
+        obj.is_Fixed_Rotation = EditorGUILayout.Toggle("FixedRotation", obj.is_Fixed_Rotation);
+        if (obj.is_Fixed_Rotation) {
+            EditorGUILayout.BeginVertical(GUI.skin.box);
+            obj.fixed_Angle = EditorGUILayout.FloatField("FixedAngle", obj.fixed_Angle);
+            EditorGUILayout.EndVertical();
+        }
+        
 
         //描画順
         obj.is_Change_Sorting_Order = EditorGUILayout.Toggle("ChangeSortingOrder", obj.is_Change_Sorting_Order);

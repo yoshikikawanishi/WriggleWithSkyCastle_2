@@ -26,7 +26,7 @@ public class ItemController : MonoBehaviour {
 
     //自機と当たったら消す
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.tag == "PlayerBodyTag") {
+        if(collision.tag == "PlayerBodyTag" || collision.tag == "BeetleBodyTag") {
             switch (kind) {
                 case ItemKind.power:        Gain_Power_Item();          break;
                 case ItemKind.score:        Gain_Score_Item();          break;

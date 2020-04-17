@@ -32,8 +32,11 @@ public class BossEnemy : MonoBehaviour {
     private bool is_Cleared = false;
     //無敵化
     private bool is_Invincible = false;
-    //最後に被弾してからの経過時間
-    private float damaged_Span_Time = 0;
+    //最後に被弾した時間
+    private float last_Damaged_Time;
+    //フェーズ中に自機が被弾したかどうか
+    private int player_Life;
+    private bool is_Player_No_Damaged = true;
 
 
     protected void Awake() {
@@ -44,13 +47,14 @@ public class BossEnemy : MonoBehaviour {
         poisoned_Enemy  = gameObject.AddComponent<PoisonedEnemy>();
         //初期値代入
         DEFAULT_LIFE = new List<int>(life);
+        player_Life = PlayerManager.Instance.Get_Life();
     }
 
-    protected void Update() {
-        if(damaged_Span_Time < 0.6f) {
-            damaged_Span_Time += Time.deltaTime;
-        }
+
+    protected void Update() {        
+        Observe_Player_Life();
     }
+
 
     //被弾時の処理
     public void Damaged(int damage, string damaged_Tag) {
@@ -62,7 +66,7 @@ public class BossEnemy : MonoBehaviour {
             return;
         }
         //連続で被弾時ダメージ減らす
-        if(damaged_Span_Time < 0.6f) {
+        if(Time.time - last_Damaged_Time < 0.6f) {
             damage = (int)(damage * 0.3f);
             if (damage < 1)
                 damage = 1;
@@ -78,8 +82,8 @@ public class BossEnemy : MonoBehaviour {
             poisoned_Enemy.Start_Poisoned_Damaged(true);
         }
         else {
-            //毒以外でダメージ間のインターバルリセット
-            damaged_Span_Time = 0;
+            //毒以外でダメージ時、最後に被弾した時間を記録
+            last_Damaged_Time = Time.time;
         }
         //フェーズ終了
         if(life[now_Phase - 1] <= 0) {            
@@ -118,12 +122,26 @@ public class BossEnemy : MonoBehaviour {
     }
 
 
+    //自機が被弾したかどうか
+    private void Observe_Player_Life() {
+        if (!is_Player_No_Damaged)
+            return;
+        if(player_Life != PlayerManager.Instance.Get_Life()) {
+            player_Life = PlayerManager.Instance.Get_Life();
+            is_Player_No_Damaged = false;
+        }
+    }
+
+
     //フェーズの切り替え
     private void Change_Phase() {
         var effect = Instantiate(phase_Change_Bomb_Prefab);
         effect.transform.position = transform.position;
 
         _put_Out_Item.Put_Out_Item(power_Value, score_Value);
+        if (is_Player_No_Damaged) {
+            _put_Out_Item.Put_Out_Stock_Up_Item();
+        }
 
         Set_Now_Phase(now_Phase + 1);
     }

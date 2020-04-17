@@ -25,4 +25,11 @@ public class CircleColliderPool : MonoBehaviour {
         pool.Add(cc);
         return cc;
     }
+
+
+    public void Set_Inactive_All() {
+        foreach(CircleCollider2D c in pool) {
+            c.enabled = false;
+        }
+    }
 }

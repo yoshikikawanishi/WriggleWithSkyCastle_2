@@ -40,7 +40,7 @@ public class Laser : MonoBehaviour {
 
     void OnEnable() {        
         if (play_On_Awake) {
-            Launch();
+            Launch();            
         }        
     }
 
@@ -112,8 +112,8 @@ public class Laser : MonoBehaviour {
             Vector2 side = Quaternion.AngleAxis(90f, -Vector3.forward) * sections[i].direction;
             side.Normalize();
 
-            sections[i].left = points[i] - side * laserWidth / 2f;
-            sections[i].right = points[i] + side * laserWidth / 2f;
+            sections[i].left = points[i] - (Vector2)start_Pos - side * laserWidth / 2f;
+            sections[i].right = points[i] - (Vector2)start_Pos + side * laserWidth / 2f;
         }
     }
     
@@ -123,7 +123,6 @@ public class Laser : MonoBehaviour {
 
         MeshFilter mf = GetComponent<MeshFilter>();
         MeshRenderer mr = GetComponent<MeshRenderer>();
-        //MeshCollider mc = GetComponent<MeshCollider>();
         Mesh mesh = mf.mesh = new Mesh();
 
         mesh.name = "CurveLaserMesh";
@@ -167,8 +166,7 @@ public class Laser : MonoBehaviour {
         mesh.uv = uvs;
         mesh.triangles = triangles;
         mr.material = laserMat;
-        mr.sortingOrder = sortingOrder;
-        //mc.sharedMesh = mesh;        
+        mr.sortingOrder = sortingOrder;        
     }    
 
 
@@ -205,6 +203,7 @@ public class Laser : MonoBehaviour {
         sections = null;
         points = null;
         colliders.Clear();
+        GetComponent<CircleColliderPool>().Set_Inactive_All();
     }
 
 

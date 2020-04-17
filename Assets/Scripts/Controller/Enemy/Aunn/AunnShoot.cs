@@ -8,6 +8,8 @@ public class AunnShoot : MonoBehaviour {
     [SerializeField] private GameObject purple_Rice_Shoot_Obj;
     [SerializeField] private ShootSystem dog_Bullet_Shoot;
     [SerializeField] private ShootSystem dog_Bullet_Big_Shoot;
+    [SerializeField] private ShootSystem aunn_Word_Shoot;
+    [SerializeField] private GameObject long_Curve_Laser_Shoot_Obj;
 
 
     //------------------------ジャンプショット用 短レーザーショット-------------------------
@@ -58,5 +60,22 @@ public class AunnShoot : MonoBehaviour {
     public void Stop_Dog_Bullet() {
         dog_Bullet_Shoot.Stop_Shoot();
         dog_Bullet_Big_Shoot.Stop_Shoot();
+    }
+
+
+    //------------------------------------フェーズチェンジ時の----------------------------
+    public void Shoot_Aunn_Word_Bullet() {
+        aunn_Word_Shoot.Shoot();
+    }
+
+    //----------------------------------フェーズ２---------------------------------------
+    public void Shoot_Long_Curve_Laser() {
+        long_Curve_Laser_Shoot_Obj.GetComponent<ShootSystem>().Shoot();
+        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Shoot();
+    }
+
+    public void Stop_Long_Curve_Laser() {
+        long_Curve_Laser_Shoot_Obj.GetComponent<ShootSystem>().Stop_Shoot();
+        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Stop_Shoot();
     }
 }

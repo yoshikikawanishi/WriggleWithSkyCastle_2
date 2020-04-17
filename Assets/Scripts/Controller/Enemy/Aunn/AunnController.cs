@@ -41,7 +41,7 @@ public class AunnController : BossEnemy {
 
     new void Update() {
         base.Update();
-        if (start_Battle) {
+        if (start_Battle) {            
             switch (Get_Now_Phase()) {
                 case 1: _attack.Phase1(_BGM); break;
                 case 2: _attack.Phase2(_BGM); break;
@@ -53,7 +53,7 @@ public class AunnController : BossEnemy {
     //戦闘開始
     public void Start_Battle() {
         _BGM.Start_Time_Count();
-        start_Battle = true;
+        start_Battle = true;        
     }
 
     //クリア時の処理

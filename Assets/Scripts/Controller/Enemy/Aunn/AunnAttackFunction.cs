@@ -44,6 +44,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _trace = gameObject.AddComponent<TracePlayer>();
         _trace.kind = TracePlayer.Kind.onlyX;
         _trace.speed = 2.5f;
+        _trace.enabled = false;
 
         foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();   
         
@@ -58,7 +59,9 @@ public class AunnAttackFunction : MonoBehaviour {
         _move_Two_Points.Stop_Move();
         _shoot.Stop_Deposit_Purple_Bullet();
         _shoot.Stop_Dog_Bullet();
+        _shoot.Stop_Long_Curve_Laser();
         _trace.enabled = false;
+        _copy.Delete_Copy();
     }
 
 
@@ -75,7 +78,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
     //端にダッシュする
     //direction : 右端に行くとき.1 / 左端に行くとき-1
-    private IEnumerator Dash_To_Side_Cor(int direction) {
+    public IEnumerator Dash_To_Side_Cor(int direction) {
         is_End_Move = false;
         _controller.Change_Land_Parameter();
 
@@ -100,7 +103,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
 
     //壁に張り付く
-    private IEnumerator Jump_On_Wall_Cor(Vector2 next_Pos) {
+    public IEnumerator Jump_On_Wall_Cor(Vector2 next_Pos) {
         is_End_Move = false;
         _controller.Change_Fly_Parameter();
 
@@ -118,6 +121,27 @@ public class AunnAttackFunction : MonoBehaviour {
 
         transform.localScale = new Vector3(direction, 1, 1);
 
+        is_End_Move = true;
+    }
+
+
+    //大ジャンプする
+    public IEnumerator High_Jump_Move_Cor(Vector2 next_Pos) {
+        is_End_Move = false;
+        _controller.Change_Fly_Parameter();
+
+        //向き
+        int direction = (transform.position.x - next_Pos.x).CompareTo(0);
+        if(direction == 0) { direction = 1; }
+        transform.localScale = new Vector3(direction, 1, 1);
+
+        //ジャンプ
+        _controller.Change_Animation("JumpBool");
+        _move_Two_Points.Start_Move(next_Pos, 2);
+        yield return new WaitUntil(_move_Two_Points.End_Move);
+
+        _controller.Change_Land_Parameter();
+        _controller.Change_Animation("SquatBool");
         is_End_Move = true;
     }
 

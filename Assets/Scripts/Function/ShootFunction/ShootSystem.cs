@@ -37,6 +37,9 @@ public class ShootSystem : MonoBehaviour {
     public int sorting_Order = -5;
     public int sorting_Order_Diff = 0;
 
+    public bool is_Fixed_Rotation = false;
+    public float fixed_Angle = 0;
+
     //その他設定
     public bool other_Param = true;    
     // 1:奇数段 / 2:偶数弾 / 3:全方位弾 / 4:nWay弾 / 5:ばらまき弾 / 6:渦巻き弾
@@ -299,6 +302,10 @@ public class ShootSystem : MonoBehaviour {
                 bullet.GetComponent<SpriteRenderer>().sortingOrder = sorting_Order;
                 sorting_Order += sorting_Order_Diff;
             }
+            //角度の固定
+            if (is_Fixed_Rotation) {
+                bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, fixed_Angle));
+            }
             //パラメータ変更
             speed -= speed_Diff;
             angle_Deg += angle_Diff;
@@ -358,6 +365,10 @@ public class ShootSystem : MonoBehaviour {
                                     
             float dirVelocity = Mathf.Atan2(bullet_Rigid.velocity.y, bullet_Rigid.velocity.x) * Mathf.Rad2Deg;    //進行方向に回転
             bullet.transform.rotation = Quaternion.AngleAxis(dirVelocity, new Vector3(0, 0, 1));
+            //描画角度の固定化
+            if (is_Fixed_Rotation) {
+                bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, fixed_Angle));
+            }
             yield return new WaitForSeconds(0.016f);
         }
     }

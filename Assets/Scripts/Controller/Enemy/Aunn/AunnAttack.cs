@@ -45,7 +45,7 @@ public class AunnAttack : MonoBehaviour {
                 Attack_In_Melody_C();
                 break;
             case AunnBGMManager.Melody.main:
-                StartCoroutine("Attack_In_Melody_Main_Cor", _BGM);
+                Attack_In_Melody_Main(true, _BGM);
                 break;
         }
     }
@@ -88,13 +88,20 @@ public class AunnAttack : MonoBehaviour {
                 Attack_In_Melody_C();
                 break;
             case AunnBGMManager.Melody.main:
-                
+                Attack_In_Melody_Main(false, _BGM);
                 break;
         }
     }
 
     public void Stop_Phase2() {
-
+        _attack_Func.Stop_Attack();
+        StopAllCoroutines();
+        if (_controller.Get_Now_Anim_Param() == "DivingGroundBool") {
+            transform.position += new Vector3(0, 50f);
+        }
+        _controller.Change_Land_Parameter();
+        _controller.Change_Animation("StandingBool");
+        _effect.Stop_Charge_Effect();
     }
 
 
@@ -120,7 +127,11 @@ public class AunnAttack : MonoBehaviour {
 
 
     //サビ前、サビ弾幕用
-    private IEnumerator Attack_In_Melody_Main_Cor(AunnBGMManager _BGM) {
+    private void Attack_In_Melody_Main(bool is_Phase1, AunnBGMManager _BGM) {
+        StartCoroutine(Attack_In_Melody_Main_Cor(is_Phase1, _BGM));
+    }
+    
+    private IEnumerator Attack_In_Melody_Main_Cor(bool is_Phase1, AunnBGMManager _BGM) {
         can_Attack = false;
 
         AunnController _controller = GetComponent<AunnController>();
@@ -130,14 +141,9 @@ public class AunnAttack : MonoBehaviour {
         ChildColliderTrigger foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
 
         //移動        
-        _controller.Change_Fly_Parameter();
-        if (transform.position.x < 32) {
-            _controller.Change_Animation("JumpBool");            
-            _move_Two_Points.Start_Move(new Vector3(200f, transform.position.y), 2);
-            yield return new WaitUntil(_move_Two_Points.End_Move);
-            _effect.Jump_And_Landing_Effect();
-            yield return new WaitForSeconds(1.0f);
-        }
+        _attack_Func.StartCoroutine("High_Jump_Move_Cor", new Vector2(200f, transform.position.y + 4));
+        yield return new WaitUntil(_attack_Func.Is_End_Move);
+        transform.localScale = new Vector3(1, 1, 1);
 
         //サビまでの時間計測
         float wait_Time = _BGM.BGM_TIME[5] - _BGM.Get_Now_BGM_Time();
@@ -145,6 +151,7 @@ public class AunnAttack : MonoBehaviour {
             wait_Time = 2;
 
         //移動
+        _controller.Change_Fly_Parameter();
         _controller.Change_Animation("ShootPoseBool");
         transform.localScale = new Vector3(1, 1, 1);
         _effect.Start_Charge_Effect(wait_Time);
@@ -153,15 +160,24 @@ public class AunnAttack : MonoBehaviour {
 
         //弾幕
         while (_BGM.Get_Now_Melody() == AunnBGMManager.Melody.main) {
-            _effect.Play_Yellow_Circle_Effect();
-            _effect.Play_Burst_Effect_Red();
-            _shoot.Shoot_Dog_Bullet();
-            yield return new WaitForSeconds(10.0f);
+            //フェーズ１
+            if (is_Phase1) {
+                _effect.Play_Yellow_Circle_Effect();
+                _effect.Play_Burst_Effect_Red();
+                _shoot.Shoot_Dog_Bullet();
+                yield return new WaitForSeconds(10.0f);
 
-            _effect.Play_Yellow_Circle_Effect();
-            _effect.Play_Burst_Effect_Red();
-            _shoot.Shoot_Dog_Bullet_Big();
-            yield return new WaitForSeconds(8.0f);
+                _effect.Play_Yellow_Circle_Effect();
+                _effect.Play_Burst_Effect_Red();
+                _shoot.Shoot_Dog_Bullet_Big();
+                yield return new WaitForSeconds(8.0f);
+            }
+            //フェーズ２
+            else {
+                _effect.Play_Burst_Effect_Red();
+                _shoot.Shoot_Long_Curve_Laser();
+                yield return new WaitForSeconds(9.0f);
+            }
         }
         
         _controller.Change_Land_Parameter();
@@ -174,7 +190,31 @@ public class AunnAttack : MonoBehaviour {
 
     //フェーズ切り替え時の攻撃
     private IEnumerator Phase_Change_Attack_Cor() {
-        yield return new WaitForSeconds(5.0f);
+        //取得
+        MoveTwoPoints _move_Two_Points = GetComponent<MoveTwoPoints>();
+        MoveConstSpeed _move_Const = GetComponent<MoveConstSpeed>();
+
+        //無敵化
+        gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        yield return new WaitForSeconds(1.0f);
+
+        //移動
+        _attack_Func.StartCoroutine("High_Jump_Move_Cor", new Vector2(0, transform.position.y + 4));
+        yield return new WaitUntil(_attack_Func.Is_End_Move);
+        yield return new WaitForSeconds(0.3f);
+        _controller.Change_Fly_Parameter();
+        _controller.Change_Animation("ShootPoseBool");
+        _move_Const.Start_Move(new Vector3(0, transform.position.y + 80f), 1);
+        yield return new WaitUntil(_move_Const.End_Move);
+
+        //ショット
+        _shoot.Shoot_Aunn_Word_Bullet();
+        yield return new WaitForSeconds(3.0f);
+
+        _controller.Change_Land_Parameter();
+        yield return new WaitForSeconds(3.0f);
+
+        gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
         can_Attack = true;
     }
 }

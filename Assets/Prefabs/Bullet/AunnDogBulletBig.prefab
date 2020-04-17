@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61994990435219106}
   - component: {fileID: 199965612621786354}
   - component: {fileID: 114570917415123534}
+  - component: {fileID: 114144102990992452}
   - component: {fileID: 198088359424829754}
   - component: {fileID: 114594895089695372}
   m_Layer: 9
@@ -91,6 +92,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 6}
   m_EdgeRadius: 0
+--- !u!114 &114144102990992452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1466099843016782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e9097613b8f774b99955e1a2390e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deleted_Obj_Tag:
+  - PlayerBodyTag
+  - BombTag
+  is_Delete_Invisible: 1
 --- !u!114 &114570917415123534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +209,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 50
   inter_Angle_Deg: 20

@@ -18,7 +18,7 @@ public class CollectionItem : MonoBehaviour {
     [SerializeField] private bool is_Change_Life_Up_Item = false;
 
 
-    private void Start() {
+    private void Awake() {
         //すでに取得済みの時
         if (CollectionManager.Instance.Is_Collected(collection_Name)) {
             if (is_Change_Life_Up_Item) {
