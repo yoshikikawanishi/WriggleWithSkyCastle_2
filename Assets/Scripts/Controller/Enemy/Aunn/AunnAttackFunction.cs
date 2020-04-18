@@ -117,8 +117,8 @@ public class AunnAttackFunction : MonoBehaviour {
         yield return new WaitForSeconds(0.18f);
         _move_Two_Points.Start_Move(next_Pos, 0);
         yield return new WaitUntil(_move_Two_Points.End_Move);
-        _controller.Change_Animation("ShootPoseBool");
 
+        _controller.Change_Animation("OnWallBool");
         transform.localScale = new Vector3(direction, 1, 1);
 
         is_End_Move = true;
@@ -265,9 +265,11 @@ public class AunnAttackFunction : MonoBehaviour {
             _copy_Shoot.Start_Deposite_Purple_Bullet();
         }
 
+        yield return new WaitForSeconds(0.5f);
+
         //反対側の壁に飛びつく
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * direction, 80f));
-        yield return new WaitUntil(Is_End_Move);
+        yield return new WaitUntil(Is_End_Move);        
 
         //弾の配置終了
         _shoot.Stop_Deposit_Purple_Bullet();

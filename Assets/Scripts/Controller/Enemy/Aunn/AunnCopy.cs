@@ -84,6 +84,14 @@ public class AunnCopy : Enemy {
         this.is_Symmetry = is_Symmetry;
         gameObject.SetActive(true);
         transform.position = position;
+        //生成直後は判定消す
+        gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        StartCoroutine("Release_Invincible_Cor");
+    }
+
+    private IEnumerator Release_Invincible_Cor() {
+        yield return new WaitForSeconds(1.0f);
+        gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
     }
 
 

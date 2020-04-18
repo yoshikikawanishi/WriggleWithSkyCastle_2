@@ -17,7 +17,7 @@ public class AunnController : BossEnemy {
 
     //初期値
     private float default_Gravity;
-    private readonly Vector2 collider_Size_Standing = new Vector2(28f, 56f);
+    private readonly Vector2 collider_Size_Standing = new Vector2(28f, 54f);
     private readonly Vector2 collider_Offset_Standing = new Vector2(1, -2f);
     private readonly Vector2 collider_Size_Squat = new Vector2(28f, 28f);
     private readonly Vector2 collider_Offset_Squat = new Vector2(1, -12f);
@@ -72,9 +72,10 @@ public class AunnController : BossEnemy {
         _anim.SetBool("HighJumpBool", false);
         _anim.SetBool("ShootPoseBool", false);
         _anim.SetBool("DivingGroundBool", false);
+        _anim.SetBool("OnWallBool", false);
 
         _anim.SetBool(next_Param, true);
-        now_Anim_Param = next_Param;
+        now_Anim_Param = next_Param;        
 
         //当たり判定の変更
         switch (next_Param) {
