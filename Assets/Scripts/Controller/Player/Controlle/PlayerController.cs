@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MBLDefine;
 
+//***次ゲーム作るときは入力周りのことも他クラスに任せること***
+
 public class PlayerController : MonoBehaviour {
 
     //コンポーネント
@@ -22,10 +24,11 @@ public class PlayerController : MonoBehaviour {
     private CollectionManager collection_Manager;
 
     //状態
-    public bool is_Playable = true;
+    public bool is_Playable = true;    
     public bool is_Landing = true;
     public bool is_Squat = false;
     public bool is_Ride_Beetle = false;
+    public bool can_Action = true;  //移動以外の無効化
 
     //ジャンプボタンが押された時接地していなくても、数フレーム後に着地すればジャンプする
     private bool start_Jump_Frame_Count = false;
@@ -120,6 +123,12 @@ public class PlayerController : MonoBehaviour {
         if (is_Squat) {
             _transition.Slow_Down();
         }
+
+        //アクション無効化
+        if(can_Action == false) {
+            return;
+        }
+
         //ジャンプ
         if (input.GetKeyDown(Key.Jump)) {
             //地面にいるときはそのままジャンプ
@@ -319,6 +328,10 @@ public class PlayerController : MonoBehaviour {
     //Setter
     public void Set_Is_Playable(bool is_Playable) {
         this.is_Playable = is_Playable;
+    }
+
+    public void Set_Can_Action(bool can_Action) {
+        this.can_Action = can_Action;
     }
 
     //Getter

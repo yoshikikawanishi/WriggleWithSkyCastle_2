@@ -5,6 +5,9 @@ TextureImporter:
     21300000: GamePadButton_0
     21300002: GamePadButton_1
     21300004: GamePadButton_2
+    21300006: ButtonIcon_0
+    21300008: ButtonIcon_1
+    21300010: ButtonIcon_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -120,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GamePadButton_0
+      name: ButtonIcon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -134,13 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f512172e624d0a84baefb0469c3561c2
+      spriteID: dbee61c53f12a344f8936805c8263650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamePadButton_1
+      name: ButtonIcon_1
       rect:
         serializedVersion: 2
         x: 32
@@ -154,13 +157,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ff85f06b3765ec4aa5c161bf80ae857
+      spriteID: ac73b210101fa4740adefaeff07e1af4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GamePadButton_2
+      name: ButtonIcon_2
       rect:
         serializedVersion: 2
         x: 64
@@ -174,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c72cd19a39895d945b5039f957f063f0
+      spriteID: bd95b025cce991f4db7156d8abae64d9
       vertices: []
       indices: 
       edges: []
