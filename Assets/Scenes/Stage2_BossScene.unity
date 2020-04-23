@@ -160,6 +160,7 @@ MonoBehaviour:
   bullet: {fileID: 1956420573939216, guid: a48c8414ccf4b5344b2b32df4f90478c, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -178,9 +179,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -213,6 +240,7 @@ MonoBehaviour:
   bullet: {fileID: 1136071402790422, guid: 51003321ee7544147bffdab603f58ca9, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -231,9 +259,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -5020,6 +5074,7 @@ MonoBehaviour:
   bullet: {fileID: 1882840218936906, guid: a462dff2bf198654cb17f086166b4308, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -5038,9 +5093,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -5073,6 +5154,7 @@ MonoBehaviour:
   bullet: {fileID: 1192208651321600, guid: c5876a98535762f4a93a8df296c0156e, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -5091,9 +5173,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -14775,6 +14883,7 @@ MonoBehaviour:
   bullet: {fileID: 1484826329495228, guid: fd792f9f968edfa44a0e9cd9b4695bca, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 16
   angle_Noise: 8
   lifeTime: 7
@@ -14793,9 +14902,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 0
@@ -15869,6 +16004,7 @@ MonoBehaviour:
   bullet: {fileID: 1484826329495228, guid: fd792f9f968edfa44a0e9cd9b4695bca, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 16
   angle_Noise: 8
   lifeTime: 7
@@ -15887,9 +16023,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 0
@@ -17326,6 +17488,7 @@ MonoBehaviour:
   bullet: {fileID: 1882840218936906, guid: a462dff2bf198654cb17f086166b4308, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -17344,9 +17507,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -17379,6 +17568,7 @@ MonoBehaviour:
   bullet: {fileID: 1192208651321600, guid: c5876a98535762f4a93a8df296c0156e, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -17397,9 +17587,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -22410,6 +22626,7 @@ MonoBehaviour:
   bullet: {fileID: 1882840218936906, guid: a462dff2bf198654cb17f086166b4308, type: 2}
   parent: {fileID: 0}
   max_Speed: 90
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 5
@@ -22428,9 +22645,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 3
   inter_Angle_Deg: 40
@@ -27816,6 +28059,7 @@ MonoBehaviour:
   bullet: {fileID: 1075402022672936, guid: 44bfa3a0f25c81446b0a29785bc49db9, type: 2}
   parent: {fileID: 0}
   max_Speed: 100
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 15
@@ -27933,9 +28177,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 1
   sorting_Order: 4
   sorting_Order_Diff: 2
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 36
   inter_Angle_Deg: 20
@@ -27968,6 +28238,7 @@ MonoBehaviour:
   bullet: {fileID: 1075402022672936, guid: 44bfa3a0f25c81446b0a29785bc49db9, type: 2}
   parent: {fileID: 0}
   max_Speed: 100
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 15
@@ -28085,9 +28356,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 1
   sorting_Order: 3
   sorting_Order_Diff: 2
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 36
   inter_Angle_Deg: 20
@@ -32774,6 +33071,7 @@ MonoBehaviour:
   bullet: {fileID: 1956420573939216, guid: a48c8414ccf4b5344b2b32df4f90478c, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -32792,9 +33090,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -32827,6 +33151,7 @@ MonoBehaviour:
   bullet: {fileID: 1136071402790422, guid: 51003321ee7544147bffdab603f58ca9, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 6
@@ -32845,9 +33170,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -33288,7 +33639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: e0010000a4010000
+  life: d002000080020000
   power_Value: 16
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1493121116874872, guid: 20dc9e0b24cf99a4c902f6c82ea5650b,

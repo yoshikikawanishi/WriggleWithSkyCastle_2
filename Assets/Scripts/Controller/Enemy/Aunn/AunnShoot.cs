@@ -41,7 +41,7 @@ public class AunnShoot : MonoBehaviour {
             var shoot_Obj = Instantiate(purple_Rice_Shoot_Obj);
             shoot_Obj.transform.position = transform.position;            
             deposit_Objs.Add(shoot_Obj);
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

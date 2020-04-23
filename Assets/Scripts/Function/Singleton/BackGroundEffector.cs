@@ -43,7 +43,7 @@ public class BackGroundEffector : SingletonMonoBehaviour<BackGroundEffector> {
 
 
     //背景の色遷移
-    private IEnumerator Change_Color_Cor(Color next_Color, float change_Speed_Rate) {
+    protected virtual IEnumerator Change_Color_Cor(Color next_Color, float change_Speed_Rate) {
         float rate = 0;
         Color difference = next_Color - back_Ground_Sprite.color;
         Color delta_Color = difference * change_Speed_Rate;
@@ -52,10 +52,6 @@ public class BackGroundEffector : SingletonMonoBehaviour<BackGroundEffector> {
             back_Ground_Sprite.color += delta_Color;
             yield return null;
         }
-    }
-
-
-
-	
+    }	
 	
 }

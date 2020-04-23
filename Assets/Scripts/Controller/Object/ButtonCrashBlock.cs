@@ -111,7 +111,10 @@ public class ButtonCrashBlock : MonoBehaviour {
         }
         //消滅
         else {
-            Destroy(gameObject);
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Animator>().SetTrigger("CrashTrigger");
+            Invoke("Do_Process_Depart_Player", 0.1f);
+            Destroy(gameObject, 0.6f);
         }
     }
 

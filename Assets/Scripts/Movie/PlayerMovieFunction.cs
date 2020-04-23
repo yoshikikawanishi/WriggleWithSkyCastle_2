@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovieFunction : MonoBehaviour {
+public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
 
     private GameObject player;
     private PlayerController player_Controller;
