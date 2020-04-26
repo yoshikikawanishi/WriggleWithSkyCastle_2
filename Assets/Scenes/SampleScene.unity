@@ -2829,6 +2829,7 @@ GameObject:
   - component: {fileID: 1173540447}
   - component: {fileID: 1173540446}
   - component: {fileID: 1173540448}
+  - component: {fileID: 1173540449}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -2899,6 +2900,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   file_Name: SampleSceneEnemy
+--- !u!114 &1173540449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173540443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: []
 --- !u!1 &1217446601
 GameObject:
   m_ObjectHideFlags: 0

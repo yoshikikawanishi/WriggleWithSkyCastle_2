@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class OpeningMovie : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private GameObject flies;
+
 
     public void Start_Movie() {
-        StartCoroutine("Opening_Movie_Cor");
+        if (SceneManagement.Instance.Is_First_Visit()) {
+            StartCoroutine("Opening_Movie_Cor");
+        }
+        else {
+            Destroy(flies);
+        }
     }
 
     private IEnumerator Opening_Movie_Cor() {
@@ -29,13 +27,17 @@ public class OpeningMovie : MonoBehaviour {
 
         //フェードイン
         FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.02f);
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.4f);
+
+        //ハエ登場
+        flies.GetComponent<Animator>().SetTrigger("InTrigger");
+
         //会話
-        _message.Start_Display("OpeningText", 1, 2);
+        _message.Start_Display("OpeningText", 1, 7);
         yield return new WaitUntil(_message.End_Message);
-        //ガイドウィンドウ
-        _guide.Open_Window("UI/GuideOpening");
-        yield return new WaitForSeconds(0.1f);
+
+        //ハエ退場
+        flies.GetComponent<Animator>().SetTrigger("OutTrigger");
 
         //終了設定
         player.GetComponent<PlayerController>().Set_Is_Playable(true);

@@ -24,6 +24,10 @@ public class DataManager : SingletonMonoBehaviour<DataManager> {
             Debug.Log("<color=#ff0000ff>Delete Aya Movie Data </color>");
             PlayerPrefs.DeleteKey("Aya");
         }
+        if (DebugModeManager.Instance.Delete_Has_Game_Over) {
+            Debug.Log("<color=#ff0000ff>Delete Has Game Over </color>");
+            PlayerPrefs.DeleteKey("GameOver");
+        }
         #endif
     }
 

@@ -129,7 +129,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 0
   Delete_Collection_Data: 0
   Delete_Visited_Scene_Date: 0
-  Is_First_Visit_Scene_In_Testplay: 1
+  Is_First_Visit_Scene_In_Testplay: 0
   Is_Delete_BGM: 0
   Delete_Player_Data: 0
   Player_Life: 6
@@ -138,6 +138,7 @@ MonoBehaviour:
   Delete_Yuka_Data: 0
   Delete_Rumia_Data: 0
   Delete_Aya_Data: 1
+  Delete_Has_Game_Over: 0
 --- !u!114 &114752986096458988
 MonoBehaviour:
   m_ObjectHideFlags: 1

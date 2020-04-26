@@ -32,5 +32,7 @@ public class DebugModeManager : SingletonMonoBehaviour<DebugModeManager> {
     public bool Delete_Rumia_Data;
     //文のデータを消す
     public bool Delete_Aya_Data;
+    //ゲームオーバーのデータを消す
+    public bool Delete_Has_Game_Over;
     
 }

@@ -27,10 +27,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
         BeetlePowerManager.Instance.Set_Beetle_Power(0);
         //復活
         PlayerManager.Instance.Reduce_Stock();
-        if (PlayerManager.Instance.Get_Stock() == 0 && !SceneManagement.Instance.Has_Visited("Stage2_1Scene"))
-            StartCoroutine("Game_Over_Cor");
-        else
-            StartCoroutine("Revive");        
+        if (PlayerManager.Instance.Get_Stock() == 0 && PlayerPrefs.GetInt("GameOver") == 0) {            
+            Game_Over();
+        }
+        else {
+            StartCoroutine("Revive");
+        }
     }
 
 
@@ -66,27 +68,20 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
 
         //エフェクト
         Play_Revive_Effect(player);
-
-        //残機が0の時ラルバムービー
-        //TODO : ムービーはゲーム中1度だけ
-        if(player_Manager.Get_Stock() == 0) {
-            gameObject.AddComponent<LarvaStockZeroMovie>().Start_Movie();
-        }
+                
     }   
 
 
     //ゲームオーバー時の処理
     public void Game_Over() {
-        StartCoroutine("Game_Over_Cor");
-    }
-
-    private IEnumerator Game_Over_Cor() {
-        yield return new WaitForSeconds(1.0f);
-        FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
-        yield return new WaitForSeconds(1.0f);
-        PlayerPrefs.SetInt("STOCK", 3);
-        SceneManager.LoadScene("TitleScene");
-    }
+        if (SceneManagement.Instance.Has_Visited("Stage2_1Scene")) {
+            gameObject.AddComponent<GameOverMovie>().Start_Movie(true);
+            PlayerPrefs.SetInt("GameOver", 1);
+        }
+        else {
+            gameObject.AddComponent<GameOverMovie>().Start_Movie(false);
+        }
+    }  
 
 
     //復活時のエフェクト
