@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using UnityEngine.Events;
 
 
 public class MovieSystem : MonoBehaviour {
@@ -13,6 +13,7 @@ public class MovieSystem : MonoBehaviour {
             message,
             motion,
             genObj,
+            function,
             wait,
         }
         public Type type = Type.message;
@@ -20,6 +21,7 @@ public class MovieSystem : MonoBehaviour {
         public Message message = new Message();
         public Motion motion = new Motion();
         public GenObject gen_Obj = new GenObject();
+        public Function function = new Function();
         public Wait wait = new Wait();
     }
 
@@ -35,9 +37,8 @@ public class MovieSystem : MonoBehaviour {
     public class Motion {
         public GameObject obj;
         public string anim_Parameter;
-        public bool param_Bool;
-        public AnimationCurve x_Move;
-        public AnimationCurve y_Move;
+        public AnimationCurve x_Move = AnimationCurve.Constant(0, 1, 0);
+        public AnimationCurve y_Move = AnimationCurve.Constant(0, 1, 0);
     }
 
     [System.Serializable]
@@ -48,15 +49,22 @@ public class MovieSystem : MonoBehaviour {
     }
 
     [System.Serializable]
+    public class Function {
+        public MonoBehaviour component;
+        public string function;
+    }
+
+    [System.Serializable]
     public class Wait {
         public bool wait_Message;
         public float wait_Time;
     }
 
-    
+    public bool is_Disable_Controlle = true;
     public List<Event> list = new List<Event>();
     
     private MessageDisplay _message;
+    private bool is_End_Movie;
 
 
     void Awake() {
@@ -72,7 +80,14 @@ public class MovieSystem : MonoBehaviour {
     }
 
     private IEnumerator Movie_Cor() {
-        for(int i = 0; i < list.Count; i++) {
+        //初期設定
+        if (is_Disable_Controlle) {
+            PlayerMovieFunction.Instance.Disable_Controlle_Player();            
+        }
+        PauseManager.Instance.Set_Is_Pausable(false);
+
+        //イベントをリスト順にこなす
+        for (int i = 0; i < list.Count; i++) {
             Event e = list[i];
             switch (e.type) {
                 case Event.Type.message:
@@ -85,6 +100,9 @@ public class MovieSystem : MonoBehaviour {
                 case Event.Type.genObj:
                     Generate_Object(e);
                     break;
+                case Event.Type.function:
+                    e.function.component.Invoke(e.function.function, 0);
+                    break;
                 case Event.Type.wait:
                     if (e.wait.wait_Message) {
                         yield return new WaitUntil(_message.End_Message);
@@ -93,7 +111,22 @@ public class MovieSystem : MonoBehaviour {
                     break;
             }
         }
-        yield return null;
+
+        //終了設定
+        if (is_Disable_Controlle) {
+            GetComponent<PlayerMovieFunction>().Enable_Controlle_Player();            
+        }
+        PauseManager.Instance.Set_Is_Pausable(true);
+        is_End_Movie = true;
+    }
+
+    //ムービー終了
+    public bool End_Movie() {
+        if (is_End_Movie) {
+            is_End_Movie = false;
+            return true;
+        }
+        return false;
     }
 
 
@@ -115,12 +148,13 @@ public class MovieSystem : MonoBehaviour {
         if (x_Curve == null || y_Curve == null)
             yield break;
 
+        Vector2 root_Pos = obj.transform.position;
         float xt = x_Curve.keys[x_Curve.keys.Length - 1].time;
         float yt = y_Curve.keys[y_Curve.keys.Length - 1].time;
         float end_Time = Mathf.Max(xt, yt);
 
         for (float t = 0; t < end_Time; t += 0.016f + Time.deltaTime) {
-            obj.transform.position = new Vector3(x_Curve.Evaluate(t), y_Curve.Evaluate(t));
+            obj.transform.position = root_Pos + new Vector2(x_Curve.Evaluate(t), y_Curve.Evaluate(t));
             yield return new WaitForSeconds(0.016f);
         }
     }
@@ -135,6 +169,12 @@ public class MovieSystem : MonoBehaviour {
             return;
 
         string parameter = e.motion.anim_Parameter;
+        for(int i = 0; i < anim.parameters.Length; i++) {
+            string param = anim.parameters[i].ToString();
+            if (param.Contains("Bool")) {
+                anim.SetBool(param, false);
+            }
+        }
         if (parameter.Contains("Bool")) {
             anim.SetBool(parameter, true);
         }
@@ -147,6 +187,7 @@ public class MovieSystem : MonoBehaviour {
         obj.transform.SetParent(e.gen_Obj.parent.transform);
         obj.transform.localPosition = e.gen_Obj.position;
     }
+
 
     #region EditorGUI用
     public void Add_Event(int index) {

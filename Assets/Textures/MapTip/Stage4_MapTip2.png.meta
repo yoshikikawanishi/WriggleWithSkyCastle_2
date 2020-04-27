@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 3d5a5346bf4f6f74c81161b0a5f205a9
+guid: c2ced6ba45768c54ea1654c036a93eae
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Stage4_MapTip1_0
-    21300002: Stage4_MapTip1_1
-    21300004: Stage4_MapTip1_2
-    21300006: Stage4_MapTip1_3
-    21300008: Stage4_MapTip1_4
-    21300010: Stage4_MapTip1_5
-    21300012: Stage4_MapTip1_6
-    21300014: Stage4_MapTip1_7
-    21300016: Stage4_MapTip1_8
-    21300018: Stage4_MapTip1_9
-    21300020: Stage4_MapTip1_10
-    21300022: Stage4_MapTip1_11
-    21300024: Stage4_MapTip1_12
-    21300026: Stage4_MapTip1_13
-    21300028: Stage4_MapTip1_14
+    21300000: Stage4_MapTip2_0
+    21300002: Stage4_MapTip2_1
+    21300004: Stage4_MapTip2_2
+    21300006: Stage4_MapTip2_3
+    21300008: Stage4_MapTip2_4
+    21300010: Stage4_MapTip2_5
+    21300012: Stage4_MapTip2_6
+    21300014: Stage4_MapTip2_7
+    21300016: Stage4_MapTip2_8
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -78,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,7 +83,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -111,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,87 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stage4_MapTip1_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77fade035e5a0884bbd67f4d5c22b84c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 694396908db0e744a90ed03590a2925d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f468c31f1b73f048b02b66c29b4d0bc
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c5fe73acc0d4ce4498e073e2872fabd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_4
+      name: Stage4_MapTip2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -226,13 +140,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ebea642b9358ae47b62ab444b414a01
+      spriteID: a76b63e197f513e42a8aaeeb5fec2db8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_5
+      name: Stage4_MapTip2_1
       rect:
         serializedVersion: 2
         x: 32
@@ -246,13 +160,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 667b3e8c8ec6afa469bdfb6b8093e108
+      spriteID: 10b9cf81eb416384099fd46b4392e07e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_6
+      name: Stage4_MapTip2_2
       rect:
         serializedVersion: 2
         x: 64
@@ -266,33 +180,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6f440be3c2ce6c4aa317bfb351327e2
+      spriteID: 6be4bfdbb9071604099c4546080d8356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_7
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc9c31bbeb88675499d516622eb0fd87
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_8
+      name: Stage4_MapTip2_3
       rect:
         serializedVersion: 2
         x: 0
@@ -306,13 +200,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e703a165e4973494b92fbffb46fb72da
+      spriteID: d606386add21017469877fe95a1c057c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_9
+      name: Stage4_MapTip2_4
       rect:
         serializedVersion: 2
         x: 32
@@ -326,13 +220,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0021ff753d08c947aa6f6af82b84a7e
+      spriteID: 9a1bdca4685c08e41a53e251f325c92e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_10
+      name: Stage4_MapTip2_5
       rect:
         serializedVersion: 2
         x: 64
@@ -346,33 +240,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4821e511fc4fc114bbbef6d73af2730a
+      spriteID: 467647941518e0346b57a4e75cfe9b9e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d80f953614e24d408265f45ed273064
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stage4_MapTip1_12
+      name: Stage4_MapTip2_6
       rect:
         serializedVersion: 2
         x: 0
@@ -386,13 +260,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df8d7b864c515154e955c1bcabe9e5fa
+      spriteID: d2b8eed186676914c86383c321e1dd48
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_13
+      name: Stage4_MapTip2_7
       rect:
         serializedVersion: 2
         x: 32
@@ -406,13 +280,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b9108243a5e59341ae6cf346261255d
+      spriteID: 61afd57a1342f99478a7f92dbb8b30bd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stage4_MapTip1_14
+      name: Stage4_MapTip2_8
       rect:
         serializedVersion: 2
         x: 64
@@ -426,7 +300,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14670be0e5735e54bad8ccd23271b3fd
+      spriteID: 5d3af4cd1976917448779e70cc00ec45
       vertices: []
       indices: 
       edges: []
@@ -434,7 +308,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8e62dfe5e6f06094e8107cfb38af110c
+    spriteID: 0d2f0f12d6063b742a772ab386cdbfcf
     vertices: []
     indices: 
     edges: []

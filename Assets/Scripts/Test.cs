@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class Test : MonoBehaviour {    
 
 	// Use this for initialization
-	void Start () {        
-        Invoke("Test1", 3f);        
+	void Start () {
+        GetComponent<MovieSystem>().Start_Movie();       
 	}
 	
 
 	private void Test1() {
-       
+        Debug.Log("Test");
     }
 
    

@@ -10,8 +10,8 @@ public class DebugModeWindow : EditorWindow {
     static void Open() {
         EditorWindow.GetWindow<DebugModeWindow>("DebugMode");
     }
-
-    private void OnGUI() {
+    
+    private void OnGUI() {        
         var obj = (Resources.Load("CommonScripts") as GameObject).GetComponent<DebugModeManager>();
 
         EditorGUILayout.Space();
