@@ -133,11 +133,9 @@ public class AunnAttack : MonoBehaviour {
     
     private IEnumerator Attack_In_Melody_Main_Cor(bool is_Phase1, AunnBGMManager _BGM) {
         can_Attack = false;
-
         AunnController _controller = GetComponent<AunnController>();
         AunnEffect _effect = GetComponentInChildren<AunnEffect>();
         MoveConstSpeed _move_Const = GetComponent<MoveConstSpeed>();
-        MoveTwoPoints _move_Two_Points = GetComponent<MoveTwoPoints>();
         ChildColliderTrigger foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
 
         //移動        
@@ -191,7 +189,6 @@ public class AunnAttack : MonoBehaviour {
     //フェーズ切り替え時の攻撃
     private IEnumerator Phase_Change_Attack_Cor() {
         //取得
-        MoveTwoPoints _move_Two_Points = GetComponent<MoveTwoPoints>();
         MoveConstSpeed _move_Const = GetComponent<MoveConstSpeed>();
 
         //無敵化

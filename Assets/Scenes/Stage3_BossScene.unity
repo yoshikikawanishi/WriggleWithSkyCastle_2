@@ -761,6 +761,7 @@ GameObject:
   - component: {fileID: 1292355550}
   - component: {fileID: 1292355556}
   - component: {fileID: 1292355555}
+  - component: {fileID: 1292355557}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -807,6 +808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
+  rotate_Fade_Out_Prefab: {fileID: 0}
 --- !u!114 &1292355553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -856,6 +858,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aunn: {fileID: 2066341012}
+--- !u!114 &1292355557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292355549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6decfa6d1a791140a4bc42ed06e3ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
 --- !u!1 &1357466680
 GameObject:
   m_ObjectHideFlags: 0

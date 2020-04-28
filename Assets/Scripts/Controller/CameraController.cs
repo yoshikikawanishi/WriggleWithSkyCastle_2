@@ -42,9 +42,8 @@ public class CameraController : MonoBehaviour {
 
 
     private void LateUpdate() {
-        if (player == null) {
-            return;
-        }
+        if (player == null) 
+            return;        
         
         if (!is_Auto_Scroll) {
             //自機追従
@@ -65,6 +64,9 @@ public class CameraController : MonoBehaviour {
 
 
     private void FixedUpdate() {
+        if (this.enabled == false)
+            return;
+
         if (is_Auto_Scroll) {
             Auto_Scroll();
         }

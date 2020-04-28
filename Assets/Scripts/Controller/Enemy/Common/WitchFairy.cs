@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(WitchFairyBattleMovie))]
 public class WitchFairy : FairyEnemy {
 
     private ChildColliderTrigger search_Light_Collider;
@@ -33,14 +34,24 @@ public class WitchFairy : FairyEnemy {
     }
 
 
+    //やられると戦闘終了
+    public override void Vanish() {        
+        if (!is_Searching) {
+            GetComponent<WitchFairyBattleMovie>().Finish_Battle();
+        }
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+        gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+    }
+
+
     //戦闘開始時の処理
-    public void Start_Battle() {
+    private void Start_Battle() {
         GameObject player = GameObject.FindWithTag("PlayerTag");
         if (player == null)
             return;
 
         GetComponent<WitchFairyBattleMovie>().Start_Battle_Movie(gameObject);
-        Destroy(GetComponent<RedFairy>());
-        Destroy(GetComponent<Rigidbody2D>());
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        Destroy(GetComponent<RedFairy>());        
     }
 }

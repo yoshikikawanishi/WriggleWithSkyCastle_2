@@ -19,7 +19,6 @@ public class OpeningMovie : MonoBehaviour {
     private IEnumerator Opening_Movie_Cor() {
         GameObject player = GameObject.FindWithTag("PlayerTag");
         MessageDisplay _message = GetComponent<MessageDisplay>();
-        GuideWindowDisplayer _guide = GetComponent<GuideWindowDisplayer>();
 
         //自機を止める、ポーズ不可
         player.GetComponent<PlayerController>().Set_Is_Playable(false);

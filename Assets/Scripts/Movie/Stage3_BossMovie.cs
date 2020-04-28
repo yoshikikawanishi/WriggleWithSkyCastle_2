@@ -6,17 +6,7 @@ using UnityEngine.SceneManagement;
 public class Stage3_BossMovie : MonoBehaviour {
 
     [SerializeField] private AunnController aunn;
-
-    private GameObject player;
-    private MessageDisplay _message;
-
-	
-	void Awake () {
-        //取得
-        player = GameObject.FindWithTag("PlayerTag");
-        _message = GetComponent<MessageDisplay>();
-	}
-	
+        	
 	
     //ボス戦前ムービー
     public void Play_Before_Boss_Movie() {

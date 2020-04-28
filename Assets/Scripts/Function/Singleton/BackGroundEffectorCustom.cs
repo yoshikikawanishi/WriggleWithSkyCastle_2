@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+//タイルマップに使う用
 public class BackGroundEffectorCustom : BackGroundEffector {
 
-    [SerializeField] private List<Tilemap> back_Grounds;
-    private Color default_Color;
+    [SerializeField] private List<Tilemap> back_Grounds;    
 
     new void Awake() {
         if(back_Grounds.Count == 0) {
             Debug.Log("Set_BackGround_BackGroundEffecter");
             return;
-        }
-        default_Color = back_Grounds[0].color;
+        }        
     }
     
 

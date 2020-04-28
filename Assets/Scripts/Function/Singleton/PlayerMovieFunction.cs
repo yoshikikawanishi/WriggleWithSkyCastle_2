@@ -9,10 +9,13 @@ public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
     private Rigidbody2D player_Rigid;
 
 
-    void Awake() {
+    new void Awake() {
+        base.Awake();
         player = GameObject.FindWithTag("PlayerTag");
-        player_Controller = player.GetComponent<PlayerController>();
-        player_Rigid = player.GetComponent<Rigidbody2D>();
+        if (player != null) {
+            player_Controller = player.GetComponent<PlayerController>();
+            player_Rigid = player.GetComponent<Rigidbody2D>();
+        }
     }
 
 

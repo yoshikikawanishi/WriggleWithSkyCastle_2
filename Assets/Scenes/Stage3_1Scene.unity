@@ -15929,6 +15929,7 @@ GameObject:
   - component: {fileID: 1135424265}
   - component: {fileID: 1135424266}
   - component: {fileID: 1135424267}
+  - component: {fileID: 1135424268}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -15975,6 +15976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
+  rotate_Fade_Out_Prefab: {fileID: 0}
 --- !u!114 &1135424263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16037,6 +16039,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   file_Name: Stage3_1SceneEnemy
+--- !u!114 &1135424268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1135424259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6decfa6d1a791140a4bc42ed06e3ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
 --- !u!1 &1148622495
 GameObject:
   m_ObjectHideFlags: 0

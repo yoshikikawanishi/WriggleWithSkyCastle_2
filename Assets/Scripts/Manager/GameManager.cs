@@ -74,12 +74,16 @@ public class GameManager : SingletonMonoBehaviour<GameManager> {
 
     //ゲームオーバー時の処理
     public void Game_Over() {
+        GameOverMovie _movie = GetComponent<GameOverMovie>();
+        if(_movie == null) {
+            _movie = gameObject.AddComponent<GameOverMovie>();
+        }
         if (SceneManagement.Instance.Has_Visited("Stage2_1Scene")) {
-            gameObject.AddComponent<GameOverMovie>().Start_Movie(true);
-            PlayerPrefs.SetInt("GameOver", 1);
+            _movie.Start_Movie(true);
+            PlayerPrefs.SetInt("GameOver", 1);  //次回以降ゲームオーバーしない
         }
         else {
-            gameObject.AddComponent<GameOverMovie>().Start_Movie(false);
+            _movie.Start_Movie(false);
         }
     }  
 

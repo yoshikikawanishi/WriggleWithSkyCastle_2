@@ -17,13 +17,14 @@ public class GameOverMovie : MonoBehaviour {
     
 
     private IEnumerator Game_Over_Movie_Cor() {
-
-        yield return null;
+        yield return new WaitForSeconds(1.0f);
+        SceneManager.LoadScene("GameOverScene");
     }
 
 
     private IEnumerator Back_Title_Cor() {
         yield return new WaitForSeconds(1.0f);
+        PlayerPrefs.SetInt("STOCK", 3);
         SceneManager.LoadScene("TitleScene");
     }
 

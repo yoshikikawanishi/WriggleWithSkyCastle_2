@@ -6,6 +6,8 @@ MonoImporter:
   defaultReferences:
   - screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a,
       type: 3}
+  - rotate_Fade_Out_Prefab: {fileID: 1889755791061838, guid: eb18dbf12404ae540850520fb928d6ab,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1153,6 +1153,7 @@ MonoBehaviour:
   bullet: {fileID: 1233847619697354, guid: dcc1bf78bdf6f0443b5aa6c6be739ef1, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1198,6 +1199,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0
@@ -10643,6 +10646,7 @@ MonoBehaviour:
   bullet: {fileID: 1233847619697354, guid: dcc1bf78bdf6f0443b5aa6c6be739ef1, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -10688,6 +10692,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0
@@ -11035,6 +11041,7 @@ MonoBehaviour:
   bullet: {fileID: 1233847619697354, guid: dcc1bf78bdf6f0443b5aa6c6be739ef1, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -11080,6 +11087,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0
@@ -13138,6 +13147,7 @@ MonoBehaviour:
   bullet: {fileID: 1099511604927390, guid: 94fbb265629e0ce4b98d40ef28419c09, type: 2}
   parent: {fileID: 0}
   max_Speed: 80
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -13183,6 +13193,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0
@@ -19494,6 +19506,7 @@ GameObject:
   - component: {fileID: 1201252402}
   - component: {fileID: 1201252404}
   - component: {fileID: 1201252403}
+  - component: {fileID: 1201252405}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -19527,6 +19540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
+  rotate_Fade_Out_Prefab: {fileID: 0}
 --- !u!114 &1201252400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19589,6 +19603,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   boss_Battle_Canvas: {fileID: 517165964}
+--- !u!114 &1201252405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1201252397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6decfa6d1a791140a4bc42ed06e3ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
 --- !u!4 &1205736373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4883154174306586, guid: 74647cc946fdfd04ca8b2823eeca4846,
@@ -23793,6 +23819,7 @@ MonoBehaviour:
   bullet: {fileID: 1233847619697354, guid: dcc1bf78bdf6f0443b5aa6c6be739ef1, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -23838,6 +23865,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0
@@ -28258,6 +28287,7 @@ MonoBehaviour:
   bullet: {fileID: 1099511604927390, guid: 94fbb265629e0ce4b98d40ef28419c09, type: 2}
   parent: {fileID: 0}
   max_Speed: 50
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -28303,6 +28333,8 @@ MonoBehaviour:
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 0
   num: 1
   inter_Angle_Deg: 0

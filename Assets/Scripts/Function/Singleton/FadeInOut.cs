@@ -6,7 +6,9 @@ public class FadeInOut : SingletonMonoBehaviour<FadeInOut> {
 
     public Sprite screen_Cover_Image;
     private SpriteRenderer screen_Cover_Sprite;
-  
+    
+    public GameObject rotate_Fade_Out_Prefab;
+    private GameObject rotate_Fade_Out_Object;
 	
     /// <summary>
     /// フェードイン開始
@@ -39,6 +41,27 @@ public class FadeInOut : SingletonMonoBehaviour<FadeInOut> {
         Generate();
         Prepare(color, true);
         StartCoroutine("Fade_Out_Cor", speed);
+    }
+
+
+    /// <summary>
+    /// 回転フェードアウト
+    /// </summary>
+    public void Start_Rotate_Fade_Out() {
+        var main_Camera = GameObject.FindWithTag("MainCamera");
+        rotate_Fade_Out_Object = Instantiate(rotate_Fade_Out_Prefab, main_Camera.transform);
+        rotate_Fade_Out_Object.transform.position = main_Camera.transform.position + new Vector3(0, 0, 10);
+    }
+
+
+    /// <summary>
+    /// フェードアウト用のカバーを消す
+    /// </summary>
+    public void Delete_Fade_Out_Obj() {        
+        if (screen_Cover_Sprite != null)
+            screen_Cover_Sprite.gameObject.SetActive(false);
+        if (rotate_Fade_Out_Object != null)
+            Destroy(rotate_Fade_Out_Object);
     }
 
 
@@ -83,4 +106,5 @@ public class FadeInOut : SingletonMonoBehaviour<FadeInOut> {
             yield return new WaitForSeconds(0.016f);
         }
     }
+   
 }

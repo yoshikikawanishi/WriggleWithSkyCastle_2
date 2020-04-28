@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class GameOverScene : MonoBehaviour {
 
-    [SerializeField] private Button initial_Selected_Button;
-
 
 	// Use this for initialization
 	void Start () {
-        initial_Selected_Button.Select();
+        Play_Movie();
 	}
+
+    private void Play_Movie() {
+        GetComponent<MovieSystem>().Start_Movie();
+    }
 		
+    public void Revive() {
+        GameManager.Instance.StartCoroutine("Revive");
+    }
 }

@@ -9609,6 +9609,7 @@ MonoBehaviour:
   bullet: {fileID: 1798116787944428, guid: 9e6565de85f430b43ae6415f6e617d06, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 0
@@ -9627,9 +9628,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -18093,6 +18120,7 @@ GameObject:
   - component: {fileID: 2040442445}
   - component: {fileID: 2040442449}
   - component: {fileID: 2040442450}
+  - component: {fileID: 2040442451}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -18126,6 +18154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
+  rotate_Fade_Out_Prefab: {fileID: 0}
 --- !u!114 &2040442447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18174,6 +18203,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   file_Name: Stage2_2SceneEnemy
+--- !u!114 &2040442451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040442444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6decfa6d1a791140a4bc42ed06e3ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 0
 --- !u!4 &2049060919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4183997764480874, guid: fd803d44ed3628f4e890a27b9360459d,
