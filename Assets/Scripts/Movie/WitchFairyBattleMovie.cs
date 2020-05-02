@@ -5,9 +5,11 @@ using UnityEngine;
 public class WitchFairyBattleMovie : MonoBehaviour {
 
     [SerializeField] private float battle_Camera_Pos;
+    [SerializeField] private float return_Camera_Pos;
     [SerializeField] private Vector2 player_Initial_Pos;
     [SerializeField] private Vector2 player_Return_Pos;
     [SerializeField] private Vector2 enemy_Initial_Pos;
+    [SerializeField] private GameObject erase_Bullet_Bomb;
 
     private GameObject battle_Enemy;
     private GameObject main_Camera;
@@ -89,18 +91,27 @@ public class WitchFairyBattleMovie : MonoBehaviour {
     }
     
     private IEnumerator Finish_Battle_Cor() {
+        //弾消し
+        var bomb = Instantiate(erase_Bullet_Bomb, main_Camera.transform);
+        bomb.transform.position = main_Camera.transform.position;
+        Destroy(bomb, 1.5f);
+
+        //フェードアウト
         FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
-        yield return new WaitForSeconds(1.0f);        
+        yield return new WaitForSeconds(1.5f);        
         FadeInOut.Instance.Delete_Fade_Out_Obj();
         
+        //敵の復活
         for(int i = 0; i < erased_Enemies.Count; i++) {
             erased_Enemies[i].SetActive(true);
         }
         erased_Enemies.Clear();
 
+        //操作可能化
         if (player != null)
             player.transform.position = player_Return_Pos;
-
-        gameObject.SetActive(false);
+        main_Camera.GetComponent<CameraController>().enabled = true;
+        main_Camera.transform.position = new Vector3(return_Camera_Pos, 0, -10);
+        Destroy(gameObject);
     }
 }

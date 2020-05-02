@@ -12,8 +12,7 @@ public class Test : MonoBehaviour {
 	
 
 	private void Test1() {
-        Debug.Log("Test");
-        FadeInOut.Instance.Start_Rotate_Fade_Out();
+        Debug.Log("Test");        
     }
 
    

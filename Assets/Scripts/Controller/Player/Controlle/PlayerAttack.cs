@@ -53,7 +53,7 @@ public class PlayerAttack : MonoBehaviour {
             //オプションによって変える
             switch (player_Manager.Get_Option()) {
                 case PlayerManager.Option.none:     Set_Attack_Status(0.18f, 0.17f, true); break;
-                case PlayerManager.Option.bee:      Set_Attack_Status(0.01f, 0.01f, true); break;
+                case PlayerManager.Option.bee:      Set_Attack_Status(0.18f, 0.01f, true); break;
                 case PlayerManager.Option.butterfly: Set_Attack_Status(0.18f, 0.13f, false); break;
                 case PlayerManager.Option.mantis:   Set_Attack_Status(0.24f, 0.17f, true); break;
                 case PlayerManager.Option.spider:   Set_Attack_Status(0.18f, 0.17f, true); break;
@@ -76,11 +76,11 @@ public class PlayerAttack : MonoBehaviour {
             Mantis_Shoot();
         else if (player_Manager.Get_Option() == PlayerManager.Option.butterfly)  //オプションがチョウの時浮く
             _rigid.velocity = new Vector2(_rigid.velocity.x, 200f);
-
-        _rigid.velocity += new Vector2(transform.localScale.x * 5f, 0); //Rigidbodyのスリープ状態を解除する
+        
+        _rigid.velocity += new Vector2(transform.localScale.x * 5f, 0); //Rigidbodyのスリープ状態を解除する        
         for (float t = 0; t < attack_Time; t += Time.deltaTime) {
             //敵と衝突時
-            if (attack_Collision.Hit_Trigger()) {
+            if (attack_Collision.Hit_Trigger()) {                
                 StartCoroutine("Do_Hit_Attack_Process");
                 yield return new WaitForSeconds(0.05f);                
                 break;
@@ -126,11 +126,11 @@ public class PlayerAttack : MonoBehaviour {
         if (knock_Back) {
             float force = _controller.is_Landing ? 170f : 30f;                  //ノックバック
             _rigid.velocity = new Vector2(force * -transform.localScale.x, 10f);
-        }         
+        }        
         player_SE.Play_Hit_Attack_Sound();                                  //効果音                                                               
         float tmp = Time.timeScale;                                         //ヒットストップ        
         Time.timeScale = 0.4f;
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.06f);
         Time.timeScale = tmp;
 
     }

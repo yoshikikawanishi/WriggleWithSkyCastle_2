@@ -329,10 +329,11 @@ public class ShootSystem : MonoBehaviour {
         else {
             bullet.AddComponent<Bullet>().Set_Inactive(lifeTime);
         }
-    }    
+    }
 
 
     //弾の加速(単体)
+    //※※※※※※※ BulletのisDeleteInvisibleを入れてると軌道おかしくなった ※※※※※※※※
     public IEnumerator Accelerate_Bullet_Cor(GameObject bullet, float max_Speed) {
         GameObject player = GameObject.FindWithTag("PlayerTag");
 

@@ -6,12 +6,14 @@ using UnityEngine;
 public class WitchFairy : FairyEnemy {
 
     private ChildColliderTrigger search_Light_Collider;
+    private GameObject player;
 
     private bool is_Searching = true;
 
 
     void Start() {
         search_Light_Collider = GetComponentInChildren<ChildColliderTrigger>();
+        player = GameObject.FindWithTag("PlayerTag");
     }
 
 	
@@ -51,7 +53,41 @@ public class WitchFairy : FairyEnemy {
             return;
 
         GetComponent<WitchFairyBattleMovie>().Start_Battle_Movie(gameObject);
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        Destroy(GetComponent<RedFairy>());        
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<RedFairy>());
+        Destroy(search_Light_Collider.gameObject);
+        Turn_To_Player();
+        StartCoroutine("Attack_Cor");
+    }
+
+
+    //攻撃
+    private IEnumerator Attack_Cor() {
+        GetComponent<Animator>().SetBool("AttackBool", true);
+        yield return new WaitForSeconds(1.5f);
+
+        ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
+        float center_Angle = 0;
+        while (true) {
+            Turn_To_Player();
+            center_Angle += Random.Range(10, 50);
+            shoots[0].center_Angle_Deg = center_Angle - 5f;
+            shoots[1].center_Angle_Deg = center_Angle + 5f;
+            shoots[0].Shoot();
+            shoots[1].Shoot();            
+            yield return new WaitForSeconds(2.9f);
+        }
+    }
+
+
+    //自機の方向を向く
+    private void Turn_To_Player() {
+        if (player == null)
+            return;
+        int direction = (player.transform.position.x - transform.position.x).CompareTo(0);
+        if (direction == 0)
+            direction = 1;
+        float size = Mathf.Abs(transform.localScale.x);
+        transform.localScale = new Vector3(-direction, 1, 1) * size;
     }
 }
