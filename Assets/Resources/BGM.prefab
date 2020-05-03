@@ -161,8 +161,8 @@ MonoBehaviour:
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 7d6f2f88ccf0276429c53cdf6bc8b261, type: 3}
-    volume: 0.3
+  - clip: {fileID: 8300000, guid: 2ff738d5f7db22045b960fc04d78a369, type: 3}
+    volume: 0.32
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - clip: {fileID: 8300000, guid: 13e3cc5d7f06afa43aec8ffcc8b98af8, type: 3}

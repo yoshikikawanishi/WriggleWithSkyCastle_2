@@ -82,7 +82,7 @@ public class AunnCopy : Enemy {
         GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);
         base.Set_Life(life);
         this.is_Symmetry = is_Symmetry;
-        gameObject.SetActive(true);
+        gameObject.SetActive(true);        
         transform.position = position;
         //生成直後は判定消す
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");

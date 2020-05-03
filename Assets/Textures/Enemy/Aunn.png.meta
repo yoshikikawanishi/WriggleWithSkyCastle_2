@@ -145,17 +145,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 300
-        width: 50
-        height: 60
+        y: 200
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb7546b145defa54086630f808bb523d
+      spriteID: 9f0f853d00a3213439eb154ce2a17bbd
       vertices: []
       indices: 
       edges: []
@@ -164,18 +164,18 @@ TextureImporter:
       name: Aunn_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 300
-        width: 50
-        height: 60
+        x: 30
+        y: 200
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 318c3653933af0e4ebcaacc8d57b8bb0
+      spriteID: b3629c0237feaa04194256f311f6d61c
       vertices: []
       indices: 
       edges: []
@@ -184,18 +184,18 @@ TextureImporter:
       name: Aunn_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 300
-        width: 50
-        height: 60
+        x: 60
+        y: 200
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06a74ee20d55ee341a516a23bd36190f
+      spriteID: 887ab5dbe210d3147aebf8026566ba9b
       vertices: []
       indices: 
       edges: []
@@ -204,18 +204,18 @@ TextureImporter:
       name: Aunn_3
       rect:
         serializedVersion: 2
-        x: 150
-        y: 300
-        width: 50
-        height: 60
+        x: 90
+        y: 200
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e0830eebd9d46f4abe2f1244ea6aa8f
+      spriteID: 6b64ee5b41f1a9646bf78094cb38f380
       vertices: []
       indices: 
       edges: []
@@ -225,17 +225,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 50
-        height: 60
+        y: 160
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5d2f6f9edb77974bb17eeb5cc506f33
+      spriteID: 1b28eac73720f0b4fa4eca9c8f172e44
       vertices: []
       indices: 
       edges: []
@@ -244,18 +244,18 @@ TextureImporter:
       name: Aunn_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 240
-        width: 50
-        height: 60
+        x: 30
+        y: 160
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 334c0e8c05418a24384298207f1d8705
+      spriteID: ac7bfdded4804c04eb3194e8102f41ab
       vertices: []
       indices: 
       edges: []
@@ -264,18 +264,18 @@ TextureImporter:
       name: Aunn_6
       rect:
         serializedVersion: 2
-        x: 100
-        y: 240
-        width: 50
-        height: 60
+        x: 60
+        y: 160
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf7c0bba58181f48b3e48bf7f2203e7
+      spriteID: d536f9317bbcd2a45874171c91d3a5d0
       vertices: []
       indices: 
       edges: []
@@ -284,18 +284,18 @@ TextureImporter:
       name: Aunn_7
       rect:
         serializedVersion: 2
-        x: 150
-        y: 240
-        width: 50
-        height: 60
+        x: 90
+        y: 160
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e72190752cc8a344bc79dc212037bf5
+      spriteID: 923fd5817337a174294fc5f76d6d0907
       vertices: []
       indices: 
       edges: []
@@ -305,17 +305,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
-        width: 50
-        height: 60
+        y: 120
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f045d87efacda6d4a86d7ea4b7a152eb
+      spriteID: 2f36da78bdb787146be0d5cd546919ea
       vertices: []
       indices: 
       edges: []
@@ -324,18 +324,18 @@ TextureImporter:
       name: Aunn_9
       rect:
         serializedVersion: 2
-        x: 50
-        y: 180
-        width: 50
-        height: 60
+        x: 30
+        y: 120
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc496b83efec7f243a653a97f8676f46
+      spriteID: c5f428ed3b2073c478242ab5712dedaa
       vertices: []
       indices: 
       edges: []
@@ -344,18 +344,18 @@ TextureImporter:
       name: Aunn_10
       rect:
         serializedVersion: 2
-        x: 100
-        y: 180
-        width: 50
-        height: 60
+        x: 60
+        y: 120
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2995e59b054945e40a4cd2f6acbce36c
+      spriteID: 99de49ba7ba9ff142bba2318d3a37984
       vertices: []
       indices: 
       edges: []
@@ -364,18 +364,18 @@ TextureImporter:
       name: Aunn_11
       rect:
         serializedVersion: 2
-        x: 150
-        y: 180
-        width: 50
-        height: 60
+        x: 90
+        y: 120
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1372f004a8f034e4790b2ff2deb53fc6
+      spriteID: f4a77ac632651fb44b47bb9b84b4905e
       vertices: []
       indices: 
       edges: []
@@ -385,17 +385,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 120
-        width: 50
-        height: 60
+        y: 80
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0899cbb453971d4588e70d23d648775
+      spriteID: a5c579802a77c59409b934071d79b832
       vertices: []
       indices: 
       edges: []
@@ -404,18 +404,18 @@ TextureImporter:
       name: Aunn_13
       rect:
         serializedVersion: 2
-        x: 50
-        y: 120
-        width: 50
-        height: 60
+        x: 30
+        y: 80
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bb7f4c34966dea4e9e069fec072d79e
+      spriteID: e7e2046e412829549b438f419e7cfe73
       vertices: []
       indices: 
       edges: []
@@ -424,18 +424,18 @@ TextureImporter:
       name: Aunn_14
       rect:
         serializedVersion: 2
-        x: 100
-        y: 120
-        width: 50
-        height: 60
+        x: 60
+        y: 80
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e7b7fd93a755c1499fd756dc72d3857
+      spriteID: c08ef319b0d399444879bf7aa8814018
       vertices: []
       indices: 
       edges: []
@@ -444,18 +444,18 @@ TextureImporter:
       name: Aunn_15
       rect:
         serializedVersion: 2
-        x: 150
-        y: 120
-        width: 50
-        height: 60
+        x: 90
+        y: 80
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e856d42b74013b48b7cb62a040dbed8
+      spriteID: 080d39cb137d3f34dbbf56cafa840a21
       vertices: []
       indices: 
       edges: []
@@ -465,17 +465,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 60
-        width: 50
-        height: 60
+        y: 40
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d37e600fe4b8dca459dec12be62823ba
+      spriteID: e7a232c0ae8b3ea49bb9798abf6ee355
       vertices: []
       indices: 
       edges: []
@@ -484,18 +484,18 @@ TextureImporter:
       name: Aunn_17
       rect:
         serializedVersion: 2
-        x: 50
-        y: 60
-        width: 50
-        height: 60
+        x: 30
+        y: 40
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12b27f39bd845c94990e1bd65b188787
+      spriteID: 13284e4b3f04cfa46abfcb74c676cf3b
       vertices: []
       indices: 
       edges: []
@@ -504,18 +504,18 @@ TextureImporter:
       name: Aunn_18
       rect:
         serializedVersion: 2
-        x: 100
-        y: 60
-        width: 50
-        height: 60
+        x: 60
+        y: 40
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 017c50e3dea02274584a5469e016444c
+      spriteID: 9f889fa5a878d564a890694cccc0e5e7
       vertices: []
       indices: 
       edges: []
@@ -524,18 +524,18 @@ TextureImporter:
       name: Aunn_19
       rect:
         serializedVersion: 2
-        x: 150
-        y: 60
-        width: 50
-        height: 60
+        x: 90
+        y: 40
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11bd60716ca06a846be4ef01c42ea09c
+      spriteID: 825cc8d6af63f0c4fbabaaa624d5013d
       vertices: []
       indices: 
       edges: []
@@ -546,16 +546,16 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 62
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8bd96eafd021a84c9faf1076fe8ab6c
+      spriteID: 0ffa01aada53d6746ba9970c4e770999
       vertices: []
       indices: 
       edges: []
@@ -564,18 +564,18 @@ TextureImporter:
       name: Aunn_21
       rect:
         serializedVersion: 2
-        x: 50
+        x: 30
         y: 0
-        width: 50
-        height: 62
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43fdbd312981db04597d52f4f0762be2
+      spriteID: a244dcee5afe4d248a8cce9476b6cb3f
       vertices: []
       indices: 
       edges: []
@@ -584,18 +584,18 @@ TextureImporter:
       name: Aunn_22
       rect:
         serializedVersion: 2
-        x: 100
+        x: 60
         y: 0
-        width: 50
-        height: 62
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8758252f50bb38459ba58fbf6936a92
+      spriteID: e75e916e21458784891d63badd83b511
       vertices: []
       indices: 
       edges: []
@@ -604,18 +604,18 @@ TextureImporter:
       name: Aunn_23
       rect:
         serializedVersion: 2
-        x: 150
+        x: 90
         y: 0
-        width: 50
-        height: 62
+        width: 30
+        height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b80928e95b9e37c4891579c9f01efc35
+      spriteID: 6571b81e875b0b949a695623bcf5c56c
       vertices: []
       indices: 
       edges: []
@@ -623,7 +623,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e8e134326bb2f0e44b15a36f65622606
+    spriteID: 74f480ecf61ed694f9c93bcfac730f1d
     vertices: []
     indices: 
     edges: []

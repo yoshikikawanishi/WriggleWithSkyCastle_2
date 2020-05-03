@@ -34,6 +34,7 @@ public class AunnDogBullet : MonoBehaviour {
 
 
     private IEnumerator Change_Sprite_And_Curve_Cor() {
+        GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(change_Color_Time - 0.5f);
         GetComponent<ParticleSystem>().Play();
         _sprite.sprite = null;

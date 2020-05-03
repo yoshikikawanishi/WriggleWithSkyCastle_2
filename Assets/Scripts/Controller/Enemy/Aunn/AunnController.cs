@@ -17,10 +17,10 @@ public class AunnController : BossEnemy {
 
     //初期値
     private float default_Gravity;
-    private readonly Vector2 collider_Size_Standing = new Vector2(28f, 54f);
+    private readonly Vector2 collider_Size_Standing = new Vector2(14f, 27f);
     private readonly Vector2 collider_Offset_Standing = new Vector2(1, -2f);
-    private readonly Vector2 collider_Size_Squat = new Vector2(28f, 28f);
-    private readonly Vector2 collider_Offset_Squat = new Vector2(1, -12f);
+    private readonly Vector2 collider_Size_Squat = new Vector2(14f, 14f);
+    private readonly Vector2 collider_Offset_Squat = new Vector2(1, -6f);
 
     //trueのアニメータパラメータ
     private string now_Anim_Param;

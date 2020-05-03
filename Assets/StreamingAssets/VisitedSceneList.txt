@@ -5,3 +5,8 @@ TitleScene
 PlayGuide2Scene
 Stage2_1Scene
 GameOverScene
+Stage2_BossScene
+Stage3_1Scene
+Stage3_2Scene
+Stage3_BossScene
+Stage4_1Scene

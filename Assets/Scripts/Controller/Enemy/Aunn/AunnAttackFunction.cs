@@ -178,7 +178,10 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //コピーの生成
         if (generate_Copy) {
-            _copy.Create_Copy(80, false, new Vector2(-transform.position.x, transform.position.y));
+            Vector2 position = new Vector2(-transform.position.x, transform.position.y);
+            if (Mathf.Abs(transform.position.x) < 5f)
+                position = new Vector2(120f, transform.position.y);
+            _copy.Create_Copy(80, false, position);
         }
 
         //自機を追いかける        
@@ -200,6 +203,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _controller.Change_Animation("HighJumpBool");
         _move.Start_Move(1);        
         _effect.Play_A_Letter_Effect();
+        _effect.Play_Burst_Effect_Red();
         yield return new WaitUntil(_move.Is_End_Move);
 
         //弾幕レーザー
@@ -257,7 +261,8 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //弾の配置開始
         _shoot.Start_Deposite_Purple_Bullet();
-        _effect.Play_A_Letter_Effect();        
+        _effect.Play_A_Letter_Effect();
+        _effect.Play_Purple_Circle_Effect();
 
         //コピーの生成
         if (generate_Copy) {

@@ -128,7 +128,7 @@ MonoBehaviour:
   bullet: {fileID: 1617079379290214, guid: cac04dec7e712e042afa2343e2393e97, type: 2}
   parent: {fileID: 0}
   max_Speed: 80
-  radius: 32
+  radius: 16
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 8
@@ -177,7 +177,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 1
   fixed_Angle: 0
   other_Param: 1
-  num: 4
+  num: 8
   inter_Angle_Deg: 90
   center_Angle_Deg: 0
   arc_Deg: 360

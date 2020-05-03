@@ -13,7 +13,7 @@ public class NemunoBGMTimeKeeper  {
     private Melody now_Melody = Melody.A;
 
     //曲のタイミング                            A   B    A  ｻﾋﾞ前   ｻﾋﾞ    ﾙｰﾌﾟ
-    public readonly float[] BGM_Time_Keeper = { 0, 20f, 42f, 48f, 56.14f, 78.7f };
+    public readonly float[] BGM_Time_Keeper = { 0, 20f, 42f, 48f, 56.14f, 79.0f };
 
     private float BGM_Launch_Time = 0;
     private float now_BGM_Time = 0;
