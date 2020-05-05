@@ -15,17 +15,21 @@ public class WitchFairyBattleMovie : MonoBehaviour {
     private GameObject main_Camera;
     private GameObject player;
     private List<GameObject> erased_Enemies = new List<GameObject>();
-
-    private bool is_Battle_Now = false;
+    private MessageDisplay _message;
 
 
     void Awake() {
         main_Camera = GameObject.FindWithTag("MainCamera");
         player = GameObject.FindWithTag("PlayerTag");
+        _message = GetComponent<MessageDisplay>();
+        _message.Set_Canvas_And_Panel_Name("BattleEventCanvas", "BattleMessagePanel");
     }
 
 
-    //戦闘開始
+    /// <summary>
+    /// 戦闘開始時のムービー
+    /// </summary>
+    /// <param name="battle_Enemy">戦闘を行う妖精</param>
     public void Start_Battle_Movie(GameObject battle_Enemy) {
         if (battle_Enemy == null || !battle_Enemy.activeSelf)
             return;
@@ -41,12 +45,12 @@ public class WitchFairyBattleMovie : MonoBehaviour {
         PlayerMovieFunction.Instance.Disable_Controlle_Player();
         //カメラ止める
         main_Camera.GetComponent<CameraController>().enabled = false;
-        //フェードアウト
-        FadeInOut.Instance.Start_Rotate_Fade_Out();
-        yield return new WaitForSeconds(1.0f);
-        
         //画面内のアクティブな敵を消す
         erased_Enemies = Erase_Visible_Enemy();
+
+        //フェードアウト
+        FadeInOut.Instance.Start_Rotate_Fade_Out();
+        yield return new WaitForSeconds(1.0f);              
 
         //初期位置調整
         main_Camera.transform.position = new Vector3(battle_Camera_Pos, 0, -10);
@@ -56,36 +60,18 @@ public class WitchFairyBattleMovie : MonoBehaviour {
         //フェードイン
         FadeInOut.Instance.Delete_Fade_Out_Obj();
 
+        //メッセージ
+        Display_Message(1, 1);
+        yield return new WaitForSeconds(2.0f);
+
         //戦闘開始
-        PlayerMovieFunction.Instance.Enable_Controlle_Player();        
+        PlayerMovieFunction.Instance.Enable_Controlle_Player();          
     }
 
 
-    //画面内のアクティブな敵を消す, 戦闘する敵は除く
-    //消した敵を返す
-    private List<GameObject> Erase_Visible_Enemy() {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyTag");
-        List<GameObject> active_Enemies = new List<GameObject>();
-        Renderer renderer;
-
-        foreach (GameObject enemy in enemies) {
-            if (!enemy.activeSelf || enemy == battle_Enemy)
-                continue;
-            renderer = enemy.GetComponent<Renderer>();
-            if (renderer == null)
-                continue;
-
-            if (renderer.isVisible) {
-                active_Enemies.Add(enemy);
-                enemy.SetActive(false);
-            }
-        }
-
-        return active_Enemies;
-    }
-
-
-    //戦闘終了
+    /// <summary>
+    /// 戦闘終了時のムービー
+    /// </summary>
     public void Finish_Battle() {
         StartCoroutine("Finish_Battle_Cor");
     }
@@ -112,6 +98,41 @@ public class WitchFairyBattleMovie : MonoBehaviour {
             player.transform.position = player_Return_Pos;
         main_Camera.GetComponent<CameraController>().enabled = true;
         main_Camera.transform.position = new Vector3(return_Camera_Pos, 0, -10);
+        _message.Quit_Message();
+
         Destroy(gameObject);
+    }
+
+
+    /// <summary>
+    /// メッセージ表示
+    /// </summary>
+    /// <returns></returns>
+    public void Display_Message(int start_ID, int end_ID) {
+        _message.Start_Display_Auto("WitchFairyText", start_ID, end_ID, 1.0f, 0.05f);
+    }
+
+
+    //画面内のアクティブな敵を消す, 戦闘する敵は除く
+    //消した敵を返す
+    private List<GameObject> Erase_Visible_Enemy() {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyTag");
+        List<GameObject> active_Enemies = new List<GameObject>();
+        Renderer renderer;
+
+        foreach (GameObject enemy in enemies) {
+            if (!enemy.activeSelf || enemy == battle_Enemy)
+                continue;
+            renderer = enemy.GetComponent<Renderer>();
+            if (renderer == null)
+                continue;
+
+            if (renderer.isVisible) {
+                active_Enemies.Add(enemy);
+                enemy.SetActive(false);
+            }
+        }
+
+        return active_Enemies;
     }
 }

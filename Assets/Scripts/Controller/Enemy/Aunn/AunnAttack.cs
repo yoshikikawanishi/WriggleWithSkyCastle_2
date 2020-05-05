@@ -9,6 +9,7 @@ public class AunnAttack : MonoBehaviour {
     private AunnAttackFunction _attack_Func;
     private AunnShoot _shoot;
     private AunnEffect _effect;
+    private ChildColliderTrigger foot_Collider;
 
     [HideInInspector] public bool[] start_Phase = { true, true };
     [HideInInspector] public bool can_Attack = true;
@@ -20,6 +21,7 @@ public class AunnAttack : MonoBehaviour {
         _attack_Func = GetComponent<AunnAttackFunction>();
         _shoot = GetComponentInChildren<AunnShoot>();
         _effect = GetComponentInChildren<AunnEffect>();
+        foot_Collider = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
     }    
 	
 	
@@ -193,6 +195,7 @@ public class AunnAttack : MonoBehaviour {
 
         //無敵化
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        foot_Collider.Delete_Collision();
         yield return new WaitForSeconds(1.0f);
 
         //移動
@@ -212,6 +215,7 @@ public class AunnAttack : MonoBehaviour {
         yield return new WaitForSeconds(3.0f);
 
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
+        foot_Collider.Activate_Collision();
         can_Attack = true;
     }
 }

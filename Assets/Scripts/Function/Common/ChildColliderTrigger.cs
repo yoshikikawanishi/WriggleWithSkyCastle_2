@@ -20,6 +20,21 @@ public class ChildColliderTrigger : MonoBehaviour {
     }
 
 
+    /// <summary>
+    /// 当たり判定消す
+    /// </summary>
+    public void Delete_Collision() {
+        gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 当たり判定を出す
+    /// </summary>
+    public void Activate_Collision() {
+        gameObject.SetActive(true);
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (!is_Trigger)
             return;

@@ -113,6 +113,12 @@ public class MessageDisplay : MonoBehaviour {
         this.panel_Name = panel_Name;
     }
 
+    //表示の強制終了
+    public void Quit_Message() {
+        StopAllCoroutines();
+        messagePanel.SetActive(false);
+        endMessage = true;
+    }
 
     //==================================================== private ====================================================
     //テキストファイルの読み込み

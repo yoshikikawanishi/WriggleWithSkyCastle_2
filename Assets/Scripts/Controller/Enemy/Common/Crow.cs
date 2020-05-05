@@ -7,7 +7,7 @@ public class Crow : MonoBehaviour {
 
     private void Update() {
         if(transform.position.y < -180f) {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

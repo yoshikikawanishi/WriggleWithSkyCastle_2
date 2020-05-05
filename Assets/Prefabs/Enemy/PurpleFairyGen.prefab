@@ -147,7 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Pooled: 1
-  life: 9
+  is_One_Life: 0
+  life: 7
   power_Value: 5
   score_Value: 5
   drop_Life_Probability: 0.1
@@ -255,6 +256,7 @@ MonoBehaviour:
   bullet: {fileID: 1099511604927390, guid: 94fbb265629e0ce4b98d40ef28419c09, type: 2}
   parent: {fileID: 0}
   max_Speed: 80
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 5
@@ -273,9 +275,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 5
   inter_Angle_Deg: 72

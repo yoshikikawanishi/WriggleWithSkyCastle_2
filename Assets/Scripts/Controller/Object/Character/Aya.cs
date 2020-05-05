@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Aya : TalkCharacter {    
+public class Aya : TalkCharacter {
+
+    [SerializeField] private AyaCameraFrame camera_Effect;
+
 
     new void Start() {
         base.Start();
@@ -10,6 +13,14 @@ public class Aya : TalkCharacter {
         if (c.Is_Collected("Momizi") && c.Is_Collected("Aya")) {
             Change_Status_With_Momizi();
         }
+    }
+
+
+    protected override float Action_Before_Talk() {
+        if(talk_Count == 1) {
+            camera_Effect.Disappear();
+        }
+        return 0;
     }
 
     protected override void Action_In_End_Talk() {

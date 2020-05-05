@@ -14,9 +14,6 @@ public class AyaMovie : MonoBehaviour {
     [SerializeField] private float          on_The_Way_Message_Line1;
     [SerializeField] private Vector2Int[]   on_The_Way_Message_ID1  = new Vector2Int[2];
     [Space]
-    [SerializeField] private float          on_The_Way_Message_Line2;
-    [SerializeField] private Vector2Int[]   on_The_Way_Message_ID2  = new Vector2Int[2];
-    [Space]
     [SerializeField] private Vector2Int[]   damaged_Message_ID      = new Vector2Int[3];
 
     private GameObject main_Camera;
@@ -40,9 +37,11 @@ public class AyaMovie : MonoBehaviour {
             Destroy(aya.gameObject);
     }
 
+
     public int Get_Movie_Count() {
         return movie_Count;
     }
+
 
     //ムービーを開始する
     public void Play_Aya_Movie() {
@@ -65,20 +64,27 @@ public class AyaMovie : MonoBehaviour {
         if (movie_Count > start_Message_ID.Length)
             yield break;
         
-        _message.Set_Canvas_And_Panel_Name("AyaMessageCanvas", "AyaMessagePanel");        
-
-        //開始セリフ
-        Display_Message(start_Message_ID[movie_Count - 1]);        
-        yield return new WaitUntil(_message.End_Message);        
+        _message.Set_Canvas_And_Panel_Name("AyaMessageCanvas", "AyaMessagePanel");
 
         //カメラエフェクト
         camera_Frame_Effect.Appear();
 
+        //開始セリフ
+        Display_Message(start_Message_ID[movie_Count - 1]);              
+        yield return new WaitUntil(_message.End_Message);    
+        
+        //３回目はやらない
+        if(movie_Count == 3) {            
+            camera_Frame_Effect.Disappear();
+            yield break;
+        }
+
         //一定x座標を越えた時のセリフ
         StartCoroutine("On_The_Way_Message1_Cor");
-        StartCoroutine("On_The_Way_Message2_Cor");
         //自機被弾時セリフ
-        StartCoroutine("Player_Damaged_Movie_Cor");        
+        StartCoroutine("Player_Damaged_Movie_Cor");
+        //カメラ攻撃
+        StartCoroutine("Camera_Attack_Cor");
     }
 
 
@@ -91,24 +97,12 @@ public class AyaMovie : MonoBehaviour {
         //セリフ
         Display_Message(on_The_Way_Message_ID1[movie_Count - 1]);
         yield return new WaitUntil(_message.End_Message);
-    }
-
-    private IEnumerator On_The_Way_Message2_Cor() {
-        //待つ
-        while (main_Camera.transform.position.x < on_The_Way_Message_Line2) {
-            yield return null;
-        }
-        //セリフ
-        Display_Message(on_The_Way_Message_ID2[movie_Count - 1]);
-        yield return new WaitUntil(_message.End_Message);
-        camera_Frame_Effect.Disappear();
-    }
+    }  
 
 
     //自機被弾時セリフ    
     private IEnumerator Player_Damaged_Movie_Cor() {
-        //初期設定
-        damaged_Count = 0;
+        //初期設定        
         player_Life = PlayerManager.Instance.Get_Life();
         //待つ
         while (true) {
@@ -131,10 +125,24 @@ public class AyaMovie : MonoBehaviour {
     }
 
 
+    //カメラ攻撃
+    private IEnumerator Camera_Attack_Cor() {
+        yield return new WaitForSeconds(1.0f);
+        float span;
+
+        for (int i = 0; i < 3; i++) {
+            camera_Frame_Effect.Attack();
+            span = Random.Range(10.0f, 15.0f);
+            yield return new WaitForSeconds(span);
+        }
+    }
+
+
     //自機のライフが減ったときにtrueを返す    
     private bool Is_Player_Damaged() {
-        if(PlayerManager.Instance.Get_Life() < player_Life) {
-            player_Life = PlayerManager.Instance.Get_Life();
+        int life = PlayerManager.Instance.Get_Life();
+        if(life > 0 && life < player_Life) {
+            player_Life = life;
             return true;
         }
         return false;

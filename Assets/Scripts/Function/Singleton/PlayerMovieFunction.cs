@@ -28,6 +28,7 @@ public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
         player_Controller.To_Disable_Ride_Beetle();
         player_Controller.Change_Animation("IdleBool");
         player_Rigid.velocity = Vector2.zero;
+        player.GetComponentInChildren<PlayerBodyCollision>().Become_Invincible();
     }
 
 
@@ -39,6 +40,7 @@ public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
         player_Controller.Set_Is_Playable(false);        
         player_Controller.Change_Animation("RideBeetleBool");
         player_Rigid.velocity = Vector2.zero;
+        player.GetComponentInChildren<PlayerBodyCollision>().Become_Invincible();
     }
 
 
@@ -49,5 +51,6 @@ public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
 
         player_Controller.Set_Is_Playable(true);
         player_Controller.To_Enable_Ride_Beetle();
+        player.GetComponentInChildren<PlayerBodyCollision>().Release_Invincible();
     }
 }

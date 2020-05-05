@@ -37,7 +37,9 @@ public class Momizi : TalkCharacter {
 
 
     private void Change_Status_With_Aya() {
-        transform.position = new Vector3(5740f, -64f);
+        transform.position = new Vector3(6640f, -50f);
+        transform.localScale = new Vector3(-1, 1, 1);
+        GetComponent<Animator>().SetTrigger("GladTrigger");
         Change_Message_Status("MomiziText", 10, 10);
     }
 }

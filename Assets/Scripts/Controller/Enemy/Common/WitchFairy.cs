@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(WitchFairyBattleMovie))]
 public class WitchFairy : FairyEnemy {
 
+    private WitchFairyBattleMovie _movie;
     private ChildColliderTrigger search_Light_Collider;
     private GameObject player;
 
@@ -12,6 +13,7 @@ public class WitchFairy : FairyEnemy {
 
 
     void Start() {
+        _movie = GetComponent<WitchFairyBattleMovie>();
         search_Light_Collider = GetComponentInChildren<ChildColliderTrigger>();
         player = GameObject.FindWithTag("PlayerTag");
     }
@@ -39,7 +41,7 @@ public class WitchFairy : FairyEnemy {
     //やられると戦闘終了
     public override void Vanish() {        
         if (!is_Searching) {
-            GetComponent<WitchFairyBattleMovie>().Finish_Battle();
+            _movie.Finish_Battle();
         }
         GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
@@ -52,7 +54,7 @@ public class WitchFairy : FairyEnemy {
         if (player == null)
             return;
 
-        GetComponent<WitchFairyBattleMovie>().Start_Battle_Movie(gameObject);
+        _movie.Start_Battle_Movie(gameObject);
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<RedFairy>());
         Destroy(search_Light_Collider.gameObject);
@@ -64,11 +66,14 @@ public class WitchFairy : FairyEnemy {
     //攻撃
     private IEnumerator Attack_Cor() {
         GetComponent<Animator>().SetBool("AttackBool", true);
-        yield return new WaitForSeconds(1.5f);
-
         ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
+        yield return new WaitForSeconds(3.5f);
+
+        _movie.Display_Message(2, 2);
+        int player_Life = PlayerManager.Instance.Get_Life();
+
         float center_Angle = 0;
-        while (true) {
+        for(int i = 0; i < 2; i++) {
             Turn_To_Player();
             center_Angle += Random.Range(10, 50);
             shoots[0].center_Angle_Deg = center_Angle - 5f;
@@ -77,6 +82,10 @@ public class WitchFairy : FairyEnemy {
             shoots[1].Shoot();            
             yield return new WaitForSeconds(2.9f);
         }
+
+        if(PlayerManager.Instance.Get_Life() == player_Life)
+            _movie.Display_Message(3, 3);
+        StartCoroutine("Attack_Cor");
     }
 
 

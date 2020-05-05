@@ -4519,7 +4519,7 @@ Tilemap:
   - first: {x: 71, y: 1, z: 0}
     second:
       m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -6975,8 +6975,8 @@ Tilemap:
     m_Data: {fileID: 21300002, guid: 7496dab39126fe04195e408d18494263, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: 21300000, guid: 7496dab39126fe04195e408d18494263, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300016, guid: 7496dab39126fe04195e408d18494263, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300022, guid: 7496dab39126fe04195e408d18494263, type: 3}
   - m_RefCount: 50
@@ -6991,8 +6991,8 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 71dcc1e062506ef458c16811a7d91689, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 21300004, guid: 71dcc1e062506ef458c16811a7d91689, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300016, guid: 7496dab39126fe04195e408d18494263, type: 3}
   - m_RefCount: 254
     m_Data: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
   m_TileMatrixArray:
@@ -18676,6 +18676,60 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc83e115e5dcb045b1293f3f17eecf0, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1350846969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1350846970}
+  - component: {fileID: 1350846971}
+  m_Layer: 9
+  m_Name: AttackCollision
+  m_TagString: EnemyBulletTag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1350846970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350846969}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800021316}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1350846971
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1350846969}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 360, y: 180}
+  m_EdgeRadius: 0
 --- !u!4 &1371860328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4301900812480062, guid: 12bea1ac5245ebe429cb402ffcc2b407,
@@ -19356,6 +19410,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 212302481939875122, guid: 302b44e82ba31dc4b973f0c8455b37a6,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302b44e82ba31dc4b973f0c8455b37a6, type: 2}
   m_IsPrefabAsset: 0
@@ -19970,10 +20029,6 @@ MonoBehaviour:
   on_The_Way_Message_ID1:
   - {x: 11, y: 13}
   - {x: 15, y: 16}
-  on_The_Way_Message_Line2: 6000
-  on_The_Way_Message_ID2:
-  - {x: 21, y: 22}
-  - {x: 24, y: 25}
   damaged_Message_ID:
   - {x: 31, y: 32}
   - {x: 34, y: 35}
@@ -20867,6 +20922,7 @@ MonoBehaviour:
   start_ID: 41
   end_ID: 50
   baloon_Pos: {x: 8, y: 16}
+  camera_Effect: {fileID: 1800021319}
 --- !u!95 &1889899565
 Animator:
   serializedVersion: 3

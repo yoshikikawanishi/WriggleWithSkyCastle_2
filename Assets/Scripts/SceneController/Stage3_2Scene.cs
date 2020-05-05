@@ -8,8 +8,7 @@ public class Stage3_2Scene : MonoBehaviour {
 
     private AyaMovie aya_Movie;
 
-    private bool is_Passed_Middle_Point = false;
-    private bool is_Passed_Final_Point = false;
+    private bool is_Passed_Middle_Point = false;    
 
 
 	// Use this for initialization
@@ -28,15 +27,10 @@ public class Stage3_2Scene : MonoBehaviour {
 	void Update () {
         if (player == null)
             return;
+        if (CollectionManager.Instance.Is_Collected("Aya") && CollectionManager.Instance.Is_Collected("Momizi"))
+            return;
 
-        if (player.transform.position.x > 6500f) {
-            if (!is_Passed_Final_Point) {
-                is_Passed_Final_Point = true;
-                is_Passed_Middle_Point = true;
-                BackGroundEffector.Instance.Start_Change_Color(new Color(1f, 1f, 1f), 0.02f);
-            }
-        }
-        else if (player.transform.position.x > 3364f) {
+        if (player.transform.position.x > 3364f && player.transform.position.x < 4000f) {
             if (!is_Passed_Middle_Point) {
                 is_Passed_Middle_Point = true;
                 BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 0.02f);
