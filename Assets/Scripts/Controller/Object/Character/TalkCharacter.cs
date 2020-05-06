@@ -5,7 +5,7 @@ using UnityEngine;
 public class TalkCharacter : MonoBehaviour {
     
     //スクリプト
-    protected MessageDisplay _message;
+    protected MessageDisplayCustom _message;
 
     //読み込むテキストファイル
     public string fileName;
@@ -32,9 +32,9 @@ public class TalkCharacter : MonoBehaviour {
     //Start
     protected void Start() {
         //スクリプト取得
-        _message = GetComponent<MessageDisplay>();
+        _message = GetComponent<MessageDisplayCustom>();
         if(_message == null)
-            _message = gameObject.AddComponent<MessageDisplay>();
+            _message = gameObject.AddComponent<MessageDisplayCustom>();
         //会話マークの生成
         mark_Up_Baloon = Instantiate(Resources.Load("Object/MarkUpBaloon") as GameObject);
         mark_Up_Baloon.transform.position = transform.position + (Vector3)baloon_Pos;

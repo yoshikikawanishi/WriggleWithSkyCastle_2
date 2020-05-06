@@ -14999,7 +14999,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 16
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114342255511216738, guid: fa2076cbd28bb12408704686d97dee7e, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: fa2076cbd28bb12408704686d97dee7e, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &879032630
@@ -19505,8 +19506,8 @@ GameObject:
   - component: {fileID: 1201252398}
   - component: {fileID: 1201252402}
   - component: {fileID: 1201252404}
-  - component: {fileID: 1201252403}
   - component: {fileID: 1201252405}
+  - component: {fileID: 1201252403}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -19585,11 +19586,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201252397}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
+  m_Script: {fileID: 11500000, guid: a89c779296742824c8473bb1bc75f7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Display_Selection_After_Message: 0
-  selection_Canvas: {fileID: 0}
 --- !u!114 &1201252404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19993,6 +19992,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4578843588278626, guid: 6ff41e60e9209cd48b68303d8644c2c8,
     type: 2}
   m_PrefabInternal: {fileID: 1232240184}
+--- !u!1 &1233475507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1763491103116310, guid: fa2076cbd28bb12408704686d97dee7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 878264327}
+--- !u!114 &1233475508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1233475507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a89c779296742824c8473bb1bc75f7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1236974981
 Prefab:
   m_ObjectHideFlags: 0
@@ -22401,15 +22416,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 359660387}
-    - target: {fileID: 224336113966076998, guid: 23145e826290c9949aa63b42b3f2c54a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -48.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 1220827783621862, guid: 23145e826290c9949aa63b42b3f2c54a, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23145e826290c9949aa63b42b3f2c54a, type: 2}
   m_IsPrefabAsset: 0

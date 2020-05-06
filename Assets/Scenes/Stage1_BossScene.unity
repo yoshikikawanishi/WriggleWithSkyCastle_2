@@ -490,8 +490,8 @@ GameObject:
   - component: {fileID: 603977457}
   - component: {fileID: 603977461}
   - component: {fileID: 603977462}
-  - component: {fileID: 603977463}
   - component: {fileID: 603977464}
+  - component: {fileID: 603977463}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -582,11 +582,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 603977456}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
+  m_Script: {fileID: 11500000, guid: a89c779296742824c8473bb1bc75f7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Display_Selection_After_Message: 0
-  selection_Canvas: {fileID: 0}
 --- !u!114 &603977464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1066,6 +1064,10 @@ Prefab:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1220827783621862, guid: 23145e826290c9949aa63b42b3f2c54a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147345059476332, guid: 23145e826290c9949aa63b42b3f2c54a, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

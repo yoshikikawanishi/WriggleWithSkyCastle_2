@@ -63,14 +63,14 @@ public class MovieSystem : MonoBehaviour {
     public bool is_Disable_Controlle = true;
     public List<Event> list = new List<Event>();
     
-    private MessageDisplay _message;
+    private MessageDisplayCustom _message;
     private bool is_End_Movie;
 
 
     void Awake() {
-        _message = GetComponent<MessageDisplay>();
+        _message = GetComponent<MessageDisplayCustom>();
         if(_message == null)
-            _message = gameObject.AddComponent<MessageDisplay>();        
+            _message = gameObject.AddComponent<MessageDisplayCustom>();        
     }
 
     

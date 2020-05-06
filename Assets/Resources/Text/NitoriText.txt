@@ -1,4 +1,4 @@
-#ID	#NAME	#ICON	#MESSAGE
+#ID	#NAME	#PANELNUMBER	#MESSAGE
 1	にとり	non	げげ、誰だ！？
 2	にとり	non	私の光学迷彩スーツを見抜くなんてなかなかやるな！
 3	にとり	non	ごうか景品としてそこのアイテムをやるから持って行くといいよ

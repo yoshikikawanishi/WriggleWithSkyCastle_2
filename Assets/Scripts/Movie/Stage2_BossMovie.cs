@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Stage2_BossMovie : MonoBehaviour {
 
     //スクリプト
-    private MessageDisplay _message;
+    private MessageDisplayCustom _message;
     //自機
     private GameObject player;
     //ネムノ
@@ -17,7 +17,7 @@ public class Stage2_BossMovie : MonoBehaviour {
 
     private void Awake() {
         //取得
-        _message = GetComponent<MessageDisplay>();
+        _message = GetComponent<MessageDisplayCustom>();
         player = GameObject.FindWithTag("PlayerTag");
         nemuno = GameObject.Find("Nemuno");
     }

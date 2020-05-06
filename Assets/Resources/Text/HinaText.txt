@@ -1,4 +1,4 @@
-#ID	#NAME	#ICON	#MESSAGE
+#ID	#NAME	#PANELNUMBER	#MESSAGE
 1	ひな	non	あらいけない/厄が移っちゃったわ
 2	　	non	えんがちょしますか？
 3	ひな	non	どうなっても知らないわよ

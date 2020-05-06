@@ -6,7 +6,7 @@ public class YukaMovie : SingletonMonoBehaviour<YukaMovie> {
 
     [SerializeField] private GameObject boss_Battle_Canvas;
     //コンポーネント
-    private MessageDisplay _message;
+    private MessageDisplayCustom _message;
 
     private GameObject yuka;
 
@@ -14,7 +14,7 @@ public class YukaMovie : SingletonMonoBehaviour<YukaMovie> {
 	// Use this for initialization
 	void Start () {
         //取得
-        _message = GetComponent<MessageDisplay>();
+        _message = GetComponent<MessageDisplayCustom>();
         yuka = GameObject.Find("Yuka");       
     }
 	
