@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 114192098912221324}
   - component: {fileID: 114130173076250116}
   - component: {fileID: 114173627335961346}
-  - component: {fileID: 114342255511216738}
+  - component: {fileID: 114785324843134044}
   m_Layer: 9
   m_Name: Yuka
   m_TagString: Untagged
@@ -1012,6 +1012,7 @@ MonoBehaviour:
   bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1075,9 +1076,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 6
   inter_Angle_Deg: 20
@@ -1161,6 +1188,7 @@ MonoBehaviour:
   bullet: {fileID: 1742974461349758, guid: aee60bc3d16d58d4582e97f7de51b0a0, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1224,9 +1252,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 6
   inter_Angle_Deg: 20
@@ -1253,19 +1307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9417a567dc3104da43ccc2900b6bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114342255511216738
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763491103116310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Display_Selection_After_Message: 0
-  selection_Canvas: {fileID: 0}
 --- !u!114 &114355433994445274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1314,6 +1355,7 @@ MonoBehaviour:
   bullet: {fileID: 1742974461349758, guid: aee60bc3d16d58d4582e97f7de51b0a0, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1377,9 +1419,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 6
   inter_Angle_Deg: 20
@@ -1412,6 +1480,7 @@ MonoBehaviour:
   bullet: {fileID: 1632546210349180, guid: 3d2faf7ce32d60b48a386c00a166f105, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1430,9 +1499,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 27
@@ -1476,6 +1571,7 @@ MonoBehaviour:
   bullet: {fileID: 1025434327628990, guid: 7bcf7b0f0356e844295e7fcde436a763, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 50
@@ -1584,9 +1680,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 1
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 18
   inter_Angle_Deg: 20
@@ -1602,6 +1724,19 @@ MonoBehaviour:
   loop_Count: 1
   span: 1
   center_Angle_Diff: 0
+--- !u!114 &114785324843134044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763491103116310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_Display_Selection_After_Message: 0
+  selection_Canvas: {fileID: 0}
 --- !u!114 &114813588126598550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1647,6 +1782,7 @@ MonoBehaviour:
   bullet: {fileID: 1742974461349758, guid: aee60bc3d16d58d4582e97f7de51b0a0, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1665,9 +1801,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: -27
@@ -1700,6 +1862,7 @@ MonoBehaviour:
   bullet: {fileID: 1576648886757804, guid: c0c20a6f0f8954646af2418a3989a0d0, type: 2}
   parent: {fileID: 0}
   max_Speed: 60
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 50
@@ -1808,9 +1971,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 1
   sorting_Order: -4
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 18
   inter_Angle_Deg: 20
@@ -1843,6 +2032,7 @@ MonoBehaviour:
   bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -1906,9 +2096,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 6
   inter_Angle_Deg: 20

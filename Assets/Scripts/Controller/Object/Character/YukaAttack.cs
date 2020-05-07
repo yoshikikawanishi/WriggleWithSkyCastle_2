@@ -127,7 +127,7 @@ public class YukaAttack : MonoBehaviour {
 
     //ラルバの助言入れる
     private IEnumerator Play_Guide_Message(int start_ID, int end_ID) {
-        MessageDisplayCustom _message = GetComponent<MessageDisplayCustom>();
+        MessageDisplay _message = GetComponent<MessageDisplay>();
         Time.timeScale = 0;
         _message.Start_Display_Auto("YukaText", start_ID, end_ID, 1.0f, 0.05f);
         yield return new WaitUntil(_message.End_Message);

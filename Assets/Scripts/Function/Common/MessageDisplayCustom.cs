@@ -138,6 +138,7 @@ public class MessageDisplayCustom : MonoBehaviour {
             //名前とアイコン
             name_Texts[index].text = text.textWords[i, 1];
             //セリフ
+            message_Texts[index].text = "";
             int lineLength = text.textWords[i, 3].Length;
             for (int j = 0; j < lineLength; j++) {
                 if (text.textWords[i, 3][j] == '/') {
@@ -153,9 +154,7 @@ public class MessageDisplayCustom : MonoBehaviour {
             yield return new WaitUntil(Wait_Input_Z);
             //終了
             if (i == end_ID)
-                break;
-            //次の行へ
-            message_Texts[index].text = "";
+                break;            
         }
 
         for (int i = 0; i < message_Panels.Length; i++)

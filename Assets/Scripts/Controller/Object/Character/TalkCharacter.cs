@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TalkCharacter : MonoBehaviour {
-    
+
     //スクリプト
-    protected MessageDisplayCustom _message;
+    protected MessageDisplay _message;
+    protected MessageDisplayCustom _message_Custom;
 
     //読み込むテキストファイル
     public string fileName;
@@ -13,6 +14,8 @@ public class TalkCharacter : MonoBehaviour {
     public int end_ID;
     //会話マークの位置
     public Vector2 baloon_Pos = new Vector2(8f, 16f);
+    //メッセージ表示の種類
+    public bool dual_Panel = true;
 
     //会話中か
     protected bool is_Talking = false;
@@ -32,9 +35,13 @@ public class TalkCharacter : MonoBehaviour {
     //Start
     protected void Start() {
         //スクリプト取得
-        _message = GetComponent<MessageDisplayCustom>();
-        if(_message == null)
-            _message = gameObject.AddComponent<MessageDisplayCustom>();
+        _message = GetComponent<MessageDisplay>();
+        _message_Custom = GetComponent<MessageDisplayCustom>();
+        if (_message == null)
+            _message = gameObject.AddComponent<MessageDisplay>();
+        if (_message_Custom == null)
+            _message_Custom = gameObject.AddComponent<MessageDisplayCustom>();
+
         //会話マークの生成
         mark_Up_Baloon = Instantiate(Resources.Load("Object/MarkUpBaloon") as GameObject);
         mark_Up_Baloon.transform.position = transform.position + (Vector3)baloon_Pos;
@@ -81,8 +88,14 @@ public class TalkCharacter : MonoBehaviour {
             player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 
             //メッセージ表示
-            _message.Start_Display(fileName, start_ID, end_ID);
-            yield return new WaitUntil(_message.End_Message);
+            if (dual_Panel) {
+                _message_Custom.Start_Display(fileName, start_ID, end_ID);
+                yield return new WaitUntil(_message_Custom.End_Message);
+            }
+            else {
+                _message.Start_Display(fileName, start_ID, end_ID);
+                yield return new WaitUntil(_message.End_Message);
+            }
             //終了
             yield return new WaitForSeconds(0.1f);
             player_Controller.Set_Is_Playable(true);

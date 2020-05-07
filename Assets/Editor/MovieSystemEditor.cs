@@ -35,6 +35,7 @@ public class MovieSystemEditor : Editor {
             switch (obj.list[i].type) {
                 case MovieSystem.Event.Type.message:                    
                     obj.list[i].message.file_Name = EditorGUILayout.TextField("filename", obj.list[i].message.file_Name);
+                    obj.list[i].message.dual_Panel = EditorGUILayout.Toggle("DualPanel", obj.list[i].message.dual_Panel);
                     obj.list[i].message.start_ID = EditorGUILayout.IntField("startID", obj.list[i].message.start_ID);
                     obj.list[i].message.end_ID = EditorGUILayout.IntField("endID", obj.list[i].message.end_ID);
                     obj.list[i].message.is_Auto = EditorGUILayout.Toggle("Auto Message", obj.list[i].message.is_Auto);

@@ -620,6 +620,7 @@ MonoBehaviour:
   start_ID: 1
   end_ID: 2
   baloon_Pos: {x: 8, y: 16}
+  dual_Panel: 0
   hina_Disaster: {fileID: 180389286}
 --- !u!114 &121921970
 MonoBehaviour:
@@ -10282,6 +10283,7 @@ MonoBehaviour:
   start_ID: 1
   end_ID: 1
   baloon_Pos: {x: 12, y: 18}
+  dual_Panel: 1
 --- !u!70 &852827672
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

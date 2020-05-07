@@ -28,6 +28,7 @@ public class MovieSystem : MonoBehaviour {
     [System.Serializable]
     public class Message {
         public string file_Name;
+        public bool dual_Panel = true;
         public int start_ID;
         public int end_ID;
         public bool is_Auto;        
@@ -62,15 +63,19 @@ public class MovieSystem : MonoBehaviour {
 
     public bool is_Disable_Controlle = true;
     public List<Event> list = new List<Event>();
-    
-    private MessageDisplayCustom _message;
+
+    private MessageDisplay _message;
+    private MessageDisplayCustom _message_Custom;    
     private bool is_End_Movie;
 
 
     void Awake() {
-        _message = GetComponent<MessageDisplayCustom>();
+        _message = GetComponent<MessageDisplay>();
+        _message_Custom = GetComponent<MessageDisplayCustom>();
         if(_message == null)
-            _message = gameObject.AddComponent<MessageDisplayCustom>();        
+            _message = gameObject.AddComponent<MessageDisplay>();
+        if (_message_Custom == null)
+            _message_Custom = gameObject.AddComponent<MessageDisplayCustom>();
     }
 
     
@@ -104,8 +109,8 @@ public class MovieSystem : MonoBehaviour {
                     e.function.component.Invoke(e.function.function, 0);
                     break;
                 case Event.Type.wait:
-                    if (e.wait.wait_Message) {
-                        yield return new WaitUntil(_message.End_Message);
+                    if (e.wait.wait_Message) {                        
+                        yield return new WaitUntil(Is_End_Message);
                     }
                     yield return new WaitForSeconds(e.wait.wait_Time);
                     break;
@@ -133,12 +138,27 @@ public class MovieSystem : MonoBehaviour {
     //メッセージ表示
     private void Start_Message(Event e) {
         if (e.message.is_Auto) {
-            _message.Start_Display_Auto(e.message.file_Name, e.message.start_ID, e.message.end_ID, 1.0f, 0.02f);
+            if(e.message.dual_Panel)
+                _message_Custom.Start_Display_Auto(e.message.file_Name, e.message.start_ID, e.message.end_ID, 1.0f, 0.02f);
+            else
+                _message.Start_Display_Auto(e.message.file_Name, e.message.start_ID, e.message.end_ID, 1.0f, 0.02f);
         }
         else {
-            _message.Start_Display(e.message.file_Name, e.message.start_ID, e.message.end_ID);
+            if(e.message.dual_Panel)
+                _message_Custom.Start_Display(e.message.file_Name, e.message.start_ID, e.message.end_ID);
+            else
+                _message.Start_Display(e.message.file_Name, e.message.start_ID, e.message.end_ID);
         }        
     }
+
+
+    //メッセージ表示終了検知用
+    private bool Is_End_Message() {
+        if (_message.End_Message() || _message_Custom.End_Message())
+            return true;
+        return false;
+    }
+
 
     //オブジェクトの移動を行う
     private IEnumerator Object_Move_Cor(Event e) {

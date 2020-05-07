@@ -34,7 +34,7 @@ public class Hina : TalkCharacter {
     }
 
 
-    //==========================会話関連==========================    
+    //==========================会話関連==========================       
     protected override float Action_Before_Talk() {        
         if(start_ID == 1 && !is_Player_Having_Disaster)
             Infect_Disaster_Effect_To_Player();
