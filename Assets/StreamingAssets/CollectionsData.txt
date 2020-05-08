@@ -6,7 +6,7 @@ Yuka	False
 Medicine	False
 Shizuha	False
 BigFrog	False
-Nitori	True
-Hina	True
+Nitori	False
+Hina	False
 Momizi	False
 Aya	False
