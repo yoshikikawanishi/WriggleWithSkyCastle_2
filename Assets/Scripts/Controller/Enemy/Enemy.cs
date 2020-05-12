@@ -6,7 +6,6 @@ using UnityEngine;
 /// 敵の体力を管理
 /// 敵の被弾時、消滅時の処理を行う、継承で処理変更
 /// </summary>
-[RequireComponent(typeof(EnemyCollisionDetection))]
 public class Enemy : MonoBehaviour {
     
     [SerializeField] private bool is_Pooled = false;

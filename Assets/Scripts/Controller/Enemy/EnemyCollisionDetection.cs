@@ -16,7 +16,7 @@ public class EnemyCollisionDetection : MonoBehaviour {
         {"PlayerBodyTag"    , 10    },
     };        
 
-    private Enemy _enemy;
+    protected Enemy _enemy;
 
     
     void Awake() {
@@ -47,6 +47,9 @@ public class EnemyCollisionDetection : MonoBehaviour {
 
     //被弾の処理
     protected virtual void Damaged(string key) {
+        if (_enemy == null)
+            return;
+
         //ダメージの計算
         int damage = (int)(damaged_Tag_Dictionary[key] * Damage_Rate());
         _enemy.Damaged(damage, key);
@@ -73,6 +76,6 @@ public class EnemyCollisionDetection : MonoBehaviour {
             return 1.7f;
         }
         return 1.9f;
-    }
-
+    }    
+    
 }

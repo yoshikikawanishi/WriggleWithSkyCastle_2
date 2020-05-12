@@ -29,7 +29,7 @@ public class PlayerMovieFunction : SingletonMonoBehaviour<PlayerMovieFunction> {
         player_Controller.Change_Animation("IdleBool");
         player_Rigid.velocity = Vector2.zero;
         player.GetComponentInChildren<PlayerBodyCollision>().Become_Invincible();
-    }
+    }    
 
 
     //自機の操作無効化、飛行

@@ -5,26 +5,61 @@ using UnityEngine;
 [RequireComponent(typeof(WitchFairyBattleMovie))]
 public class WitchFairy : FairyEnemy {
 
+    private Rigidbody2D _rigid;
     private WitchFairyBattleMovie _movie;
-    private ChildColliderTrigger search_Light_Collider;
+    private SearchLight search_Light;
+    private ChildColliderTrigger side_Collider;
     private GameObject player;
+    private GameObject main_Camera;
 
     private bool is_Searching = true;
 
 
     void Start() {
+        _rigid = GetComponent<Rigidbody2D>();
         _movie = GetComponent<WitchFairyBattleMovie>();
-        search_Light_Collider = GetComponentInChildren<ChildColliderTrigger>();
+        search_Light = transform.Find("SearchLight").GetComponent<SearchLight>();
+        search_Light.gameObject.SetActive(false);
+        side_Collider = transform.Find("SideCollision").GetComponent<ChildColliderTrigger>();
+
         player = GameObject.FindWithTag("PlayerTag");
+        main_Camera = GameObject.FindWithTag("MainCamera");
+
+        //被弾の当たり判定は子供の方で行う
+        Destroy(GetComponent<EnemyCollisionDetection>());
     }
 
-	
-	//ライトが当たると戦闘開始
+		
 	void Update () {
-        if (search_Light_Collider.Hit_Trigger() && is_Searching) {
+
+        if (!is_Searching)
+            return;
+
+        //カメラが近付いてくるまで待機
+        if (Mathf.Abs(main_Camera.transform.position.x - transform.position.x) > 270f) {
+            if (search_Light.gameObject.activeSelf)
+                search_Light.gameObject.SetActive(false);
+            _rigid.velocity = new Vector2(0, 0);
+            return;
+        }
+
+        //ライト点灯
+        if (!search_Light.gameObject.activeSelf)
+            search_Light.gameObject.SetActive(true);
+
+        //歩く
+        _rigid.velocity = new Vector2(-transform.localScale.x.CompareTo(0) * 40f, _rigid.velocity.y);
+        //反転
+        if (side_Collider.Hit_Trigger()) {
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, 1);                        
+        }
+
+        //ライトが当たると戦闘開始
+        if (search_Light.Is_Detect()) {
             is_Searching = false;
             Start_Battle();
         }
+        
 	}
 
 
@@ -57,7 +92,7 @@ public class WitchFairy : FairyEnemy {
         _movie.Start_Battle_Movie(gameObject);
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<RedFairy>());
-        Destroy(search_Light_Collider.gameObject);
+        Destroy(search_Light.gameObject);
         Turn_To_Player();
         StartCoroutine("Attack_Cor");
     }

@@ -12,7 +12,7 @@ public class Test : MonoBehaviour {
 	
 
 	private void Test1() {
-        Debug.Log("Test");        
+
     }
 
    

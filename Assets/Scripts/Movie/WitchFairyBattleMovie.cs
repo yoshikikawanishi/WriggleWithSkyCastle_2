@@ -50,8 +50,10 @@ public class WitchFairyBattleMovie : MonoBehaviour {
 
         //フェードアウト
         FadeInOut.Instance.Start_Rotate_Fade_Out();
-        yield return new WaitForSeconds(1.0f);              
+        yield return new WaitForSeconds(1.0f);
 
+        //自機の動きを止める
+        PlayerMovieFunction.Instance.Disable_Controlle_Player();
         //初期位置調整
         main_Camera.transform.position = new Vector3(battle_Camera_Pos, 0, -10);
         player.transform.position = player_Initial_Pos;
@@ -113,21 +115,19 @@ public class WitchFairyBattleMovie : MonoBehaviour {
     }
 
 
-    //画面内のアクティブな敵を消す, 戦闘する敵は除く
+    //付近のアクティブな敵を消す, 戦闘する敵は除く
     //消した敵を返す
     private List<GameObject> Erase_Visible_Enemy() {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyTag");
         List<GameObject> active_Enemies = new List<GameObject>();
-        Renderer renderer;
+        float camera_Distance;
 
         foreach (GameObject enemy in enemies) {
             if (!enemy.activeSelf || enemy == battle_Enemy)
                 continue;
-            renderer = enemy.GetComponent<Renderer>();
-            if (renderer == null)
-                continue;
 
-            if (renderer.isVisible) {
+            camera_Distance = battle_Camera_Pos - enemy.transform.position.x;           
+            if (Mathf.Abs(camera_Distance) < 350f) {
                 active_Enemies.Add(enemy);
                 enemy.SetActive(false);
             }
