@@ -1,5 +1,5 @@
 Name	IsExist
-WildBoar	True
+WildBoar	False
 WildBoar	True
 WildBoar	True
 WildBoar	True

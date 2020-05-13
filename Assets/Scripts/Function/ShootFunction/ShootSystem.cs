@@ -348,7 +348,7 @@ public class ShootSystem : MonoBehaviour {
         float p = 0;
         Vector2 player_Direction = new Vector2();
 
-        for(float t = 0; t < end_Time; t += Time.deltaTime) {            
+        for(float t = 0; t < end_Time; t += 0.03f) {            
             if(!bullet.activeSelf) {
                 yield break;
             }
@@ -370,7 +370,7 @@ public class ShootSystem : MonoBehaviour {
             if (is_Fixed_Rotation) {
                 bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, fixed_Angle));
             }
-            yield return new WaitForSeconds(0.016f);
+            yield return new WaitForSeconds(0.03f - Time.deltaTime);
         }
     }
     

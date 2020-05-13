@@ -14,6 +14,8 @@ public class WitchFairy : FairyEnemy {
 
     private bool is_Searching = true;
 
+    [SerializeField] private float shoot_Noise = 0;
+
 
     void Start() {
         _rigid = GetComponent<Rigidbody2D>();
@@ -110,9 +112,9 @@ public class WitchFairy : FairyEnemy {
         float center_Angle = 0;
         for(int i = 0; i < 2; i++) {
             Turn_To_Player();
-            center_Angle += Random.Range(10, 50);
-            shoots[0].center_Angle_Deg = center_Angle - 5f;
-            shoots[1].center_Angle_Deg = center_Angle + 5f;
+            center_Angle = Random.Range(0, shoot_Noise);
+            shoots[0].center_Angle_Deg += center_Angle;
+            shoots[1].center_Angle_Deg += center_Angle;
             shoots[0].Shoot();
             shoots[1].Shoot();            
             yield return new WaitForSeconds(2.9f);
