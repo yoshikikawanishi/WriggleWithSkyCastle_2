@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour {
     private PlayerKickCollision kick_Collision;
     private PlayerManager player_Manager;
 
+    private GameObject spider_Footing;
+
     private bool can_Attack = true;    
 
 
@@ -28,6 +30,7 @@ public class PlayerAttack : MonoBehaviour {
         attack_Collision = GetComponentInChildren<PlayerAttackCollision>();
         kick_Collision = GetComponentInChildren<PlayerKickCollision>();
         player_Manager = PlayerManager.Instance;
+        spider_Footing = Resources.Load("Object/SpiderFooting") as GameObject;
         //オブジェクトプール
         ObjectPoolManager.Instance.Create_New_Pool(mantis_Attack_Bullet, 5);
     }
@@ -70,12 +73,12 @@ public class PlayerAttack : MonoBehaviour {
         attack_Collision.Make_Collider_Appear(attack_Time);        
         player_SE.Play_Attack_Sound();
 
-        if (player_Manager.Get_Option() == PlayerManager.Option.bee)    //オプションが蜂の時ショット
-            Bee_Shoot();
-        else if (player_Manager.Get_Option() == PlayerManager.Option.mantis) //オプションがカマキリの時ショット
-            Mantis_Shoot();
-        else if (player_Manager.Get_Option() == PlayerManager.Option.butterfly)  //オプションがチョウの時浮く
-            _rigid.velocity = new Vector2(_rigid.velocity.x, 200f);
+        switch (player_Manager.Get_Option()) {
+            case PlayerManager.Option.bee:      StartCoroutine("Bee_Shoot_Cor"); break;
+            case PlayerManager.Option.mantis:   Mantis_Shoot(); break;
+            case PlayerManager.Option.butterfly: _rigid.velocity = new Vector2(_rigid.velocity.x, 200f); break;
+            case PlayerManager.Option.spider:   Gen_Spider_Footing(); break;
+        }      
         
         _rigid.velocity += new Vector2(transform.localScale.x * 5f, 0); //Rigidbodyのスリープ状態を解除する        
         for (float t = 0; t < attack_Time; t += Time.deltaTime) {
@@ -92,34 +95,48 @@ public class PlayerAttack : MonoBehaviour {
         can_Attack = true;
     }
 
+
     //オプションが蜂の時のショット    
-    private void Bee_Shoot() {
+    private IEnumerator Bee_Shoot_Cor() {
         ObjectPool bullet_Pool = ObjectPoolManager.Instance.Get_Pool("PlayerBeeBullet");
         for (int i = 0; i < 3; i++) {
-            var bullet = bullet_Pool.GetObject();
-            bullet.transform.position = transform.position + new Vector3(0, -6f + i * 6f);
-            bullet.transform.localScale = transform.localScale;
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(900f * transform.localScale.x, 0);
+            for (int j = 0; j < 3; j++) {
+                var bullet = bullet_Pool.GetObject();
+                bullet.transform.position = transform.position + new Vector3(0, -6f + j * 6f);
+                bullet.transform.localScale = transform.localScale;
+                bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(900f * transform.localScale.x, 0);
+            }
+            player_SE.Play_Shoot_Sound();
+            yield return new WaitForSeconds(0.1f);
         }
-        player_SE.Play_Shoot_Sound();
     }
+
 
     //オプションがカマキリの時ショット
     private void Mantis_Shoot() {
         ObjectPool bullet_Pool = ObjectPoolManager.Instance.Get_Pool("PlayerMantisAttackBullet");
         float angle;
         Vector3 pos;
-        for(int i = 0; i < 8; i++) {
+        for(int i = 0; i < 15; i++) {
             var bullet = bullet_Pool.GetObject();
             angle = Random.Range(-30f, 70f) * Mathf.Deg2Rad;
-            pos = new Vector2(Mathf.Cos(angle) * transform.localScale.x, Mathf.Sin(angle) * 0.5f) * 24f;
-            bullet.transform.position = transform.position + pos;            
-            bullet.GetComponent<Rigidbody2D>().velocity = (bullet.transform.position - transform.position) * Random.Range(20f, 120f);
+            pos = new Vector2(Mathf.Cos(angle) * transform.localScale.x, Mathf.Sin(angle) * 0.5f) * 32f;
+            bullet.transform.position = transform.position + pos;               
+            bullet.GetComponent<Rigidbody2D>().velocity = (bullet.transform.position - transform.position) * Random.Range(15f, 90f);
             bullet.GetComponent<Rigidbody2D>().velocity += _rigid.velocity;
             bullet.GetComponent<Bullet>().Set_Inactive(5.0f);
         }
         player_SE.Play_Shoot_Sound();
     }
+
+
+    //オプションが蜘蛛の時足場生成
+    private void Gen_Spider_Footing() {
+        var footing = ObjectPoolManager.Instance.Get_Pool(spider_Footing).GetObject();
+        footing.transform.position = transform.position + new Vector3(transform.localScale.x * 40f, -32f);
+        ObjectPoolManager.Instance.Set_Inactive(footing, 10f);
+    }
+
     
     //敵と衝突時の処理
     private IEnumerator Do_Hit_Attack_Process() {

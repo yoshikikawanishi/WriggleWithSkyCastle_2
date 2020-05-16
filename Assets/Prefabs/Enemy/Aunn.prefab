@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4931748133286984}
-  - component: {fileID: 114875716280122668}
+  - component: {fileID: 114241668979336778}
   m_Layer: 9
   m_Name: ShortLaser_Jump
   m_TagString: Untagged
@@ -1302,6 +1302,122 @@ MonoBehaviour:
   start_Time: 0.5
   loop_Count: 1
   span: 0
+--- !u!114 &114241668979336778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1077405987871278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 2
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1899467269081262, guid: 0607688abdce78e419f48857b35c0697, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 180
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 5
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.12
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.5
+      value: 0.12
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 15
+  inter_Angle_Deg: 20
+  center_Angle_Deg: 0
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 0
+  center_Angle_Diff: 0
 --- !u!114 &114270133825806722
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2635,7 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d66c3cda971b142a0ccf14226963c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 010000000c030000
+  life: 480300000c030000
   power_Value: 0
   score_Value: 0
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
@@ -2644,122 +2760,6 @@ MonoBehaviour:
     type: 2}
   clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
     type: 2}
---- !u!114 &114875716280122668
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1077405987871278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kind: 2
-  comment: 
-  play_On_Awake: 0
-  bullet: {fileID: 1899467269081262, guid: 0607688abdce78e419f48857b35c0697, type: 2}
-  parent: {fileID: 0}
-  max_Speed: 180
-  radius: 0
-  speed_Noise: 0
-  angle_Noise: 0
-  lifeTime: 5
-  offset: {x: 0, y: 0}
-  default_Shoot_Sound: 0
-  is_Acceleration: 1
-  velocity_Forward:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_Lateral:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.8
-      value: 0.1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_To_Player:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  is_Change_Sorting_Order: 0
-  sorting_Order: -5
-  sorting_Order_Diff: 0
-  is_Fixed_Rotation: 0
-  fixed_Angle: 0
-  other_Param: 1
-  num: 15
-  inter_Angle_Deg: 20
-  center_Angle_Deg: 0
-  arc_Deg: 360
-  shoot_Rate: 30
-  duration: 5
-  connect_Bullet: 0
-  connect_Num: 1
-  speed_Diff: 15
-  angle_Diff: 0
-  looping: 0
-  loop_Count: 1
-  span: 0
-  center_Angle_Diff: 0
 --- !u!114 &114883049691432556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2940,7 +2940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac712a02bc25dc844b793a2943dc0ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  short_Curve_Laser: {fileID: 114875716280122668}
+  short_Curve_Laser: {fileID: 114241668979336778}
   purple_Rice_Shoot_Obj: {fileID: 1367709679408024}
   dog_Bullet_Shoot: {fileID: 114596317232708342}
   dog_Bullet_Big_Shoot: {fileID: 114982702615559888}

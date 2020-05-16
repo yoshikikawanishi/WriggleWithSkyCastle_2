@@ -164,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1853506654878994}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -776, y: -80, z: 0}
+  m_LocalPosition: {x: -715, y: -16.5, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4653396035300458}
@@ -260,7 +260,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -8, y: 0}
+  m_Offset: {x: -13, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -285,7 +285,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -5, y: 0}
   m_Size: {x: 16, y: 28}
   m_Direction: 0
 --- !u!70 &70317828859544372
@@ -300,7 +300,7 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -5, y: 0}
   m_Size: {x: 16, y: 28}
   m_Direction: 0
 --- !u!95 &95156322822084748
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texture: {fileID: 2800000, guid: f860e6f24614fae4fbc8671633192421, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 0.29803923}
+  color: {r: 1, g: 1, b: 1, a: 0.6}
   sorting_Order: 3
   is_Trigger: 1
   center: {x: 94, y: 31}
@@ -740,7 +740,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 25, y: 30}
+  m_Size: {x: 35, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

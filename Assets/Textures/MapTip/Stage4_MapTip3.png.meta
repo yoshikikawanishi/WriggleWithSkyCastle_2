@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-guid: 764f53de1e5fd28479b553153a8b6575
+guid: d3a169cc52e3728478888aca4d12a20a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WitchFairy_0
-    21300002: WitchFairy_1
-    21300004: WitchFairy_2
-    21300006: WitchFairy_3
-    21300008: WitchFairy_4
-    21300010: WitchFairy_5
-    21300012: WitchFairy_6
-    21300014: WitchFairy_7
+    21300000: Stage4_MapTip3_0
+    21300002: Stage4_MapTip3_1
+    21300004: Stage4_MapTip3_2
+    21300006: Stage4_MapTip3_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -71,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -93,7 +89,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +100,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,7 +111,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WitchFairy_0
+      name: Stage4_MapTip3_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
-        width: 35
-        height: 30
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,19 +135,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a8a911ed5d87c49b91d94286f50b84
+      spriteID: 43241d8adf285824089edade638b26af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_1
+      name: Stage4_MapTip3_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 30
-        width: 35
-        height: 30
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,59 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824332bd400d2a74cafacbe205d1affe
+      spriteID: c1555a93ad7ac5741a44605f70db8d66
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_2
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 30
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22fdebcc5ce009644a1879d7ecb6ec65
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_3
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 30
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb1f0d987e9895042939cd611d1eff69
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_4
+      name: Stage4_MapTip3_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d8cc02c239d73d4da27bc01b1ef389d
+      spriteID: 38d28db2cce4f8f4f8a5710d18a8156a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_5
+      name: Stage4_MapTip3_3
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 35
-        height: 30
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,47 +195,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c15fbc2b576fa3c4bb75bb4ac9f843ab
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_6
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 495dd0dceaa99624fa47dc419658585b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_7
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 0
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1ae966cdf22d8e479aacc57bb271664
+      spriteID: 823533a773401654b82d9b43fe6d17f2
       vertices: []
       indices: 
       edges: []
@@ -287,7 +203,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c8ecef15d86102a4b8ce55b7506e3b99
+    spriteID: 00467fdee7d476b47a13295c26b548a3
     vertices: []
     indices: 
     edges: []

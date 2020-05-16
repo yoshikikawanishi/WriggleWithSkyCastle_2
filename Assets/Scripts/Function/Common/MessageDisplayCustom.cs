@@ -105,7 +105,7 @@ public class MessageDisplayCustom : MonoBehaviour {
             name_Texts[i] = message_Panels[i].transform.GetChild(1).GetComponent<Text>();
 
             message_Panels[i].SetActive(true);
-            message_Texts[i].text = "";
+            message_Texts[i].text = "...";
             name_Texts[i].text = "";
         }
     }

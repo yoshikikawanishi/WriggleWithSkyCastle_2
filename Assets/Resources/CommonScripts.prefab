@@ -134,7 +134,7 @@ MonoBehaviour:
   Delete_Player_Data: 0
   Player_Life: 6
   Player_Power: 128
-  Player_Option: 2
+  Player_Option: 3
   Delete_Yuka_Data: 1
   Delete_Rumia_Data: 0
   Delete_Aya_Data: 1

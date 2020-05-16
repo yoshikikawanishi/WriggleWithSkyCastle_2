@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 764f53de1e5fd28479b553153a8b6575
+guid: c47cbeb3769eb4c4a990b17cffa04ba9
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WitchFairy_0
-    21300002: WitchFairy_1
-    21300004: WitchFairy_2
-    21300006: WitchFairy_3
-    21300008: WitchFairy_4
-    21300010: WitchFairy_5
-    21300012: WitchFairy_6
-    21300014: WitchFairy_7
+    21300000: WitchFairyBig_0
+    21300002: WitchFairyBig_1
+    21300004: WitchFairyBig_2
+    21300006: WitchFairyBig_3
+    21300008: WitchFairyBig_4
+    21300010: WitchFairyBig_5
+    21300012: WitchFairyBig_6
+    21300014: WitchFairyBig_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -125,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WitchFairy_0
+      name: WitchFairyBig_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 30
-        width: 35
-        height: 30
+        y: 90
+        width: 105
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,59 +139,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a8a911ed5d87c49b91d94286f50b84
+      spriteID: 1b56ae9f5bd5ba241b3584dd6aa1568e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 30
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 824332bd400d2a74cafacbe205d1affe
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_2
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 30
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22fdebcc5ce009644a1879d7ecb6ec65
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_3
+      name: WitchFairyBig_1
       rect:
         serializedVersion: 2
         x: 105
-        y: 30
-        width: 35
-        height: 30
+        y: 90
+        width: 105
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,19 +159,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb1f0d987e9895042939cd611d1eff69
+      spriteID: b0fc32af3aad296438558cee74252d07
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_4
+      name: WitchFairyBig_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 90
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209a045d5dfe26a49a5f3733c7388aac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WitchFairyBig_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 90
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21053e71da5c044aa46f5a662efd36e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WitchFairyBig_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 30
+        width: 105
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,59 +219,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d8cc02c239d73d4da27bc01b1ef389d
+      spriteID: 7b7243a48b1cec741a8e31b772529055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WitchFairy_5
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 0
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c15fbc2b576fa3c4bb75bb4ac9f843ab
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_6
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 495dd0dceaa99624fa47dc419658585b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WitchFairy_7
+      name: WitchFairyBig_5
       rect:
         serializedVersion: 2
         x: 105
         y: 0
-        width: 35
-        height: 30
+        width: 105
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -279,7 +239,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1ae966cdf22d8e479aacc57bb271664
+      spriteID: 8b17dd1b38b66cb45adfca0b31068398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WitchFairyBig_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78147bb3a5dba094c92b6f116949dfeb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WitchFairyBig_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 0
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c78b96a8b31e548b8e17a2332c9a3e
       vertices: []
       indices: 
       edges: []
@@ -287,7 +287,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c8ecef15d86102a4b8ce55b7506e3b99
+    spriteID: b2d972a1ca46c374f906951c164eb0dc
     vertices: []
     indices: 
     edges: []

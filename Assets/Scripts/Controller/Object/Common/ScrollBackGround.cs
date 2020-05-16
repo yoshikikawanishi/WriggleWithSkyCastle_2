@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class ScrollBackGround : MonoBehaviour {
 
-    [SerializeField] private Renderer[] back_Grounds;
+    [SerializeField] private Renderer center;
+    [SerializeField] private Renderer left;
+    [SerializeField] private Renderer right;    
 
     [SerializeField][Range(0.1f, 1)] private float speed_Rate;
-    [SerializeField] private float back_Ground_Width;    
+    [SerializeField] private float back_Ground_Width;
 
+    private Renderer[] back_Grounds = new Renderer[3];
     private GameObject main_Camera;
     private float camera_Position;
 
     private int visible_Back_Ground_Index = 0;
 
+    //速度差の値保存用
+    private float SPEED_RATE;
+
 
     void Awake() {
         //取得
         main_Camera = GameObject.FindWithTag("MainCamera");
-        camera_Position = main_Camera.transform.position.x;        
+        camera_Position = main_Camera.transform.position.x;
+
+        //代入
+        back_Grounds[0] = left;
+        back_Grounds[1] = center;
+        back_Grounds[2] = right;
+        SPEED_RATE = speed_Rate;
     }    
 
 
@@ -50,7 +62,12 @@ public class ScrollBackGround : MonoBehaviour {
     //背景スクロール
     private void Scroll_Back_Ground() {
         float distance = Camera_Move_Distance();
-        for(int i = 0; i < back_Grounds.Length; i++) {
+        if (distance > 16f)
+            speed_Rate = 1;
+        else
+            speed_Rate = SPEED_RATE;
+
+        for (int i = 0; i < back_Grounds.Length; i++) {            
             back_Grounds[i].transform.position += new Vector3(distance * speed_Rate, 0, 0);
         }
     }
@@ -71,7 +88,7 @@ public class ScrollBackGround : MonoBehaviour {
 
             back_Grounds[visible_Back_Ground_Index].transform.position = new Vector3(loop_Pos, 0, 0);
 
-            visible_Back_Ground_Index = visible_Back_Ground_Index % back_Grounds.Length;            
+            visible_Back_Ground_Index = next;            
         }
     }
 }

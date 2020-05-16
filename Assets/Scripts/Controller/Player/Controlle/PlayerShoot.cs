@@ -91,6 +91,7 @@ public class PlayerShoot : MonoBehaviour {
                 GameObject bullet = s.bullet_Pool.GetObject();
                 bullet.transform.position = transform.position;
                 bullet.transform.position += new Vector3(0, (-s.width * s.num) / 2) + new Vector3(0, s.width * j);
+                bullet.transform.position += new Vector3(transform.localScale.x * 32f, 0);
                 bullet.transform.localScale = transform.localScale;
                 bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(s.bullet_Speed * transform.localScale.x, 0);
                 if (s.bullet_Pool == ObjectPoolManager.Instance.Get_Pool(spider_Bullet))

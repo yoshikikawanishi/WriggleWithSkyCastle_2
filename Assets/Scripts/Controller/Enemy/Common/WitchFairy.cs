@@ -106,23 +106,29 @@ public class WitchFairy : FairyEnemy {
         ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
         yield return new WaitForSeconds(3.5f);
 
-        _movie.Display_Message(2, 2);
-        int player_Life = PlayerManager.Instance.Get_Life();
+        while (true) {
+            _movie.Display_Message(2, 2);
+            yield return new WaitForSeconds(1.5f);
 
-        float center_Angle = 0;
-        for(int i = 0; i < 2; i++) {
-            Turn_To_Player();
-            center_Angle = Random.Range(0, shoot_Noise);
-            shoots[0].center_Angle_Deg += center_Angle;
-            shoots[1].center_Angle_Deg += center_Angle;
-            shoots[0].Shoot();
-            shoots[1].Shoot();            
-            yield return new WaitForSeconds(2.9f);
-        }
+            int player_Life = PlayerManager.Instance.Get_Life();
+       
+            float center_Angle = 0;
+            for (int i = 0; i < 2; i++) {
+                Turn_To_Player();
+                center_Angle = Random.Range(0, shoot_Noise);
+                shoots[0].center_Angle_Deg += center_Angle;
+                shoots[1].center_Angle_Deg += center_Angle;
+                shoots[0].Shoot();
+                shoots[1].Shoot();
+                yield return new WaitForSeconds(2.5f);
+            }
 
-        if(PlayerManager.Instance.Get_Life() == player_Life)
-            _movie.Display_Message(3, 3);
-        StartCoroutine("Attack_Cor");
+            if (PlayerManager.Instance.Get_Life() == player_Life) {
+                _movie.Display_Message(3, 3);
+                yield return new WaitForSeconds(1.0f);
+            }
+            yield return new WaitForSeconds(2.0f);
+        }        
     }
 
 
