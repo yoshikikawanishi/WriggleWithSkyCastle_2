@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ScrollBackGround : MonoBehaviour {
 
-    [SerializeField] private Renderer center;
     [SerializeField] private Renderer left;
+    [SerializeField] private Renderer center;    
     [SerializeField] private Renderer right;    
 
     [SerializeField][Range(0.1f, 1)] private float speed_Rate;
@@ -14,8 +14,8 @@ public class ScrollBackGround : MonoBehaviour {
     private Renderer[] back_Grounds = new Renderer[3];
     private GameObject main_Camera;
     private float camera_Position;
-
-    private int visible_Back_Ground_Index = 0;
+    private Renderer center_Back_Ground;
+    private DEQueue<Renderer> dequeue = new DEQueue<Renderer>();
 
     //速度差の値保存用
     private float SPEED_RATE;
@@ -31,6 +31,11 @@ public class ScrollBackGround : MonoBehaviour {
         back_Grounds[1] = center;
         back_Grounds[2] = right;
         SPEED_RATE = speed_Rate;
+
+        center_Back_Ground = center;
+        for(int i = 0; i < 3; i++) {
+            dequeue.Add_Last(back_Grounds[i]);
+        }        
     }    
 
 
@@ -75,20 +80,23 @@ public class ScrollBackGround : MonoBehaviour {
 
     //背景ﾙｰﾌﾟ用
     private void Loop_Back_Ground() {
-        if (!back_Grounds[visible_Back_Ground_Index].isVisible) {            
-            int next = (visible_Back_Ground_Index + 1) % back_Grounds.Length;
-            float loop_Pos;
-
-            if (back_Grounds[visible_Back_Ground_Index].transform.position.x < back_Grounds[next].transform.position.x) {
-                loop_Pos = back_Grounds[next].transform.position.x + back_Ground_Width / 2;
-            }
-            else {
-                loop_Pos = back_Grounds[next].transform.position.x - back_Ground_Width / 2;
-            }
-
-            back_Grounds[visible_Back_Ground_Index].transform.position = new Vector3(loop_Pos, 0, 0);
-
-            visible_Back_Ground_Index = next;            
+        if (center.isVisible) {
+            return;
+        }
+        //中心背景が見えなくなったとき
+        //左に流れた時 : 中心を右のに変更、左端のを中心の右側に配置、順番の並び替え
+        if(center.transform.position.x < main_Camera.transform.position.x) {
+            center = dequeue.Get_Last();
+            dequeue.Get_First().transform.position = center.transform.position
+                                                   + new Vector3(back_Ground_Width / 2, 0);
+            dequeue.Add_Last(dequeue.Remove_First());
+        }
+        //右に流れた時 : 中心を左のに変更、右端のを中心の左側に配置、順番の並び替え
+        else {
+            center = dequeue.Get_First();
+            dequeue.Get_Last().transform.position = center.transform.position
+                                                  + new Vector3(-back_Ground_Width / 2, 0);
+            dequeue.Add_First(dequeue.Remove_Last());
         }
     }
 }
