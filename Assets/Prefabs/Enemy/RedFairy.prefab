@@ -111,12 +111,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Pooled: 0
-  is_Blowed: 1
+  is_One_Life: 0
+  shake_Camera_In_Vanish: 1
   life: 2
   power_Value: 1
   score_Value: 1
   drop_Life_Probability: 0.2
-  vanish_Action: 0
+  drop_Option_Box_Probability: 0
 --- !u!114 &114832934055501080
 MonoBehaviour:
   m_ObjectHideFlags: 1

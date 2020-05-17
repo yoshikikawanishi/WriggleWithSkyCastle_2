@@ -111,17 +111,19 @@ public class PlayerController : MonoBehaviour {
                 _squat.Release_Squat();
         }
         //移動
-        if (Input.GetAxisRaw("Horizontal") > 0) {
-            _transition.Transition(1);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0) {
-            _transition.Transition(-1);
-        }
-        else {
-            _transition.Slow_Down();
-        }
         if (is_Squat) {
             _transition.Slow_Down();
+        }
+        else {
+            if (Input.GetAxisRaw("Horizontal") > 0) {
+                _transition.Transition(1);
+            }
+            else if (Input.GetAxisRaw("Horizontal") < 0) {
+                _transition.Transition(-1);
+            }
+            else {
+                _transition.Slow_Down();
+            }            
         }
 
         //アクション無効化
@@ -232,8 +234,8 @@ public class PlayerController : MonoBehaviour {
         if (start_Attack_Frame_Count) {
             attack_Frame_Count++;
             if (Input.GetAxisRaw("Vertical") < -0.7f) {
-                _attack.Kick();
-                is_Squat = false;
+                _squat.Release_Squat();
+                _attack.Kick();                                
             }
             else if (attack_Frame_Count > 7) {
                 _attack.Attack();

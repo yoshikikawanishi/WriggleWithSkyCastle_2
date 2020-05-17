@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private bool is_Pooled = false;
     [SerializeField] public bool is_One_Life = false;
     [Space]
+    [SerializeField] private bool shake_Camera_In_Vanish = false;
+    [Space]
     [SerializeField] private int life = 5;
     [SerializeField] private int power_Value = 0;
     [SerializeField] private int score_Value = 0;
@@ -21,6 +23,8 @@ public class Enemy : MonoBehaviour {
     private Color default_Color, damaged_Color;    
     private SpiderFootingEnemy spider_Footing_Enemy;
     private PoisonedEnemy poisoned_Enemy;
+
+    private CameraShake camera_Shake;
 
     private bool is_Exist = true;
     private int default_Life;
@@ -38,6 +42,7 @@ public class Enemy : MonoBehaviour {
         spider_Footing_Enemy = gameObject.AddComponent<SpiderFootingEnemy>();
         poisoned_Enemy = gameObject.AddComponent<PoisonedEnemy>();
         vanish_Shoot_If_Collected_Hina = Resources.Load("Effect/EnemyVanishShoot") as GameObject;
+        camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
 
@@ -94,11 +99,15 @@ public class Enemy : MonoBehaviour {
         Play_Vanish_Effect();
         Put_Out_Item();
         StopAllCoroutines();
-        
+
+        if (camera_Shake != null && shake_Camera_In_Vanish) {
+            camera_Shake.Shake(0.25f, new Vector2(0.8f, 1f), false);            
+        }
+
         if (is_Pooled || is_One_Life) {            
             gameObject.SetActive(false);
             return;
-        }
+        }        
         Destroy(gameObject);
     }
 

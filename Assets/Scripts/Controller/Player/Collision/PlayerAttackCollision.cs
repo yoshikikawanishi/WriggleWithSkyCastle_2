@@ -7,7 +7,7 @@ public class PlayerAttackCollision : MonoBehaviour {
     private bool is_Hit_Attack = false;    
     private Vector2 offset;
     private BoxCollider2D _collider;
-    private GameObject player;
+    private GameObject player;    
 
     private readonly string HIT_EFFECT_NAME = "HitEffect";
 

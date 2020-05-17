@@ -8,14 +8,15 @@ public class PlayerAttack : MonoBehaviour {
 
     //コンポーネント
     private PlayerController _controller;
+    private PlayerBodyCollision player_Body;
     private PlayerSoundEffect player_SE;
     private Animator _anim;
     private Rigidbody2D _rigid;
     private PlayerAttackCollision attack_Collision;
     private PlayerKickCollision kick_Collision;
-    private PlayerManager player_Manager;
+    private PlayerManager player_Manager;    
 
-    private GameObject spider_Footing;
+    private GameObject spider_Footing;    
 
     private bool can_Attack = true;    
 
@@ -23,13 +24,14 @@ public class PlayerAttack : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         //取得
-        _controller = GetComponent<PlayerController>();
+        _controller = GetComponent<PlayerController>();        
         player_SE = GetComponentInChildren<PlayerSoundEffect>();
+        player_Body = GetComponentInChildren<PlayerBodyCollision>();
         _anim = GetComponent<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
         attack_Collision = GetComponentInChildren<PlayerAttackCollision>();
         kick_Collision = GetComponentInChildren<PlayerKickCollision>();
-        player_Manager = PlayerManager.Instance;
+        player_Manager = PlayerManager.Instance;        
         spider_Footing = Resources.Load("Object/SpiderFooting") as GameObject;
         //オブジェクトプール
         ObjectPoolManager.Instance.Create_New_Pool(mantis_Attack_Bullet, 5);
@@ -141,7 +143,7 @@ public class PlayerAttack : MonoBehaviour {
     //敵と衝突時の処理
     private IEnumerator Do_Hit_Attack_Process() {
         if (knock_Back) {
-            float force = _controller.is_Landing ? 170f : 30f;                  //ノックバック
+            float force = _controller.is_Landing ? 170f : 30f;              //ノックバック
             _rigid.velocity = new Vector2(force * -transform.localScale.x, 10f);
         }        
         player_SE.Play_Hit_Attack_Sound();                                  //効果音                                                               
@@ -149,7 +151,6 @@ public class PlayerAttack : MonoBehaviour {
         Time.timeScale = 0.4f;
         yield return new WaitForSeconds(0.06f);
         Time.timeScale = tmp;
-
     }
 
     #endregion 
@@ -194,6 +195,7 @@ public class PlayerAttack : MonoBehaviour {
         //キック開始
         _rigid.velocity = new Vector2(transform.localScale.x * Kick_Velocity(), -Kick_Velocity());
         kick_Collision.Make_Collider_Appear();
+        player_Body.Change_Collider_Size(new Vector2(10, 12), new Vector2(0, -6));
         player_SE.Play_Kick_Sound();
 
         //キック中
@@ -212,6 +214,7 @@ public class PlayerAttack : MonoBehaviour {
 
         _controller.Set_Is_Playable(true);
         kick_Collision.Make_Collider_Disappear();
+        player_Body.Back_Default_Collider();
 
         float time = is_Sliding ? 0 : 0.05f;
         yield return new WaitForSeconds(time);
@@ -263,7 +266,7 @@ public class PlayerAttack : MonoBehaviour {
     //キックのヒット時の処理
     private void Do_Hit_Kick_Process() {
         _rigid.velocity = new Vector2(30f * -transform.localScale.x, 160f); //ノックバック        
-        player_SE.Play_Hit_Attack_Sound();                                  //効果音
+        player_SE.Play_Hit_Attack_Sound();                                  //効果音        
     }
 
 
