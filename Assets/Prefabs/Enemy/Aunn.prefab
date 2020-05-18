@@ -1431,6 +1431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 80
   power_Value: 0
   score_Value: 0
@@ -1447,13 +1448,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 4
+  kind: 2
   comment: 
   play_On_Awake: 0
   bullet: {fileID: 1563537286411790, guid: 52850021aa6628047ba049590b3f1bf6, type: 2}
   parent: {fileID: 0}
-  max_Speed: 80
-  radius: 32
+  max_Speed: 100
+  radius: 16
   speed_Noise: 5
   angle_Noise: 0
   lifeTime: 10
@@ -1483,7 +1484,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1.9966232
-      value: 0.001
+      value: 0.07720728
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1492,12 +1493,102 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 2.2617097
-      value: 0.001
+      value: 0.07720728
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2.3778179
+      value: 1.0001736
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.6354778
+      value: 1.0019102
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.8747678
+      value: 0.081438355
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.141657
+      value: 0.085449286
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.2429543
+      value: 1.001007
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6.1740093
+      value: 0.9968642
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6.5189323
+      value: 0.07682746
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6.8606668
+      value: 0.07682746
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 6.900098
+      value: 0.9961338
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 7.438987
+      value: 0.9961338
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 1
@@ -1556,6 +1647,33 @@ MonoBehaviour:
       weightedMode: 0
       inWeight: 0
       outWeight: 0
+    - serializedVersion: 3
+      time: 2.2692869
+      value: -0.000014228746
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.001894
+      value: 0.00026162874
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.388364
+      value: 0.10037166
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 1
     m_RotationOrder: 4
@@ -1565,7 +1683,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 8
+  num: 20
   inter_Angle_Deg: 20
   center_Angle_Deg: 0
   arc_Deg: 360
@@ -1575,9 +1693,9 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 15
   angle_Diff: 0
-  looping: 0
-  loop_Count: 1
-  span: 1
+  looping: 1
+  loop_Count: 3
+  span: 2
   center_Angle_Diff: 0
 --- !u!114 &114305568855030100
 MonoBehaviour:

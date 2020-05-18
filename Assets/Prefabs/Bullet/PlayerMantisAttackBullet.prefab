@@ -93,6 +93,7 @@ MonoBehaviour:
   - GroundTag
   - DamagedGroundTag
   - EnemyBulletTag
+  - EnemyTag
   is_Delete_Invisible: 1
 --- !u!212 &212438308724048034
 SpriteRenderer:

@@ -106,7 +106,7 @@ MonoBehaviour:
   deleted_Obj_Tag:
   - PlayerBodyTag
   - BombTag
-  is_Delete_Invisible: 1
+  is_Delete_Invisible: 0
 --- !u!114 &114570917415123534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 814e3c7e063b6d04f9ec74f97f42612b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burst_Time: 3.8
+  burst_Time: 3
 --- !u!114 &114594895089695372
 MonoBehaviour:
   m_ObjectHideFlags: 1
