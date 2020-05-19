@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerJump _jump;
     private PlayerAttack _attack;
     private PlayerChargeAttack _charge_Attack;
+    private PlayerKick _kick;    
     private PlayerSquat _squat;
     private PlayerShoot _shoot;
     private PlayerGettingOnBeetle _getting_On_Beetle;
@@ -29,25 +30,10 @@ public class PlayerController : MonoBehaviour {
     public bool is_Squat = false;
     public bool is_Ride_Beetle = false;
     public bool can_Action = true;  //移動以外の無効化
-
-    //ジャンプボタンが押された時接地していなくても、数フレーム後に着地すればジャンプする
-    private bool start_Jump_Frame_Count = false;
-    private int jump_Frame_Count = 0;
-    //地面から離れた後も数フレーム間はジャンプを受け付ける
-    private int leave_Land_Frame_Count = 0;
-
-    //攻撃の入力識別用
-    public bool start_Attack_Frame_Count = false;
-    public bool start_Charge_Attack_Frame_Count = false;    
-    private int attack_Frame_Count = 0;
-    private int charge_Attack_Frame_Count = 0;
+    public bool can_Attack = true;      
 
     //現在のアニメーション
-    private string now_Animator_Parameter = "IdleBool";
-
-    //ショットについて
-    public  float SHOOT_INTERVAL = 0.25f;
-    private float shoot_Time = 0.2f;
+    private string now_Animator_Parameter = "IdleBool";   
 
     //初期値
     private float default_Gravity;
@@ -66,6 +52,7 @@ public class PlayerController : MonoBehaviour {
         _jump = GetComponent<PlayerJump>();
         _attack = GetComponent<PlayerAttack>();
         _charge_Attack = GetComponent<PlayerChargeAttack>();
+        _kick = GetComponent<PlayerKick>();        
         _squat = GetComponent<PlayerSquat>();
         _shoot = GetComponent<PlayerShoot>();
         _getting_On_Beetle = GetComponent<PlayerGettingOnBeetle>();
@@ -109,7 +96,7 @@ public class PlayerController : MonoBehaviour {
         else {
             if(is_Squat)
                 _squat.Release_Squat();
-        }
+        }        
         //移動
         if (is_Squat) {
             _transition.Slow_Down();
@@ -131,51 +118,16 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
-        //ジャンプ
-        if (input.GetKeyDown(Key.Jump)) {
-            //地面にいるときはそのままジャンプ
-            if (is_Landing) {
-                _jump.Jump();
-            }
-            //地面から離れている時
-            else {
-                //数フレーム前に地面にいた時はジャンプする
-                if (leave_Land_Frame_Count < 3) {
-                    _jump.Jump();
-                    leave_Land_Frame_Count = 3;
-                }
-                //ボタン押下後数フレーム間着地しないか監視する
-                else {                    
-                    start_Jump_Frame_Count = true;
-                    jump_Frame_Count = 0;
-                }
-            }
-        }
-        //ボタン押下後数フレーム以内に着地したときジャンプする
-        if (start_Jump_Frame_Count) {
-            jump_Frame_Count++;
-            if(is_Landing && jump_Frame_Count < 10) {
-                _jump.Jump();
-                start_Jump_Frame_Count = false;
-                jump_Frame_Count = 0;
-            }
-        }
-        //地面から離れた後のフレームカウントする
-        if (is_Landing)
-            leave_Land_Frame_Count = 0;
-        else
-            leave_Land_Frame_Count++;       
-        //減速
-        if (input.GetKeyUp(Key.Jump)) {
-            _jump.Slow_Down();
-        }
-        //近接攻撃
+        //ジャンプ操作
+        Jump();       
+        //近接攻撃、キックの操作
         Attack();
         //カブトムシに乗る
         if (input.GetKeyDown(Key.Fly) && BeetlePowerManager.Instance.Get_Beetle_Power() > 0) {
             _getting_On_Beetle.Get_On_Beetle();
             is_Played_Alert = false;    //警告音を鳴らしたかどうかをリセット
         }
+
         //落下中重力下げる
         if(_rigid.velocity.y < -1f) {
             if(_rigid.gravityScale > default_Gravity - 5f)
@@ -224,8 +176,65 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-    //近接攻撃
-    public void Attack() {
+    #region JUMP
+    //ジャンプボタンが押された時接地していなくても、数フレーム後に着地すればジャンプする
+    private bool start_Jump_Frame_Count = false;
+    private int jump_Frame_Count = 0;
+    //地面から離れた後も数フレーム間はジャンプを受け付ける
+    private int leave_Land_Frame_Count = 0;
+
+    private void Jump() {        
+        if (input.GetKeyDown(Key.Jump)) {
+            //地面にいるときはそのままジャンプ
+            if (is_Landing) {
+                _jump.Jump();
+            }
+            //地面から離れている時
+            else {
+                //数フレーム前に地面にいた時はジャンプする
+                if (leave_Land_Frame_Count < 3) {
+                    _jump.Jump();
+                    leave_Land_Frame_Count = 3;
+                }
+                //ボタン押下後数フレーム間着地しないか監視する
+                else {
+                    start_Jump_Frame_Count = true;
+                    jump_Frame_Count = 0;
+                }
+            }
+        }
+        //ボタン押下後数フレーム以内に着地したときジャンプする
+        if (start_Jump_Frame_Count) {
+            jump_Frame_Count++;
+            if (is_Landing && jump_Frame_Count < 10) {
+                _jump.Jump();
+                start_Jump_Frame_Count = false;
+                jump_Frame_Count = 0;
+            }
+        }
+        //地面から離れた後のフレームカウントする
+        if (is_Landing)
+            leave_Land_Frame_Count = 0;
+        else
+            leave_Land_Frame_Count++;
+        //減速
+        if (input.GetKeyUp(Key.Jump)) {
+            _jump.Slow_Down();
+        }
+    }
+    #endregion
+
+
+    #region ATTACK
+    //攻撃の入力識別用
+    public bool start_Attack_Frame_Count = false;
+    private int attack_Frame_Count = 0;
+    //チャージアタックチャージ
+    private bool start_Charge_Attack_Charge = false;
+    //チャージキックチャージ
+    public bool start_Charge_Kick_Charge = false;
+
+    private void Attack() {
         //入力を受け取ったら、少しだけ待つ
         if (input.GetKeyDown(Key.Attack)) {
             start_Attack_Frame_Count = true;
@@ -235,52 +244,44 @@ public class PlayerController : MonoBehaviour {
             attack_Frame_Count++;
             if (Input.GetAxisRaw("Vertical") < -0.7f) {
                 _squat.Release_Squat();
-                _attack.Kick();                                
+                _kick.Kick();                                
             }
             else if (attack_Frame_Count > 7) {
                 _attack.Attack();
-                start_Charge_Attack_Frame_Count = true; //チャージアタック
+                start_Charge_Attack_Charge = true;
             }
             else return;
             attack_Frame_Count = 0;
             start_Attack_Frame_Count = false;
         }
-       
-        //チャージアタック溜めるかどうか
-        if (start_Charge_Attack_Frame_Count) {
-            //収集アイテムを集めていないときは不可
-            if (!CollectionManager.Instance.Is_Collected("Raiko")) {
-                start_Charge_Attack_Frame_Count = false;
-                return;
-            }
-            charge_Attack_Frame_Count++;
-            //通常攻撃後10フレーム間攻撃ボタン押していたらチャージ開始
-            if(charge_Attack_Frame_Count > 10) {                      
 
-                if (input.GetKey(Key.Attack)) {
-                    _charge_Attack.Charge();
-                }
-                if (!input.GetKey(Key.Attack) || input.GetKeyDown(Key.Fly)) {
-                    _charge_Attack.Charge_Attack();
-                    Release_Charge();
-                }
+        //チャージアタック
+        Debug.Log("TODO : Charge Attack need collection item");
+        if (start_Charge_Attack_Charge) {            
+            _charge_Attack.Charge();
+            if (!input.GetKey(Key.Attack)) {
+                start_Charge_Attack_Charge = false;
+                _charge_Attack.Charge_Attack();
             }
-            //10フレーム押す前に攻撃ボタンを離したときチャージ開始しない
-            else if (!input.GetKey(Key.Attack) || input.GetKeyDown(Key.Fly)) {
-                Release_Charge();
-            }            
         }
+
+        //チャージキックの溜め
+        Debug.Log("TODO : Charge Kick need collection item");
+        if (is_Squat) {
+            _kick.Charge();
+        }
+        else {
+            _kick.Quit_Charge();
+        }
+        
     }
-
-    //チャージ解除
-    private void Release_Charge() {
-        charge_Attack_Frame_Count = 0;
-        start_Charge_Attack_Frame_Count = false;        
-    }
+    #endregion
 
 
-    //ショット
-    private bool is_Buffered_Input = false;
+    #region SHOOT
+    private bool is_Buffered_Input = false;    
+    public float SHOOT_INTERVAL = 0.25f;
+    private float shoot_Time = 0.2f;
 
     public void Shoot() {
         //通常ショット
@@ -306,6 +307,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+    #endregion
 
 
     //アニメーション変更

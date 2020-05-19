@@ -53,9 +53,9 @@ public class PlayerDamaged : MonoBehaviour {
         SpriteRenderer _sprite = GetComponent<SpriteRenderer>();
         float span = invincible_Time_Length / 30;
         for (int i = 0; i < 15; i++) {
-            _sprite.color = new Color(1, 1, 1, 0.3f);
+            _sprite.color = new Color(0.5f, 0.5f, 0.5f, 0.3f);
             yield return new WaitForSeconds(span * 0.8f);
-            _sprite.color = new Color(1, 1, 1, 1);
+            _sprite.color = new Color(0.5f, 0.5f, 0.5f, 1);
             yield return new WaitForSeconds(span * 1.2f);
         }
     }

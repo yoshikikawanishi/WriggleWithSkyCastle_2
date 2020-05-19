@@ -73,18 +73,34 @@ public class PlayerChargeAttack : MonoBehaviour {
     }
 
 
+    //チャージ完了
+    public bool Is_Complete_Charge() {
+        if(charge_Phase == 3) {
+            return true;
+        }
+        return false;
+    }
+
+
     //チャージ攻撃,ChargePhase == 3で強攻撃、それ以下で通常攻撃
     public void Charge_Attack() {
         if(charge_Phase == 3) {
             StartCoroutine("Charge_Attack_Cor");
         }
-        else {
+        else if(charge_Phase > 1) {
             _attack.Attack();
         }
+        Quit_Charge();
+    }
+
+
+    //チャージ終了
+    public void Quit_Charge() {
         charge_Time = 0;
-        player_Effect.Start_Shoot_Charge(0);
+        player_Effect.Start_Shoot_Charge(-1);
         player_SE.Stop_Charge_Sound();
     }
+
 
     //強攻撃
     private IEnumerator Charge_Attack_Cor() {

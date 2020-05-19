@@ -11,6 +11,7 @@ public class PlayerEffect : MonoBehaviour {
     [SerializeField] private ParticleSystem ride_Beetle;
     [SerializeField] private ParticleSystem dark_Powder;
     [SerializeField] private GameObject jump_Effect;
+    [SerializeField] private ParticleSystem charge_Kick_Charge_Effect;
 
     private ParticleSystem[] shoot_Charge_Particle = new ParticleSystem[3];
 
@@ -104,4 +105,40 @@ public class PlayerEffect : MonoBehaviour {
         Destroy(effect, 1.0f);
     }
 
+
+    /// <summary>
+    /// チャージキックのチャージエフェクト
+    /// </summary>
+    public void Play_Charge_Kick_Charge_Effect() {
+        charge_Kick_Charge_Effect.gameObject.SetActive(true);
+        charge_Kick_Charge_Effect.Play();
+    }
+
+    public void Stop_Charge_Kick_Charge_Effect() {
+        charge_Kick_Charge_Effect.gameObject.SetActive(false);        
+    }
+
+
+    /// <summary>
+    /// チャージキックのフルチャージ時の点滅開始
+    /// </summary>
+    public void Start_Full_Charge_Blink() {
+        StartCoroutine("Full_Charge_Blink_Cor");
+    }
+
+
+    public void Quit_Full_Charge_Blink() {
+        StopCoroutine("Full_Charge_Blink_Cor");
+    }
+
+
+    private IEnumerator Full_Charge_Blink_Cor() {
+        SpriteRenderer _sprite = transform.parent.GetComponent<SpriteRenderer>();
+        while (true) {
+            _sprite.color = new Color(0.7f, 0.7f, 0.7f, _sprite.color.a);
+            yield return new WaitForSeconds(0.2f);
+            _sprite.color = new Color(0.5f, 0.5f, 0.5f, _sprite.color.a);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }    
 }

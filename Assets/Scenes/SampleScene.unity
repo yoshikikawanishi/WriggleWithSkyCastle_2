@@ -440,6 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 0
   is_One_Life: 1
+  shake_Camera_In_Vanish: 0
   life: 5
   power_Value: 1
   score_Value: 1
@@ -3110,6 +3111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 0
   is_One_Life: 1
+  shake_Camera_In_Vanish: 0
   life: 1000
   power_Value: 1
   score_Value: 1
@@ -3406,6 +3408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 0
   is_One_Life: 1
+  shake_Camera_In_Vanish: 0
   life: 5
   power_Value: 1
   score_Value: 1
