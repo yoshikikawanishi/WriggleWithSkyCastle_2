@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class PlayerKick : MonoBehaviour {
 
+    private enum Kind {
+        kick,
+        sliding,
+        charge_Kick,
+        charge_Sliding
+    }
+    private Kind kind;
+
+    private enum State {
+        idle,
+        charging,
+        full_Charge,
+    }
+    private State state;
 
     //コンポーネント
     private PlayerController _controller;
+    private PlayerShoot _shoot;
     private PlayerBodyCollision player_Body;
     private PlayerEffect player_Effect;
     private PlayerSoundEffect player_SE;
@@ -14,18 +29,18 @@ public class PlayerKick : MonoBehaviour {
     private Rigidbody2D _rigid;    
     private PlayerKickCollision kick_Collision;
     private PlayerManager player_Manager;
-
-    //キック用フィールド変数
+    
     private bool end_Kick = false;
     private bool accept_Input = true;
-    private bool is_Charge_Kick_Charging = false;
-    private float kick_Charge_Time = 0;
+    private float charge_Time = 0;
+    private float full_Charge_Span = 1.0f;
 
 
     // Use this for initialization
     void Awake() {
         //取得
         _controller = GetComponent<PlayerController>();
+        _shoot = GetComponent<PlayerShoot>();
         player_Effect = GetComponentInChildren<PlayerEffect>();
         player_SE = GetComponentInChildren<PlayerSoundEffect>();
         player_Body = GetComponentInChildren<PlayerBodyCollision>();
@@ -38,62 +53,110 @@ public class PlayerKick : MonoBehaviour {
 
     //チャージキックのチャージ, Updateで呼ぶこと
     public void Charge() {
-        if (!is_Charge_Kick_Charging) {
-            is_Charge_Kick_Charging = true;
-            player_Effect.Play_Charge_Kick_Charge_Effect();
-        }        
+        if (Is_Complete_Charge())
+            return;
+        //チャージ開始
+        if (state == State.idle) {
+            charge_Time += Time.deltaTime;
+            if (charge_Time > 0.5f) {
+                state = State.charging;
+                player_Effect.Play_Charge_Kick_Charge_Effect();
+            }
+        }
+        //チャージ
+        if (charge_Time < full_Charge_Span) {
+            charge_Time += Time.deltaTime;            
+        }
+        //チャージ完了
+        else if (state != State.full_Charge) {            
+            player_Effect.Start_Full_Charge_Blink();
+            player_SE.Finish_Charge_Kick_Charge();
+            state = State.full_Charge;            
+        }
     }
     
-    public void Quit_Charge() {
-        if (is_Charge_Kick_Charging) {
-            is_Charge_Kick_Charging = false;
-            player_Effect.Stop_Charge_Kick_Charge_Effect();
+    
+    public void Quit_Charge(bool release_Full_Charge) {
+        if(state == State.idle) {
+            return;
         }
+        else if (state == State.charging) {         
+            player_Effect.Stop_Charge_Kick_Charge_Effect();
+            charge_Time = 0;
+            state = State.idle;
+        }
+        else if(state == State.full_Charge) {
+            if (release_Full_Charge) {
+                player_Effect.Quit_Full_Charge_Blink();
+                charge_Time = 0;
+                state = State.idle;
+            }
+        }                
+    }
+
+
+    public bool Is_Complete_Charge() {
+        if(state == State.full_Charge) {
+            return true;
+        }
+        return false;
     }
 
 
     //キック
-    public void Kick() {
+    public void Kick() {        
         if (accept_Input) {
             kick_Collision.is_Hit_Kick = false;
-            if (_controller.is_Landing)
-                StartCoroutine("Kick_Cor", true);
-            else
-                StartCoroutine("Kick_Cor", false);
+            if (Is_Complete_Charge()) {
+                if (_controller.is_Landing)
+                    StartCoroutine("Kick_Cor", Kind.charge_Sliding);
+                else
+                    StartCoroutine("Kick_Cor", Kind.charge_Kick);
+            }
+            else {
+                if (_controller.is_Landing)
+                    StartCoroutine("Kick_Cor", Kind.sliding);
+                else
+                    StartCoroutine("Kick_Cor", Kind.kick);
+            }
         }
     }
 
 
-    private IEnumerator Kick_Cor(bool is_Sliding) {
-
+    private IEnumerator Kick_Cor(Kind kind) {        
         accept_Input = false;
 
-        //入力受付後15フレーム以内にキック可能になればキック
+        //入力受付後30フレーム以内にキック可能になればキック
         float loop_Count = 0;
         while (!_controller.can_Attack) {
             yield return null;
             loop_Count++;
-            if (loop_Count > 15) {
+            if (loop_Count > 30) {
                 accept_Input = true;
                 yield break;
             }
         }
+
+        //キック開始        
         _controller.can_Attack = false;
         _controller.Set_Is_Playable(false);
         _controller.Change_Animation("KickBool");
-
-        //キック開始
-        _rigid.velocity = new Vector2(transform.localScale.x * Kick_Velocity(), -Kick_Velocity());
-        kick_Collision.Make_Collider_Appear();
+        
         player_Body.Change_Collider_Size(new Vector2(10, 12), new Vector2(0, -6));
         player_SE.Play_Kick_Sound();
 
-        //キック中
-        if (is_Sliding)
-            StartCoroutine("Sliding_Cor");
-        else
+        if (kind == Kind.kick || kind == Kind.sliding) {
+            kick_Collision.Make_Collider_Appear(false);
             StartCoroutine("Kicking_Cor");
-
+        }
+        else {
+            kick_Collision.Make_Collider_Appear(true);
+            player_SE.Play_Charge_Shoot_Sound();
+            Quit_Charge(true);
+            player_Body.Become_Invincible();
+            StartCoroutine("Charge_Kicking_Cor");
+        }       
+       
         yield return new WaitUntil(End_Kick);
 
         //キック終了
@@ -106,8 +169,9 @@ public class PlayerKick : MonoBehaviour {
         kick_Collision.Make_Collider_Disappear();
         player_Body.Back_Default_Collider();
 
-        float time = is_Sliding ? 0 : 0.05f;
-        yield return new WaitForSeconds(time);
+        if (kind == Kind.charge_Kick || kind == Kind.charge_Sliding) {
+            player_Body.Release_Invincible();
+        }
 
         _controller.can_Attack = true;
         accept_Input = true;
@@ -116,15 +180,18 @@ public class PlayerKick : MonoBehaviour {
 
     //キック発生中の処理
     private IEnumerator Kicking_Cor() {
+        float speed = Kick_Velocity();
+        _rigid.velocity = new Vector2(speed * transform.localScale.x, -speed);
+        
         for (float t = 0; t < 0.35f; t += Time.deltaTime) {
 
-            _rigid.velocity = new Vector2(transform.localScale.x * Kick_Velocity(), _rigid.velocity.y);
+            _rigid.velocity = new Vector2(speed * transform.localScale.x, _rigid.velocity.y);
             _controller.Change_Animation("KickBool");
 
             //敵と衝突時の処理
             if (kick_Collision.Hit_Trigger()) {
                 Do_Hit_Kick_Process();
-                accept_Input = true;                    //敵に当たったとき次のキック入力を受け付ける
+                accept_Input = true;
                 yield return new WaitForSeconds(0.05f);
                 break;
             }
@@ -133,30 +200,35 @@ public class PlayerKick : MonoBehaviour {
         end_Kick = true;
     }
 
-    //スライディング発生中の処理
-    private IEnumerator Sliding_Cor() {
-        for (float t = 0; t < 0.33f; t += Time.deltaTime) {
+   
+    //チャージキック
+    private IEnumerator Charge_Kicking_Cor() {                       
+        float speed = Charge_Kick_Velocity();
+        _rigid.velocity = new Vector2(speed * transform.localScale.x, -speed);
 
-            _rigid.velocity = new Vector2(transform.localScale.x * Kick_Velocity(), _rigid.velocity.y);
+        for (float t = 0; t < 0.5f; t += Time.deltaTime) {
+
+            _rigid.velocity = new Vector2(speed * transform.localScale.x, _rigid.velocity.y);
             _controller.Change_Animation("KickBool");
 
             //敵と衝突時の処理
             if (kick_Collision.Hit_Trigger()) {
-                Do_Hit_Kick_Process();
-                yield return new WaitForSeconds(0.015f);
-                break;
+                Do_Hit_Charge_Kick_Process();
             }
-
             yield return null;
         }
         end_Kick = true;
     }
-
+   
 
     //キックのヒット時の処理
     private void Do_Hit_Kick_Process() {
         _rigid.velocity = new Vector2(30f * -transform.localScale.x, 160f); //ノックバック        
         player_SE.Play_Hit_Attack_Sound();                                  //効果音        
+    }
+
+    private void Do_Hit_Charge_Kick_Process() {
+        _shoot.Shoot_Charge_Kick_Shoot();
     }
 
 
@@ -193,5 +265,11 @@ public class PlayerKick : MonoBehaviour {
             speed *= 1.5f;
 
         return speed;
+    }
+
+
+    //チャージキックの速度
+    private float Charge_Kick_Velocity() {
+        return 400f;
     }
 }

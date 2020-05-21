@@ -129,6 +129,8 @@ public class PlayerEffect : MonoBehaviour {
 
     public void Quit_Full_Charge_Blink() {
         StopCoroutine("Full_Charge_Blink_Cor");
+        SpriteRenderer _sprite = transform.parent.GetComponent<SpriteRenderer>();
+        _sprite.color = new Color(0.5f, 0.5f, 0.5f, _sprite.color.a);
     }
 
 

@@ -44,9 +44,9 @@ public class PlayerKickCollision : MonoBehaviour {
 
 
     //当たり判定を生成する
-    public void Make_Collider_Appear() {
+    public void Make_Collider_Appear(bool is_Charge_Kick) {
         _collider.enabled = true;
-        Play_Animation();
+        Play_Animation(is_Charge_Kick);
     }
 
     //当たり判定を消す
@@ -56,7 +56,10 @@ public class PlayerKickCollision : MonoBehaviour {
     }
 
     //キックのアニメーション再生
-    private void Play_Animation() {
+    private void Play_Animation(bool is_Charge_Kick) {
+        if (is_Charge_Kick) {
+            transform.GetChild(0).GetComponent<Animator>().SetBool("ChargeKickBool", true);
+        }
         int power = PlayerManager.Instance.Get_Power();        
         if (power >= 64) {
             transform.GetChild(0).GetComponent<Animator>().SetBool("KickBool2", true);            
@@ -69,6 +72,7 @@ public class PlayerKickCollision : MonoBehaviour {
     private void Stop_Animation() {
         transform.GetChild(0).GetComponent<Animator>().SetBool("KickBool1", false);
         transform.GetChild(0).GetComponent<Animator>().SetBool("KickBool2", false);
+        transform.GetChild(0).GetComponent<Animator>().SetBool("ChargeKickBool", false);
     }
 
 

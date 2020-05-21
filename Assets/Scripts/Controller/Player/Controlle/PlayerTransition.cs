@@ -10,7 +10,9 @@ public class PlayerTransition : MonoBehaviour {
 
     //速度、加速度
     private float max_Speed = 170f;
-    private float acc = 20f;
+    private float min_Speed = 50f;
+    private float acc = 3f;
+    private float charge_Kick_Speed = 350f;
 
     
     private void Start() {
@@ -24,21 +26,41 @@ public class PlayerTransition : MonoBehaviour {
         if (Time.timeScale == 0) return;    //時間停止中        
         direction = direction > 0 ? 1 : -1;
 
-        //空中で慣性つける
-        acc = _controller.is_Landing ? 40f : 35f;
+        //地上と空中で加速度変える
+        acc = _controller.is_Landing ? 3f : 35f;
         
-        //移動、加
-        if(direction == 1) {            
-            _rigid.velocity += new Vector2(acc, 0);
+        //移動、加速
+        if(direction == 1) {
             transform.localScale = new Vector3(1, 1, 1);
-            if(_rigid.velocity.x > max_Speed) {
+            //初速
+            if (_rigid.velocity.x < min_Speed) {
+                _rigid.velocity = new Vector2(min_Speed, _rigid.velocity.y);
+            }
+            //加速
+            _rigid.velocity += new Vector2(acc, 0);     
+            //速度が乗っているときは維持する
+            if(_rigid.velocity.x > charge_Kick_Speed) {
+                _rigid.velocity = new Vector2(charge_Kick_Speed, _rigid.velocity.y);                
+            }
+            //通常移動速度
+            else if(_rigid.velocity.x > max_Speed) {
                 _rigid.velocity = new Vector2(max_Speed, _rigid.velocity.y);
             }
         }
         if(direction == -1){
-            _rigid.velocity += new Vector2(-acc, 0);
             transform.localScale = new Vector3(-1, 1, 1);
-            if(_rigid.velocity.x < -max_Speed) {
+            //初速
+            if (_rigid.velocity.x > -min_Speed) {
+                _rigid.velocity = new Vector2(-min_Speed, _rigid.velocity.y);
+            }
+            //加速
+            _rigid.velocity += new Vector2(-acc, 0);            
+            //速度が乗っているときは維持する
+            if(_rigid.velocity.x < -charge_Kick_Speed) {                
+                _rigid.velocity = new Vector2(-charge_Kick_Speed, _rigid.velocity.y);
+            }
+            //通常移動速度
+            else if(_rigid.velocity.x < -max_Speed) {
                 _rigid.velocity = new Vector2(-max_Speed, _rigid.velocity.y);
             }
         }

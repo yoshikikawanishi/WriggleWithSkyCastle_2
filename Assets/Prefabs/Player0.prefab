@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 82369156270229568}
   - component: {fileID: 82202009166376868}
   - component: {fileID: 82901100058906980}
+  - component: {fileID: 82894735917683104}
   m_Layer: 8
   m_Name: SoundEffects
   m_TagString: Untagged
@@ -537,7 +538,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363138437532354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4898502722962256}
@@ -1781,6 +1782,102 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &82894735917683104
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819637386215632}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243373875129941320, guid: 99e0dad0e338c1f43a4b809f4ca302ab,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4c98d8e081423e843b2f31787385e0ad, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!82 &82901100058906980
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2168,6 +2265,7 @@ MonoBehaviour:
   damaged_Sound: {fileID: 82369156270229568}
   hit_Attack_Sound: {fileID: 82202009166376868}
   alert_Sound: {fileID: 82901100058906980}
+  finish_Charge_Kick_Charge: {fileID: 82894735917683104}
 --- !u!114 &114301154435675764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2325,7 +2423,10 @@ MonoBehaviour:
     type: 2}
   spider_Bullet: {fileID: 1587434127945356, guid: 8a4abdd0855d8b34587b69bc17b58e2a,
     type: 2}
-  charge_Shoot_Obj: {fileID: 0}
+  charge_Shoot_Obj: {fileID: 1194738067102766, guid: e5fa98d782848274a8883f6f30815195,
+    type: 2}
+  charge_Kick_Shoot_Obj: {fileID: 1683584142448316, guid: 0dab1b47c74fa6540ac234524b4afc35,
+    type: 2}
   shoot_Interval: 0.25
 --- !u!114 &114800450731055106
 MonoBehaviour:
@@ -16240,7 +16341,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.5
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -16293,7 +16394,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -20
+      scalar: -50
       minScalar: 5
       maxCurve:
         serializedVersion: 2

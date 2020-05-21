@@ -18,6 +18,7 @@ public class PlayerShoot : MonoBehaviour {
     [SerializeField] private GameObject mantis_Bullet;
     [SerializeField] private GameObject spider_Bullet;
     [SerializeField] private GameObject charge_Shoot_Obj;
+    [SerializeField] private GameObject charge_Kick_Shoot_Obj;
 
     private float charge_Time = 0;
     private float[] charge_Span = new float[3] { 0.3f, 1.0f, 2.0f };
@@ -246,6 +247,7 @@ public class PlayerShoot : MonoBehaviour {
     }   
 
 
+
     //パワーによってチャージ時間を変える
     private void Change_Charge_Span() {
         //値が変化したときだけ判別
@@ -271,4 +273,15 @@ public class PlayerShoot : MonoBehaviour {
         }
     }
     #endregion
+
+
+    //チャージキックのショット用
+    public void Shoot_Charge_Kick_Shoot() {
+        var obj = Instantiate(charge_Kick_Shoot_Obj);
+        obj.transform.position = transform.position;
+        ShootSystem[] shoots = obj.GetComponentsInChildren<ShootSystem>();
+        for(int i = 0; i < shoots.Length; i++) {
+            shoots[i].Shoot();
+        }
+    }
 }

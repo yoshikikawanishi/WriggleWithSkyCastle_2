@@ -80,9 +80,9 @@ public class PlayerController : MonoBehaviour {
 
     private void LateUpdate() {
         //速度の制限
-        if(Mathf.Abs(_rigid.velocity.x) > 210f) {
-            _rigid.velocity = new Vector2(_rigid.velocity.x.CompareTo(0) * 210f, _rigid.velocity.y);
-        }
+        //if(Mathf.Abs(_rigid.velocity.x) > 210f) {
+        //    _rigid.velocity = new Vector2(_rigid.velocity.x.CompareTo(0) * 210f, _rigid.velocity.y);
+        //}
     }
 
 
@@ -256,7 +256,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         //チャージアタック
-        Debug.Log("TODO : Charge Attack need collection item");
+        //Debug.Log("TODO : Charge Attack need collection item");
         if (start_Charge_Attack_Charge) {            
             _charge_Attack.Charge();
             if (!input.GetKey(Key.Attack)) {
@@ -266,12 +266,12 @@ public class PlayerController : MonoBehaviour {
         }
 
         //チャージキックの溜め
-        Debug.Log("TODO : Charge Kick need collection item");
+        //Debug.Log("TODO : Charge Kick need collection item");
         if (is_Squat) {
             _kick.Charge();
         }
         else {
-            _kick.Quit_Charge();
+            _kick.Quit_Charge(false);
         }
         
     }
