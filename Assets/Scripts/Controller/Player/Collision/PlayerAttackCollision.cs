@@ -62,9 +62,9 @@ public class PlayerAttackCollision : MonoBehaviour {
         is_Hit_Attack = false;        
         GetComponent<BoxCollider2D>().enabled = true;
         Change_Size();        
-        Play_Animation();
+        Play_Animation();        
         Invoke("Make_Collider_Disappear", lifeTime);
-    }
+    }    
 
 
     public void Make_Collider_Disappear() {
@@ -77,9 +77,9 @@ public class PlayerAttackCollision : MonoBehaviour {
         switch (PlayerManager.Instance.Get_Option()) {
             case PlayerManager.Option.none:         Set_Size(1.0f, new Vector2(10, 0)); break;
             case PlayerManager.Option.bee:          Set_Size(1.0f, new Vector2(10, 0));  break;
-            case PlayerManager.Option.butterfly:    Set_Size(1.2f, new Vector2(11, 0)); break;
-            case PlayerManager.Option.mantis:       Set_Size(1.5f, new Vector2(14, 0)); break;
-            case PlayerManager.Option.spider:       Set_Size(1.0f, new Vector2(10, 0)); break;
+            case PlayerManager.Option.butterfly:    Set_Size(1.0f, new Vector2(10, 0)); break;
+            case PlayerManager.Option.mantis:       Set_Size(1.7f, new Vector2(14, 0)); break;
+            case PlayerManager.Option.spider:       Set_Size(1.2f, new Vector2(11, 0)); break;
         }
     }
 

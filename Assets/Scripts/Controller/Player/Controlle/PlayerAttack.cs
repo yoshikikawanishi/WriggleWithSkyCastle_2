@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour {
             switch (player_Manager.Get_Option()) {
                 case PlayerManager.Option.none:     Set_Attack_Status(0.18f, 0.17f, true); break;
                 case PlayerManager.Option.bee:      Set_Attack_Status(0.18f, 0.01f, true); break;
-                case PlayerManager.Option.butterfly: Set_Attack_Status(0.18f, 0.13f, false); break;
+                case PlayerManager.Option.butterfly: Set_Attack_Status(0.18f, 0.08f, false); break;
                 case PlayerManager.Option.mantis:   Set_Attack_Status(0.24f, 0.17f, true); break;
                 case PlayerManager.Option.spider:   Set_Attack_Status(0.18f, 0.17f, true); break;
             }
@@ -72,7 +72,7 @@ public class PlayerAttack : MonoBehaviour {
 
         switch (player_Manager.Get_Option()) {
             case PlayerManager.Option.bee:      StartCoroutine("Bee_Shoot_Cor"); break;
-            case PlayerManager.Option.mantis:   Mantis_Shoot(); break;
+            //case PlayerManager.Option.mantis:   Mantis_Shoot(); break;
             case PlayerManager.Option.butterfly: _rigid.velocity = new Vector2(_rigid.velocity.x, 200f); break;
             case PlayerManager.Option.spider:   Gen_Spider_Footing(); break;
         }      
@@ -130,8 +130,7 @@ public class PlayerAttack : MonoBehaviour {
     //オプションが蜘蛛の時足場生成
     private void Gen_Spider_Footing() {
         var footing = ObjectPoolManager.Instance.Get_Pool(spider_Footing).GetObject();
-        footing.transform.position = transform.position + new Vector3(transform.localScale.x * 40f, -32f);
-        ObjectPoolManager.Instance.Set_Inactive(footing, 10f);
+        footing.transform.position = transform.position + new Vector3(transform.localScale.x * 54f, -16f);        
     }
 
     

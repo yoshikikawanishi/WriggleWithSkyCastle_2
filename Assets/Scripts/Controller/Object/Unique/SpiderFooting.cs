@@ -16,6 +16,7 @@ public class SpiderFooting : MonoBehaviour {
 
     private void OnEnable() {
         is_Collasping = false;
+        StartCoroutine("Collaspe_Cor", 10f);
     }
 
 
@@ -25,17 +26,17 @@ public class SpiderFooting : MonoBehaviour {
             return;
         }
         if(collision.tag == "PlayerFootTag" && player_Rigid.velocity.y < 10f) {
-            StartCoroutine("Collaspe_Cor");
+            StartCoroutine("Collaspe_Cor", 0.8f);
             is_Collasping = true;
         }
     }
 
 
     //点滅して消滅する
-    private IEnumerator Collaspe_Cor() {        
+    private IEnumerator Collaspe_Cor(float time) {        
         Renderer _renderer = GetComponent<Renderer>();
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(time);
 
         float span = 0.2f;
         for(int i = 0; i < 6; i++) {

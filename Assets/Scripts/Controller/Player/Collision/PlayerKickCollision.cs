@@ -47,6 +47,12 @@ public class PlayerKickCollision : MonoBehaviour {
     public void Make_Collider_Appear(bool is_Charge_Kick) {
         _collider.enabled = true;
         Play_Animation(is_Charge_Kick);
+        if (is_Charge_Kick) {
+            gameObject.tag = "PlayerChargeAttackTag";
+        }
+        else {
+            gameObject.tag = "PlayerKickTag";
+        }
     }
 
     //当たり判定を消す

@@ -18,7 +18,7 @@ public class Stage3_2Scene : MonoBehaviour {
         aya_Movie = GetComponent<AyaMovie>();
         //初回時フェードイン
         if (SceneManagement.Instance.Is_First_Visit()) {
-            FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.01f);
+            FadeInOut.Instance.Start_Fade_In(new Color(1, 1, 1), 0.01f);
         }
         BGMManager.Instance.Change_BGM("Stage3");
     }
