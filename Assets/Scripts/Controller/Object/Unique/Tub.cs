@@ -52,6 +52,7 @@ public class Tub : MonoBehaviour {
                 state = State.dropping;
                 _rigid.gravityScale = 80f;
             }
+            transform.position = new Vector3(transform.position.x, default_Height + Mathf.Sin(Time.time * 2) * 5f);
         }
         //落下中
         else if(state == State.dropping) {
@@ -59,6 +60,7 @@ public class Tub : MonoBehaviour {
                 state = State.landing;
                 camera_Shake.Shake(0.2f, new Vector2(1, 1), false);
                 landing_Effect.SetActive(true);
+                Shoot();
             }
         }
         //着地後
@@ -92,5 +94,15 @@ public class Tub : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+
+    private void Shoot() {
+        if (player.GetComponent<PlayerController>().Get_Is_Ride_Beetle()) {
+            ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
+            for (int i = 0; i < shoots.Length; i++) {
+                shoots[i].Shoot();
+            }
+        }
     }
 }
