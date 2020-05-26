@@ -94,6 +94,8 @@ public class PlayerDamaged : MonoBehaviour {
 
     //MissZoneに当たったときの処理
     public void Miss() {
-        PlayerManager.Instance.Set_Life(0);
+        PlayerManager.Instance.Reduce_Life();
+        if(PlayerManager.Instance.Get_Life() > 0)
+            GameManager.Instance.Miss();
     }
 }

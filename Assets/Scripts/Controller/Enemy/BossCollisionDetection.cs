@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossCollisionDetection : EnemyCollisionDetection {    
 
-    private BossEnemy _boss_Enemy;
+    protected BossEnemy _boss_Enemy;
     
 
     private void Awake() {

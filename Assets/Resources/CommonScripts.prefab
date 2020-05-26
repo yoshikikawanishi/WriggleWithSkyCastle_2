@@ -132,7 +132,7 @@ MonoBehaviour:
   Is_First_Visit_Scene_In_Testplay: 1
   Is_Delete_BGM: 1
   Delete_Player_Data: 0
-  Player_Life: 6
+  Player_Life: 5
   Player_Power: 128
   Player_Option: 0
   Delete_Yuka_Data: 1
