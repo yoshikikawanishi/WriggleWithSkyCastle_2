@@ -26,7 +26,7 @@ public class PlayerShoot : MonoBehaviour {
     //チャージ段階
     private int charge_Phase = 0;
     //チャージショットに必要なパワー
-    private readonly int essential_Power_In_Charge_Shoot = 15;
+    private readonly int essential_Power_In_Charge_Shoot = 30;
     //パワー
     private int player_Power = 0;
 

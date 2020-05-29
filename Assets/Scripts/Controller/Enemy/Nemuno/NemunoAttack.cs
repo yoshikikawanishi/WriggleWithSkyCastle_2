@@ -241,7 +241,7 @@ public class NemunoAttack : MonoBehaviour {
 
         _controller.Change_Land_Paramter();
         _controller.Change_Animation("IdleBool");
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(4.0f);
 
         can_Attack = true;
     }

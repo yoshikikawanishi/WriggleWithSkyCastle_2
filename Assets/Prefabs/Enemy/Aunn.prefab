@@ -2102,7 +2102,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    speed: 0.03
+    speed: 0.025
     arc_Size: 50
     is_Local_Position: 0
   - comment: "\u5927\u30B8\u30E3\u30F3\u30D7\u79FB\u52D5\u7528"
@@ -2872,7 +2872,7 @@ MonoBehaviour:
   life: 480300000c030000
   power_Value: 0
   score_Value: 0
-  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
+  phase_Change_Bomb_Prefab: {fileID: 1212498252451088, guid: dec7555660d41c249bae666db35d812a,
     type: 2}
   clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
     type: 2}

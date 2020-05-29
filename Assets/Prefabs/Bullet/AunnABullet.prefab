@@ -177,7 +177,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 1
   fixed_Angle: 0
   other_Param: 1
-  num: 8
+  num: 6
   inter_Angle_Deg: 90
   center_Angle_Deg: 0
   arc_Deg: 360
@@ -298,7 +298,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 1
   fixed_Angle: 0
   other_Param: 1
-  num: 8
+  num: 6
   inter_Angle_Deg: 90
   center_Angle_Deg: 0
   arc_Deg: 360

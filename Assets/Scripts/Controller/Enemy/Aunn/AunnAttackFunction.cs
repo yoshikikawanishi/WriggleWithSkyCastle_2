@@ -334,6 +334,7 @@ public class AunnAttackFunction : MonoBehaviour {
             next_Pos = transform.position + new Vector3(112f * -direction, 0);
             _move_Two_Points.Start_Move(next_Pos, 1);
             yield return new WaitUntil(_move_Two_Points.End_Move);
+            yield return new WaitForSeconds(0.1f);
 
             if (direction == 1 && transform.position.x < -88f)
                 break;

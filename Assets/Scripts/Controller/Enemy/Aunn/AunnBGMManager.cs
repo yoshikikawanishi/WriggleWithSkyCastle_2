@@ -14,7 +14,7 @@ public class AunnBGMManager{
     private Melody now_Melody = Melody.A;
 
     //曲のタイミング                       A    B    A    C  ｻﾋﾞ前 ｻﾋﾞ ﾙｰﾌﾟ
-    public readonly float[] BGM_TIME = { 0, 05f, 10f, 15f, 20f, 24f, 35f };
+    public readonly float[] BGM_TIME = { 0, 05f, 10f, 15f, 25f, 35f, 45f };
 
     private float now_BGM_Time = 0;
     private float BGM_Launch_Time = 0;    

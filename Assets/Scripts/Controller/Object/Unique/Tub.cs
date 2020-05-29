@@ -77,7 +77,7 @@ public class Tub : MonoBehaviour {
         }
         //上昇
         else if(state == State.raising) {
-            transform.position += new Vector3(0, 1);
+            transform.position += new Vector3(0, 1 * Time.timeScale);
             if(transform.position.y > default_Height) {
                 state = State.idle;
                 transform.position = new Vector3(transform.position.x, default_Height);
