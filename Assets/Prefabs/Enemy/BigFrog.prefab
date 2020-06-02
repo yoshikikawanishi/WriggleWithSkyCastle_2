@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 4831076267037258}
   - component: {fileID: 212272359214522298}
   - component: {fileID: 114169933939641320}
-  - component: {fileID: 114924684394554780}
   - component: {fileID: 114416808030413884}
   - component: {fileID: 114364916171035724}
   - component: {fileID: 61069014665777336}
@@ -313,6 +312,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54001b5de28925749b1cb3d1b4468072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 22010000
+  power_Value: 10
+  score_Value: 10
+  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
+    type: 2}
+  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
+    type: 2}
+  clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
+    type: 2}
+  state: 0
   bubble_Shoot_Left: {fileID: 114416575221194474}
   bubble_Shoot_Right: {fileID: 114379931140544424}
   sleeping_Bubble_Shoot: {fileID: 114507108755222946}
@@ -347,6 +356,7 @@ MonoBehaviour:
   bullet: {fileID: 1319821717479526, guid: df2d8186c3523914da4b78b0b07105bf, type: 2}
   parent: {fileID: 0}
   max_Speed: 80
+  radius: 0
   speed_Noise: 30
   angle_Noise: 10
   lifeTime: 8
@@ -437,9 +447,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -472,6 +508,7 @@ MonoBehaviour:
   bullet: {fileID: 1319821717479526, guid: df2d8186c3523914da4b78b0b07105bf, type: 2}
   parent: {fileID: 0}
   max_Speed: 80
+  radius: 0
   speed_Noise: 30
   angle_Noise: 10
   lifeTime: 8
@@ -562,9 +599,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -608,6 +671,7 @@ MonoBehaviour:
   bullet: {fileID: 1319821717479526, guid: df2d8186c3523914da4b78b0b07105bf, type: 2}
   parent: {fileID: 0}
   max_Speed: 50
+  radius: 0
   speed_Noise: 30
   angle_Noise: 10
   lifeTime: 8
@@ -662,9 +726,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 20
@@ -703,31 +793,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Pooled: 0
+  is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 46
   power_Value: 0
   score_Value: 0
   drop_Life_Probability: 100
   drop_Option_Box_Probability: 0
---- !u!114 &114924684394554780
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779075583713130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 22010000
-  power_Value: 10
-  score_Value: 10
-  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
-    type: 2}
-  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
-    type: 2}
-  clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
-    type: 2}
 --- !u!212 &212025669826075592
 SpriteRenderer:
   m_ObjectHideFlags: 1

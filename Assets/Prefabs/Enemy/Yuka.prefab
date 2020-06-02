@@ -186,7 +186,6 @@ GameObject:
   - component: {fileID: 212751923508009558}
   - component: {fileID: 58180226018625194}
   - component: {fileID: 95703302884865934}
-  - component: {fileID: 114355433994445274}
   - component: {fileID: 114192098912221324}
   - component: {fileID: 114130173076250116}
   - component: {fileID: 114173627335961346}
@@ -990,6 +989,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae8a11281ac667f4db1f63390e412770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 36010000
+  power_Value: 0
+  score_Value: 0
+  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
+    type: 2}
+  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
+    type: 2}
+  clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
+    type: 2}
+  state: 0
   cross_Shoot_Obj: {fileID: 1690940215302166}
   spiral_Shoot_Obj: {fileID: 1832758649742924}
   diffusion_Shoot_Obj: {fileID: 1102718097665856}
@@ -1307,26 +1316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db9417a567dc3104da43ccc2900b6bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114355433994445274
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1763491103116310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 36010000
-  power_Value: 0
-  score_Value: 0
-  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
-    type: 2}
-  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
-    type: 2}
-  clear_Effect_Prefab: {fileID: 1844696841656212, guid: ffec3cd4ff0877e46a8d34dd9762b18a,
-    type: 2}
 --- !u!114 &114422221333373642
 MonoBehaviour:
   m_ObjectHideFlags: 1

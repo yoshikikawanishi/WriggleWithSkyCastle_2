@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 50846519083205156}
   - component: {fileID: 58116589038570194}
   - component: {fileID: 95067472309027772}
-  - component: {fileID: 114871998827701920}
   - component: {fileID: 114679339249625682}
   - component: {fileID: 114893537118939074}
   - component: {fileID: 114475841216765868}
@@ -774,26 +773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc6558f475549845ba82acb7d1b6c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114871998827701920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519146634465832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 2c0100002c010000
-  power_Value: 8
-  score_Value: 10
-  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
-    type: 2}
-  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
-    type: 2}
-  clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
-    type: 2}
 --- !u!114 &114890555519188882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -948,6 +927,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e1f7755fa6bb742b840a660505ffba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 2c0100002c010000
+  power_Value: 8
+  score_Value: 10
+  phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
+    type: 2}
+  clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
+    type: 2}
+  clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
+    type: 2}
+  state: 0
   back_Design: {fileID: 0}
 --- !u!114 &114994852942124014
 MonoBehaviour:

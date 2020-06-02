@@ -56,7 +56,7 @@ public class Stage2_BossMovie : MonoBehaviour {
         PauseManager.Instance.Set_Is_Pausable(true);
 
         //戦闘開始
-        nemuno.GetComponent<NemunoController>().Start_Battle();
+        nemuno.GetComponent<Nemuon>().Start_Battle();
         BGMManager.Instance.Change_BGM("Stage2_Boss");
     }
 

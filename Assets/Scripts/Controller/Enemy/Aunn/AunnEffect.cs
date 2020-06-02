@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AunnEffect : MonoBehaviour {
 
+    [SerializeField] private GameObject back_Design;
     [SerializeField] private ParticleSystem a_Letter_Effect;
     [SerializeField] private ParticleSystem unn_Letter_Effect;
     [SerializeField] private GameObject power_Charge_Effect;
@@ -14,11 +15,14 @@ public class AunnEffect : MonoBehaviour {
 
 
 	public void Play_Battle_Effect() {
-
+        back_Design.transform.localScale = new Vector3(0, 0, 1);
+        back_Design.SetActive(true);
+        BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 0.05f);
     }
 
     public void Delete_Battle_Effect() {
-
+        back_Design.SetActive(false);
+        BackGroundEffector.Instance.Change_Color_Default(1);
     }
 
 

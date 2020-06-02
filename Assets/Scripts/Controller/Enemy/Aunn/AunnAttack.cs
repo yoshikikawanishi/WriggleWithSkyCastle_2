@@ -5,7 +5,7 @@ using UnityEngine;
 public class AunnAttack : MonoBehaviour {
 
     //コンポーネント
-    private AunnController _controller;
+    private Aunn _controller;
     private AunnAttackFunction _attack_Func;
     private AunnShoot _shoot;
     private AunnEffect _effect;
@@ -17,7 +17,7 @@ public class AunnAttack : MonoBehaviour {
 
     private void Awake() {
         //取得
-        _controller = GetComponent<AunnController>();
+        _controller = GetComponent<Aunn>();
         _attack_Func = GetComponent<AunnAttackFunction>();
         _shoot = GetComponentInChildren<AunnShoot>();
         _effect = GetComponentInChildren<AunnEffect>();
@@ -30,6 +30,7 @@ public class AunnAttack : MonoBehaviour {
         //フェーズ開始時の処理
         if (start_Phase[0]) {
             start_Phase[0] = false;
+            _effect.Play_Battle_Effect();
         }
 
         //攻撃の開始時にfalseに変更、AttackFunctionの方で攻撃終了時にtrueにもどす
@@ -61,6 +62,7 @@ public class AunnAttack : MonoBehaviour {
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("StandingBool");
         _effect.Stop_Charge_Effect();
+        _effect.Delete_Battle_Effect();
     }
 
 
@@ -73,6 +75,7 @@ public class AunnAttack : MonoBehaviour {
             _attack_Func.generate_Copy = true;
             can_Attack = false;
             StartCoroutine("Phase_Change_Attack_Cor");
+            _effect.Play_Battle_Effect();
         }
 
         //攻撃の開始時にfalseに変更、AttackFunctionの方で攻撃終了時にtrueにもどす
@@ -104,6 +107,7 @@ public class AunnAttack : MonoBehaviour {
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("StandingBool");
         _effect.Stop_Charge_Effect();
+        _effect.Delete_Battle_Effect();
     }
 
 
@@ -135,7 +139,7 @@ public class AunnAttack : MonoBehaviour {
     
     private IEnumerator Attack_In_Melody_Main_Cor(bool is_Phase1, AunnBGMManager _BGM) {
         can_Attack = false;
-        AunnController _controller = GetComponent<AunnController>();
+        Aunn _controller = GetComponent<Aunn>();
         AunnEffect _effect = GetComponentInChildren<AunnEffect>();
         MoveConstSpeed _move_Const = GetComponent<MoveConstSpeed>();
         ChildColliderTrigger foot_Collision = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
@@ -159,7 +163,7 @@ public class AunnAttack : MonoBehaviour {
         yield return new WaitForSeconds(wait_Time);
 
         //弾幕
-        while (_BGM.Get_Now_Melody() == AunnBGMManager.Melody.main) {
+        do {
             //フェーズ１
             if (is_Phase1) {
                 _effect.Play_Yellow_Circle_Effect();
@@ -178,8 +182,8 @@ public class AunnAttack : MonoBehaviour {
                 _shoot.Shoot_Long_Curve_Laser();
                 yield return new WaitForSeconds(9.0f);
             }
-        }
-        
+        } while (_BGM.Get_Now_Melody() == AunnBGMManager.Melody.main);
+
         _controller.Change_Land_Parameter();
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
         _controller.Change_Animation("SquatBool");

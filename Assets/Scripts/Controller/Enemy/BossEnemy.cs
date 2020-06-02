@@ -25,10 +25,7 @@ public class BossEnemy : MonoBehaviour {
     //体力
     private List<int> DEFAULT_LIFE = new List<int>();
     //現在のフェーズ
-    private int now_Phase = 1;
-    //クリア検知用
-    private bool clear_Trigger = false;
-    private bool is_Cleared = false;
+    private int now_Phase = 1;     
     //無敵化
     private bool is_Invincible = false;
     //最後に被弾した時間
@@ -36,6 +33,13 @@ public class BossEnemy : MonoBehaviour {
     //フェーズ中に自機が被弾したかどうか
     private int player_Life;
     private bool is_Player_No_Damaged = true;
+
+    public enum State {
+        idle,
+        battle,
+        cleared,
+    }
+    public State state = State.idle;
 
 
     protected void Awake() {
@@ -54,16 +58,54 @@ public class BossEnemy : MonoBehaviour {
         Observe_Player_Life();
     }
 
+    //========================戦闘開始、フェーズ切り替え時、クリア時の処理　：　行いたい処理を継承して追加すること====================
 
-    //被弾時の処理
+    //戦闘開始時の処理
+    public virtual void Start_Battle() {
+        state = State.battle;
+    }
+
+
+    //フェーズ切り替え時の処理    
+    protected virtual void Change_Phase() {
+        var effect = Instantiate(phase_Change_Bomb_Prefab);
+        effect.transform.position = transform.position;
+
+        _put_Out_Item.Put_Out_Item(power_Value, score_Value);
+        if (is_Player_No_Damaged) {
+            _put_Out_Item.Put_Out_Stock_Up_Item();
+        }
+        is_Player_No_Damaged = true;
+
+        Set_Now_Phase(now_Phase + 1);
+    }
+
+
+    //クリア時の処理
+    protected virtual void Clear() {        
+        state = State.cleared;
+        StartCoroutine("Clear_Cor");
+    }
+
+
+    //クリア後の処理
+    protected virtual void Do_After_Clear_Process() {
+
+    }
+    
+
+    //=========================================================================================================================
+
+    //被弾
     public void Damaged(int damage, string damaged_Tag) {
-        if (is_Cleared) {
+        if (state != State.battle) {
             return;
         }
         if (is_Invincible) {
             Play_Invincible_Effect();
             return;
         }
+
         //連続で被弾時ダメージ減らす
         if(Time.time - last_Damaged_Time < 0.6f) {
             damage = (int)(damage * 0.3f);
@@ -76,6 +118,7 @@ public class BossEnemy : MonoBehaviour {
             life[now_Phase - 1] -= damage;
             Play_Damaged_Effect(damaged_Tag);
         }
+
         //毒ダメージ
         if(damaged_Tag == "PlayerAttackTag" && PlayerManager.Instance.Get_Option() == PlayerManager.Option.spider) {
             poisoned_Enemy.Start_Poisoned_Damaged(true);
@@ -84,6 +127,7 @@ public class BossEnemy : MonoBehaviour {
             //毒以外でダメージ時、最後に被弾した時間を記録
             last_Damaged_Time = Time.time;
         }
+
         //フェーズ終了
         if(life[now_Phase - 1] <= 0) {            
             if (now_Phase < life.Count)
@@ -106,6 +150,7 @@ public class BossEnemy : MonoBehaviour {
         }
     }
 
+
     //無敵時のエフェクト
     private void Play_Invincible_Effect() {
         StartCoroutine("Blink", new Color(0.7f, 0.7f, 0.7f));
@@ -121,7 +166,7 @@ public class BossEnemy : MonoBehaviour {
     }
 
 
-    //自機が被弾したかどうか
+    //１フェーズ中自機が被弾したかどうか、Updateで呼ぶこと
     private void Observe_Player_Life() {
         if (!is_Player_No_Damaged)
             return;
@@ -129,30 +174,11 @@ public class BossEnemy : MonoBehaviour {
             player_Life = PlayerManager.Instance.Get_Life();
             is_Player_No_Damaged = false;
         }
-    }
+    }    
 
-
-    //フェーズの切り替え
-    private void Change_Phase() {
-        var effect = Instantiate(phase_Change_Bomb_Prefab);
-        effect.transform.position = transform.position;
-
-        _put_Out_Item.Put_Out_Item(power_Value, score_Value);
-        if (is_Player_No_Damaged) {
-            _put_Out_Item.Put_Out_Stock_Up_Item();
-        }
-
-        Set_Now_Phase(now_Phase + 1);
-    }
-
-
+    
     //クリア時の処理
-    private void Clear() {
-        is_Cleared = true;
-        StartCoroutine("Clear_Cor");
-    }
-
-    private IEnumerator Clear_Cor() {        
+    protected IEnumerator Clear_Cor() {        
         //無敵化
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
 
@@ -174,9 +200,11 @@ public class BossEnemy : MonoBehaviour {
 
         _camera_Shake.Shake(0.8f, new Vector2(1.2f, 1.2f), true);
 
-        clear_Trigger = true;        
+        Do_After_Clear_Process();        
     }
 
+
+    //===============================================================================================================
 
     //Getter
     public int Get_Now_Phase() {
@@ -196,16 +224,6 @@ public class BossEnemy : MonoBehaviour {
 
     public void Set_Is_Invincible(bool is_Invincible) {
         this.is_Invincible = is_Invincible;
-    }
-
-
-    //クリア検知用
-    public bool Clear_Trigger() {
-        if (clear_Trigger) {
-            clear_Trigger = false;
-            return true;
-        }
-        return false;
-    }
+    }    
 
 }

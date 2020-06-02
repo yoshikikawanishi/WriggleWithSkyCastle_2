@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class AunnAttackFunction : MonoBehaviour {
 
-    private AunnController _controller;
+    private Aunn _controller;
     private AunnAttack _attack;
     private AunnShoot _shoot;
     private AunnEffect _effect;
@@ -29,7 +29,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
     void Awake() {
         //取得
-        _controller = GetComponent<AunnController>();
+        _controller = GetComponent<Aunn>();
         _attack = GetComponent<AunnAttack>();
         _shoot = GetComponentInChildren<AunnShoot>();
         _effect = GetComponentInChildren<AunnEffect>();

@@ -113,12 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &11457691 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114871998827701920, guid: 19d626d1e33ab2d448279d12954fa6b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1469411590}
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
 --- !u!1 &132646003
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,6 +471,12 @@ MonoBehaviour:
   life_Time: 0
   angler_Velocity: 0.15
   in_Fixed_Update: 1
+--- !u!114 &601706121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114893537118939074, guid: 19d626d1e33ab2d448279d12954fa6b4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1469411590}
+  m_Script: {fileID: 11500000, guid: 16e1f7755fa6bb742b840a660505ffba, type: 3}
 --- !u!1 &603977456
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9b1dc6db1052644983c0ac124408d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 11457691}
+  boss: {fileID: 0}
 --- !u!114 &603977462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,7 +953,7 @@ Prefab:
         type: 2}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 11457691}
+      objectReference: {fileID: 601706121}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ea28094736e434a827aea05559829e, type: 2}
   m_IsPrefabAsset: 0

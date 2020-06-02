@@ -1061,7 +1061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &354515706
 Transform:
   m_ObjectHideFlags: 0
@@ -1858,6 +1858,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114073091607464970, guid: d95e32122d3bf2b4ca6258720fc788b2,
+        type: 2}
+      propertyPath: back_Design
+      value: 
+      objectReference: {fileID: 354515705}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95e32122d3bf2b4ca6258720fc788b2, type: 2}
   m_IsPrefabAsset: 0
@@ -2346,7 +2351,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -15
   m_Sprite: {fileID: 21300000, guid: 721c6962b6ca64c4db74c6b53c687908, type: 3}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

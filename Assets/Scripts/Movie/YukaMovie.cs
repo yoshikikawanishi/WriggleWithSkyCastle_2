@@ -54,13 +54,13 @@ public class YukaMovie : SingletonMonoBehaviour<YukaMovie> {
         player_Controller.Set_Is_Playable(true);
         player_Controller.To_Enable_Ride_Beetle();
         BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 0.1f);
-        yuka.GetComponent<YukaAttack>().Start_Battle();
+        yuka.GetComponent<Yuka>().Start_Battle();
         if (boss_Battle_Canvas != null)
             boss_Battle_Canvas.SetActive(true);
     }
 
 
-    //YukaAttackで呼ばれる
+    //Yukaで呼ばれる
     //クリアムービー
     public void Start_Clear_Movie() {
         //クリアの保存

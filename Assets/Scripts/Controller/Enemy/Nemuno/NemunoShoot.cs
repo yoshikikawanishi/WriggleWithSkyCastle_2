@@ -16,14 +16,14 @@ public class NemunoShoot : MonoBehaviour {
 
     //コンポーネント
     private BulletAccelerator _accelerator;
-    private NemunoController nemuno_Controller;
+    private Nemuon nemuno_Controller;
 
 
 	// Use this for initialization
 	void Start () {
         //取得
         _accelerator = GetComponent<BulletAccelerator>();
-        nemuno_Controller = transform.parent.GetComponent<NemunoController>();
+        nemuno_Controller = transform.parent.GetComponent<Nemuon>();
         //オブジェクトプール
         ObjectPoolManager.Instance.Create_New_Pool(yellow_Rice_Bullet, 48);
 	}

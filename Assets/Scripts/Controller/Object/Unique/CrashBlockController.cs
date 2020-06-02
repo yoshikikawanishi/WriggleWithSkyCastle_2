@@ -24,11 +24,12 @@ public class CrashBlockController : MonoBehaviour {
     [SerializeField] private Sprite damaged_Sprite;
 
     private int default_Life;
-
+    private Color default_Color;
 
     //Awake
     private void Awake() {
         default_Life = life;
+        default_Color = GetComponent<SpriteRenderer>().color;
     }
 
 
@@ -119,11 +120,10 @@ public class CrashBlockController : MonoBehaviour {
         StartCoroutine("Repel_Effect_Cor");
     }
 
-    private IEnumerator Repel_Effect_Cor() {
-        Color default_Col = GetComponent<SpriteRenderer>().color;
-        GetComponent<SpriteRenderer>().color = default_Col + new Color(0.2f, 0.2f, 0.2f);
+    private IEnumerator Repel_Effect_Cor() {        
+        GetComponent<SpriteRenderer>().color = default_Color + new Color(0.2f, 0.2f, 0.2f);
         yield return new WaitForSeconds(0.2f);
-        GetComponent<SpriteRenderer>().color = default_Col;
+        GetComponent<SpriteRenderer>().color = default_Color;
     }
 
 }

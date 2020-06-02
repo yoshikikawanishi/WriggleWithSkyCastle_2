@@ -266,12 +266,13 @@ public class PlayerController : MonoBehaviour {
         }
 
         //チャージキックの溜め
-        //Debug.Log("TODO : Charge Kick need collection item");
-        if (is_Squat) {
-            _kick.Charge();
-        }
-        else {
-            _kick.Quit_Charge(false);
+        if (CollectionManager.Instance.Is_Collected("Saki")) {
+            if (is_Squat) {
+                _kick.Charge();
+            }
+            else {
+                _kick.Quit_Charge(false);
+            }
         }
         
     }

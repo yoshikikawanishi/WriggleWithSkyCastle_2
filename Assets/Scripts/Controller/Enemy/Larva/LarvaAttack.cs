@@ -5,7 +5,7 @@ using UnityEngine;
 public class LarvaAttack : MonoBehaviour {
 
     //コンポーネント
-    private LarvaController _controller;
+    private Larva _controller;
     private LarvaShootObj shoot_Obj;
     private MoveTwoPoints _move;
 
@@ -20,7 +20,7 @@ public class LarvaAttack : MonoBehaviour {
 
     private void Awake() {
         //取得
-        _controller = GetComponent<LarvaController>();
+        _controller = GetComponent<Larva>();
         shoot_Obj = GetComponentInChildren<LarvaShootObj>();
         _move = GetComponent<MoveTwoPoints>();
 

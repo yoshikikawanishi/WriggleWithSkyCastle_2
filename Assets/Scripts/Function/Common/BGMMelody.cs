@@ -22,7 +22,7 @@ public class BGMMelody : MonoBehaviour {
     public List<OneMelody> melody_List = new List<OneMelody>();
 
     private float now_BGM_Time = 0;
-    private float BGM_Launch_Time = 0;
+    private float BGM_Launch_Time = 0;    
 
 
     //時間計測開始
@@ -33,17 +33,24 @@ public class BGMMelody : MonoBehaviour {
 
     //メロディ取得
     public Melody Get_Now_Melody() {
-       
+        now_BGM_Time = (Time.unscaledTime - BGM_Launch_Time) % melody_List[melody_List.Count - 1].span.y;
+
+        for (int i = 0; i < melody_List.Count; i++) {
+            if (melody_List[i].span.x < now_BGM_Time && now_BGM_Time < melody_List[i].span.y) {
+                now_Melody = melody_List[i].melody;
+            }
+        }
         return now_Melody;
     }
    
 
     public float Get_Now_BGM_Time() {
+        now_BGM_Time = (Time.unscaledTime - BGM_Launch_Time) % melody_List[melody_List.Count - 1].span.y;
         return now_BGM_Time;
     }
 
 
-    //Inspectorで追加するよう
+    //====================================Editor用======================================    
     public void Add_Melody() {
         melody_List.Add(new OneMelody());
     }

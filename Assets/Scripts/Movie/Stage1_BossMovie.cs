@@ -63,7 +63,7 @@ public class Stage1_BossMovie : MonoBehaviour {
         PauseManager.Instance.Set_Is_Pausable(true);
 
         //戦闘開始
-        larva.GetComponent<LarvaController>().Start_Battle();
+        larva.GetComponent<Larva>().Start_Battle();
         BGMManager.Instance.Change_BGM("Stage1_Boss");
     }
 

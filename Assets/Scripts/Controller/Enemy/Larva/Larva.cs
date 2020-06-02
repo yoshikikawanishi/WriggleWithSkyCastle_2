@@ -2,56 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LarvaController : MonoBehaviour {
+public class Larva : BossEnemy {
 
     //コンポーネント
     private LarvaAttack _attack;
     private BossEnemy _boss;
 
     //バックデザイン
-    [SerializeField] private GameObject back_Design;
-
-    //戦闘開始
-    private bool is_Start_Battle = false;
+    [SerializeField] private GameObject back_Design;    
 
 
-    private void Awake() {
+    new void Awake() {
+        base.Awake();
         //取得
         _attack = GetComponent<LarvaAttack>();
         _boss = GetComponent<BossEnemy>();
     }
-
-    // Use this for initialization
-    void Start () {
+    
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (is_Start_Battle) {
-
+	new void Update () {
+        base.Update();
+        if (state == State.battle) {
             switch (_boss.Get_Now_Phase()) {
                 case 1: _attack.Do_Phase1(); break;
                 case 2: _attack.Do_Phase2(); break;
             }
-
         }
-
 	}
-
-
-    //戦闘開始
-    public void Start_Battle() {
-        is_Start_Battle = true;
-    }
-
+    
 
     //クリア
-    public void Clear() {
-        _attack.Stop_Phase2();
-        this.enabled = false;
+    protected override void Clear() {
+        base.Clear();
+        _attack.Stop_Phase2();                
     }
 
+
+    protected override void Do_After_Clear_Process() {
+        base.Do_After_Clear_Process();        
+        GameObject.Find("Scripts").GetComponent<Stage1_BossMovie>().Start_Clear_Movie();
+    }
+
+
+    //==============================================エフェクト============================================
 
     //戦闘中の画面エフェクト
     public void Play_Battle_Effect() {

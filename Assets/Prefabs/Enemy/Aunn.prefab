@@ -1157,6 +1157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7aac20dd6db3fb4e8934261010da797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  back_Design: {fileID: 0}
   a_Letter_Effect: {fileID: 198624714355144920}
   unn_Letter_Effect: {fileID: 198207418398055522}
   power_Charge_Effect: {fileID: 1254462421188618}

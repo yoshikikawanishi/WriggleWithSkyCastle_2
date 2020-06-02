@@ -5,13 +5,7 @@ using UnityEngine;
 public class BigFrogMovie : SingletonMonoBehaviour<BigFrogMovie> {
 
     [SerializeField] private BigFrog big_Frog;
-    [SerializeField] private GameObject boss_Canvas;
-    
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+    [SerializeField] private GameObject boss_Canvas;	
    
 
     public void Start_Battle_Movie() {

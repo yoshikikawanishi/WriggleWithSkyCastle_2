@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AunnController : BossEnemy {
+public class Aunn : BossEnemy {
 
     //コンポーネント
     private AunnAttack _attack;    
@@ -11,9 +11,6 @@ public class AunnController : BossEnemy {
     private Animator _anim;
 
     public readonly AunnBGMManager _BGM = new AunnBGMManager();
-
-    //戦闘開始
-    private bool start_Battle = false;
 
     //初期値
     private float default_Gravity;
@@ -41,7 +38,7 @@ public class AunnController : BossEnemy {
 
     new void Update() {
         base.Update();
-        if (start_Battle) {            
+        if (state == State.battle) {            
             switch (Get_Now_Phase()) {
                 case 1: _attack.Phase1(_BGM); break;
                 case 2: _attack.Phase2(_BGM); break;
@@ -51,15 +48,20 @@ public class AunnController : BossEnemy {
 
 
     //戦闘開始
-    public void Start_Battle() {
-        _BGM.Start_Time_Count();
-        start_Battle = true;        
+    public override void Start_Battle() {
+        base.Start_Battle();
+        _BGM.Start_Time_Count();                    
     }
 
     //クリア時の処理
-    public void Clear() {
-        start_Battle = false;
+    protected override void Clear() {
         _attack.Stop_Phase2();
+        base.Clear();        
+    }
+
+    protected override void Do_After_Clear_Process() {
+        base.Do_After_Clear_Process();
+        GameObject.Find("Scripts").GetComponent<Stage3_BossMovie>().Play_Clear_Movie();
     }
 
 

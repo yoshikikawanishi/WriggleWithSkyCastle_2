@@ -6,7 +6,7 @@ public class AunnCopy : Enemy {
 
     private Animator _anim;
     private GameObject main_Body;
-    private AunnController main_Controller;
+    private Aunn main_Controller;
 
     private string now_Anim_Param;
     private bool is_Symmetry = false;
@@ -18,7 +18,7 @@ public class AunnCopy : Enemy {
         //取得
         _anim = GetComponent<Animator>();
         main_Body = transform.parent.gameObject;
-        main_Controller = main_Body.GetComponent<AunnController>();
+        main_Controller = main_Body.GetComponent<Aunn>();
 
         //消す
         gameObject.SetActive(false);

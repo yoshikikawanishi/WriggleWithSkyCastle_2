@@ -1,0 +1,2 @@
+#ID	#NAME	#PANELNUMBER	#MESSAGE
+1	早鬼	1	ああああ

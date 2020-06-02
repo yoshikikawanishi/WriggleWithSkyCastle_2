@@ -819,7 +819,7 @@ Prefab:
         type: 2}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 2052201147}
+      objectReference: {fileID: 921620002}
     - target: {fileID: 1886875275799854, guid: a1ea28094736e434a827aea05559829e, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -908,6 +908,7 @@ MonoBehaviour:
   start_ID: 1
   end_ID: 4
   baloon_Pos: {x: 8, y: 16}
+  dual_Panel: 1
 --- !u!61 &86950586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1242,6 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 2
@@ -10750,6 +10752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 2
@@ -11145,6 +11148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 2
@@ -13041,6 +13045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 1
@@ -16059,6 +16064,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4183997764480874, guid: fd803d44ed3628f4e890a27b9360459d,
     type: 2}
   m_PrefabInternal: {fileID: 918538187}
+--- !u!114 &921620002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114130173076250116, guid: fa2076cbd28bb12408704686d97dee7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 878264327}
+  m_Script: {fileID: 11500000, guid: ae8a11281ac667f4db1f63390e412770, type: 3}
 --- !u!1001 &940835830
 Prefab:
   m_ObjectHideFlags: 0
@@ -16862,6 +16873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 6
   power_Value: 3
   score_Value: 6
@@ -19145,6 +19157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 6
   power_Value: 3
   score_Value: 6
@@ -23490,6 +23503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 6
   power_Value: 3
   score_Value: 6
@@ -23964,6 +23978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 5
@@ -28417,6 +28432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 1
@@ -28953,6 +28969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 6
   power_Value: 3
   score_Value: 6
@@ -29691,6 +29708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 100
   power_Value: 3
   score_Value: 2
@@ -31056,12 +31074,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4183997764480874, guid: fd803d44ed3628f4e890a27b9360459d,
     type: 2}
   m_PrefabInternal: {fileID: 2041321826}
---- !u!114 &2052201147 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114355433994445274, guid: fa2076cbd28bb12408704686d97dee7e,
-    type: 2}
-  m_PrefabInternal: {fileID: 878264327}
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
 --- !u!1001 &2064047866
 Prefab:
   m_ObjectHideFlags: 0

@@ -16033,12 +16033,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 141029210}
   m_Script: {fileID: 11500000, guid: 54001b5de28925749b1cb3d1b4468072, type: 3}
---- !u!114 &978472380 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114924684394554780, guid: 57c99e6fba7cbf24cb5e852a83825ed4,
-    type: 2}
-  m_PrefabInternal: {fileID: 141029210}
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
 --- !u!1001 &988240968
 Prefab:
   m_ObjectHideFlags: 0
@@ -17154,7 +17148,7 @@ Prefab:
         type: 2}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 978472380}
+      objectReference: {fileID: 978472378}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ea28094736e434a827aea05559829e, type: 2}
   m_IsPrefabAsset: 0

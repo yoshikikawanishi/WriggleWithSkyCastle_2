@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Stage3_BossMovie : MonoBehaviour {
 
-    [SerializeField] private AunnController aunn;
+    [SerializeField] private Aunn aunn;
         	
 	
     //ボス戦前ムービー

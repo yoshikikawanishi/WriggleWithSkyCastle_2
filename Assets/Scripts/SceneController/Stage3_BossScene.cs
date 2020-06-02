@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stage3_BossScene : MonoBehaviour {
 
-    [SerializeField] private AunnController aunn;
+    [SerializeField] private Aunn aunn;
 
     private Stage3_BossMovie _movie;
 
@@ -20,14 +20,5 @@ public class Stage3_BossScene : MonoBehaviour {
         //ムービー開始
         _movie.Play_Before_Boss_Movie();
 	}
-	
-
-	// Update is called once per frame
-	void Update () {
-        //クリア時
-        if (aunn.Clear_Trigger()) {
-            _movie.Play_Clear_Movie();
-            aunn.Clear();
-        }
-	}
+		
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NemunoController : MonoBehaviour {
+public class Nemuon : BossEnemy {
 
     //背景エフェクト
     [SerializeField] private GameObject back_Design;
@@ -10,8 +10,7 @@ public class NemunoController : MonoBehaviour {
     //コンポーネント
     private Animator _anim;
     private Rigidbody2D _rigid;
-    private CapsuleCollider2D _collider;
-    private BossEnemy _boss_Controller;
+    private CapsuleCollider2D _collider;    
     private NemunoAttack _attack;
     public NemunoBGMTimeKeeper _BGM;
 
@@ -19,27 +18,22 @@ public class NemunoController : MonoBehaviour {
     private bool start_Battle = false;
 
 
-    private void Awake() {
+    new void Awake() {
+        base.Awake();
         //取得
         _anim = GetComponent<Animator>();
         _rigid = GetComponent<Rigidbody2D>();
-        _collider = GetComponent<CapsuleCollider2D>();
-        _boss_Controller = GetComponent<BossEnemy>();
+        _collider = GetComponent<CapsuleCollider2D>();        
         _attack = GetComponent<NemunoAttack>();
         _BGM = new NemunoBGMTimeKeeper();
     }
-
-
-    // Use this for initialization
-    void Start () {
-        
-	}
-	
+   
 
 	// Update is called once per frame
-	void Update () {
-        if (start_Battle) {
-            switch (_boss_Controller.Get_Now_Phase()) {
+	new void Update () {
+        base.Update();
+        if (state == State.battle) {
+            switch (Get_Now_Phase()) {
                 case 1: _attack.Phase1(_BGM); break;
                 case 2: _attack.Phase2(_BGM); break;
             }
@@ -61,9 +55,18 @@ public class NemunoController : MonoBehaviour {
 
 
     //戦闘開始
-    public void Start_Battle() {
+    public override void Start_Battle() {
+        base.Start_Battle();
         start_Battle = true;
         _BGM.Start_Time_Count();
+    }
+
+
+    //クリア時の処理
+    protected override void Do_After_Clear_Process() {
+        base.Do_After_Clear_Process();    
+        _attack.Stop_Phase2();
+        GameObject.Find("Scripts").GetComponent<Stage2_BossMovie>().Start_Clear_Movie();
     }
 
 

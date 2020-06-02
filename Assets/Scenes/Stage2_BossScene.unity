@@ -22435,7 +22435,7 @@ Prefab:
         type: 2}
       propertyPath: boss
       value: 
-      objectReference: {fileID: 2083742400}
+      objectReference: {fileID: 1753782350}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ea28094736e434a827aea05559829e, type: 2}
   m_IsPrefabAsset: 0
@@ -27661,9 +27661,8 @@ GameObject:
   - component: {fileID: 1753782354}
   - component: {fileID: 1753782353}
   - component: {fileID: 1753782352}
-  - component: {fileID: 2083742400}
-  - component: {fileID: 1753782351}
   - component: {fileID: 1753782350}
+  - component: {fileID: 1753782351}
   - component: {fileID: 1753782349}
   - component: {fileID: 1753782357}
   - component: {fileID: 1753782348}
@@ -27880,6 +27879,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468895e03e0a034428d3ff1c81f7edf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: d002000080020000
+  power_Value: 16
+  score_Value: 20
+  phase_Change_Bomb_Prefab: {fileID: 1493121116874872, guid: 20dc9e0b24cf99a4c902f6c82ea5650b,
+    type: 2}
+  clear_Converge_Effect_Prefab: {fileID: 1514557283582060, guid: fcc5c3a8db22a064e96d61d288435c8c,
+    type: 2}
+  clear_Effect_Prefab: {fileID: 1844696841656212, guid: ffec3cd4ff0877e46a8d34dd9762b18a,
+    type: 2}
+  state: 0
   back_Design: {fileID: 1915972721}
 --- !u!114 &1753782351
 MonoBehaviour:
@@ -33639,24 +33648,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2083742400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114415734449131596, guid: d92b6a874b1bdf040a5b6ba49087e1dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1753782347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9048ccf0aa56442ba7e89fea6de129, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: d002000080020000
-  power_Value: 16
-  score_Value: 20
-  phase_Change_Bomb_Prefab: {fileID: 1493121116874872, guid: 20dc9e0b24cf99a4c902f6c82ea5650b,
-    type: 2}
-  clear_Converge_Effect_Prefab: {fileID: 1514557283582060, guid: fcc5c3a8db22a064e96d61d288435c8c,
-    type: 2}
-  clear_Effect_Prefab: {fileID: 1286543694777680, guid: b9604c5b805caab4ba62565377add58e,
-    type: 2}

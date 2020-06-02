@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class YukaAttack : MonoBehaviour {
+public class Yuka : BossEnemy {
 
-    //コンポーネント
-    private BossEnemy _boss_Controller;
+    //コンポーネント    
     private MoveTwoPoints _move_Two_Points;
 
     //弾幕用オブジェクト
@@ -18,41 +17,37 @@ public class YukaAttack : MonoBehaviour {
     // Use this for initialization
     void Start() {
         //取得
-        _boss_Controller = GetComponent<BossEnemy>();
         _move_Two_Points = GetComponent<MoveTwoPoints>();
         //ボス戦開始前無敵化
-        _boss_Controller.Set_Is_Invincible(true);
+        Set_Is_Invincible(true);
         //オブジェクトプール
         ObjectPoolManager.Instance.Create_New_Pool(flower_Bullet, 4);
-    }
-
-    // Update is called once per frame
-    void Update() {
-        //クリア
-        if (_boss_Controller.Clear_Trigger()) {
-            StartCoroutine("Clear_Cor");
-            YukaMovie.Instance.Start_Clear_Movie();
-        }
-    }
+    }   
 
 
     //戦闘開始
-    public void Start_Battle() {        
+    public override void Start_Battle() {
+        base.Start_Battle();
         //ボス敵にする
-        _boss_Controller.Set_Is_Invincible(false);
+        Set_Is_Invincible(false);
         gameObject.tag = "EnemyTag";        
         //攻撃開始
         StartCoroutine("Attack_Cor");
-    }    
+    }
 
 
-    //クリア時の処理
-    public IEnumerator Clear_Cor() {
+    //クリア後の処理
+    protected override void Do_After_Clear_Process() {
+        base.Do_After_Clear_Process();
+        StartCoroutine("After_Clear_Cor");
+    }
+    
+    private IEnumerator After_Clear_Cor() {        
         //攻撃中止
         StopCoroutine("Attack_Cor");
         Stop_Charge_Effect();
-        //背景戻す
-        BackGroundEffector.Instance.Start_Change_Color(new Color(1, 1, 1), 0.1f);
+        //ムービー
+        YukaMovie.Instance.Start_Clear_Movie();
         //移動
         _move_Two_Points.Start_Move(new Vector3(transform.position.x, -110f), 0);
         yield return new WaitUntil(_move_Two_Points.End_Move);
@@ -62,6 +57,8 @@ public class YukaAttack : MonoBehaviour {
     }
 
 
+    //===================================================攻撃========================================================
+    #region Attack
     //攻撃
     private IEnumerator Attack_Cor() {
         GetComponent<Animator>().SetBool("AttackBool", true);
@@ -179,6 +176,10 @@ public class YukaAttack : MonoBehaviour {
         UsualSoundManager.Instance.Play_Shoot_Sound();
     }
 
+    #endregion
+
+    //================================================エフェクト=======================================================
+    #region Effect
 
     //溜め
     private void Play_Charge_Effect() {
@@ -198,4 +199,6 @@ public class YukaAttack : MonoBehaviour {
     private void Play_Burst_Effect() {
         transform.GetChild(6).GetComponent<ParticleSystem>().Play();
     }
+
+    #endregion
 }

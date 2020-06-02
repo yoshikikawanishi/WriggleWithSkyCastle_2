@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BigFrog : MonoBehaviour {
+public class BigFrog : BossEnemy {
 
     [SerializeField] private ShootSystem bubble_Shoot_Left;
     [SerializeField] private ShootSystem bubble_Shoot_Right;
@@ -12,9 +12,7 @@ public class BigFrog : MonoBehaviour {
 
     private BossEnemy boss_Enemy;
     private Animator _anim;
-    private GameObject player;
-
-    private bool is_Start_Battle = false;
+    private GameObject player;    
 
 
 	// Use this for initialization
@@ -29,33 +27,27 @@ public class BigFrog : MonoBehaviour {
         player = GameObject.FindWithTag("PlayerTag");        
 	}
 	
-
-	// Update is called once per frame
-	void Update () {
-        //戦闘
-        if (is_Start_Battle) {
-            StartCoroutine("Attack_Cor");
-            is_Start_Battle = false;
-        }
-        //クリア
-        if (boss_Enemy.Clear_Trigger()) {
-            Stop_Battle();
-            BigFrogMovie.Instance.Start_Clear_Movie();
-        }	
-	}
-
-
-    //戦闘開始時の処理
-    public void Start_Battle() {
-        is_Start_Battle = true;
+	
+    //戦闘開始
+    public override void Start_Battle() {
+        base.Start_Battle();
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer"); //敵判定
         sleeping_Bubble_Shoot.Stop_Shoot();                     //泡止める
         _anim.SetTrigger("GetUpTrigger");                       //起きる
+        StartCoroutine("Attack_Cor");                           //戦闘開始
     }
 
 
-    //戦闘終了時の処理
-    public void Stop_Battle() {
+    //撃破時の処理
+    protected override void Clear() {
+        base.Clear();
+        Stop_Battle();
+        BigFrogMovie.Instance.Start_Clear_Movie();
+    }
+
+
+    //攻撃の停止
+    private void Stop_Battle() {
         StopCoroutine("Attack_Cor");
         StopCoroutine("Bubble_Shoot_Cor");
         _anim.SetTrigger("SleepTrigger");
