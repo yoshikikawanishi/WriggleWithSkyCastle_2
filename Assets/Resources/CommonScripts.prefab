@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
-  Delete_Collection_Data: 1
+  Delete_Collection_Data: 0
   Delete_Visited_Scene_Date: 0
   Is_First_Visit_Scene_In_Testplay: 1
   Is_Delete_BGM: 1
@@ -137,7 +137,7 @@ MonoBehaviour:
   Player_Option: 3
   Delete_Yuka_Data: 1
   Delete_Rumia_Data: 0
-  Delete_Aya_Data: 0
+  Delete_Aya_Data: 1
   Delete_Has_Game_Over: 0
 --- !u!114 &114752986096458988
 MonoBehaviour:

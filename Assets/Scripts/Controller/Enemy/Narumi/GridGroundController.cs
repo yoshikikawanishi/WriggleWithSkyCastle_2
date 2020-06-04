@@ -13,7 +13,7 @@ public class GridGroundController : MonoBehaviour {
     private State state = State.idle;
 
     private float default_Height;
-    private float raise_Height = 160f;
+    private float raise_Height = 196f;
     private float raising_Time = 0;
     private float raise_Time_Span;
     private AnimationCurve raise_Curve;
@@ -23,6 +23,8 @@ public class GridGroundController : MonoBehaviour {
     private SpriteRenderer soul_Effect_Sprite;
     private Animator soul_Effect_Anim;
 
+    private GameObject player;
+
 	
 	void Start () {
         default_Height = transform.position.y;
@@ -30,8 +32,25 @@ public class GridGroundController : MonoBehaviour {
         soul_Effect_Sprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         soul_Effect_Anim = transform.GetChild(0).GetComponent<Animator>();
         soul_Effect_Anim.gameObject.SetActive(false);
+
+        player = GameObject.FindWithTag("PlayerTag");        
 	}
 	
+
+    void Update() {
+        //自機が埋まるのを防ぐ
+        if(state == State.idle && Is_Overlap_Player()) {
+            if(gameObject.layer != LayerMask.NameToLayer("InvincibleLayer")) {
+                gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+            }
+        }
+        else {
+            if(gameObject.layer == LayerMask.NameToLayer("InvincibleLayer")) {
+                gameObject.layer = LayerMask.NameToLayer("Default");
+            }
+        }
+    }
+
 
     void FixedUpdate() {
         //上昇
@@ -83,6 +102,15 @@ public class GridGroundController : MonoBehaviour {
     }
 
 
+    //自機が下に埋まっているかどうか
+    private bool Is_Overlap_Player() {
+        Vector2 diff = player.transform.position - transform.position;
+        if (Mathf.Abs(diff.x) < 24f && diff.y < -8f)
+            return true;        
+        return false;
+    }    
+
+
     //上昇開始
     public void Start_Raise(float raise_Time_Span) {
         if(state != State.idle) 
@@ -99,8 +127,7 @@ public class GridGroundController : MonoBehaviour {
 
     //停止
     public void Freeze() {
-        state = State.freeze;
-        soul_Effect_Sprite.color = new Color(1.0f, 0.7f, 0.7f);
+        state = State.freeze;        
     }
 
 
@@ -116,6 +143,18 @@ public class GridGroundController : MonoBehaviour {
         if(state == State.idle) 
             return;
         state = State.dropping;
+    }
+
+
+    //ショット
+    public IEnumerator Shoot_Cor() {
+        soul_Effect_Sprite.color = new Color(1.0f, 0.3f, 0.7f);        
+        yield return new WaitForSeconds(1.0f);
+        ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
+        for(int i = 0; i < shoots.Length; i++) {
+            shoots[i].Shoot();
+        }
+        soul_Effect_Sprite.color = new Color(1.0f, 1.0f, 1.0f);
     }
 
 

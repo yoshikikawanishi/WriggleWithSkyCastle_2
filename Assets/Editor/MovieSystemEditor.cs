@@ -84,9 +84,17 @@ public class MovieSystemEditor : Editor {
                 GUILayout.FlexibleSpace();
                 EditorGUILayout.EndHorizontal();
             }
-            
         
         }
+
+        //追加ボタン
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+        if (GUILayout.Button("AddEvent", GUILayout.Width(160), GUILayout.Height(20))) {
+            obj.Add_Event(obj.list.Count);
+        }
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
 
         EditorUtility.SetDirty(obj);        
 

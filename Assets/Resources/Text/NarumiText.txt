@@ -1,0 +1,2 @@
+#ID	#NAME	#PANELNUMBER	#MESSAGE
+1	成美	1	ああああ

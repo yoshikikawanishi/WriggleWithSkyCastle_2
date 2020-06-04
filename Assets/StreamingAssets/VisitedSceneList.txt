@@ -4,3 +4,9 @@ Stage3_1Scene
 Stage4_1Scene
 Stage4_2Scene
 Stage4_BossScene
+TitleScene
+Stage3_2Scene
+Stage3_BossScene
+Stage1_BossScene
+Stage2_1Scene
+Stage2_2Scene

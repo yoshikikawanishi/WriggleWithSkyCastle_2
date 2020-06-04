@@ -22,7 +22,7 @@ public class NarumiBlockBarrier : MonoBehaviour {
         block_Pool = gameObject.AddComponent<ObjectPool>();
         block_Pool.CreatePool(block_Prefab, 10);
 
-        Create_Barrier(12, 64f, 0.05f, -1);
+        //Create_Barrier(12, 64f, 0.05f, -1);
 	}
 
 

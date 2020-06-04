@@ -119,7 +119,7 @@ public class MovieSystem : MonoBehaviour {
 
         //終了設定
         if (is_Disable_Controlle) {
-            GetComponent<PlayerMovieFunction>().Enable_Controlle_Player();            
+            PlayerMovieFunction.Instance.Enable_Controlle_Player();            
         }
         PauseManager.Instance.Set_Is_Pausable(true);
         is_End_Movie = true;
