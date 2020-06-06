@@ -32,7 +32,7 @@ public class NarumiBlockBarrier : MonoBehaviour {
 
 
     /// <summary>
-    /// ブロックバリア生成、本体中心に回転させる
+    /// ブロックバリア生成、本体中心に回転させる, Create_Barrier(12, 64f, 0.05f, -1);
     /// </summary>
     /// <param name="num">ブロック数</param>
     /// <param name="radius">回転の半径</param>
@@ -55,7 +55,7 @@ public class NarumiBlockBarrier : MonoBehaviour {
             obj = block_Pool.GetObject();
             obj.transform.SetParent(transform);
             angle = center_Angle_Rad + inter_Angle_Rad * i;
-            obj.transform.position = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+            obj.transform.position = transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
             blocks.Add(obj);
         }
 
@@ -88,7 +88,7 @@ public class NarumiBlockBarrier : MonoBehaviour {
                 continue;
             }
             float angle = center_Angle_Rad + inter_Angle_Rad * i;
-            blocks[i].transform.position = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+            blocks[i].transform.position = transform.position + new Vector3(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
         }
         center_Angle_Rad += angle_Velocity_Rad;
     }

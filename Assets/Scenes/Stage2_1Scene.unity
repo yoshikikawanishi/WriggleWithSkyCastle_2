@@ -16874,7 +16874,7 @@ MonoBehaviour:
   is_Pooled: 1
   is_One_Life: 0
   shake_Camera_In_Vanish: 0
-  life: 6
+  life: 12
   power_Value: 3
   score_Value: 6
   drop_Life_Probability: 0.1
@@ -19158,7 +19158,7 @@ MonoBehaviour:
   is_Pooled: 1
   is_One_Life: 0
   shake_Camera_In_Vanish: 0
-  life: 6
+  life: 12
   power_Value: 3
   score_Value: 6
   drop_Life_Probability: 0.1
@@ -23504,7 +23504,7 @@ MonoBehaviour:
   is_Pooled: 1
   is_One_Life: 0
   shake_Camera_In_Vanish: 0
-  life: 6
+  life: 12
   power_Value: 3
   score_Value: 6
   drop_Life_Probability: 0.1
@@ -28970,7 +28970,7 @@ MonoBehaviour:
   is_Pooled: 1
   is_One_Life: 0
   shake_Camera_In_Vanish: 0
-  life: 6
+  life: 12
   power_Value: 3
   score_Value: 6
   drop_Life_Probability: 0.1

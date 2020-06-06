@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NemunoAttackFunction : MonoBehaviour {
 
-    private Nemuon _controller;
+    private Nemuno _controller;
     private NemunoAttack _attack;
     private NemunoSoundEffect _sound;
     private NemunoCollision _collision;
@@ -19,7 +19,7 @@ public class NemunoAttackFunction : MonoBehaviour {
 
     private void Awake() {
         //取得
-        _controller = GetComponent<Nemuon>();
+        _controller = GetComponent<Nemuno>();
         _attack = GetComponent<NemunoAttack>();
         _sound = GetComponentInChildren<NemunoSoundEffect>();
         _collision = GetComponent<NemunoCollision>();                

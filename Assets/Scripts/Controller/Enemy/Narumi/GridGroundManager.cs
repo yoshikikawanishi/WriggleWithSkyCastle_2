@@ -114,15 +114,25 @@ public class GridGroundManager : MonoBehaviour {
     }
 
 
-    //ショット撃つ
+    //ランダムにショット撃つ
     private IEnumerator Random_Shoot_Cor(float span) {
         if (blocks.Count == 0)
             yield break;
+        if(Active_Block_List().Count == 0) {
+            StartCoroutine("Random_Raies_Cor", 0.2f);
+            yield return new WaitForSeconds(1.0f);
+            Quit_Random_Raise();
+        }
+
         Freeze_Blocks();
         List<GridGroundController> list;
         while (true) {
             list = Active_Block_List();
-            list[Random.Range(0, list.Count)].StartCoroutine("Shoot_Cor");
+            int index = Random.Range(0, list.Count);
+            while (list[index].Is_Nearly_Player()) {
+                index = Random.Range(0, list.Count);
+            }
+            list[index].StartCoroutine("Shoot_Cor");
             yield return new WaitForSeconds(span);
         }
     }

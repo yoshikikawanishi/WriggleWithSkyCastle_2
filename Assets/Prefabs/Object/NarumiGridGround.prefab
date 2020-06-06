@@ -202,7 +202,7 @@ MonoBehaviour:
   kind: 2
   comment: 
   play_On_Awake: 0
-  bullet: {fileID: 1672911330097656, guid: 3e058fdecf15422438cc824e8cae2f01, type: 2}
+  bullet: {fileID: 1793947466115986, guid: 3562c1ff7a1d6664f9aadb2f232c88c7, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
   radius: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   kind: 2
   comment: 
   play_On_Awake: 0
-  bullet: {fileID: 1672911330097656, guid: 3e058fdecf15422438cc824e8cae2f01, type: 2}
+  bullet: {fileID: 1434217107461684, guid: 1254b63eaee9d2e4eb4ae0035b81a096, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
   radius: 0

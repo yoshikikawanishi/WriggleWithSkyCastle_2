@@ -2,36 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NarumiAttack : MonoBehaviour {
+public class NarumiAttack : BossEnemyAttack {
 
-    private BGMMelody melody_Manager;
+    private Narumi _main;    
     private NarumiBlockBarrier block_Barrier;
     private MoveTwoPoints _move_Two_Points;
     private MoveConstSpeed _move_Const_Speed;
+    private CameraShake camera_Shake;
     [SerializeField] private GridGroundManager ground_Blocks;
 
 
 	// Use this for initialization
-	void Start () {
-        melody_Manager = GetComponentInChildren<BGMMelody>();
+	void Start () {        
+        block_Barrier = GetComponentInChildren<NarumiBlockBarrier>();
+        _main = GetComponent<Narumi>();
         _move_Two_Points = GetComponent<MoveTwoPoints>();
         _move_Const_Speed = GetComponent<MoveConstSpeed>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        switch (melody_Manager.Switch_Melody_Trigger()) {
-            case BGMMelody.Melody.A: StartCoroutine("Attack_In_Melody_A_Cor"); break;
-            case BGMMelody.Melody.B: StartCoroutine("Attack_In_Melody_B_Cor"); break;
-            case BGMMelody.Melody.C: StartCoroutine("Attack_In_Melody_C_Cor"); break;
-            case BGMMelody.Melody.main: break;
-        }        
-
-	}
+        camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+	}	
 
 
+    public override void Stop_Attack() {
+        Stop_Attack_In_Melody_A();
+        Stop_Attack_In_Melody_B();
+        Stop_Attack_In_Melody_C();
+        Stop_Attack_In_Melody_Main();
+    }
+
+
+    //===================================================================
+    protected override IEnumerator Attack_In_Melody_Intro_Cor() {
+        yield return null;
+    }
+    protected override void Stop_Attack_In_Melody_Main() {
+    }
     //==================================================================
-    private IEnumerator Attack_In_Melody_A_Cor() {
+    protected override IEnumerator Attack_In_Melody_A_Cor() {
+        _main.Change_Animation("AttackBool", 1);
+        block_Barrier.Create_Barrier(16, 64f, 0.05f, -1);
         ground_Blocks.Start_Random_Raise(0.5f);
         while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.A) {
             yield return null;
@@ -40,13 +48,19 @@ public class NarumiAttack : MonoBehaviour {
     }
     
 
-    public void Stop_Attack_In_Melody_A() {
+    protected override void Stop_Attack_In_Melody_A() {
+        _main.Change_Animation("IdleBool");
         ground_Blocks.Quit_Random_Raise();
+        block_Barrier.Delete_Barrier();
     }
 
 
     //==================================================================
-    private IEnumerator Attack_In_Melody_B_Cor() {
+    protected override IEnumerator Attack_In_Melody_B_Cor() {
+        yield return null;      //Stop_Attack_In_Melody_aが呼ばれるのが先にならないよう
+
+        _main.Change_Animation("AttackBool", 1);
+        block_Barrier.Create_Barrier(16, 64f, 0.05f, -1);
         ground_Blocks.Start_Random_Shoot(2.0f);
         while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
             yield return null;
@@ -54,21 +68,26 @@ public class NarumiAttack : MonoBehaviour {
         Stop_Attack_In_Melody_B();
     }
 
-    public void Stop_Attack_In_Melody_B() {
+    protected override void Stop_Attack_In_Melody_B() {
+        _main.Change_Animation("IdleBool");
         ground_Blocks.Quit_Random_Shoot();
         ground_Blocks.Restore_Blocks_To_Original_Pos();
+        block_Barrier.Delete_Barrier();
     }
 
 
     //==================================================================
-    private IEnumerator Attack_In_Melody_C_Cor() {
+    protected override IEnumerator Attack_In_Melody_C_Cor() {
         //上昇
+        _main.Change_Animation("AttackBool", 1);
         _move_Two_Points.Start_Move(new Vector3(transform.position.x, 180f), 0);
         yield return new WaitUntil(_move_Two_Points.End_Move);
 
         transform.position = new Vector3(196f, 180f);
+        yield return new WaitForSeconds(1.0f);
 
         //落下
+        _main.Change_Animation("DropBool", 1);
         _move_Const_Speed.Start_Move(new Vector3(transform.position.x, -48f), 0);
         yield return new WaitUntil(_move_Const_Speed.End_Move);
         //着地、衝撃波
@@ -77,9 +96,27 @@ public class NarumiAttack : MonoBehaviour {
             order.Add(ground_Blocks.Num() - i - 1);
         }
         ground_Blocks.Start_Blocks_Raise(order, 0.1f);
+        camera_Shake.Shake(0.5f, new Vector2(1.5f, 1.5f), true);
         yield return new WaitForSeconds(1.0f);
         //弾幕位置に移動
+        _main.Change_Animation("AttackBool", 1);
         _move_Two_Points.Start_Move(new Vector3(transform.position.x, 32f), 0);
+        yield return new WaitUntil(_move_Two_Points.End_Move);        
     }
-    
+
+
+    protected override void Stop_Attack_In_Melody_C() {
+        
+    }
+
+
+    //======================================================================
+
+    protected override IEnumerator Attack_In_Melody_Main_Cor() {
+        yield return null;
+    }
+
+
+    protected override void Stop_Attack_In_Melody_Intro() {
+    }
 }

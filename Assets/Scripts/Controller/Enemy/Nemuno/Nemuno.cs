@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nemuon : BossEnemy {
+public class Nemuno : BossEnemy {
 
     //背景エフェクト
     [SerializeField] private GameObject back_Design;

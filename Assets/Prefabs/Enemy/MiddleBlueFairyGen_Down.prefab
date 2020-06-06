@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4eae90975da3964a8a6a9829e3a0de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gen_Only_Flying: 1
+  gen_Only_Flying: 0
   parent: {fileID: 0}
   generator_Parent: {fileID: 0}
   start_Gen_Distance_From_Camera: 240
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517185460242260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09fce0b3a3e959c4f9189e85388e618f, type: 3}
   m_Name: 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class NemunoAttack : MonoBehaviour {
 
     //コンポーネント        
-    private Nemuon _controller;
+    private Nemuno _controller;
     private NemunoShoot _shoot;
     private NemunoBarrier _barrier;
     private NemunoAttackFunction _attack_Func;
@@ -25,7 +25,7 @@ public class NemunoAttack : MonoBehaviour {
 
     private void Awake() {
         //取得
-        _controller = GetComponent<Nemuon>();
+        _controller = GetComponent<Nemuno>();
         _attack_Func = GetComponent<NemunoAttackFunction>();
         _shoot = GetComponentInChildren<NemunoShoot>();
         _barrier = GetComponentInChildren<NemunoBarrier>();              

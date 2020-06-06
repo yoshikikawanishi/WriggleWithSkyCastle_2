@@ -111,6 +111,15 @@ public class GridGroundController : MonoBehaviour {
     }    
 
 
+    //自機が周辺にいるか
+    public bool Is_Nearly_Player() {
+        Vector2 diff = player.transform.position - transform.position;
+        if (Mathf.Abs(diff.x) < 40f && Mathf.Abs(diff.y) < 40f)
+            return true;
+        return false;
+    }
+
+
     //上昇開始
     public void Start_Raise(float raise_Time_Span) {
         if(state != State.idle) 
