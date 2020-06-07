@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NarumiShoot : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private GameObject snow_Shoot_Obj;
+
+
+	public void Shoot_Snow_Shoot() {
+        ShootSystem[] shoots = snow_Shoot_Obj.GetComponentsInChildren<ShootSystem>();
+        for(int i = 0;  i < shoots.Length; i++) {
+            shoots[i].Shoot();
+        }
+    }
 }

@@ -107,6 +107,7 @@ public class SceneManagement : SingletonMonoBehaviour<SceneManagement> {
 
         { "Stage3_1Scene", true },
         { "Stage3_2Scene", true },
+        { "Stage3_3Scene", true },
         { "Stage3_BossScene", true },
 
         { "Stage4_1Scene", true },

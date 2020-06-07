@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class NarumiEffects : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private GameObject power_Charge_Effect;
+
+       
+    public void Play_Power_Charge(float span) {
+        power_Charge_Effect.SetActive(true);
+        if(span > 0) {
+            Invoke("Stop_Power_Charge", span);
+        }
+    }
+
+    public void Stop_Power_Charge() {
+        power_Charge_Effect.SetActive(false);
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Momizi : TalkCharacter {
 
@@ -10,7 +11,12 @@ public class Momizi : TalkCharacter {
         base.Start();
         CollectionManager c = CollectionManager.Instance;
         if(c.Is_Collected("Momizi") && c.Is_Collected("Aya")) {
-            Change_Status_With_Aya();
+            if (SceneManager.GetActiveScene().name == "Stage3_3Scene") {
+                Change_Status_With_Aya();
+            }
+            else {
+                Destroy(gameObject);
+            }
         }
     }
 
