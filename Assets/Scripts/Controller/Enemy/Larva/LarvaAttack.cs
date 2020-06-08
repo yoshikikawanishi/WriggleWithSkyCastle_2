@@ -2,6 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Tempo	    168
+0.357		0.34
+0.714		0.70
+1.071		1.05
+1.428		1.41
+1.785		
+2.142 		2.13
+
+3.213		3.20
+
+4.641		4.625
+
+6.069		6.05
+     */
+
 public class LarvaAttack : MonoBehaviour {
 
     //コンポーネント
@@ -49,30 +65,30 @@ public class LarvaAttack : MonoBehaviour {
 
         while (true) {
             //弾幕1
-            _controller.Play_Charge_Effect(2.0f);
-            yield return new WaitForSeconds(2.0f);
+            _controller.Play_Charge_Effect(2.13f);
+            yield return new WaitForSeconds(2.13f);
             _controller.Play_Burst_Effect();
             shoot_Obj.StartCoroutine("Shoot_Green_Bullet_Cor", 2);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.41f);
             //shoot_Obj.Shoot_Red_Bullet();
             
 
             //自機を追従、鱗粉弾発射
             Start_Trace_Player();
             for (int i = 0; i < 2; i++) {
-                yield return new WaitForSeconds(2.0f);
+                yield return new WaitForSeconds(2.13f);
                 _controller.StartCoroutine("Pre_Action_Blink");
                 _controller.Play_Small_Charge_Effect();
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(1.05f);
                 shoot_Obj.Shoot_Scales_Bullet(12, 180f);
                 _controller.Play_Scales_Effect();
             }
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(1.41f);
             Quit_Trace_Player();
 
             //突進攻撃
             StartCoroutine("Dash_Attack");
-            yield return new WaitForSeconds(4.8f);            
+            yield return new WaitForSeconds(4.625f);            
                         
         }
     }
@@ -111,7 +127,7 @@ public class LarvaAttack : MonoBehaviour {
         GetComponent<BossCollisionDetection>().Become_Invincible();
         _move.Start_Move(new Vector3(180f, -32f));
         yield return new WaitUntil(_move.End_Move);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
         GetComponent<BossCollisionDetection>().Release_Invincible();
 
         //初期設定
@@ -121,35 +137,35 @@ public class LarvaAttack : MonoBehaviour {
             //自機を追従、鱗粉弾発射
             Start_Trace_Player();
             for (int i = 0; i < 2; i++) {
-                yield return new WaitForSeconds(2.2f);
+                yield return new WaitForSeconds(2.13f);
                 _controller.StartCoroutine("Pre_Action_Blink");
                 _controller.Play_Small_Charge_Effect();
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(1.05f);
                 for (int j = 0; j < 2; j++) {
                     shoot_Obj.Shoot_Scales_Bullet((j+1) * 20, (j+1) * 150f);
                     _controller.Play_Scales_Effect();
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.34f);
                 }
             }
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(1.41f);
             Quit_Trace_Player();
 
             //突進攻撃
             StartCoroutine("Dash_Attack");
-            yield return new WaitForSeconds(4.5f);
+            yield return new WaitForSeconds(4.625f);
 
             //移動
-            _controller.Play_Charge_Effect(2.0f);            
+            _controller.Play_Charge_Effect(2.13f);            
             _move.Start_Move(new Vector3(0, 110f));
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(2.13f);
 
             //弾幕2            
             shoot_Obj.Shoot_Dif_Bullet();
             _controller.Play_Burst_Effect();
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.05f);
             _controller.Play_Burst_Effect();
             shoot_Obj.StartCoroutine("Shoot_Green_Bullet_Cor", 3);
-            yield return new WaitForSeconds(6.0f);
+            yield return new WaitForSeconds(6.05f);
             
             //移動
             _move.Start_Move(new Vector3(130f, -32f));
@@ -191,7 +207,7 @@ public class LarvaAttack : MonoBehaviour {
         else {
             _motion.Start_Move(1);
         }
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(2.13f);
         transform.localScale = new Vector3(1 * direction, 1, 1);
     }
 

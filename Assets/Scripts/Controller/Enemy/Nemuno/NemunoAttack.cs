@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ tempo 171
+ 0.351  0.33
+ 0.702  0.68
+ 1.05   1.03
+ 1.40   1.38
+ 1.76   1.74
+ 2.11   2.09
+     */
+
 public class NemunoAttack : MonoBehaviour {
 
     //コンポーネント        
@@ -109,7 +119,7 @@ public class NemunoAttack : MonoBehaviour {
         //移動
         _controller.Change_Animation("ShootBool");
         _controller.Change_Fly_Parameter();
-        yield return new WaitForSecondsRealtime(1.0f);
+        yield return new WaitForSecondsRealtime(1.03f);
         _move_Two_Points.Start_Move(new Vector3(160f, 8f), 4);
         yield return new WaitForSeconds(wait_Time - 1.0f);
 
@@ -117,12 +127,12 @@ public class NemunoAttack : MonoBehaviour {
         _controller.Play_Burst_Effect();
         _shoot.Start_Kunai_Shoot();
         UsualSoundManager.Instance.Play_Shoot_Sound();
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(10.51f);
 
         if (_BGM.Get_Now_Melody() != NemunoBGMTimeKeeper.Melody.main) {
             _controller.Change_Land_Paramter();
             _controller.Change_Animation("IdleBool");
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.38f);
         }        
 
         can_Attack = true;       
@@ -179,7 +189,7 @@ public class NemunoAttack : MonoBehaviour {
     private IEnumerator Phase2_Launch_Attack() {        
         //無敵化
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.38f);
 
         //大ジャンプ
         _attack_Func.StartCoroutine("High_Jump_Cor", -1);
@@ -187,8 +197,8 @@ public class NemunoAttack : MonoBehaviour {
 
         //溜め
         transform.localScale = new Vector3(1, 1, 1);
-        _controller.Play_Charge_Effect(2.0f);
-        yield return new WaitForSeconds(2.0f);
+        _controller.Play_Charge_Effect(2.09f);
+        yield return new WaitForSeconds(2.09f);
         
         //無敵化解除
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer");         
@@ -197,7 +207,7 @@ public class NemunoAttack : MonoBehaviour {
         _controller.Play_Burst_Effect();
         UsualSoundManager.Instance.Play_Shoot_Sound();
         _shoot.StartCoroutine("Play_Square_Blocks_Attack");
-        yield return new WaitForSeconds(8.0f);
+        yield return new WaitForSeconds(8.04f);
 
         _controller.Play_Battle_Effect();
         can_Attack = true;
@@ -227,21 +237,21 @@ public class NemunoAttack : MonoBehaviour {
         _controller.Change_Animation("ShootBool");
         _controller.Change_Fly_Parameter();
         _move_Two_Points.Start_Move(new Vector3(160f * -direction, 8f), 4);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.74f);
 
         yield return new WaitForSeconds(wait_Time - 1.5f);        
 
         //弾幕攻撃
         _shoot.Start_Knife_Shoot();
-        yield return new WaitForSeconds(6.0f);
+        yield return new WaitForSeconds(6.3f);
         
         _controller.Play_Burst_Effect();
         UsualSoundManager.Instance.Play_Shoot_Sound();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.74f);
 
         _controller.Change_Land_Paramter();
         _controller.Change_Animation("IdleBool");
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(4.2f);
 
         can_Attack = true;
     }

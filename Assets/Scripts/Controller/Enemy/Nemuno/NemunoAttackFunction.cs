@@ -173,13 +173,13 @@ public class NemunoAttackFunction : MonoBehaviour {
         //攻撃
         _controller.Change_Animation("SlashTrigger");
 
-        yield return new WaitForSeconds(Pre_Attack_Blink(1, 0.18f));
+        yield return new WaitForSeconds(Pre_Attack_Blink(1, 0.165f));
         yield return new WaitForSeconds(0.18f);
 
         _controller.Play_Slash_Effect();
         _sound.Play_Slash_Sound();
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.68f);
 
         _controller.Change_Animation("IdleBool");
         yield return new WaitForSeconds(0.2f);
@@ -205,13 +205,13 @@ public class NemunoAttackFunction : MonoBehaviour {
         //攻撃
         _controller.Change_Animation("SlashTrigger");
 
-        yield return new WaitForSeconds(Pre_Attack_Blink(2, 0.2f));
+        yield return new WaitForSeconds(Pre_Attack_Blink(2, 0.165f));
         yield return new WaitForSeconds(0.1f);
 
         _sound.Play_Slash_Sound();
         _shoot.Shoot_Shotgun(num);
         _controller.Play_Purple_Circle_Effect();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.68f);
 
         _controller.Change_Animation("IdleBool");
         yield return new WaitForSeconds(0.2f);
@@ -228,13 +228,13 @@ public class NemunoAttackFunction : MonoBehaviour {
 
         //溜めモーション
         _controller.Change_Animation("BeforeBarrierTrigger");
-        yield return new WaitForSeconds(Pre_Attack_Blink(3, 0.3f));
+        yield return new WaitForSeconds(Pre_Attack_Blink(3, 0.33f));
 
         //バリアを張る
         _controller.Play_Small_Charge_Effect();
         _controller.Change_Animation("IdleBool");
         _barrier.Start_Barrier();
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.03f);
 
         //距離と方向の計算
         int direction = -Player_Direction();
@@ -253,7 +253,7 @@ public class NemunoAttackFunction : MonoBehaviour {
         //バリア解除
         _controller.Change_Animation("IdleBool");
         _barrier.Stop_Barrier();
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.68f);
 
         _attack.can_Attack = true;
     }
@@ -267,6 +267,7 @@ public class NemunoAttackFunction : MonoBehaviour {
             direction = 1;
         StartCoroutine("High_Jump_Cor", direction);
         yield return new WaitUntil(Is_End_Move);
+        yield return new WaitForSeconds(0.68f);
         
         //Bメロじゃなくなったらここで終了
         if (_controller._BGM.Get_Now_Melody() != NemunoBGMTimeKeeper.Melody.B) {
@@ -286,9 +287,9 @@ public class NemunoAttackFunction : MonoBehaviour {
         _controller.Play_Yellow_Circle_Effect();
         _sound.Play_Before_Slash_Sound();
         _shoot.StartCoroutine("Shoot_Jump_Slash_Cor", num);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.68f);
         _sound.Play_Slash_Sound();
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.68f);
 
         //落下
         _controller.Change_Animation("IdleBool");
@@ -296,7 +297,7 @@ public class NemunoAttackFunction : MonoBehaviour {
 
         //Bメロじゃなくなったら着地を待つ
         if (_controller._BGM.Get_Now_Melody() != NemunoBGMTimeKeeper.Melody.B)
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.74f);
                     
         _attack.can_Attack = true;
     }

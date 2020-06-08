@@ -109,7 +109,7 @@ public class NemunoShoot : MonoBehaviour {
         MoveMotion[] moves = Phase2_Square_Blocks.GetComponentsInChildren<MoveMotion>();
         for(int i = 0; i < moves.Length; i++) {
             moves[i].Start_Move();
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.38f);
         }
     }
 
