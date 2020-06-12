@@ -10,7 +10,6 @@ public class BigFrog : BossEnemy {
     [Space]
     [SerializeField] private GameObject collection_Box;
 
-    private BossEnemy boss_Enemy;
     private Animator _anim;
     private GameObject player;    
 
@@ -22,7 +21,6 @@ public class BigFrog : BossEnemy {
             Destroy(gameObject);
         }
         //取得
-        boss_Enemy = GetComponent<BossEnemy>();
         _anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("PlayerTag");        
 	}

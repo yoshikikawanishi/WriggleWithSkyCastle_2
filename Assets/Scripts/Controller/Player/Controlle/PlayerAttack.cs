@@ -8,7 +8,6 @@ public class PlayerAttack : MonoBehaviour {
 
     //コンポーネント
     private PlayerController _controller;    
-    private PlayerEffect player_Effect;
     private PlayerSoundEffect player_SE;
     private Animator _anim;
     private Rigidbody2D _rigid;
@@ -21,8 +20,7 @@ public class PlayerAttack : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         //取得
-        _controller = GetComponent<PlayerController>();
-        player_Effect = GetComponentInChildren<PlayerEffect>();
+        _controller = GetComponent<PlayerController>();        
         player_SE = GetComponentInChildren<PlayerSoundEffect>();        
         _anim = GetComponent<Animator>();
         _rigid = GetComponent<Rigidbody2D>();

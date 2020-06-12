@@ -6,6 +6,7 @@ public class Narumi : BossEnemy {
 
     private Animator _anim;
     private NarumiAttack _attack;
+    [SerializeField] private BGMMelody _melody;
 
 
     void Start() {
@@ -16,7 +17,7 @@ public class Narumi : BossEnemy {
 
     public override void Start_Battle() {
         base.Start_Battle();
-        GetComponentInChildren<BGMMelody>().Start_Time_Count();        
+        _melody.Start_Time_Count();
     }
 
 

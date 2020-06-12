@@ -370,6 +370,10 @@ public class ShootSystem : MonoBehaviour {
             if (is_Fixed_Rotation) {
                 bullet.transform.rotation = Quaternion.Euler(new Vector3(0, 0, fixed_Angle));
             }
+
+            if(Time.deltaTime > 0.03f) {
+                t += Time.deltaTime - 0.03f;
+            }
             yield return new WaitForSeconds(0.03f - Time.deltaTime);
         }
     }

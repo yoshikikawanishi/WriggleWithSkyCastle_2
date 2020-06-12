@@ -4,74 +4,143 @@ using UnityEngine;
 
 public class NarumiAttack : BossEnemyAttack {
 
-    private Narumi _main;    
+    private Narumi _main;
     private NarumiBlockBarrier block_Barrier;
+    private ObjectRectFormationGenerator rect_Block_Gen;
     private NarumiEffects _effect;
     private NarumiShoot _shoot;
     private MoveTwoPoints _move_Two_Points;
     private MoveConstSpeed _move_Const_Speed;
     private CameraShake camera_Shake;
     [SerializeField] private GridGroundManager ground_Blocks;
+    [SerializeField] private BossBattleScroll scroll;
+    [SerializeField] private GridGroundManager scroll_Ground_Blocks_First;
+    [SerializeField] private GridGroundManager scroll_Ground_Blocks_Second;
 
+    private bool is_Phase2 = false;
 
-	// Use this for initialization
-	void Start () {        
+    
+    void Start() {
         block_Barrier = GetComponentInChildren<NarumiBlockBarrier>();
+        rect_Block_Gen = GetComponentInChildren<ObjectRectFormationGenerator>();
         _effect = GetComponentInChildren<NarumiEffects>();
         _shoot = GetComponentInChildren<NarumiShoot>();
         _main = GetComponent<Narumi>();
         _move_Two_Points = GetComponent<MoveTwoPoints>();
         _move_Const_Speed = GetComponent<MoveConstSpeed>();
         camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
-	}	
+    }    
 
 
     public override void Stop_Attack() {
-        Stop_Attack_In_Melody_A();
-        Stop_Attack_In_Melody_B();
-        Stop_Attack_In_Melody_C();
-        Stop_Attack_In_Melody_Main();
+        Stop_Melody_A_Phase1();
+        Stop_Melody_B_Phase1();
+        Stop_Melody_C_Phase1();
+        Stop_Melody_Main_Phase1();
+        Stop_Melody_A_Phase2();
+        Stop_Melody_B_Phase2();
+        Stop_Melody_C_Phase2();
+        Stop_Melody_Main_Phase2();
+        scroll.Stop_Scroll();
     }
 
 
-    //===================================================================
-    protected override IEnumerator Attack_In_Melody_Intro_Cor() {
-        yield return null;
+    protected override void Start_Melody_Intro() {
     }
-    protected override void Stop_Attack_In_Melody_Main() {
+
+
+    protected override void Start_Melody_A() {
+        if(now_Phase == 1) {
+            StartCoroutine("Attack_Melody_A_Phase1_Cor");            
+        }
+        else {
+            StartCoroutine("Attack_Melody_A_Phase2_Cor");
+        }
     }
+
+
+    protected override void Start_Melody_B() {
+        if (now_Phase == 1) {
+            StartCoroutine("Attack_Melody_B_Phase1_Cor");            
+        }
+        else {
+            StartCoroutine("Attack_Melody_B_Phase2_Cor");
+        }
+    }
+
+
+    protected override void Start_Melody_C() {
+        if (now_Phase == 1) {
+            StartCoroutine("Attack_Melody_C_Phase1_Cor");
+        }
+        else {
+            StartCoroutine("Attack_Melody_C_Phase2_Cor");
+        }
+    }
+
+
+    protected override void Start_Melody_Main() {
+        if (now_Phase == 1) {
+            StartCoroutine("Attack_Melody_Main_Phase1_Cor");
+        }
+        else {
+            StartCoroutine("Attack_Melody_Main_Phase2_Cor");
+        }
+    }
+
+
+    protected override void Action_In_Change_Phase() {
+        //フェーズ２開始時
+        if(now_Phase == 2) {
+            Stop_Attack();
+            StartCoroutine("Start_Phase2_Cor");
+        }
+    }
+
     //==================================================================
-    protected override IEnumerator Attack_In_Melody_A_Cor() {
+    private IEnumerator Attack_Melody_A_Phase1_Cor() {
+        //中心まで移動
+        _move_Const_Speed.Start_Move(new Vector3(0, 0), 1);
+        yield return new WaitUntil(_move_Const_Speed.End_Move);
+        //溜めエフェクト
+        _effect.Play_Power_Charge_Small();
+        yield return new WaitForSeconds(1.0f);
+        _effect.Play_Burst();
+        
         _main.Change_Animation("AttackBool", 1);
+        //ブロック生成
         block_Barrier.Create_Barrier(12, 64f, 0.05f, -1);
-        ground_Blocks.Start_Random_Raise(0.5f);
+        //地面移動開始
+        ground_Blocks.Start_Random_Raise(1.0f);
         while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.A) {
             yield return null;
         }
-        Stop_Attack_In_Melody_A();
+        Stop_Melody_A_Phase1();
     }
     
 
-    protected override void Stop_Attack_In_Melody_A() {
+    private void Stop_Melody_A_Phase1() {
         _main.Change_Animation("IdleBool");
         ground_Blocks.Quit_Random_Raise();
         block_Barrier.Delete_Barrier();
+        _move_Const_Speed.Stop_Move();
     }
 
 
     //==================================================================
-    protected override IEnumerator Attack_In_Melody_B_Cor() {
-        yield return null;      //Stop_Attack_In_Melody_aが呼ばれるのが先にならないよう
+    private IEnumerator Attack_Melody_B_Phase1_Cor() {
+        yield return null;      //Stop_Attack_In_Melody_Aができてからになるよう
 
         _main.Change_Animation("AttackBool", 1);        
-        ground_Blocks.Start_Random_Shoot(2.0f);
+        ground_Blocks.Start_Random_Shoot(1.5f);
         while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
             yield return null;
         }
-        Stop_Attack_In_Melody_B();
+        Stop_Melody_B_Phase1();
     }
 
-    protected override void Stop_Attack_In_Melody_B() {
+
+    private void Stop_Melody_B_Phase1() {
         _main.Change_Animation("IdleBool");
         ground_Blocks.Quit_Random_Shoot();
         ground_Blocks.Restore_Blocks_To_Original_Pos();
@@ -80,7 +149,7 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     //==================================================================
-    protected override IEnumerator Attack_In_Melody_C_Cor() {
+    private IEnumerator Attack_Melody_C_Phase1_Cor() {
         //上昇
         _main.Change_Animation("AttackBool", 1);
         _move_Two_Points.Start_Move(new Vector3(transform.position.x, 180f), 0);
@@ -108,24 +177,138 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitUntil(_move_Two_Points.End_Move);          
     }
 
-
-    protected override void Stop_Attack_In_Melody_C() {
-        
+    
+    private void Stop_Melody_C_Phase1() {
+        StopCoroutine("Attack_Meloddy_C_Phase1_Cor");
+        _effect.Stop_Power_Charge();
+        _move_Const_Speed.Stop_Move();
+        _move_Two_Points.Stop_Move();
     }
 
 
     //======================================================================
-
-    protected override IEnumerator Attack_In_Melody_Main_Cor() {
+    private IEnumerator Attack_Melody_Main_Phase1_Cor() {
         //弾幕
         _effect.Stop_Power_Charge();
         for(int i = 0; i < 3; i++) {
             _shoot.Shoot_Snow_Shoot();
             yield return new WaitForSeconds(3.0f);
-        }        
+        }                
     }
 
 
-    protected override void Stop_Attack_In_Melody_Intro() {
+    private void Stop_Melody_Main_Phase1() {
+        StopCoroutine("Attack_In_Melody_Main_Cor");
     }
+
+
+    //====================================================================
+    private IEnumerator Start_Phase2_Cor() {
+        //取得
+        GameObject main_Camera = GameObject.FindWithTag("MainCamera");
+        CameraController camera_Controller = main_Camera.GetComponent<CameraController>();
+        //攻撃無効化
+        Stop_Attack();
+        base.Set_Can_Attack(false);
+        //無敵化
+        gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        //インターバル
+        yield return new WaitForSeconds(1.5f);
+        Stop_Attack();
+        //移動
+        _move_Two_Points.Start_Move(new Vector3(150f, 0), 1);
+        yield return new WaitUntil(_move_Two_Points.End_Move);
+        //攻撃再開
+        gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
+        base.Set_Can_Attack(true);
+        base.Restart_Attack();
+        //カメラの子に
+        transform.SetParent(main_Camera.transform);        
+        //カメラを移動        
+        if(camera_Controller != null)
+            camera_Controller.enabled = false;
+        while (main_Camera.transform.position.x < 512f) {
+            main_Camera.transform.position += new Vector3(Time.deltaTime * 70f, 0, 0);
+            yield return null;
+        }
+        //スクロール開始
+        scroll.Start_Scroll();       
+    }
+
+
+    //====================================================================
+    private IEnumerator Attack_Melody_A_Phase2_Cor() {
+        yield return new WaitForSeconds(2.0f);
+        scroll_Ground_Blocks_First.Start_Random_Raise(1.1f);
+        scroll_Ground_Blocks_Second.Start_Random_Raise(1.1f);
+        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.A) {
+            yield return new WaitForSeconds(2.0f);
+            _shoot.Shoot_Yellow_Talisman_Shoot();            
+        }
+        Stop_Melody_A_Phase2();
+    }
+
+    
+    private void Stop_Melody_A_Phase2() {
+        StopCoroutine("Attack_Melody_A_Phase2_Cor");
+        scroll_Ground_Blocks_First.Quit_Random_Raise();
+        scroll_Ground_Blocks_Second.Quit_Random_Raise();
+    }
+
+
+    //====================================================================
+    private IEnumerator Attack_Melody_B_Phase2_Cor() {
+        GameObject main_Camera = GameObject.FindWithTag("MainCamera");
+
+        yield return new WaitForSeconds(2.0f);
+        //ショット開始
+        StartCoroutine("Yellow_Talisman_Shoot_Cor");
+
+        //ブロック生成
+        Vector3 pos = new Vector2(260f, -80f);
+        
+        while (melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
+            yield return new WaitForSeconds(Random.Range(4.0f, 6.0f));
+            rect_Block_Gen.Generate(main_Camera.transform.position + pos);            
+        }
+        Stop_Melody_B_Phase2();
+    }
+
+
+    private IEnumerator Yellow_Talisman_Shoot_Cor() {
+        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
+            yield return new WaitForSeconds(3.0f);
+            _shoot.Shoot_Yellow_Talisman_Shoot_Strong();            
+        }
+    }
+
+
+    private void Stop_Melody_B_Phase2() {
+        StopCoroutine("Attack_Melody_B_Phase2_Cor");
+        StopCoroutine("Yellow_Talisman_Shoot_Cor");
+    }
+
+
+    //====================================================================
+    private IEnumerator Attack_Melody_C_Phase2_Cor() {
+        yield return null;
+    }
+
+
+    private void Stop_Melody_C_Phase2() {
+
+    }
+
+
+    //====================================================================
+    private IEnumerator Attack_Melody_Main_Phase2_Cor() {
+        yield return null;
+    }
+
+
+    private void Stop_Melody_Main_Phase2() {
+
+    }
+
+
 }

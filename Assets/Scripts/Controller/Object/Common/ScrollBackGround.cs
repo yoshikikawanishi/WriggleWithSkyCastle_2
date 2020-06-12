@@ -14,7 +14,6 @@ public class ScrollBackGround : MonoBehaviour {
     private Renderer[] back_Grounds = new Renderer[3];
     private GameObject main_Camera;
     private float camera_Position;
-    private Renderer center_Back_Ground;
     private DEQueue<Renderer> dequeue = new DEQueue<Renderer>();
 
     //速度差の値保存用
@@ -31,8 +30,7 @@ public class ScrollBackGround : MonoBehaviour {
         back_Grounds[1] = center;
         back_Grounds[2] = right;
         SPEED_RATE = speed_Rate;
-
-        center_Back_Ground = center;
+        
         for(int i = 0; i < 3; i++) {
             dequeue.Add_Last(back_Grounds[i]);
         }        

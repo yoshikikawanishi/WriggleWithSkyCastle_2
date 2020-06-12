@@ -25,6 +25,9 @@ public class Bullet : MonoBehaviour {
 
 
     private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.tag == "BombTag") {
+            PlayerManager.Instance.Add_Score(2);
+        }
         foreach (string tag in deleted_Obj_Tag) {
             if (collision.tag == tag) {
                 gameObject.SetActive(false);

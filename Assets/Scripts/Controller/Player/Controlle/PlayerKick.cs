@@ -25,10 +25,8 @@ public class PlayerKick : MonoBehaviour {
     private PlayerBodyCollision player_Body;
     private PlayerEffect player_Effect;
     private PlayerSoundEffect player_SE;
-    private Animator _anim;
     private Rigidbody2D _rigid;    
     private PlayerKickCollision kick_Collision;
-    private PlayerManager player_Manager;
     
     private bool end_Kick = false;
     private bool accept_Input = true;
@@ -43,11 +41,9 @@ public class PlayerKick : MonoBehaviour {
         _shoot = GetComponent<PlayerShoot>();
         player_Effect = GetComponentInChildren<PlayerEffect>();
         player_SE = GetComponentInChildren<PlayerSoundEffect>();
-        player_Body = GetComponentInChildren<PlayerBodyCollision>();
-        _anim = GetComponent<Animator>();
+        player_Body = GetComponentInChildren<PlayerBodyCollision>();        
         _rigid = GetComponent<Rigidbody2D>();        
-        kick_Collision = GetComponentInChildren<PlayerKickCollision>();
-        player_Manager = PlayerManager.Instance;        
+        kick_Collision = GetComponentInChildren<PlayerKickCollision>();             
     }
    
 

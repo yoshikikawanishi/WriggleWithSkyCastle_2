@@ -834,8 +834,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.08470535
-      value: 0.04951477
+      time: 0.005389333
+      value: 0.059767134
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -843,16 +843,16 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.9534335
-      value: 0.049997516
-      inSlope: 0
-      outSlope: 0
+      time: 2.6376193
+      value: 0.06024988
+      inSlope: 0.00033655943
+      outSlope: 0.00033655943
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.25484076
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 2.099326
+      time: 2.693417
       value: 0.0029932056
       inSlope: 0
       outSlope: 0
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e1f7755fa6bb742b840a660505ffba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 2c0100002c010000
+  life: 0e0100000e010000
   power_Value: 8
   score_Value: 10
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,

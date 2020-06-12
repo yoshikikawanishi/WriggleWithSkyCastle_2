@@ -87,7 +87,7 @@ public class GridGroundManager : MonoBehaviour {
         List<GridGroundController> list;
         while (true) {
             list = Idle_Block_List();
-            list[Random.Range(0, list.Count)].Start_Raise(1.5f);
+            list[Random.Range(0, list.Count)].Start_Raise(1.8f);
             yield return new WaitForSeconds(span);
         }
     }

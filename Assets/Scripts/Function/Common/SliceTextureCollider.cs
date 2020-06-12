@@ -50,7 +50,7 @@ public class SliceTextureCollider : MonoBehaviour {
         //テクスチャのスライス
         TextureSlicer slice = new TextureSlicer();
         texture = slice.createReadableTexture2D(texture);
-        Sprite[] grid = slice.Slice_Sprite(texture, new Vector2Int(1, 1));        
+        slice.Slice_Sprite(texture, new Vector2Int(1, 1));        
 
         Vector2Int range;   //テクスチャの１マスグリッドのうち連続で透明ではないところの範囲(x, 始点 / y, 終点)
         Sprite sprite;      //タイル一枚のスプライト

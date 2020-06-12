@@ -353,7 +353,7 @@ MonoBehaviour:
   is_Pooled: 0
   is_One_Life: 0
   shake_Camera_In_Vanish: 1
-  life: 180
+  life: 140
   power_Value: 8
   score_Value: 12
   drop_Life_Probability: 1

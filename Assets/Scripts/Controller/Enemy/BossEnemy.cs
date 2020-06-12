@@ -39,7 +39,7 @@ public class BossEnemy : MonoBehaviour {
         battle,
         cleared,
     }
-    public State state = State.idle;
+    [HideInInspector] public State state = State.idle;
 
 
     protected void Awake() {

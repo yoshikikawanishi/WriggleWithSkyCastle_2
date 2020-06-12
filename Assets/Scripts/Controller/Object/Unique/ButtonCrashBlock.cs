@@ -25,7 +25,8 @@ public class ButtonCrashBlock : MonoBehaviour {
     [SerializeField] private SpriteRenderer icon_Sprite;
     [Space]
     //要求ボタンの設定用
-    [SerializeField] private List<ButtonKind> require_Button_List = new List<ButtonKind> { ButtonKind.jump };
+    [SerializeField] private int require_Button_Count = 3;
+    private List<ButtonKind> require_Button_List = new List<ButtonKind>();
     
     //ボタンアイコン配列化用
     private Sprite[] icon_Textures = new Sprite[BUTTONNUM];
@@ -34,7 +35,7 @@ public class ButtonCrashBlock : MonoBehaviour {
     private PlayerController player_Controller;
     private ChildColliderTrigger detection;
 
-    private bool is_Player_Nearly = false;
+    private bool is_Player_Nearly = true;
 
 
     void Awake() {
@@ -42,8 +43,15 @@ public class ButtonCrashBlock : MonoBehaviour {
         icon_Textures[(int)ButtonKind.jump] = icon_Jump;
         icon_Textures[(int)ButtonKind.attack] = icon_Attack;
         icon_Textures[(int)ButtonKind.fly] = icon_Fly;
+        for(int i = 0; i < require_Button_Count; i++) {
+            switch(Random.Range(0, 3)) {
+                case 0: require_Button_List.Add(ButtonKind.attack); break;
+                case 1: require_Button_List.Add(ButtonKind.jump); break;
+                case 2: require_Button_List.Add(ButtonKind.fly); break;
+            }
+        }
 
-        Display_Required_Button_Sprite();
+        StartCoroutine(Display_Required_Button_Sprite(dark_Color));
     }
 
 
@@ -104,13 +112,15 @@ public class ButtonCrashBlock : MonoBehaviour {
     //要求ボタンを入力されたときの処理
     private void Action_In_Input() {
         require_Button_List.RemoveAt(0);
+        GetComponent<AudioSource>().Play();
         //ボタン変更
         if (require_Button_List.Count > 0) {
-            Display_Required_Button_Sprite();
+            StartCoroutine(Display_Required_Button_Sprite(new Color(1, 1, 1, 1)));
             GetComponent<ObjectShake>().Shake(0.2f, new Vector2(1, 0), true);
         }
         //消滅
         else {
+            UsualSoundManager.Instance.Play_Shoot_Sound();
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<Animator>().SetTrigger("CrashTrigger");
             Invoke("Do_Process_Depart_Player", 0.1f);
@@ -133,11 +143,15 @@ public class ButtonCrashBlock : MonoBehaviour {
 
 
     //入力待ちのボタンを表示する
-    private void Display_Required_Button_Sprite() {
+    private IEnumerator Display_Required_Button_Sprite(Color next_Color) {
         for (int i = 0; i < BUTTONNUM; i++) {            
             if (i == (int)require_Button_List[0]) {
                 icon_Sprite.sprite = icon_Textures[i];
             }
         }
+        icon_Sprite.color = new Color(1, 1, 1, 0);
+        yield return new WaitForSeconds(0.1f);
+        icon_Sprite.color = next_Color;
     }
+
 }

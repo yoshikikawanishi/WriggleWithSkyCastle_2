@@ -14,9 +14,6 @@ public class Nemuno : BossEnemy {
     private NemunoAttack _attack;
     public NemunoBGMTimeKeeper _BGM;
 
-    //戦闘開始
-    private bool start_Battle = false;
-
 
     new void Awake() {
         base.Awake();
@@ -57,7 +54,6 @@ public class Nemuno : BossEnemy {
     //戦闘開始
     public override void Start_Battle() {
         base.Start_Battle();
-        start_Battle = true;
         _BGM.Start_Time_Count();
     }
 
