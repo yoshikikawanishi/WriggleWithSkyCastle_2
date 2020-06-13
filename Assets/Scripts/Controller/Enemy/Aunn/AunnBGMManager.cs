@@ -13,8 +13,8 @@ public class AunnBGMManager{
     }
     private Melody now_Melody = Melody.A;
 
-    //曲のタイミング                       A    B    A    C  ｻﾋﾞ前 ｻﾋﾞ ﾙｰﾌﾟ
-    public readonly float[] BGM_TIME = { 0, 05f, 10f, 15f, 25f, 35f, 45f };
+    //曲のタイミング                       A    B    A    C  ｻﾋﾞ前 ｻﾋﾞ  B   ﾙｰﾌﾟ
+    public readonly float[] BGM_TIME = { 0, 13f, 26f, 35f, 40f, 46f, 72f, 81f};
 
     private float now_BGM_Time = 0;
     private float BGM_Launch_Time = 0;    
@@ -49,6 +49,10 @@ public class AunnBGMManager{
         else if (now_BGM_Time < BGM_TIME[6]) {
             if (now_Melody != Melody.main)
                 now_Melody = Melody.main;
+        }
+        else if(now_BGM_Time < BGM_TIME[7]) {
+            if (now_Melody != Melody.B)
+                now_Melody = Melody.B;
         }
         return now_Melody;
     }

@@ -169,12 +169,15 @@ public class AunnAttack : MonoBehaviour {
                 _effect.Play_Yellow_Circle_Effect();
                 _effect.Play_Burst_Effect_Red();
                 _shoot.Shoot_Dog_Bullet();
-                yield return new WaitForSeconds(10.0f);
+                yield return new WaitForSeconds(15.0f);
+
+                if (_BGM.Get_Now_Melody() != AunnBGMManager.Melody.main)
+                    break;
 
                 _effect.Play_Yellow_Circle_Effect();
                 _effect.Play_Burst_Effect_Red();
                 _shoot.Shoot_Dog_Bullet_Big();
-                yield return new WaitForSeconds(8.0f);
+                yield return new WaitForSeconds(10.0f);
             }
             //フェーズ２
             else {

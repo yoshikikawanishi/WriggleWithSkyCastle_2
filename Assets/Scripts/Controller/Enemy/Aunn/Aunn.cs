@@ -50,7 +50,8 @@ public class Aunn : BossEnemy {
     //戦闘開始
     public override void Start_Battle() {
         base.Start_Battle();
-        _BGM.Start_Time_Count();                    
+        _BGM.Start_Time_Count();
+        BGMManager.Instance.Change_BGM("Stage3_Boss");
     }
 
     //クリア時の処理

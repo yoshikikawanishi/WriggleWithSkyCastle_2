@@ -19,11 +19,13 @@ public class MoveMotion : MonoBehaviour {
 
 
     public void Start_Move() {
+        is_End_Move = false;
         Stop_Move();
         StartCoroutine("Move", 0);
     }
 
     public void Start_Move(int index) {
+        is_End_Move = false;
         Stop_Move();
         StartCoroutine("Move", index);
     }

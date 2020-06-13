@@ -6,6 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(BGMManager))]
 public class BGMManagerEditor : Editor {
 
+
     public override void OnInspectorGUI() {
         BGMManager obj = target as BGMManager;        
 

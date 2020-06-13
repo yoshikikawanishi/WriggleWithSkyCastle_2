@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(BGMMelody))]
+[CustomEditor(typeof(MelodyManager))]
 public class BGMMelodyEditor : Editor {
     
 
     public override void OnInspectorGUI() {
-        BGMMelody obj = target as BGMMelody;
+        MelodyManager obj = target as MelodyManager;
 
         for(int i = 0; i < obj.melody_List.Count; i++) {            
-            obj.melody_List[i].melody = (BGMMelody.Melody)EditorGUILayout.EnumPopup("Melody", obj.melody_List[i].melody);
+            obj.melody_List[i].melody = (MelodyManager.Melody)EditorGUILayout.EnumPopup("Melody", obj.melody_List[i].melody);
             obj.melody_List[i].span = EditorGUILayout.Vector2Field("Span[s]", obj.melody_List[i].span);
 
             if(i > 0) {

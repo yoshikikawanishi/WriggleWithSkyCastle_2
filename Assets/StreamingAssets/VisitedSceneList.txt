@@ -10,6 +10,3 @@ Stage3_2Scene
 Stage3_3Scene
 Stage3_BossScene
 Stage4_1Scene
-Stage4_2Scene
-Stage4_BossScene
-TitleScene

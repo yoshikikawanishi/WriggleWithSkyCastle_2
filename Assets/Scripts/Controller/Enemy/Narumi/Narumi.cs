@@ -6,7 +6,7 @@ public class Narumi : BossEnemy {
 
     private Animator _anim;
     private NarumiAttack _attack;
-    [SerializeField] private BGMMelody _melody;
+    [SerializeField] private MelodyManager _melody;
 
 
     void Start() {

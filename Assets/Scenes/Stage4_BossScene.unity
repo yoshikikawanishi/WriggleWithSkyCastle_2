@@ -3680,7 +3680,7 @@ GameObject:
   - component: {fileID: 567795882}
   - component: {fileID: 567795881}
   m_Layer: 0
-  m_Name: NarumiBGMMelody
+  m_Name: NarumiMelodyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19437,7 +19437,7 @@ GameObject:
   - component: {fileID: 1979402066}
   - component: {fileID: 1979402065}
   m_Layer: 0
-  m_Name: NarumiGridGroundAttack
+  m_Name: BlockGroundAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

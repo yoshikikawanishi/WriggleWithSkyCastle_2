@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGMMelody : MonoBehaviour {
+public class MelodyManager : MonoBehaviour {
 
     //BGMの曲調
     public enum Melody {

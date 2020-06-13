@@ -112,7 +112,7 @@ public class NarumiAttack : BossEnemyAttack {
         block_Barrier.Create_Barrier(12, 64f, 0.05f, -1);
         //地面移動開始
         ground_Blocks.Start_Random_Raise(1.0f);
-        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.A) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
             yield return null;
         }
         Stop_Melody_A_Phase1();
@@ -133,7 +133,7 @@ public class NarumiAttack : BossEnemyAttack {
 
         _main.Change_Animation("AttackBool", 1);        
         ground_Blocks.Start_Random_Shoot(1.5f);
-        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
             yield return null;
         }
         Stop_Melody_B_Phase1();
@@ -241,7 +241,7 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitForSeconds(2.0f);
         scroll_Ground_Blocks_First.Start_Random_Raise(1.1f);
         scroll_Ground_Blocks_Second.Start_Random_Raise(1.1f);
-        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.A) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
             yield return new WaitForSeconds(2.0f);
             _shoot.Shoot_Yellow_Talisman_Shoot();            
         }
@@ -267,7 +267,7 @@ public class NarumiAttack : BossEnemyAttack {
         //ブロック生成
         Vector3 pos = new Vector2(260f, -80f);
         
-        while (melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
             yield return new WaitForSeconds(Random.Range(4.0f, 6.0f));
             rect_Block_Gen.Generate(main_Camera.transform.position + pos);            
         }
@@ -276,7 +276,7 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     private IEnumerator Yellow_Talisman_Shoot_Cor() {
-        while(melody_Manager.Get_Now_Melody() == BGMMelody.Melody.B) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
             yield return new WaitForSeconds(3.0f);
             _shoot.Shoot_Yellow_Talisman_Shoot_Strong();            
         }

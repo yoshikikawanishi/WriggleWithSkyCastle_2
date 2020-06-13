@@ -14,6 +14,7 @@ public class AunnShoot : MonoBehaviour {
 
     //------------------------ジャンプショット用 短レーザーショット-------------------------
     public void Shoot_Short_Curve_Laser() {
+        short_Curve_Laser.center_Angle_Deg += 10;
         short_Curve_Laser.Shoot();
         UsualSoundManager.Instance.Play_Laser_Sound();
         UsualSoundManager.Instance.Invoke("Play_Shoot_Sound", 1.2f);
@@ -41,7 +42,7 @@ public class AunnShoot : MonoBehaviour {
             var shoot_Obj = Instantiate(purple_Rice_Shoot_Obj);
             shoot_Obj.transform.position = transform.position;            
             deposit_Objs.Add(shoot_Obj);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.11f);
         }
     }
 
@@ -71,7 +72,7 @@ public class AunnShoot : MonoBehaviour {
     //----------------------------------フェーズ２---------------------------------------
     public void Shoot_Long_Curve_Laser() {
         long_Curve_Laser_Shoot_Obj.GetComponent<ShootSystem>().Shoot();
-        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Shoot();
+        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Shoot();        
     }
 
     public void Stop_Long_Curve_Laser() {

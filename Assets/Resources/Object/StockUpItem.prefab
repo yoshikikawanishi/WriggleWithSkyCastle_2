@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 50673632853411920}
   - component: {fileID: 58843002714876268}
   - component: {fileID: 114853120214337416}
+  - component: {fileID: 114654380280497392}
+  - component: {fileID: 114829672694304286}
   m_Layer: 0
   m_Name: StockUpItem
   m_TagString: Untagged
@@ -78,6 +80,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 16
+--- !u!114 &114654380280497392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799484069304308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c131c74a2f1bb428d402eaf5696ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DISTANCE_BORDER: 60
+  GRAVITATE_POWER: 50
+--- !u!114 &114829672694304286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1799484069304308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412d53ffa1f515542ba5262c31b42b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114853120214337416
 MonoBehaviour:
   m_ObjectHideFlags: 1

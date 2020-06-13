@@ -5,12 +5,12 @@ using UnityEngine;
 public abstract class BossEnemyAttack : MonoBehaviour {
 
     [SerializeField] protected BossEnemy boss_Enemy;
-    [SerializeField] protected BGMMelody melody_Manager;
+    [SerializeField] protected MelodyManager melody_Manager;
 
     protected int now_Phase = 0;
     protected bool can_Attack = true;
 
-    private BGMMelody.Melody now_Melody;
+    private MelodyManager.Melody now_Melody;
 
 
     // Use this for initialization
@@ -34,22 +34,22 @@ public abstract class BossEnemyAttack : MonoBehaviour {
 
         //メロディ切り替え時
         switch (Switch_Melody_Trigger()) {
-            case BGMMelody.Melody.intro:    Start_Melody_Intro();   break;
-            case BGMMelody.Melody.A:        Start_Melody_A();       break;
-            case BGMMelody.Melody.B:        Start_Melody_B();       break;
-            case BGMMelody.Melody.C:        Start_Melody_C();       break;
-            case BGMMelody.Melody.main:     Start_Melody_Main();    break;
+            case MelodyManager.Melody.intro:    Start_Melody_Intro();   break;
+            case MelodyManager.Melody.A:        Start_Melody_A();       break;
+            case MelodyManager.Melody.B:        Start_Melody_B();       break;
+            case MelodyManager.Melody.C:        Start_Melody_C();       break;
+            case MelodyManager.Melody.main:     Start_Melody_Main();    break;
         } 
     }
 
 
     //メロディ切り替え検出
-    private BGMMelody.Melody Switch_Melody_Trigger() {
+    private MelodyManager.Melody Switch_Melody_Trigger() {
         if(now_Melody != melody_Manager.Get_Now_Melody()) {
             now_Melody = melody_Manager.Get_Now_Melody();
             return now_Melody;
         }
-        return BGMMelody.Melody.none;
+        return MelodyManager.Melody.none;
     }
 
 
@@ -64,11 +64,11 @@ public abstract class BossEnemyAttack : MonoBehaviour {
         if (!can_Attack)
             return;
         switch (melody_Manager.Get_Now_Melody()) {
-            case BGMMelody.Melody.intro: Start_Melody_Intro(); break;
-            case BGMMelody.Melody.A: Start_Melody_A(); break;
-            case BGMMelody.Melody.B: Start_Melody_B(); break;
-            case BGMMelody.Melody.C: Start_Melody_C(); break;
-            case BGMMelody.Melody.main: Start_Melody_Main(); break;
+            case MelodyManager.Melody.intro: Start_Melody_Intro(); break;
+            case MelodyManager.Melody.A: Start_Melody_A(); break;
+            case MelodyManager.Melody.B: Start_Melody_B(); break;
+            case MelodyManager.Melody.C: Start_Melody_C(); break;
+            case MelodyManager.Melody.main: Start_Melody_Main(); break;
         }
     }
     

@@ -7,10 +7,21 @@ using UnityEngine;
 /// </summary>
 public class AunnAttackFunction : MonoBehaviour {
 
+ /*
+ tempo 171
+ 0.351  0.33
+ 0.702  0.68
+ 1.05   1.03
+ 1.40   1.38
+ 1.76   1.74
+ 2.11   2.09
+ */
+
     private Aunn _controller;
     private AunnAttack _attack;
     private AunnShoot _shoot;
     private AunnEffect _effect;
+    private SEManager _se;
     private Rigidbody2D _rigid;
     private SpriteRenderer _sprite;
     private MoveMotion _move;
@@ -33,6 +44,7 @@ public class AunnAttackFunction : MonoBehaviour {
         _attack = GetComponent<AunnAttack>();
         _shoot = GetComponentInChildren<AunnShoot>();
         _effect = GetComponentInChildren<AunnEffect>();
+        _se = GetComponentInChildren<SEManager>();
         _rigid = GetComponent<Rigidbody2D>();
         _sprite = GetComponent<SpriteRenderer>();
         _move = GetComponent<MoveMotion>();
@@ -138,6 +150,7 @@ public class AunnAttackFunction : MonoBehaviour {
         //ジャンプ
         _controller.Change_Animation("JumpBool");
         _move_Two_Points.Start_Move(next_Pos, 2);
+        UsualSoundManager.Instance.Play_Shoot_Sound();
         yield return new WaitUntil(_move_Two_Points.End_Move);
 
         _controller.Change_Land_Parameter();
@@ -168,12 +181,12 @@ public class AunnAttackFunction : MonoBehaviour {
         _collision.Become_Invincible();
         _controller.Change_Fly_Parameter();
         _sprite.sortingOrder = -6;
+        _se.Play("Dive");
 
         _move.Start_Move(0);
         yield return new WaitUntil(_move.Is_End_Move);
-
         _controller.Change_Animation("DivingGroundBool");
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f);        
         _sprite.sortingOrder = 3;
 
         //コピーの生成
@@ -186,10 +199,10 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //自機を追いかける        
         _trace.enabled = true;
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(2.09f);
         _trace.enabled = false;
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.33f);
 
         //ジャンプショット
         _collision.Release_Invincible();
@@ -204,17 +217,22 @@ public class AunnAttackFunction : MonoBehaviour {
         _move.Start_Move(1);        
         _effect.Play_A_Letter_Effect();
         _effect.Play_Burst_Effect_Red();
-        yield return new WaitUntil(_move.Is_End_Move);
+        UsualSoundManager.Instance.Play_Attack_Sound();
+        yield return new WaitForSeconds(1.03f);
 
-        //弾幕レーザー
-        _controller.Change_Animation("ShootPoseBool");
-        _shoot.Shoot_Short_Curve_Laser();
+        //レーザー
+        _controller.Change_Animation("ShootPoseBool");        
         _effect.Play_Unn_Letter_Effect();
         _effect.Play_Burst_Effect_Red();
-        if (generate_Copy) {
-            _copy_Shoot.Shoot_Short_Curve_Laser();
+
+        for (int i = 0; i < 4; i++) {
+            _shoot.Shoot_Short_Curve_Laser();
+            if (generate_Copy) {
+                _copy_Shoot.Shoot_Short_Curve_Laser();
+            }
+            yield return new WaitForSeconds(0.33f);
         }
-        yield return new WaitForSeconds(0.5f);        
+        yield return new WaitForSeconds(0.33f);
 
         //落下        
         _controller.Change_Land_Parameter();
@@ -226,7 +244,7 @@ public class AunnAttackFunction : MonoBehaviour {
         if (generate_Copy)
             _copy.Delete_Copy();
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.03f);
 
         //メロディ変わったら終了
         if (_controller._BGM.Get_Now_Melody() != AunnBGMManager.Melody.A) {
@@ -237,8 +255,7 @@ public class AunnAttackFunction : MonoBehaviour {
         //端にダッシュする
         int direction = -transform.position.x.CompareTo(0);
         StartCoroutine("Dash_To_Side_Cor", direction);
-        yield return new WaitUntil(Is_End_Move);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(Is_End_Move);        
 
         _attack.can_Attack = true;
     }
@@ -257,10 +274,8 @@ public class AunnAttackFunction : MonoBehaviour {
         int direction = (player.transform.position.x - transform.position.x).CompareTo(0);
         if (direction == 0) { direction = 1; }
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * -direction, 48f));
-        yield return new WaitUntil(Is_End_Move);        
-
-        //弾の配置開始
-        _shoot.Start_Deposite_Purple_Bullet();
+        UsualSoundManager.Instance.Play_Attack_Sound();
+        yield return new WaitForSeconds(0.68f);
         _effect.Play_A_Letter_Effect();
         _effect.Play_Purple_Circle_Effect();
 
@@ -274,12 +289,17 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //反対側の壁に飛びつく
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * direction, 80f));
+        UsualSoundManager.Instance.Play_Attack_Sound();
+        //弾の配置開始
+        _shoot.Start_Deposite_Purple_Bullet();        
+
         yield return new WaitUntil(Is_End_Move);        
 
         //弾の配置終了
         _shoot.Stop_Deposit_Purple_Bullet();
         _effect.Play_Unn_Letter_Effect();
         _effect.Play_Purple_Circle_Effect();
+        _se.Play("Charge");
 
         //コピーの消去
         if (generate_Copy) {
@@ -292,11 +312,13 @@ public class AunnAttackFunction : MonoBehaviour {
         //斜め下に突進する
         _controller.Change_Animation("JumpBool");
         _rigid.velocity = new Vector2(-transform.localScale.x * 160f, -200f);
+        UsualSoundManager.Instance.Play_Attack_Sound();
         yield return new WaitUntil(foot_Collision.Hit_Trigger);
         //着地
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("SquatBool");
         _effect.Jump_And_Landing_Effect();
+        _se.Play("Kick");
 
         yield return new WaitForSeconds(2.0f);
 
@@ -324,7 +346,7 @@ public class AunnAttackFunction : MonoBehaviour {
         if (generate_Copy)
             _copy.Create_Copy(80, true, new Vector2(-transform.position.x, transform.position.y));
 
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(0.68f);
 
         //移動
         Vector2 next_Pos;
@@ -333,22 +355,28 @@ public class AunnAttackFunction : MonoBehaviour {
             _effect.Jump_And_Landing_Effect();
             next_Pos = transform.position + new Vector3(112f * -direction, 0);
             _move_Two_Points.Start_Move(next_Pos, 1);
-            yield return new WaitUntil(_move_Two_Points.End_Move);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.68f);
+            _se.Play("Landing");
 
             if (direction == 1 && transform.position.x < -88f)
                 break;
             else if (direction == -1 && transform.position.x > 88f)
-                break;            
+                break;
+            if (_controller._BGM.Get_Now_Melody() != AunnBGMManager.Melody.C)
+                break;
         }
 
-        //最後は場所整える
-        _effect.Jump_And_Landing_Effect();
-        next_Pos = new Vector2(200f * -direction, transform.position.y);
-        _move_Two_Points.Start_Move(next_Pos, 1);
-        yield return new WaitUntil(_move_Two_Points.End_Move);
-        _controller.Change_Animation("SquatBool");
-        transform.localScale = new Vector3(-direction, 1, 1);
+        if (_controller._BGM.Get_Now_Melody() == AunnBGMManager.Melody.C) {
+
+            //最後は場所整える
+            _effect.Jump_And_Landing_Effect();
+            next_Pos = new Vector2(200f * -direction, transform.position.y);
+            _move_Two_Points.Start_Move(next_Pos, 1);
+            yield return new WaitUntil(_move_Two_Points.End_Move);
+            _se.Play("Landing");
+            _controller.Change_Animation("SquatBool");
+            transform.localScale = new Vector3(-direction, 1, 1);
+        }
 
         //コピーの消去
         if (generate_Copy)

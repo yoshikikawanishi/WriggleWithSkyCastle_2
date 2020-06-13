@@ -17,14 +17,23 @@ public class BGM {
 }
 
 [System.Serializable]
-public class BGMManager : MonoBehaviour{      
-    
+public class BGMManager : MonoBehaviour{
+
     public List<BGM> BGM_List = new List<BGM>() {
         new BGM("Stage1"),
         new BGM("Stage1_Boss"),
         new BGM("Stage2"),
         new BGM("Stage2_Boss"),
         new BGM("Stage3"),
+        new BGM("Stage3_Boss"),
+        new BGM("Stage4"),
+        new BGM("Stage4_Boss"),
+        new BGM("Stage5"),
+        new BGM("Stage5_Boss"),
+        new BGM("Stage6"),
+        new BGM("Stage6_Boss"),
+        new BGM("Stage7_Boss"),
+        new BGM("Title"),
     };
 
     private BGM now_BGM;
