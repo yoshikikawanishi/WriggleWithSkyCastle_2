@@ -46,7 +46,7 @@ public class WitchFairyBattleMovie : MonoBehaviour {
         //カメラ止める
         main_Camera.GetComponent<CameraController>().enabled = false;
         //画面内のアクティブな敵を消す
-        erased_Enemies = Erase_Visible_Enemy();
+        erased_Enemies = Erase_Visible_Enemy();        
 
         //フェードアウト
         FadeInOut.Instance.Start_Rotate_Fade_Out();

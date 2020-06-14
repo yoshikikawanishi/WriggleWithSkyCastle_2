@@ -42,6 +42,10 @@ public class EnemyManager : MonoBehaviour {
 
     void Awake() {
         SceneManager.sceneUnloaded += SceneUnloaded;
+        if(file_Name == "") {
+            Debug.Log("<color=#ff0000>EnemyManager have to set filename</color>");
+            file_Name = "missed";
+        }
         file_Path = Application.dataPath + @"\StreamingAssets\" + file_Name + ".txt";
     }
     
@@ -94,7 +98,8 @@ public class EnemyManager : MonoBehaviour {
         enemies.Sort(c);        
     }
 
-    static int Compare(OneLifeEnemy a, OneLifeEnemy b) {
+
+    private int Compare(OneLifeEnemy a, OneLifeEnemy b) {
         if (a.obj.transform.position.x > b.obj.transform.position.x)
             return 1;
         else if(a.obj.transform.position.x < b.obj.transform.position.x)

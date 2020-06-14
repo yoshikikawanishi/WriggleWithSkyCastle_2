@@ -1,0 +1,5 @@
+Name	IsExist
+Wolf	True
+YellowFairy	True
+RedFairy	True
+BlueFairy	True

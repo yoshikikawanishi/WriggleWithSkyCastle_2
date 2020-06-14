@@ -86,14 +86,14 @@ public class ButtonCrashBlock : MonoBehaviour {
     //自機が近付いた瞬間の処理
     private void Do_Process_Approach_Player() {
         icon_Sprite.color = light_Color;            //色
-        player_Controller.Set_Can_Action(false);    //自機のアクション無効化
+        player_Controller.To_Disable_Ride_Beetle(); //自機の飛行無効化
     }
 
 
     //自機が離れた瞬間の処理
     private void Do_Process_Depart_Player() {
         icon_Sprite.color = dark_Color;             //色
-        player_Controller.Set_Can_Action(true);     //自機のアクション無効化
+        player_Controller.To_Enable_Ride_Beetle();  //自機の飛行有効か
     }
 
 

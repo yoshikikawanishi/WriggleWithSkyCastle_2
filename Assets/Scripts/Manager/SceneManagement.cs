@@ -126,8 +126,7 @@ public class SceneManagement : SingletonMonoBehaviour<SceneManagement> {
 
         { "GameOverScene", false },
 
-        { "DemoEndingScene", true },
-        { "SampleScene", true }
+        { "DemoEndingScene", true },        
     };
 
     //ゲームシーンかどうか

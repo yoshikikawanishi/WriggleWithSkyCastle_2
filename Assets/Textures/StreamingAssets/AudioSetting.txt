@@ -1,0 +1,3 @@
+#AudioGroup	#Volume
+BGM	0
+SE	0

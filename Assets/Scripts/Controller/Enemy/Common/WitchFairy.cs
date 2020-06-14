@@ -68,6 +68,8 @@ public class WitchFairy : FairyEnemy {
     //被弾すると戦闘開始
     public override void Damaged(int damage, string attacked_Tag) {
         base.Damaged(damage, attacked_Tag);
+        if (attacked_Tag == "PlayerBulletTag")
+            return;
         if (is_Searching) {
             is_Searching = false;
             Start_Battle();

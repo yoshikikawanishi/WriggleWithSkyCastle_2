@@ -1,0 +1,7 @@
+Name	IsExist
+WildBoar	False
+WildBoar	False
+WildBoar	False
+WildBoar	False
+WildBoar	False
+WildBoar (1)	False
