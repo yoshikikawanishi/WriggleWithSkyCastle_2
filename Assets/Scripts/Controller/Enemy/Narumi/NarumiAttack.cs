@@ -217,6 +217,7 @@ public class NarumiAttack : BossEnemyAttack {
         Stop_Attack();
         //移動
         _move_Two_Points.Start_Move(new Vector3(150f, 0), 1);
+        _main.Change_Animation("MoveForwardBool", -1);
         yield return new WaitUntil(_move_Two_Points.End_Move);
         //攻撃再開
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
@@ -232,7 +233,8 @@ public class NarumiAttack : BossEnemyAttack {
             yield return null;
         }
         //スクロール開始
-        scroll.Start_Scroll();       
+        scroll.Start_Scroll();
+        _main.Change_Animation("MoveBackBool", 1);
     }
 
 
@@ -301,7 +303,12 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     //====================================================================
-    private IEnumerator Attack_Melody_Main_Phase2_Cor() {
+    private IEnumerator Attack_Melody_Main_Phase2_Cor() {        
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+            Vector3 pos = new Vector3(Random.Range(-50f, 100f), Random.Range(-100f, 100f));
+            _shoot.Shoot_Big_Bullet(pos);
+            yield return new WaitForSeconds(6.0f);
+        }
         yield return null;
     }
 

@@ -33,9 +33,11 @@ public class Narumi : BossEnemy {
         _anim.SetBool("IdleBool", false);
         _anim.SetBool("AttackBool", false);
         _anim.SetBool("DropBool", false);
+        _anim.SetBool("MoveForwardBool", false);
+        _anim.SetBool("MoveBackBool", false);
 
         _anim.SetBool(next_Parameter, true);
-    }
+    }    
 
 
     public void Change_Animation(string next_Parameter, int scale_X) {

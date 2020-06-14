@@ -14,6 +14,14 @@ TextureImporter:
     21300018: Narumi_9
     21300020: Narumi_10
     21300022: Narumi_11
+    21300024: Narumi_12
+    21300026: Narumi_13
+    21300028: Narumi_14
+    21300030: Narumi_15
+    21300032: Narumi_16
+    21300034: Narumi_17
+    21300036: Narumi_18
+    21300038: Narumi_19
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -133,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
+        y: 160
         width: 30
         height: 40
       alignment: 0
@@ -143,7 +151,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d411cabe72780647886399b259d6ddb
+      spriteID: 8e490eeabcb4da64b92b317cf718a797
       vertices: []
       indices: 
       edges: []
@@ -153,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
-        y: 80
+        y: 160
         width: 30
         height: 40
       alignment: 0
@@ -163,7 +171,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cdc3f3d81ae8934b83a0b0e07f6f5a6
+      spriteID: 3b54651f8d3be9e4fa430fcb23ccc656
       vertices: []
       indices: 
       edges: []
@@ -173,7 +181,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 60
-        y: 80
+        y: 160
         width: 30
         height: 40
       alignment: 0
@@ -183,7 +191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d026e4fd5d4913a4fb41d9d8451fc6c3
+      spriteID: f9e622668883fd441a6c6d6999786e50
       vertices: []
       indices: 
       edges: []
@@ -193,6 +201,106 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 90
+        y: 160
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553e21aebcda65640a26f078b900d0ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e93dc5875cc83e04ab4347b66461b15f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_5
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 120
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f17653ed194a10b4294f4be3ebf8a61e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_6
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 120
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66700167cda9eb4459a25b1903fdeb44
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_7
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 120
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540bfba22529bc943a4dc96ee41aeb48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_8
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 80
         width: 30
         height: 40
@@ -203,107 +311,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1438278ca72af4047a7d06f5717cd20e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Narumi_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 40
-        width: 30
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5561fc8cb65ddd24b9dbc487bd2b1e8e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Narumi_5
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 40
-        width: 30
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f05bee5b70a23984d933f7bab5f30b3d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Narumi_6
-      rect:
-        serializedVersion: 2
-        x: 60
-        y: 40
-        width: 30
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a02985abd3b39be4d835e569b0e7941c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Narumi_7
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 40
-        width: 30
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d194fae27ab180f4592f37c1398ccd4d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Narumi_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 30
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a544ae1dbc936bf4aba9aa258f23746e
+      spriteID: 436a9807501e963439f4b61e4555f7eb
       vertices: []
       indices: 
       edges: []
@@ -313,6 +321,146 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 30
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb0c28a4cb71c0741b0fae46a1eb3306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37b4279af8550b4bb843f6765df3401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_11
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 80
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0861224ef115af48939dd8954a32079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c090e1fc84dca479b93920508551e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_13
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 40
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af742e47503720145a0888af39939890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_14
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 40
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1651f282860ed4a8bc70ae5ffb05da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_15
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 40
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19cccdf866a6f0c42a45825c422c6cf7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_16
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 30
         height: 40
@@ -323,13 +471,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc77a53f33a6d154c8aff97e49500d99
+      spriteID: d2ea479ab6b1817418a80924c0300a42
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Narumi_10
+      name: Narumi_17
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1074223408a5ba44cbd0abef9f3c15e7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Narumi_18
       rect:
         serializedVersion: 2
         x: 60
@@ -343,13 +511,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f814c4be5b1ac934c80b0c1d81313448
+      spriteID: e1fa347887c12b34ea7b769bdb32b312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Narumi_11
+      name: Narumi_19
       rect:
         serializedVersion: 2
         x: 90
@@ -363,7 +531,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a5ff8164a46f9f4e9ff0a919e643ef4
+      spriteID: 5008733b9721ddd41b776073bac5b5d3
       vertices: []
       indices: 
       edges: []
@@ -371,7 +539,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9a1250e3ad376654a924bd2677e7e20b
+    spriteID: 22304e80ebbdd784484b262cd4d5375e
     vertices: []
     indices: 
     edges: []

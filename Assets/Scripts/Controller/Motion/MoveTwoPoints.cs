@@ -51,6 +51,8 @@ public class MoveTwoPoints : MonoBehaviour {
         float now_Location  = 0;        //現在の移動距離割合
         float now_Time = 0;             //現在の時間進行度
         Vector3 start_Pos = transform.position;
+        if (param[index].is_Local_Position)
+            start_Pos = transform.localPosition;
         Vector3 pos = start_Pos;
 
         while (now_Location < 1) {
