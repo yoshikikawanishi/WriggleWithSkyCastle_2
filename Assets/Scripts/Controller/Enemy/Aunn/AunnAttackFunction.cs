@@ -281,8 +281,7 @@ public class AunnAttackFunction : MonoBehaviour {
 
         //コピーの生成
         if (generate_Copy) {
-            _copy.Create_Copy(80, true, new Vector2(-transform.position.x, transform.position.y));
-            _copy_Shoot.Start_Deposite_Purple_Bullet();
+            _copy.Create_Copy(80, true, new Vector2(-transform.position.x, transform.position.y));           
         }
 
         yield return new WaitForSeconds(0.5f);
@@ -291,7 +290,8 @@ public class AunnAttackFunction : MonoBehaviour {
         StartCoroutine("Jump_On_Wall_Cor", new Vector2(230f * direction, 80f));
         UsualSoundManager.Instance.Play_Attack_Sound();
         //弾の配置開始
-        _shoot.Start_Deposite_Purple_Bullet();        
+        _shoot.Start_Deposite_Purple_Bullet();
+        _copy_Shoot.Start_Deposite_Purple_Bullet();
 
         yield return new WaitUntil(Is_End_Move);        
 

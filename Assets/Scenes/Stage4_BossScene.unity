@@ -307,6 +307,299 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 1995952307}
+--- !u!1 &92383548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 92383549}
+  - component: {fileID: 92383551}
+  - component: {fileID: 92383550}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &92383549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92383548}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 160, y: 150, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &92383550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92383548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &92383551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92383548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.18
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!4 &130711727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
@@ -2998,6 +3291,299 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 208380725}
+--- !u!1 &246252632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246252633}
+  - component: {fileID: 246252635}
+  - component: {fileID: 246252634}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246252633
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246252632}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -208, y: 150, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &246252634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246252632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &246252635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 246252632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.16
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!4 &264820911 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
@@ -3414,6 +4000,592 @@ MonoBehaviour:
   loop_Count: 1
   span: 1
   center_Angle_Diff: 0
+--- !u!1 &417179692
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 417179693}
+  - component: {fileID: 417179695}
+  - component: {fileID: 417179694}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &417179693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417179692}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -160, y: 150, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &417179694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417179692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &417179695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417179692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.18
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!1 &421979851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421979852}
+  - component: {fileID: 421979854}
+  - component: {fileID: 421979853}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &421979852
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421979851}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 64, y: 150, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &421979853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421979851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &421979854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421979851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.22
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1001 &467019865
 Prefab:
   m_ObjectHideFlags: 0
@@ -3516,6 +4688,299 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 467226793}
+--- !u!1 &471206813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471206814}
+  - component: {fileID: 471206816}
+  - component: {fileID: 471206815}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &471206814
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 471206813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16, y: 150, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471206815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 471206813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &471206816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 471206813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1001 &480299968
 Prefab:
   m_ObjectHideFlags: 0
@@ -3802,9 +5267,9 @@ MonoBehaviour:
     melody: 1
   - span: {x: 10, y: 20}
     melody: 2
-  - span: {x: 20, y: 25}
+  - span: {x: 20, y: 28}
     melody: 3
-  - span: {x: 25, y: 40}
+  - span: {x: 28, y: 40}
     melody: 4
 --- !u!4 &567795882
 Transform:
@@ -4173,6 +5638,299 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1754378939}
   m_Script: {fileID: 11500000, guid: 73e9097613b8f774b99955e1a2390e6e, type: 3}
+--- !u!1 &735559889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735559890}
+  - component: {fileID: 735559892}
+  - component: {fileID: 735559891}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &735559890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735559889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 208, y: 150, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735559891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735559889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &735559892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 735559889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.16
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1 &762315814
 GameObject:
   m_ObjectHideFlags: 0
@@ -4381,6 +6139,299 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c3234d36948e8c428b31147bc7ce071, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &851517302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851517303}
+  - component: {fileID: 851517305}
+  - component: {fileID: 851517304}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &851517303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 851517302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -112, y: 150, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &851517304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 851517302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &851517305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 851517302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1001 &873574352
 Prefab:
   m_ObjectHideFlags: 0
@@ -11299,6 +13350,299 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   block_Prefab: {fileID: 1380647043940212, guid: dd54399d24931224cb2723c4170e2a48,
     type: 2}
+--- !u!1 &1162926589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162926590}
+  - component: {fileID: 1162926592}
+  - component: {fileID: 1162926591}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162926590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162926589}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 112, y: 150, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1162926591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162926589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &1162926592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1162926589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.2
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1 &1200693010
 GameObject:
   m_ObjectHideFlags: 0
@@ -17850,6 +20194,299 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1566282585368206, guid: f6a0ef85ab25cff49a038bb966246933,
     type: 2}
   m_PrefabInternal: {fileID: 1471742211}
+--- !u!1 &1649288244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1649288245}
+  - component: {fileID: 1649288247}
+  - component: {fileID: 1649288246}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1649288245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649288244}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 16, y: 150, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649288246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649288244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &1649288247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649288244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1001 &1653269848
 Prefab:
   m_ObjectHideFlags: 0
@@ -18312,16 +20949,46 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c3234d36948e8c428b31147bc7ce071, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &1839598050 stripped
+--- !u!1 &1839598050
 GameObject:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 1691060440549334, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
     type: 2}
-  m_PrefabInternal: {fileID: 2092265549}
---- !u!4 &1839598051 stripped
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1839598051}
+  m_Layer: 0
+  m_Name: NarumiSnowShoots
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1839598051
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
     type: 2}
-  m_PrefabInternal: {fileID: 2092265549}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839598050}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1649288245}
+  - {fileID: 421979852}
+  - {fileID: 1162926590}
+  - {fileID: 92383549}
+  - {fileID: 735559890}
+  - {fileID: 471206814}
+  - {fileID: 2130431839}
+  - {fileID: 851517303}
+  - {fileID: 417179693}
+  - {fileID: 246252633}
+  m_Father: {fileID: 1066398478}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1848400968
 Prefab:
   m_ObjectHideFlags: 0
@@ -20148,50 +22815,301 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 2047136437}
---- !u!1001 &2092265549
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1066398478}
-    m_Modifications:
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4443512414078020, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9ab92c2a0ccf2bb43b70692f628c46e3, type: 2}
-  m_IsPrefabAsset: 0
 --- !u!4 &2102900185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 806948540}
+--- !u!1 &2130431838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1915761592958096, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130431839}
+  - component: {fileID: 2130431841}
+  - component: {fileID: 2130431840}
+  m_Layer: 0
+  m_Name: NarumiSnowShoot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2130431839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4927334458214718, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130431838}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -64, y: 150, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1839598051}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2130431840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114613954045750562, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130431838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1158462938803580, guid: 4d2314547c087be4688bc1850fadcc93, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24936065
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9948852
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 100
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &2130431841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114054865130576872, guid: 9ab92c2a0ccf2bb43b70692f628c46e3,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2130431838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1280999350626254, guid: 6e69dfc7a2d712441a95bae1e07ee735, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 80
+  radius: 0
+  speed_Noise: 3
+  angle_Noise: 3
+  lifeTime: 15
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.22
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.9846542
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4731448
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.21739
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 4.9616356
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 40
+  center_Angle_Deg: -90
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0

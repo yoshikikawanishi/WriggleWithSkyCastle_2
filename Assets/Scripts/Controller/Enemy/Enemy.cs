@@ -9,8 +9,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     
     [SerializeField] private bool is_Pooled = false;
-    [SerializeField] public bool is_One_Life = false;
-    [Space]
+    [SerializeField] public bool is_One_Life = false;    
     [SerializeField] private bool shake_Camera_In_Vanish = false;
     [Space]
     [SerializeField] private int life = 5;
