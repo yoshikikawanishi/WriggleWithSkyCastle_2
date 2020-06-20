@@ -13,7 +13,7 @@ public class WindFairy : Enemy {
     private PlayerController player_Controller;
     private bool is_Player_Flying = false;
 
-    private float UNDER_SHOOT_SPAN = 2.0f;
+    private float UNDER_SHOOT_SPAN = 1.5f;
     private float STRONG_SHOOT_SPAN = 2.5f;
 
     private float time_Count = 0;
@@ -43,7 +43,7 @@ public class WindFairy : Enemy {
         //自機の状態切り替え時
         if(is_Player_Flying != player_Controller.Get_Is_Ride_Beetle()) {
             is_Player_Flying = player_Controller.Get_Is_Ride_Beetle();
-            time_Count = 0;
+            time_Count = STRONG_SHOOT_SPAN;
         }
 	}
 
@@ -55,7 +55,7 @@ public class WindFairy : Enemy {
         }
         else {
             time_Count = 0;
-            strong_Shoot.Shoot();
+            StartCoroutine("Strong_Shoot_Cor");
         }
     }
 
@@ -67,7 +67,28 @@ public class WindFairy : Enemy {
         }
         else {
             time_Count = 0;
-            under_Shoot.Shoot();
+            StartCoroutine("Under_Shoot_Cor");
         }
+    }
+
+
+    private IEnumerator Under_Shoot_Cor() {
+        SpriteRenderer _sprite = GetComponent<SpriteRenderer>();
+        for(int i = 0; i < 3; i++) {
+            _sprite.color = new Color(0.7f, 0.7f, 0.7f);
+            yield return new WaitForSeconds(0.1f);
+            _sprite.color = new Color(0.5f, 0.5f, 0.5f);
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForSeconds(0.5f);
+        under_Shoot.Shoot();
+    }
+
+
+    private IEnumerator Strong_Shoot_Cor() {
+        GetComponentInChildren<ParticleSystem>().Play();
+        yield return new WaitForSeconds(1.0f);
+        strong_Shoot.center_Angle_Deg = Random.Range(0, 90f);
+        strong_Shoot.Shoot();
     }
 }

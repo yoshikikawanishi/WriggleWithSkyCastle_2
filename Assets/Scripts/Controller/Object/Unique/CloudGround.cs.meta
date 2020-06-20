@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: c2f502cc5b0e488478ca67b92a64ed67
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - delete_Effect: {fileID: 1686498649713702, guid: a09260dc45162914ea27273d816767c0,
+      type: 2}
+  - left_Top_Tile: {fileID: 11400000, guid: 41b589e3ca6726442b80e5567c841cfe, type: 2}
+  - center_Top_Tile: {fileID: 11400000, guid: f38a674e94b7bde4da22643b386cf15e, type: 2}
+  - right_Top_Tile: {fileID: 11400000, guid: b2fd25e87560b084fb2d0ae9141a1ab3, type: 2}
+  - left_Tile: {fileID: 11400000, guid: 6b8faa13609670b48aeed7cb5c1caa87, type: 2}
+  - right_Tile: {fileID: 11400000, guid: 83c89849b00294d4b82d3c62aa2d2053, type: 2}
+  - left_Bottom_Tile: {fileID: 11400000, guid: 9205787c821c92f4486725bb17adff66, type: 2}
+  - center_Bottom_Tile: {fileID: 11400000, guid: 28cde024bc6bf0545b6fe30872cfbeb9,
+      type: 2}
+  - right_Bottom_Tile: {fileID: 11400000, guid: 4140c6bf33dca9d43a70d5310a065671,
+      type: 2}
+  - isolated_Tile: {fileID: 11400000, guid: 9580b94bc0327da46b4ccfb9edf857d1, type: 2}
+  - vertical_Straight_Top_Tile: {fileID: 11400000, guid: abe96d6cf50a0024fb42c6ed79421b4a,
+      type: 2}
+  - vertical_Straight_Center_Tile: {fileID: 11400000, guid: 7910f97887c2453488ca92c58dc44c25,
+      type: 2}
+  - vertical_Straight_Bottom_Tile: {fileID: 11400000, guid: acd18ebaf6bef06429d3db4ff2ca4327,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

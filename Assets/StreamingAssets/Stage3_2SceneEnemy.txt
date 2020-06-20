@@ -4,3 +4,8 @@ Crow (1)	True
 Crow (2)	True
 Crow	False
 Crow (3)	False
+Wolf	True
+Wolf (1)	True
+Wolf (2)	True
+Wolf (3)	True
+Wolf (4)	True

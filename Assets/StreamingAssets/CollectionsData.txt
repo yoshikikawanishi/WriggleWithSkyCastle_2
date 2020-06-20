@@ -2,7 +2,7 @@
 Rumia	False
 Mystia	False
 LightFairy	False
-Yuka	False
+Yuka	True
 Medicine	False
 Shizuha	False
 BigFrog	False

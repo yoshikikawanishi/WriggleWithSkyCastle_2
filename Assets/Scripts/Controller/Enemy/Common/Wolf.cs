@@ -14,7 +14,7 @@ public class Wolf : MonoBehaviour {
     private Rigidbody2D _rigid;
     private GameObject player;
 
-    private const int move_Length_Dive = 32;
+    private const int move_Length_Dive = 64;
     private const int move_Length_Dash = 64;
     private const float move_Speed_Dive = 1.3f;
     private const float move_Speed_Dash = 2f;
@@ -34,6 +34,7 @@ public class Wolf : MonoBehaviour {
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
         move_Length = move_Length_Dive;
         move_Speed = move_Speed_Dive;
+        move_Count = (int)((move_Length / move_Speed) / 2.0f);
     }
 	
 
