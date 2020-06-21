@@ -13,8 +13,8 @@ public class WindFairy : Enemy {
     private PlayerController player_Controller;
     private bool is_Player_Flying = false;
 
-    private float UNDER_SHOOT_SPAN = 1.5f;
-    private float STRONG_SHOOT_SPAN = 2.5f;
+    private float UNDER_SHOOT_SPAN = 2.0f;
+    private float STRONG_SHOOT_SPAN = 3.0f;
 
     private float time_Count = 0;
 
@@ -43,7 +43,7 @@ public class WindFairy : Enemy {
         //自機の状態切り替え時
         if(is_Player_Flying != player_Controller.Get_Is_Ride_Beetle()) {
             is_Player_Flying = player_Controller.Get_Is_Ride_Beetle();
-            time_Count = STRONG_SHOOT_SPAN;
+            time_Count = 1.0f;
         }
 	}
 
@@ -90,5 +90,11 @@ public class WindFairy : Enemy {
         yield return new WaitForSeconds(1.0f);
         strong_Shoot.center_Angle_Deg = Random.Range(0, 90f);
         strong_Shoot.Shoot();
+    }
+
+
+    public override void Vanish() {
+        strong_Shoot.Stop_Shoot();
+        base.Vanish();
     }
 }

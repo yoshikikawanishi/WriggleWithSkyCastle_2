@@ -8,7 +8,7 @@ public class CloudGround : MonoBehaviour {
 
     private const string PLAYER_BODY_TAG = "PlayerTag";
     private const int CELL_SIZE = 32;
-    private const float delete_Detect_Range = 10f;
+    private const float delete_Detect_Range = 16f;
 
     //コンポーネント
     private PlayerController player_Controller;

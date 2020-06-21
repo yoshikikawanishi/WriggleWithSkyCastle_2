@@ -61,7 +61,9 @@ public class ItemController : MonoBehaviour {
         RC.Play_Release_And_Converge(6, transform.position, new Vector2(208f, -104f), main_Camera);
         transform.GetChild(0).SetParent(null);
 
-        Destroy(gameObject);
+        if (GetComponent<Bullet>() == null)
+            Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     //回復取得時

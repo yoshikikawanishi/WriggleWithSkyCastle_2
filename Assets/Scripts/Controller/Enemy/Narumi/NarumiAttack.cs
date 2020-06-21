@@ -190,15 +190,16 @@ public class NarumiAttack : BossEnemyAttack {
     private IEnumerator Attack_Melody_Main_Phase1_Cor() {
         //弾幕
         _effect.Stop_Power_Charge();
-        for(int i = 0; i < 3; i++) {
-            _shoot.Shoot_Snow_Shoot();
-            yield return new WaitForSeconds(3.0f);
-        }                
+        _shoot.Shoot_Snow_Shoot();
+        _effect.Play_Burst();
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) { yield return null; }
+        _shoot.Stop_Snow_Shoot();                 
     }
 
 
     private void Stop_Melody_Main_Phase1() {
-        StopCoroutine("Attack_In_Melody_Main_Cor");
+        StopCoroutine("Attack_In_Melody_Main_Phase1_Cor");
+        _shoot.Stop_Snow_Shoot();
     }
 
 
@@ -244,7 +245,10 @@ public class NarumiAttack : BossEnemyAttack {
         scroll_Ground_Blocks_First.Start_Random_Raise(1.1f);
         scroll_Ground_Blocks_Second.Start_Random_Raise(1.1f);
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(1.0f);
+            _effect.Play_Power_Charge_Small();
+            yield return new WaitForSeconds(1.0f);
+            _effect.Play_Yellow_Circle();
             _shoot.Shoot_Yellow_Talisman_Shoot();            
         }
         Stop_Melody_A_Phase2();
@@ -279,7 +283,10 @@ public class NarumiAttack : BossEnemyAttack {
 
     private IEnumerator Yellow_Talisman_Shoot_Cor() {
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(2.0f);
+            _effect.Play_Power_Charge_Small();
+            yield return new WaitForSeconds(1.0f);
+            _effect.Play_Yellow_Circle();
             _shoot.Shoot_Yellow_Talisman_Shoot_Strong();            
         }
     }
@@ -303,11 +310,16 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     //====================================================================
-    private IEnumerator Attack_Melody_Main_Phase2_Cor() {        
+    private IEnumerator Attack_Melody_Main_Phase2_Cor() {
+        _effect.Play_Power_Charge_Red(1.0f);
+
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+            _effect.Play_Power_Charge_Small();
+            yield return new WaitForSeconds(1.0f);
             Vector3 pos = new Vector3(Random.Range(-50f, 100f), Random.Range(-100f, 100f));
             _shoot.Shoot_Big_Bullet(pos);
-            yield return new WaitForSeconds(6.0f);
+            _effect.Play_Burst_Red();
+            yield return new WaitForSeconds(5.0f);
         }
         yield return null;
     }

@@ -20,6 +20,14 @@ public class NarumiShoot : MonoBehaviour {
     }
 
 
+    public void Stop_Snow_Shoot() {
+        ShootSystem[] shoots = snow_Shoot_Obj.GetComponentsInChildren<ShootSystem>();
+        for (int i = 0; i < shoots.Length; i++) {
+            shoots[i].Stop_Shoot();
+        }
+    }
+
+
     public void Shoot_Yellow_Talisman_Shoot() {
         yellow_Talisman_Shoot.center_Angle_Deg = Random.Range(0, 10f);
         yellow_Talisman_Shoot.Shoot();

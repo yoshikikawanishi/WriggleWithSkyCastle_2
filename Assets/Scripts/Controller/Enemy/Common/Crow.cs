@@ -21,11 +21,11 @@ public class Crow : MonoBehaviour {
 
     private IEnumerator Shoot_Cor() {
         while (true) {
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
             GetComponent<Animator>().SetTrigger("ShootTrigger");
             yield return new WaitForSeconds(0.4f);
             GetComponentInChildren<ShootSystem>().Shoot();
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(4.0f);
         }
     }
 }

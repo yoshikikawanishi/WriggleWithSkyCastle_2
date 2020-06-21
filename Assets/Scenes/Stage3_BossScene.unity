@@ -10797,209 +10797,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &489813806
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1467015535642620, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 489813807}
-  - component: {fileID: 489813808}
-  m_Layer: 0
-  m_Name: AunnLongLaserShoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &489813807
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4033232280140764, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 489813806}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1861372850}
-  m_Father: {fileID: 1394033004}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &489813808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114661207623120846, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 489813806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kind: 3
-  comment: 
-  play_On_Awake: 0
-  bullet: {fileID: 1526023273682262, guid: 8b7a3a3d64e56a74e9dc719feacf3fe2, type: 2}
-  parent: {fileID: 0}
-  max_Speed: 180
-  radius: 0
-  speed_Noise: 0
-  angle_Noise: 0
-  lifeTime: 10
-  offset: {x: 0, y: 0}
-  default_Shoot_Sound: 0
-  is_Acceleration: 1
-  velocity_Forward:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_Lateral:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.42365572
-      value: -0.013177332
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.63882107
-      value: 0.086566396
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 2.480008
-      value: 0.08971468
-      inSlope: 0.002598203
-      outSlope: 0.002598203
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.30896682
-      outWeight: 1
-    - serializedVersion: 3
-      time: 2.955783
-      value: -0.017094012
-      inSlope: -0.0010555078
-      outSlope: -0.0010555078
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.47396472
-    - serializedVersion: 3
-      time: 4.0649004
-      value: -0.029609896
-      inSlope: -0.00033149635
-      outSlope: -0.00033149635
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.49699786
-      outWeight: 0
-    - serializedVersion: 3
-      time: 4.5680604
-      value: 0.096164
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 6.2299814
-      value: 0.098761454
-      inSlope: -0.00091460627
-      outSlope: -0.00091460627
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.4363211
-      outWeight: 0
-    - serializedVersion: 3
-      time: 6.487412
-      value: -0.001253752
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_To_Player:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  is_Change_Sorting_Order: 0
-  sorting_Order: -5
-  sorting_Order_Diff: 0
-  is_Fixed_Rotation: 0
-  fixed_Angle: 0
-  other_Param: 1
-  num: 8
-  inter_Angle_Deg: 15
-  center_Angle_Deg: 180
-  arc_Deg: 360
-  shoot_Rate: 30
-  duration: 5
-  connect_Bullet: 0
-  connect_Num: 1
-  speed_Diff: 15
-  angle_Diff: 0
-  looping: 1
-  loop_Count: 2
-  span: 4.5
-  center_Angle_Diff: 7.5
 --- !u!1 &500463859
 GameObject:
   m_ObjectHideFlags: 0
@@ -41471,7 +41268,7 @@ Transform:
   - {fileID: 1415258644}
   - {fileID: 671632225}
   - {fileID: 132061678}
-  - {fileID: 489813807}
+  - {fileID: 1438847939}
   m_Father: {fileID: 1293993461}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -41492,7 +41289,7 @@ MonoBehaviour:
   dog_Bullet_Shoot: {fileID: 1415258645}
   dog_Bullet_Big_Shoot: {fileID: 671632226}
   aunn_Word_Shoot: {fileID: 132061679}
-  long_Curve_Laser_Shoot_Obj: {fileID: 489813806}
+  long_Curve_Laser_Shoot_Obj: {fileID: 1438847938}
 --- !u!1 &1415258643
 GameObject:
   m_ObjectHideFlags: 0
@@ -41785,6 +41582,209 @@ MonoBehaviour:
   loop_Count: 4
   span: 3
   center_Angle_Diff: 0
+--- !u!1 &1438847938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1467015535642620, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438847939}
+  - component: {fileID: 1438847940}
+  m_Layer: 0
+  m_Name: AunnLongLaserShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1438847939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4033232280140764, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438847938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2079315055}
+  m_Father: {fileID: 1394033004}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1438847940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114661207623120846, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1438847938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 3
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1526023273682262, guid: 8b7a3a3d64e56a74e9dc719feacf3fe2, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 180
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 10
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 1
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.00067792676
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.22524111
+      value: -0.0159279
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.38364512
+      value: 0.0881021
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1.3625319
+      value: 0.09082608
+      inSlope: 0.002598203
+      outSlope: 0.002598203
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.30896682
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1.5893648
+      value: -0.019797638
+      inSlope: -0.0010555078
+      outSlope: -0.0010555078
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.47396472
+    - serializedVersion: 3
+      time: 1.9307854
+      value: -0.030626675
+      inSlope: -0.00042448918
+      outSlope: -0.00042448918
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.93537307
+      outWeight: 0
+    - serializedVersion: 3
+      time: 2.4422498
+      value: 0.08032901
+      inSlope: -0.0012220191
+      outSlope: -0.0012220191
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.6368163
+    - serializedVersion: 3
+      time: 3.3768446
+      value: 0.08095582
+      inSlope: -0.00091460627
+      outSlope: -0.00091460627
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4363211
+      outWeight: 0
+    - serializedVersion: 3
+      time: 3.4977312
+      value: -0.0020274175
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 8
+  inter_Angle_Deg: 15
+  center_Angle_Deg: 180
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 1
+  loop_Count: 2
+  span: 4.5
+  center_Angle_Diff: 7.5
 --- !u!1 &1517313995
 GameObject:
   m_ObjectHideFlags: 0
@@ -42533,118 +42533,6 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 15
   angle_Diff: 0
-  looping: 0
-  loop_Count: 1
-  span: 1
-  center_Angle_Diff: 0
---- !u!1 &1861372849
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1451725515279950, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1861372850}
-  - component: {fileID: 1861372851}
-  m_Layer: 0
-  m_Name: AunnYellowRiceShoot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1861372850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4500543375811350, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1861372849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 489813807}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1861372851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114156847778242254, guid: d95e32122d3bf2b4ca6258720fc788b2,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1861372849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kind: 5
-  comment: 
-  play_On_Awake: 0
-  bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
-  parent: {fileID: 0}
-  max_Speed: 100
-  radius: 0
-  speed_Noise: 0
-  angle_Noise: 0
-  lifeTime: 7
-  offset: {x: 0, y: 0}
-  default_Shoot_Sound: 1
-  is_Acceleration: 0
-  velocity_Forward:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_Lateral:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  velocity_To_Player:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  is_Change_Sorting_Order: 0
-  sorting_Order: -5
-  sorting_Order_Diff: 0
-  is_Fixed_Rotation: 0
-  fixed_Angle: 0
-  other_Param: 1
-  num: 1
-  inter_Angle_Deg: 13
-  center_Angle_Deg: 0
-  arc_Deg: 360
-  shoot_Rate: 30
-  duration: 5
-  connect_Bullet: 1
-  connect_Num: 4
-  speed_Diff: 0
-  angle_Diff: 1
   looping: 0
   loop_Count: 1
   span: 1
@@ -47535,6 +47423,118 @@ MonoBehaviour:
   clear_Effect_Prefab: {fileID: 1143129098506850, guid: 7a41ee48a9ab59c47864f837fe247c44,
     type: 2}
   state: 0
+--- !u!1 &2079315054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1451725515279950, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2079315055}
+  - component: {fileID: 2079315056}
+  m_Layer: 0
+  m_Name: AunnYellowRiceShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2079315055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4500543375811350, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079315054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1438847939}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079315056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114156847778242254, guid: d95e32122d3bf2b4ca6258720fc788b2,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079315054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 5
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 100
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 7
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 1
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 1
+  inter_Angle_Deg: 13
+  center_Angle_Deg: 0
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 1
+  connect_Num: 4
+  speed_Diff: 0
+  angle_Diff: 1
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1 &2108316236
 GameObject:
   m_ObjectHideFlags: 0
