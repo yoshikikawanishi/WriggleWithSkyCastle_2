@@ -148,6 +148,7 @@ MonoBehaviour:
   bullet: {fileID: 1264497897957820, guid: 10743456fb1ae8549a95a7adf5d4901f, type: 2}
   parent: {fileID: 0}
   max_Speed: 100
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 8
@@ -166,12 +167,38 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
-  num: 10
-  inter_Angle_Deg: 36
+  num: 6
+  inter_Angle_Deg: 60
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
@@ -196,6 +223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Pooled: 1
+  is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 1
   power_Value: 0
   score_Value: 0
@@ -251,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spread_Speed: 0.03
+  default_Size: 0
   max_Size: 1
   life_Time: 0
   angler_Velocity: 0

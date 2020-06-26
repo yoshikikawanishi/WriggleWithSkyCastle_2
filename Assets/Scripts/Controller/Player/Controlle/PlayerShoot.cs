@@ -104,6 +104,8 @@ public class PlayerShoot : MonoBehaviour {
             }
             yield return new WaitForSeconds(s.span);
         }
+        //パワーの減少
+        BeetlePowerManager.Instance.Decrease(1);
     }
 
 

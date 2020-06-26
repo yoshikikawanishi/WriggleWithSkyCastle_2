@@ -657,6 +657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
   screen_Cover_Image: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
+  rotate_Fade_Out_Prefab: {fileID: 0}
 --- !u!114 &333920956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,10 +1225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e34ef99a4afbd489936a74511b3c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guide_Key_List:
-  - Fly
-  - Shoot
-  - Slow
+  action_List: 040000000500000006000000
 --- !u!95 &883882319
 Animator:
   serializedVersion: 3
@@ -1281,7 +1279,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b46e8a7952ec92f4d92374f9bf9eea33, type: 3}
-    m_FontSize: 30
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

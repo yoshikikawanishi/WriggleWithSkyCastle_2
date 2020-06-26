@@ -10,7 +10,7 @@ public class Bowgun : MonoBehaviour {
 
     private bool is_Active = false;
     private float time = 2.0f;
-    private float SHOOT_SPAN = 1.2f;
+    private float SHOOT_SPAN = 1.4f;
 
 
 	// Use this for initialization

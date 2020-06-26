@@ -6,6 +6,42 @@ using MBLDefine;
 
 public class ControlleGuideText : MonoBehaviour {
 
+    private enum Action {
+        Jump,
+        Attack,
+        Kick,
+        Pause,
+        Fly,
+        Shoot,
+        Slow,
+    }
+
+    //ガイドに表示するためのクラス
+    private class Guide {
+        public Action action;
+        public Key key;
+        public string comment;
+
+        public Guide(Action action, Key key, string comment) {
+            this.action = action;
+            this.key = key;
+            this.comment = comment;
+        }
+        
+        public override string ToString() {
+            string s = "・"
+                + action.ToString()
+                + "\n"
+                + "[ "
+                + key.DefaultKeyCode[0]
+                + " / "
+                + key.DefaultKeyCode[1].ToString().Substring(9)                
+                + comment
+                + " ]";                
+            return s;
+        }
+    }
+
     private Animator _anim;
     private Text _text;
 
@@ -13,37 +49,39 @@ public class ControlleGuideText : MonoBehaviour {
     private bool is_End_Guide = false;
     private int index = 0;
 
-    [SerializeField] List<string> guide_Key_List = new List<string> {
-        "Jump"
-    };
+    [SerializeField] private List<Action> action_List;
+    private List<Guide> guide_List = new List<Guide>();
+    
 
-
-    private void Awake() {
+    void Awake() {
+        //取得
         _anim = GetComponent<Animator>();
-        _text = GetComponent<Text>();       
+        _text = GetComponent<Text>();
+
+        //guide_Listにaction_Listに設定された値を代入
+        Set_Guide_List();
     }
 
 
-    private void Start() {
-        StartCoroutine(Change_Guide_Cor(guide_Key_List[0]));
+    void Start() {
+        StartCoroutine(Change_Guide_Cor(guide_List[0]));
     }
 
 
-    // Update is called once per frame
     void Update () {
-
-        if (index >= guide_Key_List.Count || !is_Wait) {
-            if(index == guide_Key_List.Count) {
+        //最後まで行ったら終了
+        if (index >= guide_List.Count || !is_Wait) {
+            if(index == guide_List.Count) {
                 is_End_Guide = true;
                 index++;
             }
             return;
         }
-
-        if (InputManager.Instance.GetKeyDown(Get_Key(guide_Key_List[index]))) {
+        //次のガイドを表示
+        if (InputManager.Instance.GetKeyDown(guide_List[index].key)) {
             index++;
-            if (index < guide_Key_List.Count)
-                StartCoroutine(Change_Guide_Cor(guide_Key_List[index]));
+            if (index < guide_List.Count)
+                StartCoroutine(Change_Guide_Cor(guide_List[index]));
             else
                 StartCoroutine(Change_Guide_Cor(null));
         }
@@ -51,7 +89,7 @@ public class ControlleGuideText : MonoBehaviour {
 
 
     //テキストを変更する
-    private IEnumerator Change_Guide_Cor(string next_Key) {
+    private IEnumerator Change_Guide_Cor(Guide guide) {
         InputManager.KeyConfigSetting key_Setting = InputManager.KeyConfigSetting.Instance;
 
         is_Wait = false;
@@ -59,18 +97,14 @@ public class ControlleGuideText : MonoBehaviour {
 
         yield return new WaitForSeconds(1.0f);
 
-        if (next_Key == null)
+        if (guide == null)
             yield break;
-        _text.text  = next_Key.ToString() + "\n"
-                    + key_Setting.GetKeyCode(next_Key)[0].ToString()
-                    + "  /  "
-                    + key_Setting.GetKeyCode(next_Key)[1].ToString().Replace("Joystick", "");
+        _text.text = guide.ToString();
 
         _anim.SetTrigger("InTrigger");
 
         yield return new WaitForSeconds(0.2f);
-        is_Wait = true;
-    
+        is_Wait = true;    
     }
 
 
@@ -96,5 +130,20 @@ public class ControlleGuideText : MonoBehaviour {
         return null;
     }
 
+
+    //ActionからGuideを設定
+    private void Set_Guide_List() {
+        foreach(Action a in action_List) {
+            switch (a) {
+                case Action.Jump:   guide_List.Add(new Guide(a, Key.Jump, ""));         break;
+                case Action.Attack: guide_List.Add(new Guide(a, Key.Attack, ""));       break;
+                case Action.Kick:   guide_List.Add(new Guide(a, Key.Attack, " + ↓"));  break;
+                case Action.Fly:    guide_List.Add(new Guide(a, Key.Fly, ""));          break;
+                case Action.Shoot:  guide_List.Add(new Guide(a, Key.Shoot, ""));        break;
+                case Action.Slow:   guide_List.Add(new Guide(a, Key.Slow, ""));         break;
+                case Action.Pause:  guide_List.Add(new Guide(a, Key.Pause, ""));        break;
+            }
+        }
+    }
 
 }

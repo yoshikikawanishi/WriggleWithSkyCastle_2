@@ -9,17 +9,32 @@ using UnityEngine;
 public class CollectionBox : MonoBehaviour {    
 
     private List<string> hit_Tag_List = new List<string> {
-        "PlayerAttackTag",
-        "PlayerChargeAttackTag",        
-        "PlayerKickTag",
-    };	
+        "PlayerTag",
+        "PlayerBodyTag"
+    };
+
+    private bool is_Hitting = false;
 
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        foreach(string tag in hit_Tag_List) {
-            if(collision.tag == tag) {
-                StartCoroutine(Put_Out_Collection());
+    void Update() {
+        if (is_Hitting) {
+            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+                StartCoroutine("Put_Out_Collection");
             }
+        }
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (hit_Tag_List.Contains(collision.tag)) {
+            is_Hitting = true;
+        }        
+    }
+
+
+    void OnTriggerExit2D(Collider2D collision) {
+        if (hit_Tag_List.Contains(collision.tag)) {
+            is_Hitting = false;
         }
     }
 
@@ -28,6 +43,7 @@ public class CollectionBox : MonoBehaviour {
         if(transform.childCount == 0) {
             yield break;
         }
+        this.enabled = false;
         GetComponent<Animator>().SetBool("OpenBool", true);
         GetComponents<AudioSource>()[0].Play();
         GetComponent<BoxCollider2D>().enabled = false;

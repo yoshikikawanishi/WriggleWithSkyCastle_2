@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour {
             _getting_On_Beetle.Get_Off_Beetle();            
         }        
         //パワーの消費
-        BeetlePowerManager.Instance.Decrease_In_Update(10f);
+        BeetlePowerManager.Instance.Decrease_In_Update(1f);
         //警告音
         if (BeetlePowerManager.Instance.Get_Beetle_Power() < 20f) {
             if (!is_Played_Alert) {

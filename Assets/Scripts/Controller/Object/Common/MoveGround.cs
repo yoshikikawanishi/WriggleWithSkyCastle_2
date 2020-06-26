@@ -37,8 +37,8 @@ public class MoveGround : MonoBehaviour {
 
 
     private void OnBecameInvisible() {
-        if (player == null)
-            return;
+        if (player== null)
+            return;   
         if (player.transform.parent == this.transform) {
             player.transform.SetParent(null);
         }

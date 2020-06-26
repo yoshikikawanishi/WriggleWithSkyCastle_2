@@ -108,7 +108,7 @@ public class BossEnemy : MonoBehaviour {
 
         //連続で被弾時ダメージ減らす
         if(Time.time - last_Damaged_Time < 0.6f) {
-            damage = (int)(damage * 0.3f);
+            damage = (int)(damage * 0.7f);
             if (damage < 1)
                 damage = 1;
         }
