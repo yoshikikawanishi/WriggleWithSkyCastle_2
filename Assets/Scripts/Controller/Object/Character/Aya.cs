@@ -27,12 +27,12 @@ public class Aya : TalkCharacter {
         if(start_ID == 41) {
             Put_Out_Collection_Box();
             start_ID = 51;
-            end_ID = 52;
+            end_ID = 51;
         }
     }
 
 
     private void Change_Status_With_Momizi() {
-        Change_Message_Status("AyaText", 53, 53);
+        Change_Message_Status("AyaText", 53, 58);
     }
 }

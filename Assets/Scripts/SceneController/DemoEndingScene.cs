@@ -13,7 +13,7 @@ public class DemoEndingScene : MonoBehaviour {
     private IEnumerator Demo_Ending_Cor() {
         FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.02f);
         yield return new WaitForSeconds(1.0f);
-        GetComponent<MessageDisplay>().Start_Display("DemoEndingText", 1, 1);
+        GetComponent<MessageDisplay>().Start_Display("DemoEndingText", 1, 2);
     }
 	
 }

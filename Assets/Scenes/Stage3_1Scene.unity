@@ -827,7 +827,7 @@ Prefab:
     - target: {fileID: 114169933939641320, guid: 57c99e6fba7cbf24cb5e852a83825ed4,
         type: 2}
       propertyPath: life.Array.data[0]
-      value: 350
+      value: 400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c99e6fba7cbf24cb5e852a83825ed4, type: 2}

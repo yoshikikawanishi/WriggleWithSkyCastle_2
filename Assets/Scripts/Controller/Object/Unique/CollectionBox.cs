@@ -18,7 +18,7 @@ public class CollectionBox : MonoBehaviour {
 
     void Update() {
         if (is_Hitting) {
-            if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetAxisRaw("Vertical") > 0) {
                 StartCoroutine("Put_Out_Collection");
             }
         }

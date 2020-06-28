@@ -154,11 +154,11 @@ MonoBehaviour:
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - clip: {fileID: 8300000, guid: 996ba4caf6ba3774690d553ea0782233, type: 3}
-    volume: 0.22
+    volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - clip: {fileID: 8300000, guid: 053d2c1b44ec9a449881df06fb567a54, type: 3}
-    volume: 0.25
+    volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - clip: {fileID: 8300000, guid: 2ff738d5f7db22045b960fc04d78a369, type: 3}
@@ -166,7 +166,7 @@ MonoBehaviour:
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - clip: {fileID: 8300000, guid: 13e3cc5d7f06afa43aec8ffcc8b98af8, type: 3}
-    volume: 0.25
+    volume: 0.23
     have_Intoro: 1
     intoro_Clip: {fileID: 8300000, guid: 09354ad43f0b48441a8a895d5c492b38, type: 3}
   - clip: {fileID: 8300000, guid: 94f530cc3e5e97a4d8787cb421d0d30f, type: 3}

@@ -46,6 +46,6 @@ public class Momizi : TalkCharacter {
         transform.position = new Vector3(6640f, -50f);
         transform.localScale = new Vector3(-1, 1, 1);
         GetComponent<Animator>().SetTrigger("GladTrigger");
-        Change_Message_Status("MomiziText", 10, 10);
+        Change_Message_Status("AyaText", 53, 58);
     }
 }
