@@ -34,7 +34,7 @@ public class HinaMovie : MonoBehaviour {
         yield return new WaitUntil(_move.End_Move);
 
         //会話開始
-        _message.Start_Display("HinaText", 4, 4);
+        _message.Start_Display("HinaText", 4, 6);
         yield return new WaitUntil(_message.End_Message);
 
         //収集アイテムを落とす

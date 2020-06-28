@@ -71,7 +71,9 @@ public class Stage2_BossMovie : MonoBehaviour {
         //会話
         _message.Start_Display("NemunoText", 9, 11);
         yield return new WaitUntil(_message.End_Message);
-
+        //体力回復
+        PlayerManager.Instance.Add_Life();
+        UsualSoundManager.Instance.Play_Life_Up_Sound();
         //シーン遷移
         FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
         BGMManager.Instance.Fade_Out();

@@ -39,7 +39,7 @@ public class PlayerDataButton : MonoBehaviour {
     private Dictionary<string, string> item_Dic = new Dictionary<string, string>() {
         { "Rumia", "ルーミアのリボン" },
         { "Mystia", "鳥獣伎楽の楽譜\nファンに高値で売れる" },
-        { "LightFairy", "東方三月精　～ Eastern and Little Nature Deity." },
+        { "LightFairy", "東方三月精　～ Eastern and Little Nature Deity.\nねうち：6,000G" },
         { "Yuka", "蠢符「リトルバグストーム」\nチャージショットを撃てるようになる" },
         { "Medicine", "もたせると　どくを　かいふくする　きのみ\n毒攻撃が強くなる" },
         { "Shizuha", "秋姉妹万歳！秋姉妹万歳！" },        

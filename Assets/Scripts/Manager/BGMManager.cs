@@ -133,7 +133,7 @@ public class BGMManager : MonoBehaviour{
 
     private IEnumerator Fade_Out_Cor() {
         while(audio_Source.volume > 0) {
-            audio_Source.volume -= 0.005f;
+            audio_Source.volume -= 0.01f;
             yield return null;
         }
         audio_Source.Stop();

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95689023890755054}
   - component: {fileID: 61230385032423556}
   - component: {fileID: 114763338749267774}
+  - component: {fileID: 114753940048719104}
   m_Layer: 0
   m_Name: WaterFall
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1305351030935196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3936, y: 37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -86,6 +87,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114753940048719104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1305351030935196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdee5dc77a436d54281d251feac10d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  water_Display_Effect_Prefab: {fileID: 1326927864715110, guid: 05cd188f97643964cabdb4b1250b1cc6,
+    type: 2}
 --- !u!114 &114763338749267774
 MonoBehaviour:
   m_ObjectHideFlags: 1

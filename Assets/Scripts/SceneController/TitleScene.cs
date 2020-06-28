@@ -31,7 +31,9 @@ public class TitleScene : MonoBehaviour {
             load_Button.GetComponentInChildren<Text>().color = new Color(1, 1, 1, 0.5f);
             play_Guide_Button.Select();
         }
-        
+
+        //BGM
+        BGMManager.Instance.Change_BGM("Title");
 	}
 	
 	

@@ -73,13 +73,16 @@ public class Hina : TalkCharacter {
         is_Player_Having_Disaster = true;
     }
 
+
     //自機の厄エフェクトをはずす
     private void Delete_Disaster_Effect_In_Player() {
         Destroy(disaster_Effect);
 
         player.GetComponentInChildren<PlayerEffect>().Play_Green_Powder_Effect();
+        UsualSoundManager.Instance.Play_Life_Up_Sound();
         is_Player_Having_Disaster = false;
     }
+
 
     //アイテム獲得イベント
     private void Play_Collection_Event() {

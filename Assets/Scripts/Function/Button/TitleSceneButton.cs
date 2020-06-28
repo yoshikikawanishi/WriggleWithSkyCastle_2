@@ -15,6 +15,7 @@ public class TitleSceneButton : MonoBehaviour {
      */
 
     [SerializeField] private ConfirmCanvas confirm_Start_Game_Canvas;
+    [SerializeField] private AudioSource start_Game_Button_Sound;
 
 
     //初めからボタン
@@ -34,6 +35,7 @@ public class TitleSceneButton : MonoBehaviour {
     public void Confirm_Button_Function(bool is_Yes) {
         if (InputManager.Instance.GetKeyDown(Key.Jump)) {
             if (is_Yes) {
+                start_Game_Button_Sound.Play();
                 StartCoroutine("Start_Game_Cor");
             }
             else {
@@ -52,6 +54,8 @@ public class TitleSceneButton : MonoBehaviour {
         SceneManagement.Instance.Delete_Visit_Scene();  //シーン進行度
         DataManager.Instance.Initialize_Player_Data();  //自機のデータ
         PlayerPrefs.DeleteAll();
+
+        BGMManager.Instance.Fade_Out();
 
         DataManager.Instance.Load_Player_Data();
     }

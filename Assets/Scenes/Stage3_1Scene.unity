@@ -824,6 +824,11 @@ Prefab:
       propertyPath: collection_Box
       value: 
       objectReference: {fileID: 543014164}
+    - target: {fileID: 114169933939641320, guid: 57c99e6fba7cbf24cb5e852a83825ed4,
+        type: 2}
+      propertyPath: life.Array.data[0]
+      value: 350
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c99e6fba7cbf24cb5e852a83825ed4, type: 2}
   m_IsPrefabAsset: 0
@@ -2817,6 +2822,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -2868,6 +2879,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -3256,6 +3273,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -17770,6 +17793,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -18005,6 +18034,12 @@ Prefab:
       propertyPath: drop_Rock.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -18703,6 +18738,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -18806,6 +18847,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -20174,6 +20221,12 @@ Prefab:
       propertyPath: m_Name
       value: WaterFall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114753940048719104, guid: 963a6148b0fef674fae9f4ee07904094,
+        type: 2}
+      propertyPath: water_Display_Effect_Prefab
+      value: 
+      objectReference: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 963a6148b0fef674fae9f4ee07904094, type: 2}
   m_IsPrefabAsset: 0
@@ -22250,6 +22303,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 212565847750020858, guid: ad841176ffea4c14cb8b8908df271e4f,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}

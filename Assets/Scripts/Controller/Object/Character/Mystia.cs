@@ -70,8 +70,11 @@ public class Mystia : TalkCharacter {
             Put_Out_Score(15);
             //ルーミアの隣に配置
             yield return new WaitForSeconds(5.0f);
-            GetComponent<BoxCollider2D>().enabled = true;
             Change_Status_With_Rumia();
+            //戻す
+            GetComponentInChildren<ParticleSystem>().Play();
+            GetComponent<BoxCollider2D>().enabled = true;
+            mark_Up_Baloon.SetActive(true);            
         }        
     }
     

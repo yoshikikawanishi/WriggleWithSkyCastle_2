@@ -3,5 +3,5 @@ WildBoar	True
 WildBoar	True
 WildBoar	True
 WildBoar	True
-WildBoar	True
-WildBoar (1)	True
+WildBoar	False
+WildBoar (1)	False
