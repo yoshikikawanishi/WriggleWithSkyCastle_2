@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212438298418907576}
   - component: {fileID: 95124639790986018}
   - component: {fileID: 70347538778099936}
-  - component: {fileID: 50933171964244052}
+  - component: {fileID: 50540456102492948}
   - component: {fileID: 114546355541998752}
   - component: {fileID: 114702070641694926}
   m_Layer: 9
@@ -167,7 +167,7 @@ Transform:
   m_Father: {fileID: 4024023780258196}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50933171964244052
+--- !u!50 &50540456102492948
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -181,12 +181,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 32
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!61 &61382488033221102
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -355,7 +355,7 @@ MonoBehaviour:
   SE_List:
   - name: Flash
     clip: {fileID: 8300000, guid: 1243f0097cd603843b58d5f499184901, type: 3}
-    volume: 0.08
+    volume: 0.04
 --- !u!114 &114546355541998752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -434,7 +434,7 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 3
-  inter_Angle_Deg: 20
+  inter_Angle_Deg: 15
   center_Angle_Deg: 135
   arc_Deg: 360
   shoot_Rate: 30
@@ -461,7 +461,7 @@ MonoBehaviour:
   is_Pooled: 0
   is_One_Life: 0
   shake_Camera_In_Vanish: 1
-  life: 25
+  life: 50
   power_Value: 10
   score_Value: 7
   drop_Life_Probability: 1

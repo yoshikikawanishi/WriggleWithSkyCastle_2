@@ -15,6 +15,7 @@ public class ScarletFairy : FairyEnemy {
         close_Shoot,
     }
     private State state = State.walk;
+    private State pre_Action = State.close_Shoot;
 
     private Renderer _renderer;
     private Animator _anim;
@@ -52,13 +53,13 @@ public class ScarletFairy : FairyEnemy {
         //ショット
         if (state == State.walk) {
             //自機が近付いた時
-            if (Is_Close_Player()) {
-                state = State.close_Shoot;
+            if (Is_Close_Player() && pre_Action != State.close_Shoot) {
+                state = State.close_Shoot;                
                 StartCoroutine("Start_Close_Shoot_Cor");
             }
             //自機が遠い時
-            else {
-                state = State.distante_Shoot;
+            else {                
+                state = State.distante_Shoot;                
                 StartCoroutine("Start_Distante_Shoot_Cor");
             }            
         }
@@ -76,20 +77,21 @@ public class ScarletFairy : FairyEnemy {
     
     //遠くにいる自機に対するショット
     private IEnumerator Start_Distante_Shoot_Cor() {
-        StartCoroutine("Blink_Cor", 2);
+        StartCoroutine(Blink_Cor(2, false));
         yield return new WaitForSeconds(0.9f);
 
         //自機が近付いたら変更
-        if (Is_Close_Player()) {
+        if (Is_Close_Player() && pre_Action != State.close_Shoot) {
             StartCoroutine("Start_Close_Shoot_Cor");
             yield break;
         }
 
-        distante_Shoot.center_Angle_Deg = 90f + 45f * transform.localScale.x;
+        distante_Shoot.center_Angle_Deg = 90f + 30f * transform.localScale.x;
         distante_Shoot.Shoot();
         yield return new WaitForSeconds(0.6f);        
 
         state = State.walk;
+        pre_Action = State.distante_Shoot;
     }
 
 
@@ -98,26 +100,28 @@ public class ScarletFairy : FairyEnemy {
         move_Speed = 0;        
         _anim.SetBool("AttackBool", true);
 
-        StartCoroutine("Blink_Cor", 3);
+        StartCoroutine(Blink_Cor(3, true));
         yield return new WaitForSeconds(1.2f);
 
         close_Shoot.Shoot();
         yield return new WaitForSeconds(1.5f);
-
-        state = State.walk;
+        
         _anim.SetBool("AttackBool", false);
-        move_Speed = MOVE_SPEED;        
+        move_Speed = MOVE_SPEED;
+        state = State.walk;
+        pre_Action = State.close_Shoot;
     }
 
 
     //白点滅
-    private IEnumerator Blink_Cor(int count) {
+    private IEnumerator Blink_Cor(int count, bool play_SE) {
         SpriteRenderer _sprite = GetComponent<SpriteRenderer>();
         SEManager _se = GetComponentInChildren<SEManager>();
 
         for(int i = 0; i < count; i++) {
             _sprite.color = new Color(0.7f, 0.7f, 0.7f, 1);
-            _se.Play("Flash");
+            if(play_SE)
+                _se.Play("Flash");
             yield return new WaitForSeconds(0.15f);
             _sprite.color = new Color(0.5f, 0.5f, 0.5f, 1);
             yield return new WaitForSeconds(0.15f);
