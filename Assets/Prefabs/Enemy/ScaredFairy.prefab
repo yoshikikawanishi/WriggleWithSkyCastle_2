@@ -221,7 +221,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 75e44e051c4ac6d4988f9899b8f99635, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2, y: -2}
@@ -355,7 +355,7 @@ MonoBehaviour:
   SE_List:
   - name: Flash
     clip: {fileID: 8300000, guid: 1243f0097cd603843b58d5f499184901, type: 3}
-    volume: 0.04
+    volume: 0.08
 --- !u!114 &114546355541998752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -433,8 +433,8 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 3
-  inter_Angle_Deg: 15
+  num: 2
+  inter_Angle_Deg: 30
   center_Angle_Deg: 135
   arc_Deg: 360
   shoot_Rate: 30
@@ -485,7 +485,7 @@ MonoBehaviour:
   play_On_Awake: 0
   bullet: {fileID: 1264497897957820, guid: 10743456fb1ae8549a95a7adf5d4901f, type: 2}
   parent: {fileID: 0}
-  max_Speed: 100
+  max_Speed: 160
   radius: 8
   speed_Noise: 0
   angle_Noise: 10

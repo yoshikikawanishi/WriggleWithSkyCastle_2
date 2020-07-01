@@ -70,10 +70,7 @@ public class Yuka : BossEnemy {
             //チャージ
             Play_Charge_Effect();
             yield return new WaitForSeconds(1.5f);
-            Stop_Charge_Effect();
-
-            //ラルバ助言
-            if (loop_Count == 0) { StartCoroutine(Play_Guide_Message(18, 18)); }
+            Stop_Charge_Effect();            
 
             if (loop_Count % 2 == 0) {
                 //花形弾幕と交差弾
@@ -99,10 +96,7 @@ public class Yuka : BossEnemy {
             for(int i = 0; i < 1; i++) {
                 Drop_Flower_Bullet(240f - i * 120f);
                 yield return new WaitForSeconds(1.0f);
-            }
-
-            //ラルバ助言
-            if (loop_Count == 0) { StartCoroutine(Play_Guide_Message(19, 19)); }
+            }            
 
             //花落とし続き
             for (int i = 1; i < 5; i++) {
@@ -119,17 +113,7 @@ public class Yuka : BossEnemy {
             _move_Two_Points.Start_Move(new Vector3(transform.position.x, -32f));            
             loop_Count++;
         }
-    }
-    
-
-    //ラルバの助言入れる
-    private IEnumerator Play_Guide_Message(int start_ID, int end_ID) {
-        MessageDisplay _message = GetComponent<MessageDisplay>();
-        Time.timeScale = 0;
-        _message.Start_Display_Auto("YukaText", start_ID, end_ID, 1.0f, 0.05f);
-        yield return new WaitUntil(_message.End_Message);
-        Time.timeScale = 1;
-    }
+    }   
 
 
     //交差弾発射

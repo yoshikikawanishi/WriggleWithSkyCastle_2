@@ -3,3 +3,8 @@ Stage1_1Scene
 Stage5_1Scene
 TitleScene
 Stage2_2Scene
+Stage3_2Scene
+Stage2_1Scene
+Stage3_1Scene
+Stage3_3Scene
+Stage4_2Scene

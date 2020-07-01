@@ -2,7 +2,7 @@
 Rumia	False
 Mystia	False
 LightFairy	False
-Yuka	False
+Yuka	True
 Medicine	False
 Shizuha	False
 BigFrog	False
@@ -10,4 +10,4 @@ Nitori	False
 Hina	False
 Momizi	False
 Aya	False
-Saki	False
+Saki	True

@@ -82,6 +82,7 @@ public class RopeWay : MonoBehaviour {
                 move_Speed = 1.5f;
                 _anim.SetBool("MoveBool", true);
                 _anim.SetBool("BackBool", false);
+                Play_Hit_Effect();
             }
         }
     }
@@ -92,6 +93,12 @@ public class RopeWay : MonoBehaviour {
         float x_2 = Mathf.Pow(vec.x, 2);
         float y_2 = Mathf.Pow(vec.y, 2);
         return Mathf.Sqrt(x_2 + y_2);
+    }
+
+
+    //エフェクト
+    private void Play_Hit_Effect() {
+        GetComponentInChildren<ParticleSystem>().Play();
     }
 
 }

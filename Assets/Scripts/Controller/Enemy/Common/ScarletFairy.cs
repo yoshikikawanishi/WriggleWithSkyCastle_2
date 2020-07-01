@@ -22,6 +22,7 @@ public class ScarletFairy : FairyEnemy {
     private GameObject player;
 
     private float player_Close_Border = 96f;
+    private Vector2 player_Distance;
     private bool is_Close_Player = false;
 
     private float MOVE_SPEED = 0.5f;
@@ -68,7 +69,8 @@ public class ScarletFairy : FairyEnemy {
 
     //自機が近くにいる時true
     private bool Is_Close_Player() {
-        if(Mathf.Abs(transform.position.x - player.transform.position.x) < player_Close_Border) {
+        player_Distance = player.transform.position - transform.position;
+        if(Mathf.Pow(player_Distance.x, 2) + Mathf.Pow(player_Distance.y, 2) < Mathf.Pow(player_Close_Border, 2)) {
             return true;
         }
         return false;
@@ -101,7 +103,7 @@ public class ScarletFairy : FairyEnemy {
         _anim.SetBool("AttackBool", true);
 
         StartCoroutine(Blink_Cor(3, true));
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.0f);
 
         close_Shoot.Shoot();
         yield return new WaitForSeconds(1.5f);
@@ -126,6 +128,14 @@ public class ScarletFairy : FairyEnemy {
             _sprite.color = new Color(0.5f, 0.5f, 0.5f, 1);
             yield return new WaitForSeconds(0.15f);
         }
+    }
+
+
+    public override void Vanish() {
+        close_Shoot.transform.SetParent(null);
+        close_Shoot.Stop_Shoot();
+        Destroy(close_Shoot, 2.0f);
+        base.Vanish();
     }
 
 }

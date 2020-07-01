@@ -1,1 +1,5 @@
 Name	IsExist
+RedYinBallStrong	True
+RedYinBallStrong (1)	True
+RedYinBallStrong	True
+RedYinBallStrong (2)	True
