@@ -40,8 +40,6 @@ GameObject:
   - component: {fileID: 95211916855795510}
   - component: {fileID: 70712426298941770}
   - component: {fileID: 114784658355263836}
-  - component: {fileID: 114492232467088236}
-  - component: {fileID: 114051480415887052}
   m_Layer: 9
   m_Name: WitchFairyBig
   m_TagString: EnemyTag
@@ -321,19 +319,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114051480415887052
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179944285346776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Display_Selection_After_Message: 0
-  selection_Canvas: {fileID: 0}
 --- !u!114 &114115806370130710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,24 +509,6 @@ MonoBehaviour:
   loop_Count: 12
   span: 0.1
   center_Angle_Diff: 0
---- !u!114 &114492232467088236
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179944285346776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8229323e13c31d84c9ca9074c1e7c0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battle_Camera_Pos: -3088
-  return_Camera_Pos: -3088
-  player_Initial_Pos: {x: -2896, y: -48}
-  player_Return_Pos: {x: -2896, y: -48}
-  enemy_Initial_Pos: {x: -3230, y: 0}
-  erase_Bullet_Bomb: {fileID: 1947703165334306, guid: 8de0254dbae329b45b865f6cadf6938d,
-    type: 2}
 --- !u!114 &114652882276687208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -721,7 +688,7 @@ MonoBehaviour:
   power_Value: 8
   score_Value: 12
   drop_Life_Probability: 1
-  drop_Option_Box_Probability: 20
+  drop_Option_Box_Probability: 0
   shoot_Noise: 0
 --- !u!114 &114785914477069136
 MonoBehaviour:

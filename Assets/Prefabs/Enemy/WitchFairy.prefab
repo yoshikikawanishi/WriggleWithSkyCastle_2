@@ -122,8 +122,6 @@ GameObject:
   - component: {fileID: 70092926955537912}
   - component: {fileID: 95156322822084748}
   - component: {fileID: 114693240147383314}
-  - component: {fileID: 114103282902058934}
-  - component: {fileID: 114947784856658400}
   m_Layer: 9
   m_Name: WitchFairy
   m_TagString: EnemyTag
@@ -336,24 +334,6 @@ MonoBehaviour:
   trigger_Tag_List:
   - GroundTag
   - InvisibleWallTag
---- !u!114 &114103282902058934
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853506654878994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8229323e13c31d84c9ca9074c1e7c0f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  battle_Camera_Pos: -700
-  return_Camera_Pos: -564
-  player_Initial_Pos: {x: -586, y: -81}
-  player_Return_Pos: {x: -481, y: 13}
-  enemy_Initial_Pos: {x: -778, y: 0}
-  erase_Bullet_Bomb: {fileID: 1947703165334306, guid: 8de0254dbae329b45b865f6cadf6938d,
-    type: 2}
 --- !u!114 &114168822098294216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -686,21 +666,8 @@ MonoBehaviour:
   power_Value: 8
   score_Value: 12
   drop_Life_Probability: 1
-  drop_Option_Box_Probability: 20
+  drop_Option_Box_Probability: 0
   shoot_Noise: 50
---- !u!114 &114947784856658400
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853506654878994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ebb81a9bd9d8d4e8901c86896fbbe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Display_Selection_After_Message: 0
-  selection_Canvas: {fileID: 0}
 --- !u!212 &212543349528732122
 SpriteRenderer:
   m_ObjectHideFlags: 1

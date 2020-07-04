@@ -61,6 +61,7 @@ public class MessageDisplay : MonoBehaviour {
     //=================================================== public =======================================================
     //表示開始
     public void Start_Display(string fileName, int start_ID, int end_ID) {
+        endMessage = false;
         //テキストファイルの読み込み
         Read_Text(fileName);
         //セリフ枠の表示、テキスト、アイコンの取得
@@ -78,13 +79,14 @@ public class MessageDisplay : MonoBehaviour {
             StopAllCoroutines();
         else if (messagePanel.activeSelf)
             return;
-
+        
         Start_Display(fileName, start_ID, end_ID);
     }
 
 
     //表示開始
     public void Start_Display_Auto(string fileName, int start_ID, int end_ID, float waitingTime, float speed) {
+        endMessage = false;
         //テキストファイルの読み込み
         Read_Text(fileName);
         //セリフ枠の表示、テキスト、アイコンの取得

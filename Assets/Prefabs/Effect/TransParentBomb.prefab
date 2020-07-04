@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114364640239817260}
   - component: {fileID: 82808274390146002}
   m_Layer: 8
-  m_Name: TransParentBomb
+  m_Name: TransparentBomb
   m_TagString: BombTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

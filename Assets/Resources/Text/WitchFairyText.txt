@@ -2,3 +2,20 @@
 1	　	non	ようせいが　しょうぶを　しかけてきた！ 
 2		non	ようせいの　だんまく　こうけぎ！
 3		non	リグルは　こうげきを　かわした！
+4	 	non	てきの　ようせいは　たおれた！
+5	 	non	リグルは/ 8 パワーを　もらった！
+6	non	non	non
+7	non	non	non
+8	non	non	non
+9	non	non	non
+10		non	しかし　なにも　おこらなかった！
+11		non	にげられない！
+12	non	non	non
+13	non	non	non
+14	non	non	non
+15	non	non	non
+16	non	non	non
+17	non	non	non
+18	non	non	non
+19	non	non	non
+20		non	 

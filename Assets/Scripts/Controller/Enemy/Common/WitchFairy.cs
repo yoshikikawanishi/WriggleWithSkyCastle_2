@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(WitchFairyBattleMovie))]
 public class WitchFairy : FairyEnemy {
 
     private Rigidbody2D _rigid;
@@ -19,7 +18,7 @@ public class WitchFairy : FairyEnemy {
 
     void Start() {
         _rigid = GetComponent<Rigidbody2D>();
-        _movie = GetComponent<WitchFairyBattleMovie>();
+        _movie = WitchFairyBattleMovie.Instance;
         search_Light = transform.Find("SearchLight").GetComponent<SearchLight>();
         search_Light.gameObject.SetActive(false);
         side_Collider = transform.Find("SideCollision").GetComponent<ChildColliderTrigger>();
@@ -82,55 +81,52 @@ public class WitchFairy : FairyEnemy {
         if (!is_Searching) {
             _movie.Finish_Battle();
         }
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
-        gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        base.Vanish();
     }
 
 
     //戦闘開始時の処理
-    private void Start_Battle() {
+    public void Start_Battle() {
         GameObject player = GameObject.FindWithTag("PlayerTag");
         if (player == null)
             return;
 
-        _movie.Start_Battle_Movie(gameObject);
+        _movie.Play_Start_Battle_Movie(this);
         Destroy(GetComponent<Rigidbody2D>());
         Destroy(GetComponent<RedFairy>());
         Destroy(search_Light.gameObject);
         Turn_To_Player();
-        StartCoroutine("Attack_Cor");
+        GetComponent<Animator>().SetBool("AttackBool", true);
     }
 
 
     //攻撃
-    private IEnumerator Attack_Cor() {
-        GetComponent<Animator>().SetBool("AttackBool", true);
+    private IEnumerator Attack_Cor() {        
         ShootSystem[] shoots = GetComponentsInChildren<ShootSystem>();
-        yield return new WaitForSeconds(3.5f);
 
-        while (true) {
-            _movie.Display_Message(2, 2);
-            yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
 
-            int player_Life = PlayerManager.Instance.Get_Life();
+        int player_Life = PlayerManager.Instance.Get_Life();
        
-            float center_Angle = 0;
-            for (int i = 0; i < 2; i++) {
-                Turn_To_Player();
-                center_Angle = Random.Range(0, shoot_Noise);
-                shoots[0].center_Angle_Deg += center_Angle;
-                shoots[1].center_Angle_Deg += center_Angle;
-                shoots[0].Shoot();
-                shoots[1].Shoot();
-                yield return new WaitForSeconds(2.5f);
-            }
+        float center_Angle = 0;
+        for (int i = 0; i < 2; i++) {
+            Turn_To_Player();
+            center_Angle = Random.Range(0, shoot_Noise);
+            shoots[0].center_Angle_Deg += center_Angle;
+            shoots[1].center_Angle_Deg += center_Angle;
+            shoots[0].Shoot();
+            shoots[1].Shoot();
+            yield return new WaitForSeconds(2.5f);
+        }
 
-            if (PlayerManager.Instance.Get_Life() == player_Life) {
-                _movie.Display_Message(3, 3);
-                yield return new WaitForSeconds(1.0f);
-            }
-            yield return new WaitForSeconds(2.0f);
-        }        
+        if (PlayerManager.Instance.Get_Life() == player_Life) {
+            _movie.Display_Message(3, 3);
+            yield return new WaitForSeconds(1.0f);
+        }
+        yield return new WaitForSeconds(2.0f);                                
+
+        //次の選択肢表示
+        _movie.Play_Battle_Movie();
     }
 
 
