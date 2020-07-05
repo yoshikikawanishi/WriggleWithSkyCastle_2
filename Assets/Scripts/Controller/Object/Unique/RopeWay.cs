@@ -12,7 +12,7 @@ public class RopeWay : MonoBehaviour {
         "PlayerKickTag",
     };
 
-    private Animator _anim;
+    private Animator _anim;    
 
     private float move_Speed = 0;
     private float now_Location = 0;
@@ -21,7 +21,7 @@ public class RopeWay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _anim = GetComponent<Animator>();	
+        _anim = GetComponent<Animator>();        
 	}
 	
 
@@ -98,7 +98,7 @@ public class RopeWay : MonoBehaviour {
 
     //エフェクト
     private void Play_Hit_Effect() {
-        GetComponentInChildren<ParticleSystem>().Play();
+        GetComponentInChildren<ParticleSystem>().Play();        
     }
 
 }

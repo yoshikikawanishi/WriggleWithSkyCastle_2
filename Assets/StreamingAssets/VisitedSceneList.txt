@@ -9,3 +9,10 @@ Stage3_1Scene
 Stage3_3Scene
 Stage4_2Scene
 Stage4_1Scene
+Stage1_BossScene
+DemoEndingScene
+PlayerDataScene
+PlayGuideScene
+ConfigScene
+GameOverScene
+Stage4_BossScene

@@ -3540,11 +3540,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1499695844}
     m_Modifications:
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4107932491213782, guid: a6e7eab04a0dd6447bb4d3a1d11553cc, type: 2}
       propertyPath: m_LocalPosition.x
       value: 307
@@ -3576,31 +3571,6 @@ Prefab:
     - target: {fileID: 4107932491213782, guid: a6e7eab04a0dd6447bb4d3a1d11553cc, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.data[1].y
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.data[2].x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.data[3].y
-      value: -64
-      objectReference: {fileID: 0}
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.data[4].x
-      value: 384
-      objectReference: {fileID: 0}
-    - target: {fileID: 114958083683033194, guid: a6e7eab04a0dd6447bb4d3a1d11553cc,
-        type: 2}
-      propertyPath: move_Distance_And_Direction.Array.data[0].x
-      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e7eab04a0dd6447bb4d3a1d11553cc, type: 2}

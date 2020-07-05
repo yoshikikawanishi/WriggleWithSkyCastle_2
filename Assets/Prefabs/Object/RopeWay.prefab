@@ -197,11 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move_Distance_And_Direction:
-  - {x: 320, y: 0}
-  - {x: 0, y: 64}
   - {x: 160, y: 0}
-  - {x: 0, y: -64}
-  - {x: 384, y: 0}
   is_Stop_In_End: 0
 --- !u!198 &198438837475527322
 ParticleSystem:
@@ -272,7 +268,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -282,7 +278,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -388,8 +384,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.79420835, b: 0.2688679, a: 1}
-      maxColor: {r: 1, g: 0.93059564, b: 0.6839622, a: 1}
+      minColor: {r: 1, g: 0.46924123, b: 0.27058828, a: 1}
+      maxColor: {r: 0.6306843, g: 1, b: 0.3726415, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.95223695, g: 1, b: 0.0990566, a: 1}
@@ -451,7 +447,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 20
+      scalar: 15
       minScalar: 2
       maxCurve:
         serializedVersion: 2
@@ -773,7 +769,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 16
+      scalar: 50
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -857,7 +853,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 10
+      value: 15
       mode: 0
       spread: 0
       speed:

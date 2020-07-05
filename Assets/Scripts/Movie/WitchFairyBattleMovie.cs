@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovie> {
 
     [SerializeField] private GameObject select_Panel;
+    [SerializeField] private GameObject option_Select_Panel;
     [SerializeField] private GameObject erase_Bullet_Bomb;
 
     private float camera_Initial_Pos = 1200f;    
@@ -95,8 +96,17 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
         //カーソル
         select_Panel.GetComponentInChildren<Button>().Select();
     }
-    
 
+
+    //WitchFairyの攻撃開始
+    private void Start_Attack(int message_Begin_ID, int message_End_ID) {
+        PlayerMovieFunction.Instance.Enable_Controlle_Player();
+        Display_Message(message_Begin_ID, message_End_ID);
+        if (battle_Enemy != null) {
+            battle_Enemy.StartCoroutine("Attack_Cor");
+        }
+    }
+    
 
     /// <summary>
     /// 戦闘終了時のムービー
@@ -140,16 +150,11 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
     }
 
 
-
     // ===================================== ボタン関数 ========================================
 
     public void Fight_Button() {
         if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
-            PlayerMovieFunction.Instance.Enable_Controlle_Player();
-            Display_Message(2, 2);
-            if (battle_Enemy != null) {
-                battle_Enemy.StartCoroutine("Attack_Cor");
-            }
+            Start_Attack(2, 2);
             EventSystem.current.SetSelectedGameObject(null);
             select_Panel.SetActive(false);
         }
@@ -159,12 +164,47 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
     public void Escape_Button() {
         if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
             PlayerMovieFunction.Instance.Enable_Controlle_Player();
-            Display_Message(11, 11);
-            if (battle_Enemy != null) {
-                battle_Enemy.StartCoroutine("Attack_Cor");
-            }
+            Start_Attack(11, 11);
             EventSystem.current.SetSelectedGameObject(null);
             select_Panel.SetActive(false);
+        }
+    }
+
+
+    public void Option_Select_Button() {
+        if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
+            EventSystem.current.SetSelectedGameObject(null);
+            select_Panel.SetActive(false);
+            option_Select_Panel.SetActive(true);
+            option_Select_Panel.GetComponentInChildren<Button>().Select();            
+        }
+    }
+
+
+    public void Option_Button(int option_Kind) {        
+        if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
+            PlayerManager.Option option = PlayerManager.Option.bee;
+            switch (option_Kind) {
+                case 0: option = PlayerManager.Option.bee; break;
+                case 1: option = PlayerManager.Option.butterfly; break;
+                case 2: option = PlayerManager.Option.mantis; break;
+                case 3: option = PlayerManager.Option.spider; break;
+            }
+
+            PlayerManager.Instance.Set_Option(option);
+            option_Select_Panel.SetActive(false);
+            UsualSoundManager.Instance.Play_Laser_Sound();
+            EventSystem.current.SetSelectedGameObject(null);
+            Start_Attack(2, 2);
+        }
+    }
+
+
+    public void Quit_Option_Select_Button() {
+        if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
+            option_Select_Panel.SetActive(false);
+            select_Panel.SetActive(true);
+            select_Panel.GetComponentInChildren<Button>().Select();
         }
     }
    

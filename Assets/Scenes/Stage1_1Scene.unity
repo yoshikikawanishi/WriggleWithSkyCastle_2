@@ -10890,12 +10890,12 @@ ParticleSystem:
     tilesX: 2
     tilesY: 2
     animationType: 1
-    rowIndex: 0
+    rowIndex: 1
     cycles: 1
     uvChannelMask: -1
     flipU: 0
     flipV: 0
-    randomRow: 1
+    randomRow: 0
     sprites:
     - sprite: {fileID: 0}
   VelocityModule:
