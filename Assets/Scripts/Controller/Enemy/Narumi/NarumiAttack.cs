@@ -179,10 +179,10 @@ public class NarumiAttack : BossEnemyAttack {
 
     
     private void Stop_Melody_C_Phase1() {
-        StopCoroutine("Attack_Meloddy_C_Phase1_Cor");
+        StopCoroutine("Attack_Melody_C_Phase1_Cor");
         _effect.Stop_Power_Charge();
         _move_Const_Speed.Stop_Move();
-        _move_Two_Points.Stop_Move();
+        _move_Two_Points.Stop_Move();        
     }
 
 
@@ -244,13 +244,11 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitForSeconds(2.0f);
         scroll_Ground_Blocks_First.Start_Random_Raise(1.1f);
         scroll_Ground_Blocks_Second.Start_Random_Raise(1.1f);
+        _shoot.Start_Jizo_Bullet_Dropping(2.0f);
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
-            yield return new WaitForSeconds(1.0f);
-            _effect.Play_Power_Charge_Small();
-            yield return new WaitForSeconds(1.0f);
-            _effect.Play_Yellow_Circle();
-            _shoot.Shoot_Yellow_Talisman_Shoot();            
+            yield return null;
         }
+        _shoot.Stop_Jizo_Bullet_Dropping();
         Stop_Melody_A_Phase2();
     }
 
@@ -259,6 +257,7 @@ public class NarumiAttack : BossEnemyAttack {
         StopCoroutine("Attack_Melody_A_Phase2_Cor");
         scroll_Ground_Blocks_First.Quit_Random_Raise();
         scroll_Ground_Blocks_Second.Quit_Random_Raise();
+        _shoot.Stop_Jizo_Bullet_Dropping();
     }
 
 

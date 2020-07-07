@@ -7,9 +7,15 @@ public class NarumiShoot : MonoBehaviour {
     [SerializeField] private GameObject snow_Shoot_Obj;
     [SerializeField] private ShootSystem yellow_Talisman_Shoot;
     [SerializeField] private ShootSystem yellow_Talisman_Shoot_Strong;
+    [SerializeField] private JizoBullet jizo_Bullet;
     [SerializeField] private Bullet big_Bullet;
 
     private const float BIG_BULLET_LIFETIME = 8;
+
+
+    void Start() {
+        ObjectPoolManager.Instance.Create_New_Pool(jizo_Bullet.gameObject, 5);
+    }
 
 
     public void Shoot_Snow_Shoot() {
@@ -37,6 +43,29 @@ public class NarumiShoot : MonoBehaviour {
     public void Shoot_Yellow_Talisman_Shoot_Strong() {
         yellow_Talisman_Shoot_Strong.center_Angle_Deg = Random.Range(0, 10f);
         yellow_Talisman_Shoot_Strong.Shoot();
+    }
+
+
+    public void Start_Jizo_Bullet_Dropping(float span) {
+        StartCoroutine("Jizo_Bullet_Dropping_Cor", span);
+    }
+
+
+    private IEnumerator Jizo_Bullet_Dropping_Cor(float span) {
+        GameObject main_Camera = GameObject.FindWithTag("MainCamera");
+        Vector2 pos = new Vector2(0, 100f);
+        while (true) {            
+            var bullet = ObjectPoolManager.Instance.Get_Pool(jizo_Bullet.gameObject).GetObject();
+            pos = new Vector2(main_Camera.transform.position.x + Random.Range(-100f, 260f), pos.y);
+            bullet.transform.position = pos;
+            ObjectPoolManager.Instance.Set_Inactive(bullet, 5.0f);
+            yield return new WaitForSeconds(span);
+        }
+    }
+
+
+    public void Stop_Jizo_Bullet_Dropping() {
+        StopCoroutine("Jizo_Bullet_Dropping_Cor");
     }
 
 

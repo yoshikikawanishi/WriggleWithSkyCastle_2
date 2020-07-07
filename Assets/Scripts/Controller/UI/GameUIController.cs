@@ -103,11 +103,11 @@ public class GameUIController : MonoBehaviour {
             beetle_Power_Slider_Value = beetle_Power_Manager.Get_Beetle_Power();
             beetle_Power_Slider.value = beetle_Power_Converter.Evaluate(beetle_Power_Slider_Value);
             //色
-            beetle_Power_Slider_Image.color = new Color(1, 1, 1, 0.5f);
+            beetle_Power_Slider_Image.color = new Color(1, 1, 1, 0.8f);
             if (beetle_Power_Slider_Value >= 90)
-                beetle_Power_Slider_Image.color = new Color(1, 1, 1, 0.8f);
+                beetle_Power_Slider_Image.color = new Color(1, 1, 1, 1.0f);
             if (beetle_Power_Slider_Value <= 30f)
-                beetle_Power_Slider_Image.color = new Color(1, 0.8f, 0.8f, 0.5f);
+                beetle_Power_Slider_Image.color = new Color(1, 0.5f, 0.5f, 0.8f);
         }    
     }
 

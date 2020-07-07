@@ -32,7 +32,7 @@ public class BeetlePowerBlock : MonoBehaviour {
         StartCoroutine(Shake_Cor());
         GameObject main_Camera = GameObject.FindWithTag("MainCamera");
         ReleaseAndConvergePlayer RC = transform.GetChild(0).GetComponent<ReleaseAndConvergePlayer>();
-        RC.Play_Release_And_Converge(12, transform.position, new Vector2(208f, -104f), main_Camera);        
+        RC.Play_Release_And_Converge(12, transform.position, new Vector2(208f, -140f), main_Camera);        
     }
 
     //揺れる

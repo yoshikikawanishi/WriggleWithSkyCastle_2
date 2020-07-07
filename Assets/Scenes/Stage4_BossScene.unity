@@ -3727,6 +3727,8 @@ MonoBehaviour:
   snow_Shoot_Obj: {fileID: 1839598050}
   yellow_Talisman_Shoot: {fileID: 414172433}
   yellow_Talisman_Shoot_Strong: {fileID: 1998321980}
+  jizo_Bullet: {fileID: 114087338570742386, guid: 456854f892be4f84bb4b21f518a91ee6,
+    type: 2}
   big_Bullet: {fileID: 734709813}
 --- !u!1 &549269415
 GameObject:

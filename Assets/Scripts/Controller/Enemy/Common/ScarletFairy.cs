@@ -103,7 +103,7 @@ public class ScarletFairy : FairyEnemy {
         _anim.SetBool("AttackBool", true);
 
         StartCoroutine(Blink_Cor(3, true));
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.6f);
 
         close_Shoot.Shoot();
         yield return new WaitForSeconds(1.5f);
@@ -124,9 +124,9 @@ public class ScarletFairy : FairyEnemy {
             _sprite.color = new Color(0.7f, 0.7f, 0.7f, 1);
             if(play_SE)
                 _se.Play("Flash");
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.1f);
             _sprite.color = new Color(0.5f, 0.5f, 0.5f, 1);
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

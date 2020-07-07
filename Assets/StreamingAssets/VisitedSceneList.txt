@@ -16,3 +16,4 @@ PlayGuideScene
 ConfigScene
 GameOverScene
 Stage4_BossScene
+Stage5_2Scene

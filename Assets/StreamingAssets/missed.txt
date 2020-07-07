@@ -1,11 +1,1 @@
 Name	IsExist
-RedYinBallStrong	True
-RedYinBallStrong (1)	True
-RedYinBallStrong	True
-RedYinBallStrong (2)	True
-RedYinBallStrong	False
-RedYinBallStrong (3)	False
-RedYinBallStrong (4)	False
-RedYinBallStrong (7)	False
-RedYinBallStrong (5)	True
-RedYinBallStrong (6)	False

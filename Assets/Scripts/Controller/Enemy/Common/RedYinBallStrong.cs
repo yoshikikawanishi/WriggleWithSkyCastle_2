@@ -18,7 +18,7 @@ public class RedYinBallStrong : Enemy {
     private MoveTwoPoints _move;
     private ShootSystem _shoot;
 
-    private const float TRACE_PLAYER_SPAN = 3.0f;       //自機追従の最低時間
+    private const float TRACE_PLAYER_SPAN = 1.5f;       //自機追従の最低時間
     private const float START_ATTACK_DISTANCE = 240f;   //攻撃開始する自機との距離
     private const float GO_AROUND_ANGLE_DEG = 45f;      //攻撃時の移動距離     
     private const float MOVE_SPEED = 0.015f;            //攻撃時の移動速度
