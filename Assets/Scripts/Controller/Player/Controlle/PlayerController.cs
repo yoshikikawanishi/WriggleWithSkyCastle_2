@@ -170,8 +170,12 @@ public class PlayerController : MonoBehaviour {
             }
         }
         //画面の天井より上にいるとき直す
-        if (transform.position.y > 124f) {
-            transform.position = new Vector3(transform.position.x, 124f);
+        if (transform.position.y > 110f) {
+            transform.position = new Vector3(transform.position.x, 110f);
+        }
+        //画面の下端より下にいるとき直す
+        else if(transform.position.y < -110f) {
+            transform.position = new Vector3(transform.position.x, -110f);
         }
     }
 

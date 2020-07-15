@@ -37,7 +37,7 @@ public class MessageDisplay : MonoBehaviour {
     private float textSpeed = 0.07f;
 
     //キャンバスとメッセージパネルの名前
-    private string canvas_Name = "Canvas";
+    private string canvas_Name = "MessageCanvas";
     private string panel_Name = "MessagePanel";
 
     //メッセージ表示後に選択画面を生成するか

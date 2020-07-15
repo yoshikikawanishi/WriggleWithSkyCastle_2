@@ -25,7 +25,7 @@ public class MessageDisplayCustom : MonoBehaviour {
 
     private float text_Speed = 0.02f;
 
-    private string canvas_Name = "Canvas";
+    private string canvas_Name = "MessageCanvas";
     private string[] panel_Names = { "MessagePanelLeft", "MessagePanelRight" };
 
     private TextFileReader text = new TextFileReader();    

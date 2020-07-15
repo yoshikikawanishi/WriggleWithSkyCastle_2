@@ -3,8 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// キャンバスにアタッチすること
+/// </summary>
 public class GameUIController : MonoBehaviour {
 
+    private enum AppearState {
+        both,
+        normal,
+        flying
+    }
+
+    [SerializeField] private AppearState appear_State;
+    [Space]
     [SerializeField] private Text score_Text;
     [SerializeField] private Text power_Text;
     [SerializeField] private Text stock_Text;
@@ -20,6 +31,9 @@ public class GameUIController : MonoBehaviour {
     private PlayerManager player_Manager;
     private BeetlePowerManager beetle_Power_Manager;
 
+    private PlayerController player_Controller;
+
+    private bool is_Appear = false;
     private int score_Text_Value = 0;
     private int power_Text_Value = 0;
     private int stock_Text_Value = 32;
@@ -40,9 +54,18 @@ public class GameUIController : MonoBehaviour {
         }
         beetle_Power_Slider_Image = beetle_Power_Slider.transform.Find("Fill Area").GetComponentInChildren<Image>();
 
+        GameObject player = GameObject.FindWithTag("PlayerTag");
+        if (player != null) {
+            player_Controller = player.GetComponent<PlayerController>();
+        }
+
+
         //UI初期値
-        Change_Player_UI(score_Text, 9, player_Manager.Get_Score(), score_Text_Value); //スコア
-        Change_Player_UI(power_Text, 3, player_Manager.Get_Power(), power_Text_Value); //パワー
+        if (!Is_Appear()) {
+            Switch_Appearance(false);
+        }
+        Change_Power_UI();          //パワー
+        Change_Score_UI();          //スコア
         Change_Stock_UI();          //ストック
         Change_Life_UI();           //ライフ
         Change_Beetle_Power_UI();   //カブトムシパワー
@@ -50,23 +73,61 @@ public class GameUIController : MonoBehaviour {
 	
 
 	// Update is called once per frame
-	void Update () {
-        Change_Player_UI(score_Text, 9, player_Manager.Get_Score(), score_Text_Value); //スコア
-        Change_Player_UI(power_Text, 3, player_Manager.Get_Power(), power_Text_Value); //パワー
-        Change_Stock_UI();          //ストック
-        Change_Life_UI();           //ライフ
-        Change_Beetle_Power_UI();   //カブトムシパワー
-        Change_Option_UI();         //オプション
-    }
+	void Update () {        
+        //表示切替
+        if(is_Appear != Is_Appear()) {
+            is_Appear = Is_Appear();
+            Switch_Appearance(is_Appear);
+        }
 
-
-    //テキストUIの変更
-    private void Change_Player_UI(Text text, int digit, int value, int text_Value) {
-        if(value != text_Value) {
-            text_Value = value;
-            text.text = value.ToString("D" + digit.ToString());
+        //UI更新
+        if (Is_Appear()) {
+            Change_Power_UI();          //パワー
+            Change_Score_UI();          //スコア
+            Change_Stock_UI();          //ストック
+            Change_Life_UI();           //ライフ
+            Change_Beetle_Power_UI();   //カブトムシパワー
+            Change_Option_UI();         //オプション
         }
     }
+
+
+    //表示するか否か
+    private bool Is_Appear() {
+        if (appear_State == AppearState.both)
+            return true;
+        if (player_Controller.Get_Is_Ride_Beetle() && appear_State == AppearState.flying)
+            return true;
+        else if (!player_Controller.Get_Is_Ride_Beetle() && appear_State == AppearState.normal)
+            return true;
+
+        return false;
+    }
+
+
+    //表示切替
+    private void Switch_Appearance(bool is_Appear) {
+        GetComponent<Canvas>().enabled = is_Appear;        
+    }
+  
+
+    //パワー
+    private void Change_Power_UI() {
+        if(power_Text_Value != player_Manager.Get_Power()) {
+            power_Text_Value = player_Manager.Get_Power();
+            power_Text.text = power_Text_Value.ToString("D" + 3.ToString()) + "/128";
+        }
+    }
+
+
+    //スコア
+    private void Change_Score_UI() {
+        if(score_Text_Value != player_Manager.Get_Score()) {
+            score_Text_Value = player_Manager.Get_Score();
+            score_Text.text = score_Text_Value.ToString("D" + 9.ToString());
+        }
+    }
+
 
     //ストックUIの変更
     private void Change_Stock_UI() {
