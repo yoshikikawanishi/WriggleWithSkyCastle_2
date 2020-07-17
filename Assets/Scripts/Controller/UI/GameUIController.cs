@@ -154,11 +154,7 @@ public class GameUIController : MonoBehaviour {
 
 
     //カブトムシパワーUI変更
-    private void Change_Beetle_Power_UI() {
-        //増加時エフェクト
-        if (beetle_Power_Slider_Value < beetle_Power_Manager.Get_Beetle_Power()) {            
-            beetle_Power_Slider.GetComponent<ParticleSystem>().Play();
-        }        
+    private void Change_Beetle_Power_UI() {          
         //値の変更
         if (beetle_Power_Slider_Value != beetle_Power_Manager.Get_Beetle_Power()) {
             beetle_Power_Slider_Value = beetle_Power_Manager.Get_Beetle_Power();

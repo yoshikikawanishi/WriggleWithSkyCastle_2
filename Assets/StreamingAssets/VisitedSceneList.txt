@@ -12,3 +12,5 @@ Stage3_3Scene
 DemoEndingScene
 Stage4_2Scene
 GameOverScene
+Stage5_1Scene
+Stage5_2Scene

@@ -1,7 +1,7 @@
 #Key	#IsCollected
 Rumia	True
 Mystia	True
-LightFairy	False
+LightFairy	True
 Yuka	True
 Medicine	True
 Shizuha	False

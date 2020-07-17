@@ -21,12 +21,12 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     [SerializeField] private int score = 0;        
 
     //上限値
-    private int MAX_LIFE = 9;
-    private int MAX_STOCK = 9;
-    private int MAX_POWER = 128;
-    private int MAX_SCORE = 9999999;
+    public const int MAX_LIFE = 9;
+    public const int MAX_STOCK = 9;
+    public const int MAX_POWER = 128;
+    public const int MAX_SCORE = 9999999;
     //スコア50000点おきに残機アップ
-    private int STOCK_UP_SCORE = 50000;
+    private const int STOCK_UP_SCORE = 50000;
 
 
     private new void Awake() {
@@ -51,7 +51,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     public int Reduce_Stock() {
         stock--;              
         return stock;
-    }    
+    }        
 
 
     //Add
