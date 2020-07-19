@@ -210,7 +210,7 @@ public class NarumiAttack : BossEnemyAttack {
         CameraController camera_Controller = main_Camera.GetComponent<CameraController>();
         //攻撃無効化
         Stop_Attack();
-        base.Set_Can_Attack(false);
+        base.Set_Can_Switch_Attack(false);
         //無敵化
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
         //インターバル
@@ -222,7 +222,7 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitUntil(_move_Two_Points.End_Move);
         //攻撃再開
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
-        base.Set_Can_Attack(true);
+        base.Set_Can_Switch_Attack(true);
         base.Restart_Attack();
         //カメラの子に
         transform.SetParent(main_Camera.transform);        

@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 114431896477201352}
   - component: {fileID: 61947649269552434}
   m_Layer: 0
-  m_Name: AttackedCollision
+  m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1581384908026094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -82.145096, y: -61.351532, z: 0}
+  m_LocalPosition: {x: 6544, y: -52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4098690036231298}
@@ -328,7 +328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Trigger: 1
   trigger_Tag_List:
-  - PlayerAttackTag
+  - PlayerBodyTag
 --- !u!114 &114513931546001366
 MonoBehaviour:
   m_ObjectHideFlags: 1

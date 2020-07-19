@@ -26,10 +26,17 @@ public class TalkCharacter : MonoBehaviour {
     //会話の回数
     protected int talk_Count = 0;
 
-    private List<string> talk_Tags = new List<string> {
+    public enum TalkType {
+        upperArrow,
+        attack,
+    }
+    public TalkType talk_Type;
+
+    private List<string> attack_Tags = new List<string> {
         "PlayerAttackTag",
         "PlayerChargeAttackTag",               
-    };    
+    };
+    private string player_Tag = "PlayerBodyTag";
 
 
     //Start
@@ -46,15 +53,28 @@ public class TalkCharacter : MonoBehaviour {
         mark_Up_Baloon = Instantiate(Resources.Load("Object/MarkUpBaloon") as GameObject);
         mark_Up_Baloon.transform.position = transform.position + (Vector3)baloon_Pos;
         mark_Up_Baloon.transform.SetParent(transform);
+        if (talk_Type == TalkType.attack)
+            mark_Up_Baloon.SetActive(false);
     }
 
 
     //OnTriggerEnter
-    private void OnTriggerEnter2D(Collider2D collision) {
+    void OnTriggerEnter2D(Collider2D collision) {
         if (is_Talking)
             return;
-        foreach(string tag in talk_Tags) {
-            if(collision.tag == tag) {
+        if (talk_Type == TalkType.attack) {
+            if (attack_Tags.Contains(collision.tag)) {
+                StartCoroutine("Talk");
+            }
+        }        
+    }
+
+
+    void OnTriggerStay2D(Collider2D collision) {
+        if (is_Talking)
+            return;
+        if (talk_Type == TalkType.upperArrow) {
+            if(collision.tag == player_Tag && Input.GetAxisRaw("Vertical") > 0) {
                 StartCoroutine("Talk");
             }
         }

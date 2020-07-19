@@ -14,12 +14,7 @@ public class Rumia : TalkCharacter {
 
     private new void Start() {
         base.Start();
-        player = GameObject.FindWithTag("PlayerTag");
-        
-        //ルーミアとミスティア発見済みならミスティアとの会話用に
-        if(PlayerPrefs.GetInt("Rumia") == 2) {
-            Change_Status_With_Mystia();
-        }
+        player = GameObject.FindWithTag("PlayerTag");                
 
         mark_Up_Baloon.transform.SetParent(null);
     }
@@ -43,6 +38,14 @@ public class Rumia : TalkCharacter {
 
 
     protected override float Action_Before_Talk() {
+        GetComponent<ParticleSystem>().Stop();
+        is_Waiting = false;
+
+        //初回時は固定
+        if (talk_Count == 1) {
+            Change_Message_Status("RumiaText", 2, 4);
+            return 0f;
+        }
         //未発見
         int rumia = PlayerPrefs.GetInt("Rumia");
         if (rumia == 0) {            
@@ -56,9 +59,7 @@ public class Rumia : TalkCharacter {
         else if (rumia == 2) {
             Change_Status_With_Mystia();
         }
-
-        GetComponent<ParticleSystem>().Stop();
-        is_Waiting = false;
+        
         return 0f;
     }    
 
@@ -71,8 +72,14 @@ public class Rumia : TalkCharacter {
             var box = transform.GetChild(0).gameObject;
             box.transform.position = new Vector3(766f, -19f);
             box.transform.SetParent(null);
-            box.SetActive(true);
+            box.SetActive(true);           
         }
+        //初回時会話方法変更
+        if(talk_Count == 1) {            
+            talk_Type = TalkType.upperArrow;
+            mark_Up_Baloon.SetActive(true);
+        }
+
     }    
 
 

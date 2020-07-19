@@ -1,0 +1,2 @@
+#ID	#NAME	#PANELNUMBER	#MESSAGE
+1	リグル	0	ああああ

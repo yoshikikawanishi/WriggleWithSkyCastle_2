@@ -9,14 +9,14 @@ public class Shop : MonoBehaviour {
 
     private GameObject shop_Canvas_Prefab;
     private GameObject shop_Canvas_Obj;
-    private ChildColliderTrigger attacked_Trigger;
+    private ChildColliderTrigger hit_Player_Trigger;
 
     private bool is_Shopping = false;
 
 
     void Start () {
         shop_Canvas_Prefab = Resources.Load("UI/ShopCanvas") as GameObject;
-        attacked_Trigger = transform.Find("AttackedCollision").GetComponent<ChildColliderTrigger>();
+        hit_Player_Trigger = transform.Find("Collision").GetComponent<ChildColliderTrigger>();
 	}
 	
 	
@@ -25,9 +25,11 @@ public class Shop : MonoBehaviour {
             return;
         }
 
-        if (attacked_Trigger.Hit_Trigger()) {
-            is_Shopping = true;
-            StartCoroutine("Start_Shopping_Cor");
+        if (hit_Player_Trigger.Hit_Trigger()) {
+            if (Input.GetAxisRaw("Vertical") > 0) {
+                is_Shopping = true;
+                StartCoroutine("Start_Shopping_Cor");
+            }
         }
 
     }

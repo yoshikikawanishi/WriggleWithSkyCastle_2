@@ -53,13 +53,17 @@ public abstract class BossEnemyAttack : MonoBehaviour {
     }
 
 
-    //メロディ切り替えで攻撃が開始しないようにする
-    public void Set_Can_Attack(bool can_Attack) {
+    /// <summary>
+    /// メロディ切り替えで攻撃が開始しないようにする
+    /// </summary>    
+    public void Set_Can_Switch_Attack(bool can_Attack) {
         this.can_Attack = can_Attack;
     }
-    
 
-    //現在のメロディに対する攻撃を開始する
+
+    /// <summary>
+    /// 現在のメロディに対する攻撃を開始する
+    /// </summary>
     protected void Restart_Attack() {
         if (!can_Attack)
             return;
@@ -79,6 +83,9 @@ public abstract class BossEnemyAttack : MonoBehaviour {
     protected abstract void Start_Melody_C();
     protected abstract void Start_Melody_Main();
 
+    /// <summary>
+    /// 全攻撃の終了
+    /// </summary>
     public abstract void Stop_Attack();
 
     /// <summary>

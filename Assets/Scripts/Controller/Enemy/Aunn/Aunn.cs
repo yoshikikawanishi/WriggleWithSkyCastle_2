@@ -5,12 +5,12 @@ using UnityEngine;
 public class Aunn : BossEnemy {
 
     //コンポーネント
-    private AunnAttack _attack;    
+    private AunnAttack _attack;
+    private AunnEffect _effect;
     private Rigidbody2D _rigid;
     private CapsuleCollider2D _collider;
     private Animator _anim;
-
-    public readonly AunnBGMManager _BGM = new AunnBGMManager();
+    private MelodyManager melody_Manager;
 
     //初期値
     private float default_Gravity;
@@ -27,36 +27,29 @@ public class Aunn : BossEnemy {
         base.Awake();
         //取得
         _attack = GetComponent<AunnAttack>();
+        _effect = GetComponentInChildren<AunnEffect>();
         _rigid = GetComponent<Rigidbody2D>();
         _collider = GetComponent<CapsuleCollider2D>();
-        _anim = GetComponent<Animator>();        
+        _anim = GetComponent<Animator>();
+        melody_Manager = GetComponentInChildren<MelodyManager>();
 
         default_Gravity = _rigid.gravityScale;
-
     }
-
-
-    new void Update() {
-        base.Update();
-        if (state == State.battle) {            
-            switch (Get_Now_Phase()) {
-                case 1: _attack.Phase1(_BGM); break;
-                case 2: _attack.Phase2(_BGM); break;
-            }
-        }
-    }
+    
 
 
     //戦闘開始
     public override void Start_Battle() {
         base.Start_Battle();
-        _BGM.Start_Time_Count();
+        melody_Manager.Start_Time_Count();
+        _effect.Play_Battle_Effect();
         BGMManager.Instance.Change_BGM("Stage3_Boss");
     }
 
     //クリア時の処理
     protected override void Clear() {
-        _attack.Stop_Phase2();
+        _attack.Stop_Attack();
+        _effect.Delete_Battle_Effect();
         base.Clear();        
     }
 

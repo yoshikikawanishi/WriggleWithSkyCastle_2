@@ -222,8 +222,8 @@ public class PlayerController : MonoBehaviour {
         else
             leave_Land_Frame_Count++;
         //減速
-        if (input.GetKeyUp(Key.Jump)) {
-            _jump.Slow_Down();
+        if (!input.GetKey(Key.Jump)) {            
+            _jump.Release_Jumping();
         }
     }
     #endregion

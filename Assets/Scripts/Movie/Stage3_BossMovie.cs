@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Stage3_BossMovie : MonoBehaviour {
 
     [SerializeField] private Aunn aunn;
-        	
+    [SerializeField] private MovieSystem before_Boss_Movie;    	
+
 	
     //ボス戦前ムービー
     public void Play_Before_Boss_Movie() {
@@ -14,7 +15,8 @@ public class Stage3_BossMovie : MonoBehaviour {
     }
 
     private IEnumerator Before_Boss_Movie_Cor() {
-        yield return new WaitForSeconds(1.0f);
+        before_Boss_Movie.Start_Movie();
+        yield return new WaitUntil(before_Boss_Movie.End_Movie);
         aunn.Start_Battle();
     }
 

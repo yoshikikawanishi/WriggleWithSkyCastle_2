@@ -187,12 +187,12 @@ public class MovieSystem : MonoBehaviour {
         Animator anim = e.motion.obj.GetComponent<Animator>();
         if (anim == null)
             return;
-
-        string parameter = e.motion.anim_Parameter;
-        for(int i = 0; i < anim.parameters.Length; i++) {
-            string param = anim.parameters[i].ToString();
+        
+        string parameter = e.motion.anim_Parameter;        
+        for (int i = 0; i < anim.parameters.Length; i++) {
+            string param = anim.parameters[i].name;            
             if (param.Contains("Bool")) {
-                anim.SetBool(param, false);
+                anim.SetBool(param, false);                
             }
         }
         if (parameter.Contains("Bool")) {

@@ -71,7 +71,7 @@ public class PlayerAttack : MonoBehaviour {
         switch (player_Manager.Get_Option()) {
             case PlayerManager.Option.bee:      StartCoroutine("Bee_Shoot_Cor"); break;
             //case PlayerManager.Option.mantis:   Mantis_Shoot(); break;
-            case PlayerManager.Option.butterfly: _rigid.velocity = new Vector2(_rigid.velocity.x, 200f); break;
+            case PlayerManager.Option.butterfly: Butterfly_Jump(); break;
             case PlayerManager.Option.spider:   Gen_Spider_Footing(); break;
         }      
         
@@ -129,6 +129,17 @@ public class PlayerAttack : MonoBehaviour {
     private void Gen_Spider_Footing() {
         var footing = ObjectPoolManager.Instance.Get_Pool(spider_Footing).GetObject();
         footing.transform.position = transform.position + new Vector3(transform.localScale.x * 54f, -16f);        
+    }
+
+
+    //オプションがチョウの時ジャンプ
+    private void Butterfly_Jump() {
+        if (_rigid.velocity.y > 0) {
+            _rigid.velocity += new Vector2(0, 200f);
+        }
+        else {
+            _rigid.velocity = new Vector2(_rigid.velocity.x, 200f);
+        }
     }
 
     

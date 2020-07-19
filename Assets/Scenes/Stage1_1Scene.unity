@@ -1433,6 +1433,7 @@ MonoBehaviour:
   end_ID: 4
   baloon_Pos: {x: 8, y: 16}
   dual_Panel: 1
+  talk_Type: 1
 --- !u!199 &294125799
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -27190,7 +27191,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4763908841912790, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: -36
       objectReference: {fileID: 0}
     - target: {fileID: 4763908841912790, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -31525,6 +31526,7 @@ MonoBehaviour:
   end_ID: 1
   baloon_Pos: {x: 8, y: 16}
   dual_Panel: 1
+  talk_Type: 1
 --- !u!61 &1672659287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36481,6 +36483,7 @@ MonoBehaviour:
   end_ID: 2
   baloon_Pos: {x: 9, y: 32}
   dual_Panel: 1
+  talk_Type: 0
 --- !u!61 &1727073162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36493,7 +36496,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -24, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}

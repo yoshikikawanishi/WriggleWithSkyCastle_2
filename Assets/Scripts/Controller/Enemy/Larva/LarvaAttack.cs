@@ -74,14 +74,14 @@ public class LarvaAttack : MonoBehaviour {
             //自機を追従、鱗粉弾発射
             Start_Trace_Player();
             for (int i = 0; i < 2; i++) {
-                yield return new WaitForSeconds(2.13f);
+                yield return new WaitForSeconds(2.4f);
                 _controller.StartCoroutine("Pre_Action_Blink");
                 _controller.Play_Small_Charge_Effect();
-                yield return new WaitForSeconds(1.05f);
+                yield return new WaitForSeconds(1.03f);
                 shoot_Obj.Shoot_Scales_Bullet(12, 180f);
                 _controller.Play_Scales_Effect();
             }
-            yield return new WaitForSeconds(1.41f);
+            yield return new WaitForSeconds(1.78f);
             Quit_Trace_Player();
 
             //突進攻撃
@@ -135,10 +135,10 @@ public class LarvaAttack : MonoBehaviour {
             //自機を追従、鱗粉弾発射
             Start_Trace_Player();
             for (int i = 0; i < 2; i++) {
-                yield return new WaitForSeconds(2.13f);
+                yield return new WaitForSeconds(2.4f);
                 _controller.StartCoroutine("Pre_Action_Blink");
                 _controller.Play_Small_Charge_Effect();
-                yield return new WaitForSeconds(1.05f);
+                yield return new WaitForSeconds(1.03f);
                 for (int j = 0; j < 2; j++) {
                     shoot_Obj.Shoot_Scales_Bullet((j+1) * 20, (j+1) * 150f);
                     _controller.Play_Scales_Effect();
@@ -150,7 +150,7 @@ public class LarvaAttack : MonoBehaviour {
 
             //突進攻撃
             StartCoroutine("Dash_Attack");
-            yield return new WaitForSeconds(4.625f);
+            yield return new WaitForSeconds(5.0f);
 
             //移動
             _controller.Play_Charge_Effect(2.13f);            
