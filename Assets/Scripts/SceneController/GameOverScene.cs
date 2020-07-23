@@ -13,7 +13,7 @@ public class GameOverScene : MonoBehaviour {
 
     private void Play_Movie() {
         GetComponent<MovieSystem>().Start_Movie();
-    }
+    }    
 		
     public void Revive() {
         GameManager.Instance.StartCoroutine("Revive");

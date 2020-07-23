@@ -6,17 +6,24 @@ using UnityEngine.SceneManagement;
 public class Stage3_BossMovie : MonoBehaviour {
 
     [SerializeField] private Aunn aunn;
-    [SerializeField] private MovieSystem before_Boss_Movie;    	
+    [SerializeField] private MovieSystem before_Boss_Movie;
+    [SerializeField] private MovieSystem before_Boss_Movie_Skip;
 
-	
+
     //ボス戦前ムービー
     public void Play_Before_Boss_Movie() {
         StartCoroutine("Before_Boss_Movie_Cor");
     }
 
     private IEnumerator Before_Boss_Movie_Cor() {
-        before_Boss_Movie.Start_Movie();
-        yield return new WaitUntil(before_Boss_Movie.End_Movie);
+        if (SceneManagement.Instance.Is_First_Visit()) {
+            before_Boss_Movie.Start_Movie();
+            yield return new WaitUntil(before_Boss_Movie.End_Movie);
+        }
+        else {
+            before_Boss_Movie_Skip.Start_Movie();
+            yield return new WaitUntil(before_Boss_Movie_Skip.End_Movie);
+        }        
         aunn.Start_Battle();
     }
 

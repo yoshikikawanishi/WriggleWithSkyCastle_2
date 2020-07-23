@@ -1,1 +1,9 @@
 #SceneName
+Stage5_1Scene
+TitleScene
+Stage1_BossScene
+PlayGuide2Scene
+Stage2_1Scene
+GameOverScene
+Stage5_2Scene
+Stage4_1Scene

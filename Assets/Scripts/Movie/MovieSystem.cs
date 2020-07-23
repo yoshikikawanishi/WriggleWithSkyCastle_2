@@ -32,6 +32,9 @@ public class MovieSystem : MonoBehaviour {
         public GenObject gen_Obj = new GenObject();
         public Function function = new Function();
         public Wait wait = new Wait();
+
+        public bool is_Open_In_Inspector = true;
+
     }
 
     /// <summary>
@@ -318,6 +321,7 @@ public class MovieSystem : MonoBehaviour {
         list[index_A] = list[index_B];
         list[index_B] = event_Tmp;
     }
+
     #endregion
    
 }
