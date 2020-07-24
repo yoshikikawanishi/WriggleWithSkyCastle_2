@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: bcc848a4f27fe6d4d8ed4681a98baf2c
+guid: a6c0b496c0b408843a2cf578d31daecd
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Jizo_0
-    21300002: Jizo_1
-    21300004: Jizo_2
-    21300006: Jizo_3
-    21300008: Jizo_4
-    21300010: Jizo_5
+    21300000: trampoline_0
+    21300002: trampoline_1
+    21300004: trampoline_2
+    21300006: trampoline_3
+    21300008: trampoline_4
+    21300010: trampoline_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jizo_0
+      name: trampoline_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 53
-        width: 17
-        height: 25
+        x: 0
+        y: 150
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b1c496d77eb7a34bbd72b69b90803a7
+      spriteID: 681099af888ec454cb993c0671d5fecd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jizo_1
+      name: trampoline_1
       rect:
         serializedVersion: 2
-        x: 29
-        y: 53
-        width: 17
-        height: 25
+        x: 0
+        y: 120
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,19 +157,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 546193de11ce2a44eb909157fbaa095f
+      spriteID: f25e4e07d87348a4ebd74dbaeea965c4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jizo_2
+      name: trampoline_2
       rect:
         serializedVersion: 2
-        x: 4
-        y: 27
-        width: 17
-        height: 25
+        x: 0
+        y: 90
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,19 +177,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1805b95f5fa2d21489111bca50880f5a
+      spriteID: d8dc0c62293596245bd155b2d3ba9757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jizo_3
+      name: trampoline_3
       rect:
         serializedVersion: 2
-        x: 29
-        y: 27
-        width: 17
-        height: 25
+        x: 0
+        y: 60
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,19 +197,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fee595eaf943ed4e9dffbda2c5eff58
+      spriteID: 49ec3253257c28a4798e3002e9c3efb1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jizo_4
+      name: trampoline_4
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1
-        width: 17
-        height: 25
+        x: 0
+        y: 30
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,19 +217,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 023155a501aa9b347abcff61d49a9442
+      spriteID: 8660c383ab2441d49874091840b818bf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jizo_5
+      name: trampoline_5
       rect:
         serializedVersion: 2
-        x: 29
-        y: 1
-        width: 17
-        height: 25
+        x: 0
+        y: 0
+        width: 96
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 062cb32841e27d649b63f1960f29ca96
+      spriteID: 0dc146b07747b7748a621d435563fc21
       vertices: []
       indices: 
       edges: []
@@ -245,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 03b16e9b18add0f48b98fbb353e1fa35
+    spriteID: 74f6e9566b903f545ae240055273b26e
     vertices: []
     indices: 
     edges: []

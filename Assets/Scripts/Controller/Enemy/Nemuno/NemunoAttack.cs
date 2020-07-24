@@ -195,13 +195,13 @@ public class NemunoAttack : MonoBehaviour {
         _attack_Func.StartCoroutine("High_Jump_Cor", -1);
         yield return new WaitUntil(_attack_Func.Is_End_Move);
 
+        //無敵化解除
+        gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
+
         //溜め
         transform.localScale = new Vector3(1, 1, 1);
         _controller.Play_Charge_Effect(2.09f);
-        yield return new WaitForSeconds(2.09f);
-        
-        //無敵化解除
-        gameObject.layer = LayerMask.NameToLayer("EnemyLayer");         
+        yield return new WaitForSeconds(2.09f);             
 
         //ブロック弾発射
         _controller.Play_Burst_Effect();

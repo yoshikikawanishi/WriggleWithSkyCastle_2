@@ -1,7 +1,6 @@
 Name	IsExist
 SmallFrog	False
 SmallFrog (2)	False
-SmallFrog	False
 SmallFrog (1)	False
 SmallFrog	False
-SmallFrog (1)	True
+SmallFrog (1)	False

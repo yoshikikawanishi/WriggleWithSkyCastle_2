@@ -84,7 +84,8 @@ public class AunnShoot : MonoBehaviour {
     //----------------------------------フェーズ２---------------------------------------
     public void Shoot_Long_Curve_Laser() {
         long_Curve_Laser_Shoot_Obj.GetComponent<ShootSystem>().Shoot();
-        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Shoot();        
+        long_Curve_Laser_Shoot_Obj.transform.GetChild(0).GetComponent<ShootSystem>().Shoot();
+        UsualSoundManager.Instance.Play_Laser_Sound();
     }
 
     public void Stop_Long_Curve_Laser() {

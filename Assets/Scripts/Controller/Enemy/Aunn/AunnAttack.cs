@@ -409,6 +409,7 @@ public class AunnAttack : BossEnemyAttack {
 
         //取得
         BossCollisionDetection _collision = GetComponent<BossCollisionDetection>();
+        
         //無敵化
         _collision.Become_Invincible();
         foot_Collider.Delete_Collision();
@@ -416,8 +417,12 @@ public class AunnAttack : BossEnemyAttack {
 
         //移動
         StartCoroutine("High_Jump_Move_Cor", new Vector2(0, transform.position.y + 4));        
-        yield return new WaitForSeconds(2.5f);        
-        
+        yield return new WaitForSeconds(2.5f);
+
+        //無敵解除
+        _collision.Release_Invincible();
+        foot_Collider.Activate_Collision();
+
         _controller.Change_Fly_Parameter();
         _controller.Change_Animation("ShootPoseBool");
         _move_Const.Start_Move(new Vector3(0, transform.position.y + 80f), 1);
@@ -427,9 +432,7 @@ public class AunnAttack : BossEnemyAttack {
         _shoot.Shoot_Aunn_Word_Bullet();
         yield return new WaitForSeconds(3.0f);
 
-        _controller.Change_Land_Parameter();        
-        _collision.Release_Invincible();
-        foot_Collider.Activate_Collision();
+        _controller.Change_Land_Parameter();                
 
         yield return new WaitForSeconds(4.0f);
 

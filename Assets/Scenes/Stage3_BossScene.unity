@@ -2038,7 +2038,7 @@ MonoBehaviour:
     message:
       file_Name: AunnText
       dual_Panel: 1
-      id: {x: 1, y: 1}
+      id: {x: 1, y: 5}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -2159,7 +2159,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 6
     message:

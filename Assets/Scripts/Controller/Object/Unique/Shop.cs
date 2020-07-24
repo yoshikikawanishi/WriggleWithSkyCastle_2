@@ -5,7 +5,9 @@ using UnityEngine;
 /// <summary>
 /// Resources/UIにShopCanvas入れておくこと
 /// </summary>
-public class Shop : MonoBehaviour {    
+public class Shop : MonoBehaviour {
+
+    [SerializeField] private bool is_Sell_Option_Item = true;
 
     private GameObject shop_Canvas_Prefab;
     private GameObject shop_Canvas_Obj;
@@ -15,7 +17,10 @@ public class Shop : MonoBehaviour {
 
 
     void Start () {
-        shop_Canvas_Prefab = Resources.Load("UI/ShopCanvas") as GameObject;
+        if(is_Sell_Option_Item)
+            shop_Canvas_Prefab = Resources.Load("UI/ShopCanvas") as GameObject;
+        else
+            shop_Canvas_Prefab = Resources.Load("UI/ShopCanvas_0") as GameObject;
         hit_Player_Trigger = transform.Find("Collision").GetComponent<ChildColliderTrigger>();
 	}
 	

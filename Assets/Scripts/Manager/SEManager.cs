@@ -9,24 +9,24 @@ public class SEManager : MonoBehaviour {
 	public class SE {
         public string name = "input name";
         public AudioClip clip;
-        public float volume; 
+        public float volume;         
     }
 
     public List<SE> SE_List = new List<SE>();
 
     private AudioSource _audio;
 
+
     private void Awake() {
         _audio = GetComponent<AudioSource>();
+        _audio.volume = 1.0f;   //volumeはPlayOneShotで調整するよ！
     }
 
 
     public void Play(string name) {
         foreach(SE se in SE_List) {
-            if(se.name == name) {
-                _audio.clip = se.clip;
-                _audio.volume = se.volume;
-                _audio.Play();
+            if(se.name == name) {                
+                _audio.PlayOneShot(se.clip, se.volume);                
                 return;
             }
         }

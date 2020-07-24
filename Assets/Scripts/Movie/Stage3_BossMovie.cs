@@ -37,6 +37,6 @@ public class Stage3_BossMovie : MonoBehaviour {
         yield return new WaitForSeconds(2.0f);
         FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
         yield return new WaitForSeconds(1.0f);
-        SceneManager.LoadScene("Stage4_1Scene");
+        SceneManager.LoadScene("DemoEndingScene");
     }
 }

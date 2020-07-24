@@ -1,6 +1,6 @@
 Name	IsExist
-WildBoar	False
-WildBoar	False
-WildBoar	False
+WildBoar	True
+WildBoar	True
+WildBoar	True
 WildBoar	False
 WildBoar (1)	False

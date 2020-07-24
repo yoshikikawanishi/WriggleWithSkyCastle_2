@@ -81,7 +81,7 @@ public class Mystia : TalkCharacter {
 
     //ルーミアの隣に移動
     private void Change_Status_With_Rumia() {
-        Change_Message_Status("MystiaText", 7, 7);
+        Change_Message_Status("MystiaText", 7, 8);
         transform.position = new Vector3(824f, 18f, 0);
         PlayerPrefs.SetInt("Rumia", 2);
     }

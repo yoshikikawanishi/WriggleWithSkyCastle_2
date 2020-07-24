@@ -86,7 +86,7 @@ public class Rumia : TalkCharacter {
     //ミスティアが横にいる時のステータスに変更
     private void Change_Status_With_Mystia() {
         GetComponent<ParticleSystem>().Stop();
-        Change_Message_Status("RumiaText", 6, 6);
+        Change_Message_Status("RumiaText", 6, 7);
     }
 
 }
