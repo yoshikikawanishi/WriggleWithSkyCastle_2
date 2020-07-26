@@ -1,13 +1,4 @@
 #SceneName
 Stage1_1Scene
-TitleScene
-Stage1_BossScene
-PlayGuide2Scene
-Stage2_1Scene
-Stage2_2Scene
-Stage2_BossScene
-Stage3_1Scene
-Stage3_2Scene
 Stage3_3Scene
-Stage3_BossScene
-DemoEndingScene
+TitleScene

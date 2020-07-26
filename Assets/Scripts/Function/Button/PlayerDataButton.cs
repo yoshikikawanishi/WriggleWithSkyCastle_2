@@ -45,9 +45,9 @@ public class PlayerDataButton : MonoBehaviour {
         { "Shizuha", "秋姉妹万歳！秋姉妹万歳！" },        
         { "BigFrog", "大蝦蟇の加護\n復活時の初期ライフが増える" },
         { "Hina", "お札\n敵を倒した時お札が飛び散る" },
-        { "Nitori", "のびーるアーム\n攻撃範囲が広がる" },
+        { "Nitori", "河童の腕\n攻撃範囲が広がる" },
         { "Momizi", "文果真報の袋とじ\nよかった。" },
-        { "Aya", "\nキックの速度が上昇する" }
+        { "Aya", "天狗の羽団扇\nキックの速度が上昇する" }
 
     };
 

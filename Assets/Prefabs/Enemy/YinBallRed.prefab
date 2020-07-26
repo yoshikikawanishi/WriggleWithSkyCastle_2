@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Pooled: 1
   is_One_Life: 0
-  shake_Camera_In_Vanish: 1
+  shake_Camera_In_Vanish: 0
   life: 4
   power_Value: 2
   score_Value: 3

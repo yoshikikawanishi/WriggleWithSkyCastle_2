@@ -8,29 +8,41 @@ public class AyaMovie : MonoBehaviour {
     //画面エフェクト用
     [SerializeField] private AyaCameraFrame camera_Frame_Effect;
 
-    //セリフのID
-    [SerializeField] private Vector2Int[]   start_Message_ID        = new Vector2Int[3];
-    [Space]
-    [SerializeField] private float          on_The_Way_Message_Line1;
-    [SerializeField] private Vector2Int[]   on_The_Way_Message_ID1  = new Vector2Int[2];
-    [Space]
-    [SerializeField] private Vector2Int[]   damaged_Message_ID      = new Vector2Int[3];
+    //表示するメッセージのステータス
+    //表示開始するx座標とファイルのメッセージ    
+    private class Message {
+        public float start_Message_Line;
+        public Vector2Int id;
+        public Message(float start_Message_Line, Vector2Int id) {
+            this.start_Message_Line = start_Message_Line;
+            this.id = id;
+        }        
+    }
+
+    private List<Message> message_List_In_First_Time = new List<Message>() {
+        new Message(3500f, new Vector2Int(1, 2)),
+        new Message(4500f, new Vector2Int(4, 6)),
+        new Message(5700f, new Vector2Int(8, 9)),
+    };
+    private List<Message> message_List_In_Second_Time = new List<Message>() {
+        new Message(3500f, new Vector2Int(11, 12)),
+        new Message(4500f, new Vector2Int(15, 16)),
+        new Message(5700f, new Vector2Int(18, 19)),
+    };
+    private List<Message> message_List_In_Third_Time = new List<Message>() {
+        new Message(3500f, new Vector2Int(21, 23)),
+    };
 
     private GameObject main_Camera;
-    private MessageDisplay _message;
+    private MessageDisplay _message;    
 
     //何回目のムービーか
     private int movie_Count = 0;
-    //自機のライフ確認用
-    private int player_Life;
-    private int damaged_Count = 0;        
-
+   
     
-    void Awake () {        
-        _message = GetComponent<MessageDisplay>();        
-	}
-
     private void Start() {
+        _message = GetComponent<MessageDisplay>();
+        _message.Set_Canvas_And_Panel_Name("AyaMessageCanvas", "AyaMessagePanel");
         main_Camera = GameObject.FindWithTag("MainCamera");
 
         if (movie_Count >= 3 && aya != null)
@@ -61,96 +73,50 @@ public class AyaMovie : MonoBehaviour {
 
     //ムービー本体
     private IEnumerator Aya_Movie_Cor() {
-        if (movie_Count > start_Message_ID.Length)
-            yield break;
-        
-        _message.Set_Canvas_And_Panel_Name("AyaMessageCanvas", "AyaMessagePanel");
+        if (movie_Count > 3)
+            yield break;                
 
         //カメラエフェクト
-        camera_Frame_Effect.Appear();
-
-        //開始セリフ
-        Display_Message(start_Message_ID[movie_Count - 1]);              
-        yield return new WaitUntil(_message.End_Message);    
+        camera_Frame_Effect.Appear();                                       
         
-        //３回目はやらない
-        if(movie_Count == 3) {            
-            camera_Frame_Effect.Disappear();
-            yield break;
+        List<Message> list;
+        switch (movie_Count) {
+            case 1: list = message_List_In_First_Time; break;
+            case 2: list = message_List_In_Second_Time; break;
+            default: list = message_List_In_Third_Time; break;
         }
 
-        //一定x座標を越えた時のセリフ
-        StartCoroutine("On_The_Way_Message1_Cor");
-        //自機被弾時セリフ
-        StartCoroutine("Player_Damaged_Movie_Cor");
-        //カメラ攻撃
-        StartCoroutine("Camera_Attack_Cor");
-    }
-
-
-    //一定のx座標を超えた時のセリフ
-    private IEnumerator On_The_Way_Message1_Cor() {        
-        //待つ
-        while(main_Camera.transform.position.x < on_The_Way_Message_Line1) {
-            yield return null;
-        }
-        //セリフ
-        Display_Message(on_The_Way_Message_ID1[movie_Count - 1]);
-        yield return new WaitUntil(_message.End_Message);
-    }  
-
-
-    //自機被弾時セリフ    
-    private IEnumerator Player_Damaged_Movie_Cor() {
-        //初期設定        
-        player_Life = PlayerManager.Instance.Get_Life();
-        //待つ
-        while (true) {
-            //自機が回復したとき
-            if (PlayerManager.Instance.Get_Life() > player_Life)
-                player_Life++;
-            //被弾時
-            if (Is_Player_Damaged()) {
-                damaged_Count++;
-                break;    
-            }
-            yield return null;
-        }
-        //セリフ
-        Display_Message(damaged_Message_ID[damaged_Count - 1]);
-        yield return new WaitUntil(_message.End_Message);
-        //次の被弾時セリフを待つ        
-        if(damaged_Count < damaged_Message_ID.Length)
-            StartCoroutine("Player_Damaged_Movie_Cor");                
-    }
-
-
-    //カメラ攻撃
-    private IEnumerator Camera_Attack_Cor() {
-        yield return new WaitForSeconds(1.0f);
-        float span;
-
-        for (int i = 0; i < 3; i++) {
+        for(int i = 0; i < list.Count; i++) {
+            //すでに過ぎたものは飛ばす
+            if (list[i].start_Message_Line < main_Camera.transform.position.x)
+                continue;
+            //設定したラインに到達するまで待つ
+            while (!Is_Reach_Line(list[i].start_Message_Line))
+                yield return null;
+            
+            Display_Message(list[i].id);            
+            yield return new WaitUntil(_message.End_Message);
+            //3回目のムービー時ムービー終わる
+            if (movie_Count == 3) {
+                camera_Frame_Effect.Disappear();
+                yield break;
+            }                
             camera_Frame_Effect.Attack();
-            span = Random.Range(10.0f, 15.0f);
-            yield return new WaitForSeconds(span);
         }
+    }   
+
+
+    //メッセージ表示
+    private void Display_Message(Vector2Int ID) {
+        _message.Start_Display_Auto("AyaText", ID.x, ID.y, 1.5f, 0.05f, false);
     }
 
 
-    //自機のライフが減ったときにtrueを返す    
-    private bool Is_Player_Damaged() {
-        int life = PlayerManager.Instance.Get_Life();
-        if(life > 0 && life < player_Life) {
-            player_Life = life;
+    //カメラが引数地点の近くにいるかどうか
+    private bool Is_Reach_Line(float line) {
+        if(Mathf.Abs(main_Camera.transform.position.x - line) < 32f) {
             return true;
         }
         return false;
-    }
-
-
-
-    private void Display_Message(Vector2Int ID) {
-        _message.Start_Display_Auto("AyaText", ID.x, ID.y, 1.5f, 0.05f, false);
     }
 }

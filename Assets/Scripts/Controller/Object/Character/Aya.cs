@@ -26,8 +26,8 @@ public class Aya : TalkCharacter {
     protected override void Action_In_End_Talk() {
         if(start_ID == 41) {
             Put_Out_Collection_Box();
-            start_ID = 51;
-            end_ID = 51;
+            start_ID = 48;
+            end_ID = 48;
         }
     }
 

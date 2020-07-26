@@ -1355,6 +1355,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 916133501}
   - {fileID: 963837264}
   - {fileID: 1020692324}
   m_Father: {fileID: 1105469849}
@@ -2819,6 +2820,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74647cc946fdfd04ca8b2823eeca4846, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &916133501 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8,
+    type: 2}
+  m_PrefabInternal: {fileID: 975870493}
 --- !u!1001 &919429435
 Prefab:
   m_ObjectHideFlags: 0
@@ -3038,7 +3044,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225546588308906, guid: 24587024a8d2acf42a8c0c548359eaa8,
+        type: 2}
+      propertyPath: life
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
@@ -3114,6 +3125,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &975870493
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 334177861}
+    m_Modifications:
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 5428
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453300801387140, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+      propertyPath: m_Name
+      value: SunFlowerFairyBlackGen (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225546588308906, guid: 24587024a8d2acf42a8c0c548359eaa8,
+        type: 2}
+      propertyPath: life
+      value: 30
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &986523485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3342,7 +3404,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4538400832346050, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1453300801387140, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
       propertyPath: m_Name
@@ -3352,6 +3414,11 @@ Prefab:
         type: 2}
       propertyPath: y_Move.m_Curve.Array.data[1].value
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114225546588308906, guid: 24587024a8d2acf42a8c0c548359eaa8,
+        type: 2}
+      propertyPath: life
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24587024a8d2acf42a8c0c548359eaa8, type: 2}
@@ -8698,7 +8765,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: AyaText
   start_ID: 41
-  end_ID: 50
+  end_ID: 51
   baloon_Pos: {x: 8, y: 16}
   dual_Panel: 1
   talk_Type: 0
@@ -9671,18 +9738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aya: {fileID: 1516649642}
   camera_Frame_Effect: {fileID: 304796344}
-  start_Message_ID:
-  - {x: 1, y: 2}
-  - {x: 4, y: 6}
-  - {x: 8, y: 8}
-  on_The_Way_Message_Line1: 4160
-  on_The_Way_Message_ID1:
-  - {x: 11, y: 13}
-  - {x: 15, y: 16}
-  damaged_Message_ID:
-  - {x: 31, y: 32}
-  - {x: 34, y: 35}
-  - {x: 37, y: 37}
 --- !u!114 &1909703023
 MonoBehaviour:
   m_ObjectHideFlags: 0
