@@ -266,6 +266,8 @@ MonoBehaviour:
   start_ID: 1
   end_ID: 5
   baloon_Pos: {x: 16, y: 24}
+  dual_Panel: 1
+  talk_Type: 0
 --- !u!114 &114099607528637236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Pooled: 0
+  is_One_Life: 0
+  shake_Camera_In_Vanish: 0
   life: 150
   power_Value: 0
   score_Value: 0
@@ -318,6 +322,7 @@ MonoBehaviour:
   bullet: {fileID: 1928252021186772, guid: 69b4b16bd320c134c8932e78acbb6d9d, type: 2}
   parent: {fileID: 0}
   max_Speed: 100
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 8
@@ -381,9 +386,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 0
@@ -456,6 +487,7 @@ MonoBehaviour:
   bullet: {fileID: 1798116787944428, guid: 9e6565de85f430b43ae6415f6e617d06, type: 2}
   parent: {fileID: 0}
   max_Speed: 70
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
@@ -474,11 +506,37 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
-  num: 3
+  num: 2
   inter_Angle_Deg: 30
   center_Angle_Deg: 0
   arc_Deg: 360
@@ -489,7 +547,7 @@ MonoBehaviour:
   speed_Diff: 15
   angle_Diff: 0
   looping: 1
-  loop_Count: 3
+  loop_Count: 2
   span: 0.5
   center_Angle_Diff: 0
 --- !u!212 &212225009177977466
