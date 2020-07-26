@@ -1,4 +1,0 @@
-Name	IsExist
-YinBall	False
-YinBall	False
-YinBall	False

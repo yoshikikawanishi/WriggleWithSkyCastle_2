@@ -1,4 +1,0 @@
-Name	IsExist
-YellowFairy	True
-RedFairy	True
-BlueFairy	True

@@ -1,7 +1,0 @@
-Name	IsExist
-SmallFrog	False
-SmallFrog	False
-SmallFrog (1)	False
-SmallFrog	False
-SmallFrog	False
-SmallFrog (1)	False

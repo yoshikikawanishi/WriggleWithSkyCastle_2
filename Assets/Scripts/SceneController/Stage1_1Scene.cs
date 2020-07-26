@@ -6,9 +6,8 @@ public class Stage1_1Scene : SingletonMonoBehaviour<Stage1_1Scene> {
 
 
     private void Start() {
-        //オープニング
-        GetComponent<OpeningMovie>().Start_Movie();                           
-        
+        //ムービー
+        GetComponent<Stage1_1Movie>().Start_Movie();                                   
     }
 
 }

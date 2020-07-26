@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OpeningMovie : MonoBehaviour {
+public class Stage1_1Movie : MonoBehaviour {
 
+    
     [SerializeField] private GameObject flies;
 
-
+    
     public void Start_Movie() {
         if (SceneManagement.Instance.Is_First_Visit()) {
             BGMManager.Instance.Stop_BGM();
-            StartCoroutine("Opening_Movie_Cor");
+            StartCoroutine("Movie_Cor");
         }
         else {
             BGMManager.Instance.Change_BGM("Stage1");
@@ -18,7 +19,8 @@ public class OpeningMovie : MonoBehaviour {
         }
     }
 
-    private IEnumerator Opening_Movie_Cor() {
+
+    private IEnumerator Movie_Cor() {
         GameObject player = GameObject.FindWithTag("PlayerTag");
         MessageDisplayCustom _message = GetComponent<MessageDisplayCustom>();
 
@@ -34,7 +36,7 @@ public class OpeningMovie : MonoBehaviour {
         flies.GetComponent<Animator>().SetTrigger("InTrigger");
 
         //会話
-        _message.Start_Display("OpeningText", 1, 7);
+        _message.Start_Display("Stage1_1MovieText", 1, 7);
         yield return new WaitUntil(_message.End_Message);
 
         //ハエ退場
@@ -45,5 +47,5 @@ public class OpeningMovie : MonoBehaviour {
         PauseManager.Instance.Set_Is_Pausable(true);
         //BGM開始
         BGMManager.Instance.Change_BGM("Stage1");
-    }
+    }    
 }

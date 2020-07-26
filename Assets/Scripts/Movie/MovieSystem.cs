@@ -173,7 +173,7 @@ public class MovieSystem : MonoBehaviour {
                     Change_Animation_Parameter(e);
                     break;
                 case Event.Type.localScale:
-                    StartCoroutine("Change_Local_Scale_Cor");
+                    StartCoroutine("Change_Local_Scale_Cor", e);
                     break;
                 case Event.Type.genObj:
                     Generate_Object(e);
@@ -242,7 +242,7 @@ public class MovieSystem : MonoBehaviour {
         if (x_Curve == null || y_Curve == null)
             yield break;
 
-        Vector2 root_Pos = Vector2.zero;
+        Vector3 root_Pos = new Vector3(0, 0, obj.transform.position.z);
         if(e.motion.apply_Root_Position)
             root_Pos = obj.position;
         float xt = x_Curve.keys[x_Curve.keys.Length - 1].time;
@@ -250,7 +250,7 @@ public class MovieSystem : MonoBehaviour {
         float end_Time = Mathf.Max(xt, yt);
 
         for (float t = 0; t < end_Time; t += Time.deltaTime) {
-            obj.position = root_Pos + new Vector2(x_Curve.Evaluate(t), y_Curve.Evaluate(t));
+            obj.position = root_Pos + new Vector3(x_Curve.Evaluate(t), y_Curve.Evaluate(t), 0);
             yield return null;
         }
     }    

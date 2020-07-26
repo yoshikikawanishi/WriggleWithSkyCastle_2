@@ -34,10 +34,16 @@ public class MovieSystemEditor : Editor {
 
         //イベントリスト        
         for (int i = 0; i < obj.list.Count; i++) {
-            obj.list[i].is_Open_In_Inspector = EditorGUILayout.Foldout(obj.list[i].is_Open_In_Inspector, obj.list[i].type.ToString() + " " + i);
+
+            EditorGUILayout.BeginHorizontal();            
+            obj.list[i].is_Open_In_Inspector = EditorGUILayout.Toggle("", obj.list[i].is_Open_In_Inspector, GUILayout.Width(10));
+            obj.list[i].name = EditorGUILayout.TextField("", obj.list[i].name);
+            GUILayout.FlexibleSpace();
             if (!obj.list[i].is_Open_In_Inspector) {
+                EditorGUILayout.EndHorizontal();
                 continue;
             }
+            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginVertical(GUI.skin.box);
             
