@@ -8,10 +8,7 @@ using UnityEditor;
 
 [CustomEditor(typeof(MovieSystem))]
 [CanEditMultipleObjects]
-public class MovieSystemEditor : Editor {
-
-    public int component_Popup_Index = 0;
-    public int method_Popup_Index = 0;
+public class MovieSystemEditor : Editor {    
     
 
     public override void OnInspectorGUI() {
@@ -117,9 +114,9 @@ public class MovieSystemEditor : Editor {
                     }                    
                     string[] names = new string[components.Length];                    
                     for (int j = 0; j < components.Length; j++)
-                        names[j] = components[j].ToString();
-                    component_Popup_Index = EditorGUILayout.Popup(component_Popup_Index, names);
-                    obj.list[i].function.component = components[component_Popup_Index];
+                        names[j] = components[j].ToString();                    
+                    obj.list[i].function.component_Index = EditorGUILayout.Popup(obj.list[i].function.component_Index, names);
+                    obj.list[i].function.component = components[obj.list[i].function.component_Index];
                     GUILayout.EndHorizontal();
                     //メソッドのポップアップ
                     Type t = obj.list[i].function.component.GetType();                    
@@ -128,9 +125,9 @@ public class MovieSystemEditor : Editor {
                         break;
                     string[] method_Names = new string[methods.Length];
                     for (int j = 0; j < methods.Length; j++) 
-                        method_Names[j] = methods[j].Name;                                            
-                    method_Popup_Index = EditorGUILayout.Popup(method_Popup_Index, method_Names);
-                    obj.list[i].function.function_Name = method_Names[method_Popup_Index];
+                        method_Names[j] = methods[j].Name;
+                    obj.list[i].function.method_Index = EditorGUILayout.Popup(obj.list[i].function.method_Index, method_Names);
+                    obj.list[i].function.function_Name = method_Names[obj.list[i].function.method_Index];
                     break;
                 case MovieSystem.Event.Type.wait:                    
                     obj.list[i].wait.wait_Message = EditorGUILayout.Toggle("Wait End Message", obj.list[i].wait.wait_Message);

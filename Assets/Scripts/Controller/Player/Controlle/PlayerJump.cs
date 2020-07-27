@@ -52,22 +52,16 @@ public class PlayerJump : MonoBehaviour {
     }
 
 
-    //ジャンプボタンが離されたときの時間を保存、それによって原則までの時間を決定
+    //ジャンプボタンが離されたときの時間を保存
     public void Release_Jumping() {
         if (!is_Jumping)
             return;
 
         if(jumping_Time < 0.1f) {
             slow_Down_Time = 0.1f;
-        }
-        else if(jumping_Time < 0.23f) {
-            slow_Down_Time = 0.23f;
-        }
-        else if(jumping_Time < 0.36f) {
-            slow_Down_Time = 0.36f;
-        }
+        }        
         else {
-            slow_Down_Time = 100f;
+            slow_Down_Time = 0;
         }        
     }
 

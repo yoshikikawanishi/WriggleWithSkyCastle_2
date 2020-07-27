@@ -106,8 +106,11 @@ public class MovieSystem : MonoBehaviour {
     [System.Serializable]
     public class Function {
         public GameObject obj;
-        public MonoBehaviour component;
+        public MonoBehaviour component;        
         public string function_Name;
+        //editor用
+        public int component_Index = 0;
+        public int method_Index = 0;
     }
 
     /// <summary>

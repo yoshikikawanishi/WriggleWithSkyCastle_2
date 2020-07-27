@@ -32,11 +32,16 @@ public class Stage1_1Movie : MonoBehaviour {
         FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.01f);
         //yield return new WaitForSeconds(0.4f);
 
+        //リグルセリフ
+        _message.Start_Display("Stage1_1MovieText", 1, 1);
+        yield return new WaitUntil(_message.End_Message);
+
         //ハエ登場
+        flies.SetActive(true);
         flies.GetComponent<Animator>().SetTrigger("InTrigger");
 
         //会話
-        _message.Start_Display("Stage1_1MovieText", 1, 7);
+        _message.Start_Display("Stage1_1MovieText", 2, 6);
         yield return new WaitUntil(_message.End_Message);
 
         //ハエ退場
