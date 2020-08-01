@@ -260,7 +260,7 @@ MonoBehaviour:
   is_One_Life: 1
   shake_Camera_In_Vanish: 0
   life: 16
-  power_Value: 5
+  power_Value: 15
   score_Value: 6
   drop_Life_Probability: 0.1
   drop_Option_Box_Probability: 0

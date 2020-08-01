@@ -106,8 +106,8 @@ public class DataManager : SingletonMonoBehaviour<DataManager> {
 
     //データの初期化
     public void Initialize_Player_Data() {        
-        string scene = "OpeningScene";
-        Vector2 pos = new Vector2(120f, -19f);
+        string scene = "Stage1_1Scene";
+        Vector2 pos = new Vector2(-164f, -84f);
         int life = 3;
         int stock = 3;
         int power = 0;

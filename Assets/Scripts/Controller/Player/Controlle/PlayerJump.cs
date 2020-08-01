@@ -57,8 +57,8 @@ public class PlayerJump : MonoBehaviour {
         if (!is_Jumping)
             return;
 
-        if(jumping_Time < 0.1f) {
-            slow_Down_Time = 0.1f;
+        if(jumping_Time < 0.05f) {
+            slow_Down_Time = 0.05f;
         }        
         else {
             slow_Down_Time = 0;

@@ -37,7 +37,7 @@ public class WitchFairy : FairyEnemy {
             return;
 
         //カメラが近付いてくるまで待機
-        if (Mathf.Abs(main_Camera.transform.position.x - transform.position.x) > 270f) {
+        if (Mathf.Abs(main_Camera.transform.position.x - transform.position.x) > 360f) {
             if (search_Light.gameObject.activeSelf)
                 search_Light.gameObject.SetActive(false);
             _rigid.velocity = new Vector2(0, 0);

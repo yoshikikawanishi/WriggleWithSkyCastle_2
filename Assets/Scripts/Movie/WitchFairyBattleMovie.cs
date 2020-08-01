@@ -23,7 +23,7 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
     private WitchFairy battle_Enemy;
     private GameObject main_Camera;
     private GameObject player;    
-    private MessageDisplay _message;
+    private MessageDisplay _message;    
 
 
     new void Awake() {
@@ -78,6 +78,7 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
 
         //フェードイン
         FadeInOut.Instance.Delete_Fade_Out_Obj();
+        BackGroundEffector.Instance.Start_Change_Color(new Color(1, 1, 1), 1);
 
         Display_Message(1, 1);
         yield return new WaitUntil(_message.End_Message);
@@ -128,7 +129,8 @@ public class WitchFairyBattleMovie : SingletonMonoBehaviour<WitchFairyBattleMovi
         //フェードアウト
         FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
         yield return new WaitForSeconds(1.5f);        
-        FadeInOut.Instance.Delete_Fade_Out_Obj();                
+        FadeInOut.Instance.Delete_Fade_Out_Obj();
+        BackGroundEffector.Instance.Change_Color_Default(1f);
 
         //操作可能化、位置を戻す        
         PlayerMovieFunction.Instance.Enable_Controlle_Player();       

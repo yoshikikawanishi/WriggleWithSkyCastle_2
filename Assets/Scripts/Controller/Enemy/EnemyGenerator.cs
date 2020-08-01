@@ -38,7 +38,7 @@ public class EnemyGenerator : MonoBehaviour {
         player_Controller = GameObject.FindWithTag("PlayerTag").GetComponent<PlayerController>();
 
         //敵のオブジェクトプール
-        pool = pool_Manager.Get_Pool(transform.GetChild(0).gameObject);
+        pool = pool_Manager.Get_Pool(transform.GetChild(0).gameObject);        
     }
 	
 
@@ -62,7 +62,7 @@ public class EnemyGenerator : MonoBehaviour {
     private IEnumerator Generate_Enemy_Cor() {
         for(int i = 0; i < num; i++) {
             var enemy = pool.GetObject();
-            enemy.transform.position = transform.position;  
+            enemy.transform.position = transform.position;            
             enemy.transform.position += (Vector3)Random_Vector2(-position_Noise, position_Noise);
             enemy.transform.SetParent(parent);            
             if (is_Controlle_Move) 
@@ -76,7 +76,7 @@ public class EnemyGenerator : MonoBehaviour {
     //敵の移動
     private IEnumerator Enemy_Move_Cor(GameObject enemy) {
         float end_Time = x_Move.keys[x_Move.length - 1].time;
-        Vector2 start_Pos = enemy.transform.localPosition;        
+        Vector2 start_Pos = enemy.transform.localPosition;
 
         for(float t = 0; t < end_Time; t += Time.deltaTime) {
             //消滅時抜ける

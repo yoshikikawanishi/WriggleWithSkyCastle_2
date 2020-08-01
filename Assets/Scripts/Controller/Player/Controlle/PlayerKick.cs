@@ -243,13 +243,13 @@ public class PlayerKick : MonoBehaviour {
         int power = PlayerManager.Instance.Get_Power();
         float speed = 180f;
 
-        if (power < 16) {
+        if (power < 100) {
             speed = 180f;
         }
-        else if (power < 32) {
+        else if (power < 200) {
             speed = 195f;
         }
-        else if (power < 64) {
+        else if (power < 300) {
             speed = 210f;
         }
         else {

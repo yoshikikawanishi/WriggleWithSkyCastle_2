@@ -989,6 +989,7 @@ MonoBehaviour:
   bullet: {fileID: 1484826329495228, guid: fd792f9f968edfa44a0e9cd9b4695bca, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 16
   angle_Noise: 8
   lifeTime: 7
@@ -1007,9 +1008,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 0
@@ -1037,6 +1064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spread_Speed: 0.1
+  default_Size: 0
   max_Size: 5
   life_Time: 0.7
   angler_Velocity: 0
@@ -1052,6 +1080,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468895e03e0a034428d3ff1c81f7edf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  life: 
+  power_Value: 0
+  score_Value: 0
+  phase_Change_Bomb_Prefab: {fileID: 0}
+  clear_Converge_Effect_Prefab: {fileID: 0}
+  clear_Effect_Prefab: {fileID: 0}
+  state: 0
   back_Design: {fileID: 0}
 --- !u!114 &114402833825644632
 MonoBehaviour:
@@ -1070,6 +1105,7 @@ MonoBehaviour:
   bullet: {fileID: 1882840218936906, guid: a462dff2bf198654cb17f086166b4308, type: 2}
   parent: {fileID: 0}
   max_Speed: 90
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 5
@@ -1088,9 +1124,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 3
   inter_Angle_Deg: 40
@@ -1118,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 900100007c010000
-  power_Value: 16
+  power_Value: 50
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1493121116874872, guid: 20dc9e0b24cf99a4c902f6c82ea5650b,
     type: 2}
@@ -1126,6 +1188,7 @@ MonoBehaviour:
     type: 2}
   clear_Effect_Prefab: {fileID: 1286543694777680, guid: b9604c5b805caab4ba62565377add58e,
     type: 2}
+  state: 0
 --- !u!114 &114458636380451856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,6 +1206,7 @@ MonoBehaviour:
   bullet: {fileID: 1075402022672936, guid: 44bfa3a0f25c81446b0a29785bc49db9, type: 2}
   parent: {fileID: 0}
   max_Speed: 120
+  radius: 0
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 7
@@ -1197,9 +1261,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 147
@@ -1232,6 +1322,7 @@ MonoBehaviour:
   bullet: {fileID: 1484826329495228, guid: fd792f9f968edfa44a0e9cd9b4695bca, type: 2}
   parent: {fileID: 0}
   max_Speed: 150
+  radius: 0
   speed_Noise: 16
   angle_Noise: 8
   lifeTime: 7
@@ -1250,9 +1341,35 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   is_Change_Sorting_Order: 0
   sorting_Order: -5
   sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
   other_Param: 1
   num: 1
   inter_Angle_Deg: 0
@@ -1279,6 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3fe19c4102de4840890225d4f2e6dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  can_Attack: 1
 --- !u!114 &114672556861522802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1291,6 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spread_Speed: 0.07
+  default_Size: 0
   max_Size: 2
   life_Time: 0.5
   angler_Velocity: 0
@@ -1501,7 +1620,7 @@ MonoBehaviour:
     type: 2}
   slash_Shotgun_Odd: {fileID: 114476232333031572}
   slash_Shootgun_Forward: {fileID: 114181244392549596}
-  knife_Shoot: {fileID: 114458636380451856}
+  knife_Shoot_Obj: {fileID: 0}
   kunai_Shoot: {fileID: 114402833825644632}
   phase2_Kunai_Shoot_Obj: {fileID: 0}
   Phase2_Square_Blocks: {fileID: 0}
@@ -1518,6 +1637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   before_Slash_Sound: {fileID: 82844842429435234}
   slash_Sound: {fileID: 82818214328522288}
+  jump_Sound: {fileID: 0}
+  land_Sound: {fileID: 0}
 --- !u!114 &114931409192020262
 MonoBehaviour:
   m_ObjectHideFlags: 1

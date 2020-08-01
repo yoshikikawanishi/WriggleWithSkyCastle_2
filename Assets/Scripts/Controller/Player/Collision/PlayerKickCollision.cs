@@ -67,10 +67,10 @@ public class PlayerKickCollision : MonoBehaviour {
             transform.GetChild(0).GetComponent<Animator>().SetBool("ChargeKickBool", true);
         }
         int power = PlayerManager.Instance.Get_Power();        
-        if (power >= 64) {
+        if (power >= 200) {
             transform.GetChild(0).GetComponent<Animator>().SetBool("KickBool2", true);            
         }
-        else if (power >= 32) {
+        else if (power >= 300) {
             transform.GetChild(0).GetComponent<Animator>().SetBool("KickBool1", true);
         }
     }

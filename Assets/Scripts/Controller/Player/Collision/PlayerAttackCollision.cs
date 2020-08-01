@@ -100,10 +100,10 @@ public class PlayerAttackCollision : MonoBehaviour {
         PlayerManager.Option option = PlayerManager.Instance.Get_Option();
 
         if (option == PlayerManager.Option.none || option == PlayerManager.Option.mantis) {
-            if (power < 32) {
+            if (power < 100) {
                 GetComponent<Animator>().SetTrigger("AttackTrigger");
             }
-            else if (power < 64) {
+            else if (power < 200) {
                 GetComponent<Animator>().SetTrigger("AttackTrigger2");
             }
             else {
@@ -111,10 +111,10 @@ public class PlayerAttackCollision : MonoBehaviour {
             }
         }
         else if (option == PlayerManager.Option.spider) {
-            if (power < 32) {
+            if (power < 100) {
                 GetComponent<Animator>().SetTrigger("BlueAttackTrigger");
             }
-            else if (power < 64) {
+            else if (power < 200) {
                 GetComponent<Animator>().SetTrigger("BlueAttackTrigger2");
             }
             else {
@@ -122,10 +122,10 @@ public class PlayerAttackCollision : MonoBehaviour {
             }
         }
         else {
-            if (power < 32) {
+            if (power < 100) {
                 GetComponent<Animator>().SetTrigger("YellowAttackTrigger");
             }
-            else if (power < 64) {
+            else if (power < 200) {
                 GetComponent<Animator>().SetTrigger("YellowAttackTrigger2");
             }
             else {

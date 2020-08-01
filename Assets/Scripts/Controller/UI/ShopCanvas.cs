@@ -29,8 +29,8 @@ public class ShopCanvas : MonoBehaviour {
 
     //値段
     private int life_Up_Price;  //Adjust_Life_Up_Price()で調整
-    private const int STOCK_UP_PRICE = 50;
-    private const int OPTION_PRICE = 5;
+    private const int STOCK_UP_PRICE = 100;
+    private const int OPTION_PRICE = 10;
 
     //コメント
     private const string WELLCOME_COMMENT = "■ よくきたね\n■ Pと　アイテムを　交換するよ";
@@ -60,16 +60,16 @@ public class ShopCanvas : MonoBehaviour {
         int price = 1;
 
         switch (player_Life) {
-            case 1: price = 1; break;
-            case 2: price = 2; break;
-            case 3: price = 4; break;
-            case 4: price = 8; break;
-            case 5: price = 16; break;
-            case 6: price = 32; break;
-            default: price = 64; break;
+            case 1: price = 10; break;
+            case 2: price = 20; break;
+            case 3: price = 40; break;
+            case 4: price = 80; break;
+            case 5: price = 120; break;
+            case 6: price = 160; break;
+            default: price = 200; break;
         }
 
-        life_Up_Button.GetComponentInChildren<Text>().text = price.ToString();
+        life_Up_Button.GetComponentInChildren<Text>().text = (price * 0.01f).ToString("0.0");
         life_Up_Price = price;
     }
 

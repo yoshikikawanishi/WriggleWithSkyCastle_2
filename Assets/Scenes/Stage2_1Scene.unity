@@ -15251,11 +15251,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 457.08456
+      value: 443.5
       objectReference: {fileID: 0}
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -78.47041
+      value: -53.3
       objectReference: {fileID: 0}
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15284,6 +15284,19 @@ Prefab:
     - target: {fileID: 1928959891870948, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_Name
       value: RedFairy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376906738107940, guid: 4bd949678d72d7c4f8be11df88e5a537,
+        type: 2}
+      propertyPath: life
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
@@ -21941,6 +21954,11 @@ Prefab:
       propertyPath: score_Value
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 95182478100341802, guid: b7b9c688fdcd05c49b0b8f54241c4dae,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7b9c688fdcd05c49b0b8f54241c4dae, type: 2}
   m_IsPrefabAsset: 0
@@ -23316,6 +23334,19 @@ Prefab:
         type: 2}
       propertyPath: drop_Life_Probability
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547467938815502, guid: 0fd0e912cd3d8bd4697aaf0697d80b87, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547467938815502, guid: 0fd0e912cd3d8bd4697aaf0697d80b87, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114119817345455350, guid: 0fd0e912cd3d8bd4697aaf0697d80b87,
+        type: 2}
+      propertyPath: life
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fd0e912cd3d8bd4697aaf0697d80b87, type: 2}
@@ -32545,11 +32576,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 400.16547
+      value: 393.8
       objectReference: {fileID: 0}
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -80.433136
+      value: -67.8
       objectReference: {fileID: 0}
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_LocalPosition.z
@@ -32574,6 +32605,19 @@ Prefab:
     - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
       propertyPath: m_RootOrder
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885315563241268, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114376906738107940, guid: 4bd949678d72d7c4f8be11df88e5a537,
+        type: 2}
+      propertyPath: life
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bd949678d72d7c4f8be11df88e5a537, type: 2}

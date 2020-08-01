@@ -115,7 +115,7 @@ public class GameUIController : MonoBehaviour {
     private void Change_Power_UI() {
         if(power_Text_Value != player_Manager.Get_Power()) {
             power_Text_Value = player_Manager.Get_Power();
-            power_Text.text = power_Text_Value.ToString("D" + 3.ToString()) + "/128";
+            power_Text.text = (power_Text_Value * 0.01f).ToString("0.00") + "/4.00";
         }
     }
 

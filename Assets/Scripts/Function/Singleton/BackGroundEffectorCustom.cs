@@ -8,11 +8,13 @@ public class BackGroundEffectorCustom : BackGroundEffector {
 
     [SerializeField] private List<Tilemap> back_Grounds;    
 
-    new void Awake() {
+
+    new void Awake() {        
         if(back_Grounds.Count == 0) {
             Debug.Log("Set_BackGround_BackGroundEffecter");
             return;
-        }        
+        }
+        default_Color = back_Grounds[0].color;
     }
     
 
@@ -28,6 +30,6 @@ public class BackGroundEffectorCustom : BackGroundEffector {
             }
             yield return null;
         }
-    }
+    }    
 
 }

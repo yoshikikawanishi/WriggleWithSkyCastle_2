@@ -115,11 +115,11 @@ public class PlayerShoot : MonoBehaviour {
         int power = player_Manager.Get_Power();
         
         //弾数
-        if (power < 32) 
+        if (power < 200) 
             option_Shoot.num = 2;        
-        else if (power < 64) 
+        else if (power < 300) 
             option_Shoot.num = 3;        
-        else if (power < 128) 
+        else if (power < 400) 
             option_Shoot.num = 4;        
         else 
             option_Shoot.num = 5;                
@@ -258,16 +258,16 @@ public class PlayerShoot : MonoBehaviour {
         }
         player_Power = player_Manager.Get_Power();
 
-        if (player_Power < 16) {
+        if (player_Power < 100) {
             charge_Span = new float[3] { 0.3f, 1.0f, 2.0f };            
         }
-        else if(player_Power < 32) {
+        else if(player_Power < 200) {
             charge_Span = new float[3] { 0.27f, 0.85f, 1.7f };
         }
-        else if(player_Power < 64) {
+        else if(player_Power < 300) {
             charge_Span = new float[3] { 0.24f, 0.7f, 1.4f };
         }
-        else if(player_Power < 128) {
+        else if(player_Power < 400) {
             charge_Span = new float[3] { 0.21f, 0.55f, 1.1f };
         }
         else {

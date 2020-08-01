@@ -23,7 +23,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager> {
     //上限値
     public const int MAX_LIFE = 9;
     public const int MAX_STOCK = 9;
-    public const int MAX_POWER = 128;
+    public const int MAX_POWER = 400;
     public const int MAX_SCORE = 9999999;
     //スコア50000点おきに残機アップ
     private const int STOCK_UP_SCORE = 50000;

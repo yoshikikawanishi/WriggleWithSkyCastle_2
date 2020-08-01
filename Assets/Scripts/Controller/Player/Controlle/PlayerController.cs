@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
     private PlayerTransitionRidingBeetle _transition_Beetle;
     private PlayerJump _jump;
     private PlayerAttack _attack;
-    private PlayerChargeAttack _charge_Attack;
     private PlayerKick _kick;    
     private PlayerSquat _squat;
     private PlayerShoot _shoot;
@@ -50,8 +49,7 @@ public class PlayerController : MonoBehaviour {
         _transition = GetComponent<PlayerTransition>();
         _transition_Beetle = GetComponent<PlayerTransitionRidingBeetle>();
         _jump = GetComponent<PlayerJump>();
-        _attack = GetComponent<PlayerAttack>();
-        _charge_Attack = GetComponent<PlayerChargeAttack>();
+        _attack = GetComponent<PlayerAttack>();        
         _kick = GetComponent<PlayerKick>();        
         _squat = GetComponent<PlayerSquat>();
         _shoot = GetComponent<PlayerShoot>();
@@ -233,8 +231,6 @@ public class PlayerController : MonoBehaviour {
     //攻撃の入力識別用
     public bool start_Attack_Frame_Count = false;
     private int attack_Frame_Count = 0;
-    //チャージアタックチャージ
-    private bool start_Charge_Attack_Charge = false;
     //チャージキックチャージ
     public bool start_Charge_Kick_Charge = false;
 
@@ -252,22 +248,11 @@ public class PlayerController : MonoBehaviour {
             }
             else if (attack_Frame_Count > 7) {
                 _attack.Attack();
-                start_Charge_Attack_Charge = true;
             }
             else return;
             attack_Frame_Count = 0;
             start_Attack_Frame_Count = false;
-        }
-
-        //チャージアタック
-        //Debug.Log("TODO : Charge Attack need collection item");
-        if (start_Charge_Attack_Charge) {            
-            _charge_Attack.Charge();
-            if (!input.GetKey(Key.Attack)) {
-                start_Charge_Attack_Charge = false;
-                _charge_Attack.Charge_Attack();
-            }
-        }
+        }        
 
         //チャージキックの溜め
         if (CollectionManager.Instance.Is_Collected("Saki")) {

@@ -175,13 +175,13 @@ public class PlayerGettingOnBeetle : MonoBehaviour {
     private void Change_Scroll_Speed_By_Power() {
         int power = PlayerManager.Instance.Get_Power();
         float scroll_Speed;
-        if (power < 16)
+        if (power < 100)
             scroll_Speed = 0.5f;
-        else if (power < 32)
+        else if (power < 200)
             scroll_Speed = 0.6f;
-        else if (power < 64)
+        else if (power < 300)
             scroll_Speed = 0.7f;
-        else if (power < 128)
+        else if (power < 400)
             scroll_Speed = 0.8f;
         else
             scroll_Speed = 1.0f;

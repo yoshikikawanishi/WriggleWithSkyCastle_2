@@ -63,16 +63,16 @@ public class EnemyCollisionDetection : MonoBehaviour {
     //自機のパワーに応じてダメージ増加
     protected float Damage_Rate() {
         int power = PlayerManager.Instance.Get_Power();
-        if(power < 16) {
+        if(power < 100) {
             return 1;
         }
-        if(power < 32) {
+        if(power < 200) {
             return 1.2f;
         }
-        else if(power < 64) {
+        else if(power < 300) {
             return 1.5f;
         }
-        else if(power < 128) {
+        else if(power < 400) {
             return 1.7f;
         }
         return 1.9f;

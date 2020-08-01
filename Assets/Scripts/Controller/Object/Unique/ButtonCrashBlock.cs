@@ -26,7 +26,7 @@ public class ButtonCrashBlock : MonoBehaviour {
     [Space]
     //要求ボタンの設定用
     [SerializeField] private int require_Button_Count = 3;
-    private List<ButtonKind> require_Button_List = new List<ButtonKind>();
+    private List<ButtonKind> require_Button_List = new List<ButtonKind>();    
     
     //ボタンアイコン配列化用
     private Sprite[] icon_Textures = new Sprite[BUTTONNUM];
@@ -43,11 +43,17 @@ public class ButtonCrashBlock : MonoBehaviour {
         icon_Textures[(int)ButtonKind.jump] = icon_Jump;
         icon_Textures[(int)ButtonKind.attack] = icon_Attack;
         icon_Textures[(int)ButtonKind.fly] = icon_Fly;
-        for(int i = 0; i < require_Button_Count; i++) {
-            switch(Random.Range(0, 3)) {
-                case 0: require_Button_List.Add(ButtonKind.attack); break;
-                case 1: require_Button_List.Add(ButtonKind.jump); break;
-                case 2: require_Button_List.Add(ButtonKind.fly); break;
+
+        switch(Random.Range(0, 3)) {
+            case 0: require_Button_List.Add(ButtonKind.jump);   break;
+            case 1: require_Button_List.Add(ButtonKind.attack); break;
+            case 2: require_Button_List.Add(ButtonKind.fly);    break;
+        }
+        for (int i = 1; i < require_Button_Count; i++) {
+            switch (require_Button_List[i-1]) {
+                case ButtonKind.jump:   require_Button_List.Add(ButtonKind.attack); break;
+                case ButtonKind.attack: require_Button_List.Add(ButtonKind.fly);    break;
+                case ButtonKind.fly:    require_Button_List.Add(ButtonKind.jump);   break;
             }
         }
 

@@ -6,7 +6,7 @@ public class BackGroundEffector : SingletonMonoBehaviour<BackGroundEffector> {
 
     [SerializeField] private GameObject back_Ground;
     private SpriteRenderer back_Ground_Sprite;
-    private Color default_Color;
+    protected Color default_Color;
 
     private new void Awake() {
         if(back_Ground == null) {
