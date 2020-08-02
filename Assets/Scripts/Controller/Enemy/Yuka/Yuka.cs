@@ -5,7 +5,7 @@ using UnityEngine;
 public class Yuka : BossEnemy {
 
     //コンポーネント    
-    private MoveTwoPoints _move_Two_Points;
+    private MoveConstTime _move_Two_Points;
 
     //弾幕用オブジェクト
     [SerializeField] private GameObject cross_Shoot_Obj;
@@ -17,7 +17,7 @@ public class Yuka : BossEnemy {
     // Use this for initialization
     void Start() {
         //取得
-        _move_Two_Points = GetComponent<MoveTwoPoints>();
+        _move_Two_Points = GetComponent<MoveConstTime>();
         //ボス戦開始前無敵化
         Set_Is_Invincible(true);
         //オブジェクトプール

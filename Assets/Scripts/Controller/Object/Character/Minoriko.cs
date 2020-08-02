@@ -70,7 +70,7 @@ public class Minoriko : Enemy {
             return;
         is_Visible = true;
         Stop_Potate_Shoot();
-        GetComponent<MoveTwoPoints>().Start_Move(transform.position + new Vector3(0, 48f));
+        GetComponent<MoveConstTime>().Start_Move(transform.position + new Vector3(0, 48f));
         GetComponent<Animator>().SetTrigger("FlyTrigger");
     }    
 
@@ -109,7 +109,7 @@ public class Minoriko : Enemy {
         StopAllCoroutines();
 
         //無敵化、移動
-        GetComponent<MoveTwoPoints>().Start_Move(new Vector3(transform.position.x, -36f));
+        GetComponent<MoveConstTime>().Start_Move(new Vector3(transform.position.x, -36f));
         GetComponent<Animator>().SetTrigger("DefeatTrigger");
         this.enabled = false;
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");

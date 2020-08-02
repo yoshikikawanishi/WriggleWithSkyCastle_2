@@ -37,7 +37,8 @@ public class Stage2_BossMovie : MonoBehaviour {
         BGMManager.Instance.Stop_BGM();
 
         //自機登場
-        MoveTwoPoints player_Move = player.AddComponent<MoveTwoPoints>();
+
+        MoveConstTime player_Move = player.AddComponent<MoveConstTime>();
         player_Move.Change_Paramter(0.021f, 0, 0);
         player_Move.Change_Transition_Curve(AnimationCurve.Linear(0, 0, 1, 1), 0);
         player.GetComponent<PlayerController>().Change_Animation("DashBool");

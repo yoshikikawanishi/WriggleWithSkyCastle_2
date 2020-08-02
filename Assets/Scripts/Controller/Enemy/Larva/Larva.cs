@@ -62,7 +62,7 @@ public class Larva : BossEnemy {
 
     //点滅溜めエフェクト
     public IEnumerator Pre_Action_Blink() {
-        for(int i = 0; i < 4; i++) {
+        for(int i = 0; i < 5; i++) {
             GetComponent<SpriteRenderer>().color = new Color(0.6f, 0.6f, 0.6f);
             yield return new WaitForSeconds(0.1f);
             GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f);

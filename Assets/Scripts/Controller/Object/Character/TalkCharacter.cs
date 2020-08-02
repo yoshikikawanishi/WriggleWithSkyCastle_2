@@ -38,6 +38,8 @@ public class TalkCharacter : MonoBehaviour {
     };
     private string player_Tag = "PlayerBodyTag";
 
+    private PlayerController player_Controller;
+
 
     //Start
     protected void Start() {
@@ -55,6 +57,9 @@ public class TalkCharacter : MonoBehaviour {
         mark_Up_Baloon.transform.SetParent(transform);
         if (talk_Type == TalkType.attack)
             mark_Up_Baloon.SetActive(false);
+
+        //自機取得
+        player_Controller = GameObject.FindWithTag("PlayerTag").GetComponent<PlayerController>();
     }
 
 
@@ -74,6 +79,8 @@ public class TalkCharacter : MonoBehaviour {
         if (is_Talking)
             return;
         if (talk_Type == TalkType.upperArrow) {
+            if (player_Controller.Get_Is_Ride_Beetle())
+                return;
             if(collision.tag == player_Tag && Input.GetAxisRaw("Vertical") > 0) {
                 StartCoroutine("Talk");
             }

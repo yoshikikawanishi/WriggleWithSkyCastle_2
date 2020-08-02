@@ -20,7 +20,7 @@ public class GameUIController : MonoBehaviour {
     [SerializeField] private Text power_Text;
     [SerializeField] private Text stock_Text;
     [SerializeField] private GameObject life_Images_Parent;
-    [SerializeField] private Slider beetle_Power_Slider;
+    [SerializeField] private Slider beetle_Power_Slider;    
     [SerializeField] private GameObject save_Text;
     [SerializeField] private Text option_Text;
     [Space]
@@ -42,6 +42,8 @@ public class GameUIController : MonoBehaviour {
     private PlayerManager.Option now_Option;
 
     private Image beetle_Power_Slider_Image;
+    private Color beetle_Power_Slider_Disable_Fly_Color = new Color(1, 0.8f, 0.8f, 0.3f); //緑ゲージ飛行不可時のカラー  
+    private bool can_Flying = true;
 
 
 	// Use this for initialization
@@ -52,7 +54,7 @@ public class GameUIController : MonoBehaviour {
         for (int i = 0; i < 9; i++) {
             life_Images[i] = life_Images_Parent.transform.GetChild(i).gameObject;
         }
-        beetle_Power_Slider_Image = beetle_Power_Slider.transform.Find("Fill Area").GetComponentInChildren<Image>();
+        beetle_Power_Slider_Image = beetle_Power_Slider.transform.Find("Fill Area").GetComponentInChildren<Image>();        
 
         GameObject player = GameObject.FindWithTag("PlayerTag");
         if (player != null) {
@@ -159,13 +161,27 @@ public class GameUIController : MonoBehaviour {
         if (beetle_Power_Slider_Value != beetle_Power_Manager.Get_Beetle_Power()) {
             beetle_Power_Slider_Value = beetle_Power_Manager.Get_Beetle_Power();
             beetle_Power_Slider.value = beetle_Power_Converter.Evaluate(beetle_Power_Slider_Value);
-            //色
+            //残量に応じてカラーを変える
+            Change_Beetle_Power_Image_Color();
+        }
+        //飛行不可の時カラーを変える
+        if (!player_Controller.Get_Can_Ride_Beetle()) {
+            beetle_Power_Slider_Image.color = beetle_Power_Slider_Disable_Fly_Color;
+            can_Flying = false;
+        }
+        //飛行可能になったときカラーを戻す
+        else if (!can_Flying) {
+            can_Flying = true;
+            Change_Beetle_Power_Image_Color();
+        }
+    }
+
+    private void Change_Beetle_Power_Image_Color() {
             beetle_Power_Slider_Image.color = new Color(1, 1, 1, 0.8f);
-            if (beetle_Power_Slider_Value >= 90)
-                beetle_Power_Slider_Image.color = new Color(1, 1, 1, 1.0f);
-            if (beetle_Power_Slider_Value <= 30f)
-                beetle_Power_Slider_Image.color = new Color(1, 0.5f, 0.5f, 0.8f);
-        }    
+        if (beetle_Power_Slider_Value >= 90)
+            beetle_Power_Slider_Image.color = new Color(1, 1, 1, 1.0f);
+        else if (beetle_Power_Slider_Value <= 30f)
+            beetle_Power_Slider_Image.color = new Color(1, 0.5f, 0.5f, 0.8f);
     }
 
 

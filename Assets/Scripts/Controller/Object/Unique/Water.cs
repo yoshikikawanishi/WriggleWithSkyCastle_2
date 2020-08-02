@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Water : MonoBehaviour {
     
-    [SerializeField] private GameObject water_Display_Effect_Prefab;
+    [SerializeField] private GameObject water_Screen_Effect_Prefab;
 
     private ObjectPool surface_Effect_Pool;
 
-    private GameObject water_Display_Effect;
+    private GameObject water_Screen_Effect;
 
 
 	// Use this for initialization
@@ -19,23 +19,23 @@ public class Water : MonoBehaviour {
         surface_Effect_Pool = ObjectPoolManager.Instance.Get_Pool(effect);
         //画面エフェクトの生成
         GameObject main_Camera = GameObject.FindWithTag("MainCamera");
-        water_Display_Effect = Instantiate(water_Display_Effect_Prefab, main_Camera.transform);
-        water_Display_Effect.transform.localPosition = new Vector3(0, 0, 10);
-        Stop_Water_Display_Effect();        
+        water_Screen_Effect = Instantiate(water_Screen_Effect_Prefab, main_Camera.transform);
+        water_Screen_Effect.transform.localPosition = new Vector3(0, 0, 10);
+        Stop_Water_Screen_Effect();        
     }
 	
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "PlayerBodyTag") {
             Play_Surface_Effect(collision.transform.position);
-            Play_Water_Display_Effect();
+            Play_Water_Screen_Effect();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (collision.tag == "PlayerBodyTag") {
             Play_Surface_Effect(collision.transform.position);
-            Stop_Water_Display_Effect();            
+            Stop_Water_Screen_Effect();            
         }
     }
 
@@ -47,14 +47,14 @@ public class Water : MonoBehaviour {
     }
 
     //画面の水滴エフェクトの開始、解除
-    private void Play_Water_Display_Effect() {
-        water_Display_Effect.GetComponentInChildren<SpriteRenderer>().enabled = true;
-        water_Display_Effect.GetComponentInChildren<ParticleSystem>().Play();
+    private void Play_Water_Screen_Effect() {
+        water_Screen_Effect.GetComponentInChildren<SpriteRenderer>().enabled = true;
+        water_Screen_Effect.GetComponentInChildren<ParticleSystem>().Play();
     }
 
-    private void Stop_Water_Display_Effect() {
-        water_Display_Effect.GetComponentInChildren<SpriteRenderer>().enabled = false;
-        water_Display_Effect.GetComponentInChildren<ParticleSystem>().Stop();
+    private void Stop_Water_Screen_Effect() {
+        water_Screen_Effect.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        water_Screen_Effect.GetComponentInChildren<ParticleSystem>().Stop();
     }    
 
 

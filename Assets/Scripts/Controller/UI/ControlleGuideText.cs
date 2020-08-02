@@ -29,13 +29,14 @@ public class ControlleGuideText : MonoBehaviour {
         }
         
         public override string ToString() {
+            InputManager.KeyConfigSetting key_Setting = InputManager.KeyConfigSetting.Instance;
             string s = "・"
                 + action.ToString()
                 + "\n"
                 + "[ "
-                + key.DefaultKeyCode[0]
+                + key_Setting.GetKeyCode(key)[0].ToString()
                 + " / "
-                + key.DefaultKeyCode[1].ToString().Substring(9)                
+                + key_Setting.GetKeyCode(key)[1].ToString()
                 + comment
                 + " ]";                
             return s;

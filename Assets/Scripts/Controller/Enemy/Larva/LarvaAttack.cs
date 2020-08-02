@@ -23,7 +23,7 @@ public class LarvaAttack : MonoBehaviour {
     //コンポーネント
     private Larva _controller;
     private LarvaShootObj shoot_Obj;
-    private MoveTwoPoints _move;
+    private MoveConstTime _move;
 
     //自機
     private GameObject player;
@@ -38,7 +38,7 @@ public class LarvaAttack : MonoBehaviour {
         //取得
         _controller = GetComponent<Larva>();
         shoot_Obj = GetComponentInChildren<LarvaShootObj>();
-        _move = GetComponent<MoveTwoPoints>();
+        _move = GetComponent<MoveConstTime>();
 
         player = GameObject.FindWithTag("PlayerTag");
     }
@@ -74,7 +74,7 @@ public class LarvaAttack : MonoBehaviour {
             //自機を追従、鱗粉弾発射
             Start_Trace_Player();
             for (int i = 0; i < 2; i++) {
-                yield return new WaitForSeconds(2.4f);
+                yield return new WaitForSeconds(3.2f);
                 _controller.StartCoroutine("Pre_Action_Blink");
                 _controller.Play_Small_Charge_Effect();
                 yield return new WaitForSeconds(1.03f);

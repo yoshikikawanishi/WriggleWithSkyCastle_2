@@ -16,7 +16,7 @@ public class Parameter {
 }
 
 
-public class MoveTwoPoints : MonoBehaviour {
+public class MoveConstTime : MonoBehaviour {
 
     [SerializeField] private List<Parameter> param = new List<Parameter> { new Parameter() };
 

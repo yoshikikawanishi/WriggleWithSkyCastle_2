@@ -82,7 +82,7 @@ public class NarumiShoot : MonoBehaviour {
         bullet.transform.position = transform.position;
         bullet.transform.SetParent(main_Camera.transform);
 
-        MoveTwoPoints bullet_Move = bullet.GetComponent<MoveTwoPoints>();
+        MoveConstTime bullet_Move = bullet.GetComponent<MoveConstTime>();
         ShootSystem[] bullet_Shoots = bullet.GetComponentsInChildren<ShootSystem>();
         VerticalVibeMotion vibe_Motion = bullet.GetComponent<VerticalVibeMotion>();
 

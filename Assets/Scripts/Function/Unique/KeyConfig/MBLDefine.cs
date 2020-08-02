@@ -42,7 +42,7 @@ namespace MBLDefine {
 
         public static readonly Key Jump     = new Key("Jump",   new List<KeyCode> { KeyCode.Z, KeyCode.Joystick1Button3 });
         public static readonly Key Attack   = new Key("Attack", new List<KeyCode> { KeyCode.X , KeyCode.Joystick1Button1 });
-        public static readonly Key Fly     = new Key("Fly",   new List<KeyCode> { KeyCode.C , KeyCode.Joystick1Button5 });
+        public static readonly Key Fly      = new Key("Fly",    new List<KeyCode> { KeyCode.C , KeyCode.Joystick1Button5 });
         public static readonly Key Slow     = new Key("Slow",   new List<KeyCode> { KeyCode.LeftShift, KeyCode.Joystick1Button6 });
         public static readonly Key Shoot    = new Key("Shoot",  new List<KeyCode> { KeyCode.Z, KeyCode.Joystick1Button0 });
         public static readonly Key Pause    = new Key("Pause",  new List<KeyCode> { KeyCode.Escape , KeyCode.Joystick1Button11 });

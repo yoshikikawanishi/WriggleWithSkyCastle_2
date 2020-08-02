@@ -14,7 +14,7 @@ public class HinaMovie : MonoBehaviour {
     private IEnumerator Hina_Movie_Cor() {
         GameObject player = GameObject.FindWithTag("PlayerTag");
         PlayerController player_Controller = player.GetComponent<PlayerController>();
-        MoveTwoPoints _move = GetComponent<MoveTwoPoints>();
+        MoveConstTime _move = GetComponent<MoveConstTime>();
         MessageDisplay _message = GetComponent<MessageDisplay>();
         Vector3 default_Pos = transform.position;
 

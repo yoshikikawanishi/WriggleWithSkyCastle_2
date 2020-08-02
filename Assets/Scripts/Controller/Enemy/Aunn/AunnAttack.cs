@@ -14,9 +14,9 @@ public class AunnAttack : BossEnemyAttack {
     private AunnEffect _effect;
     private SEManager _se;
     private ChildColliderTrigger foot_Collider;
-    private MoveConstSpeed _move_Const;
+    private MoveConstSpeed _move_Const_Speed;
     private MoveMotion _move_Motion;
-    private MoveTwoPoints _move_Two_Points;
+    private MoveConstTime _move_Const_Time;
 
     private GameObject player;
 
@@ -33,9 +33,9 @@ public class AunnAttack : BossEnemyAttack {
         _copy_Shoot = _copy.GetComponentInChildren<AunnShoot>();
         _effect = GetComponentInChildren<AunnEffect>();
         _se = GetComponentInChildren<SEManager>();
-        _move_Const = GetComponent<MoveConstSpeed>();
+        _move_Const_Speed = GetComponent<MoveConstSpeed>();
         _move_Motion = GetComponent<MoveMotion>();
-        _move_Two_Points = GetComponent<MoveTwoPoints>();
+        _move_Const_Time = GetComponent<MoveConstTime>();
         foot_Collider = transform.Find("Foot").GetComponent<ChildColliderTrigger>();
         player = GameObject.FindWithTag("PlayerTag");
     }
@@ -237,8 +237,8 @@ public class AunnAttack : BossEnemyAttack {
         _effect.Jump_And_Landing_Effect();
         UsualSoundManager.Instance.Play_Attack_Sound();
         yield return new WaitForSeconds(0.18f);
-        _move_Two_Points.Start_Move(next_Pos, 0);
-        yield return new WaitUntil(_move_Two_Points.End_Move);
+        _move_Const_Time.Start_Move(next_Pos, 0);
+        yield return new WaitUntil(_move_Const_Time.End_Move);
 
         _controller.Change_Animation("OnWallBool");
         transform.localScale = new Vector3(direction, 1, 1);        
@@ -248,7 +248,7 @@ public class AunnAttack : BossEnemyAttack {
     private void Stop_Attack_A() {
         StopCoroutine("Attack_In_Melody_A_Cor");
         StopCoroutine("Jump_On_Wall_Cor");
-        _move_Two_Points.Stop_Move();
+        _move_Const_Time.Stop_Move();
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("SquatBool");
         _shoot.Stop_Deposit_Purple_Bullet();
@@ -287,8 +287,8 @@ public class AunnAttack : BossEnemyAttack {
         _controller.Change_Fly_Parameter();
         _controller.Change_Animation("ShootPoseBool");
         transform.localScale = new Vector3(1, 1, 1);
-        _move_Const.Start_Move(new Vector3(180f, 0), 1);
-        yield return new WaitUntil(_move_Const.End_Move);
+        _move_Const_Speed.Start_Move(new Vector3(180f, 0), 1);
+        yield return new WaitUntil(_move_Const_Speed.End_Move);
         
         //TODO : 弾幕
         //溜め
@@ -317,9 +317,9 @@ public class AunnAttack : BossEnemyAttack {
 
         //ジャンプ
         _controller.Change_Animation("JumpBool");
-        _move_Two_Points.Start_Move(next_Pos, 2);
+        _move_Const_Time.Start_Move(next_Pos, 2);
         UsualSoundManager.Instance.Play_Shoot_Sound();
-        yield return new WaitUntil(_move_Two_Points.End_Move);
+        yield return new WaitUntil(_move_Const_Time.End_Move);
         
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("SquatBool");        
@@ -329,9 +329,9 @@ public class AunnAttack : BossEnemyAttack {
     private void Stop_Attack_C() {        
         StopCoroutine("Attack_In_Melody_C_Cor");
         StopCoroutine("High_Jump_Move_Cor");
-        _move_Const.Stop_Move();
+        _move_Const_Speed.Stop_Move();
         _effect.Stop_Charge_Effect();
-        _move_Two_Points.Stop_Move();
+        _move_Const_Time.Stop_Move();
         _controller.Change_Land_Parameter();
         _controller.Change_Animation("SquatBool");
     }
@@ -425,8 +425,8 @@ public class AunnAttack : BossEnemyAttack {
 
         _controller.Change_Fly_Parameter();
         _controller.Change_Animation("ShootPoseBool");
-        _move_Const.Start_Move(new Vector3(0, transform.position.y + 80f), 1);
-        yield return new WaitUntil(_move_Const.End_Move);
+        _move_Const_Speed.Start_Move(new Vector3(0, transform.position.y + 80f), 1);
+        yield return new WaitUntil(_move_Const_Speed.End_Move);
 
         //ショット
         _shoot.Shoot_Aunn_Word_Bullet();

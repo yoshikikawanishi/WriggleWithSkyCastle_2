@@ -9,7 +9,7 @@ public class NarumiAttack : BossEnemyAttack {
     private ObjectRectFormationGenerator rect_Block_Gen;
     private NarumiEffects _effect;
     private NarumiShoot _shoot;
-    private MoveTwoPoints _move_Two_Points;
+    private MoveConstTime _move_Const_Time;
     private MoveConstSpeed _move_Const_Speed;
     private CameraShake camera_Shake;
     [SerializeField] private GridGroundManager ground_Blocks;
@@ -26,7 +26,7 @@ public class NarumiAttack : BossEnemyAttack {
         _effect = GetComponentInChildren<NarumiEffects>();
         _shoot = GetComponentInChildren<NarumiShoot>();
         _main = GetComponent<Narumi>();
-        _move_Two_Points = GetComponent<MoveTwoPoints>();
+        _move_Const_Time = GetComponent<MoveConstTime>();
         _move_Const_Speed = GetComponent<MoveConstSpeed>();
         camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }    
@@ -152,8 +152,8 @@ public class NarumiAttack : BossEnemyAttack {
     private IEnumerator Attack_Melody_C_Phase1_Cor() {
         //上昇
         _main.Change_Animation("AttackBool", 1);
-        _move_Two_Points.Start_Move(new Vector3(transform.position.x, 180f), 0);
-        yield return new WaitUntil(_move_Two_Points.End_Move);
+        _move_Const_Time.Start_Move(new Vector3(transform.position.x, 180f), 0);
+        yield return new WaitUntil(_move_Const_Time.End_Move);
 
         transform.position = new Vector3(196f, 180f);
         yield return new WaitForSeconds(1.0f);
@@ -172,9 +172,9 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitForSeconds(1.0f);
         //弾幕位置に移動
         _main.Change_Animation("AttackBool", 1);
-        _move_Two_Points.Start_Move(new Vector3(transform.position.x, 32f), 0);
+        _move_Const_Time.Start_Move(new Vector3(transform.position.x, 32f), 0);
         _effect.Play_Power_Charge(-1);
-        yield return new WaitUntil(_move_Two_Points.End_Move);          
+        yield return new WaitUntil(_move_Const_Time.End_Move);          
     }
 
     
@@ -182,7 +182,7 @@ public class NarumiAttack : BossEnemyAttack {
         StopCoroutine("Attack_Melody_C_Phase1_Cor");
         _effect.Stop_Power_Charge();
         _move_Const_Speed.Stop_Move();
-        _move_Two_Points.Stop_Move();        
+        _move_Const_Time.Stop_Move();        
     }
 
 
@@ -217,9 +217,9 @@ public class NarumiAttack : BossEnemyAttack {
         yield return new WaitForSeconds(1.5f);
         Stop_Attack();
         //移動
-        _move_Two_Points.Start_Move(new Vector3(150f, 0), 1);
+        _move_Const_Time.Start_Move(new Vector3(150f, 0), 1);
         _main.Change_Animation("MoveForwardBool", -1);
-        yield return new WaitUntil(_move_Two_Points.End_Move);
+        yield return new WaitUntil(_move_Const_Time.End_Move);
         //攻撃再開
         gameObject.layer = LayerMask.NameToLayer("EnemyLayer");
         base.Set_Can_Switch_Attack(true);

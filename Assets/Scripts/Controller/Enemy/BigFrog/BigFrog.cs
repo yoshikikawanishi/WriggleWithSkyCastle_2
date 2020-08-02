@@ -19,10 +19,13 @@ public class BigFrog : BossEnemy {
         //アイテム取得済みの場合消す
         if (CollectionManager.Instance.Is_Collected("BigFrog")) {
             Destroy(gameObject);
-        }
+            return;
+        }        
         //取得
         _anim = GetComponent<Animator>();
-        player = GameObject.FindWithTag("PlayerTag");        
+        player = GameObject.FindWithTag("PlayerTag");
+
+        sleeping_Bubble_Shoot.Shoot();
 	}
 	
 	

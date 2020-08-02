@@ -164,6 +164,11 @@ public class PlayerGettingOnBeetle : MonoBehaviour {
         disable_Get_On_Beetle = false;
     }
 
+    //今無効かどうか
+    public bool Is_Enable() {
+        return !disable_Get_On_Beetle;
+    }
+
     //スクロール速度変更
     private void Change_Scroll_Speed(float speed) {        
         if (_controller.Get_Is_Ride_Beetle()) {

@@ -15,7 +15,7 @@ public class RedYinBallStrong : Enemy {
     private GameObject main_Camera;    
     private Rigidbody2D _rigid;
     private GravitatePlayer _gravitate;
-    private MoveTwoPoints _move;
+    private MoveConstTime _move;
     private ShootSystem _shoot;
 
     private const float TRACE_PLAYER_SPAN = 1.5f;       //自機追従の最低時間
@@ -33,7 +33,7 @@ public class RedYinBallStrong : Enemy {
         main_Camera = GameObject.FindWithTag("MainCamera");        
         _rigid = GetComponent<Rigidbody2D>();
         _gravitate = GetComponent<GravitatePlayer>();
-        _move = GetComponent<MoveTwoPoints>();
+        _move = GetComponent<MoveConstTime>();
         _shoot = GetComponentInChildren<ShootSystem>();
         _gravitate.enabled = false;
 	}

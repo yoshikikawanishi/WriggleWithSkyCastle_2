@@ -39,7 +39,7 @@ public class YukaMovie : SingletonMonoBehaviour<YukaMovie> {
 
         //カメラの固定
         GameObject camera = GameObject.FindWithTag("MainCamera");
-        camera.AddComponent<MoveTwoPoints>().Start_Move(new Vector3(2062f, 0, -10f));
+        camera.AddComponent<MoveConstTime>().Start_Move(new Vector3(2062f, 0, -10f));
         camera.GetComponent<CameraController>().enabled = false;
         yield return new WaitForSeconds(0.8f);
 

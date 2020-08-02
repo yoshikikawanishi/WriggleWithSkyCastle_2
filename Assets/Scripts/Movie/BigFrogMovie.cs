@@ -14,7 +14,8 @@ public class BigFrogMovie : SingletonMonoBehaviour<BigFrogMovie> {
 
     private IEnumerator Battle_Movie_Cor() {
         GameObject camera = GameObject.FindWithTag("MainCamera");
-        MoveTwoPoints camera_Move = camera.GetComponent<MoveTwoPoints>();
+
+        MoveConstTime camera_Move = camera.GetComponent<MoveConstTime>();
         CameraController camera_Controller = camera.GetComponent<CameraController>();
 
         //カメラの移動、固定        

@@ -60,7 +60,7 @@ public class Mystia : TalkCharacter {
             //当たり判定消す
             GetComponent<BoxCollider2D>().enabled = false;
             //飛び去る
-            MoveTwoPoints _move = GetComponent<MoveTwoPoints>();
+            MoveConstTime _move = GetComponent<MoveConstTime>();
             _move.Start_Move(transform.position + new Vector3(-300f, 150f));
             GetComponent<Animator>().SetTrigger("FlyTrigger");
             mark_Up_Baloon.SetActive(false);

@@ -48,7 +48,7 @@ public class Stage1_BossMovie : MonoBehaviour {
         }
 
         //ラルバ登場
-        MoveTwoPoints _move = larva.GetComponent<MoveTwoPoints>();        
+        MoveConstTime _move = larva.GetComponent<MoveConstTime>();        
         _move.Start_Move(new Vector3(128f, 0));
         yield return new WaitUntil(_move.End_Move);
 

@@ -2475,6 +2475,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212227138753765472, guid: be7d7e6167979d5459f5930c32a3b239,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be7d7e6167979d5459f5930c32a3b239, type: 2}
   m_IsPrefabAsset: 0
@@ -10364,6 +10369,11 @@ Prefab:
     - target: {fileID: 1113194938712266, guid: be7d7e6167979d5459f5930c32a3b239, type: 2}
       propertyPath: m_Name
       value: GreenPowerBlock (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212227138753765472, guid: be7d7e6167979d5459f5930c32a3b239,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: -3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be7d7e6167979d5459f5930c32a3b239, type: 2}

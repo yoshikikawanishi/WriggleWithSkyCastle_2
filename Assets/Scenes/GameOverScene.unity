@@ -419,7 +419,7 @@ MonoBehaviour:
     message:
       file_Name: GameOverText
       dual_Panel: 1
-      id: {x: 1, y: 2}
+      id: {x: 1, y: 3}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -537,9 +537,12 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 6
     message:
@@ -663,9 +666,12 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 1
       wait_Time: 1
+    is_Open_In_Inspector: 1
   - name: 
     type: 5
     message:
@@ -789,9 +795,12 @@ MonoBehaviour:
       obj: {fileID: 2047813152}
       component: {fileID: 2047813153}
       function_Name: Revive
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
+    is_Open_In_Inspector: 1
 --- !u!114 &2047813156
 MonoBehaviour:
   m_ObjectHideFlags: 0

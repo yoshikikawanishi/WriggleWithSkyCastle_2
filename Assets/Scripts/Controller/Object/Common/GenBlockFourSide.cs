@@ -142,9 +142,9 @@ public class GenBlockFourSide : MonoBehaviour {
 
     //ブロックの移動
     private IEnumerator Move_Block_Cor(GameObject block, Vector2Int direction) {
-        MoveTwoPoints move = block.GetComponent<MoveTwoPoints>();
+        MoveConstTime move = block.GetComponent<MoveConstTime>();
         if(move == null) {
-            move = block.AddComponent<MoveTwoPoints>();
+            move = block.AddComponent<MoveConstTime>();
             move.Change_Transition_Curve(AnimationCurve.Linear(0, 0, 1, 1), 0);
             move.Change_Paramter(0.07f, 0, 0);
         }

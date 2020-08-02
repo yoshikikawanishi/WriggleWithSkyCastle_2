@@ -19,7 +19,7 @@ public class NemunoAttack : MonoBehaviour {
     private NemunoShoot _shoot;
     private NemunoBarrier _barrier;
     private NemunoAttackFunction _attack_Func;
-    private MoveTwoPoints _move_Two_Points;
+    private MoveConstTime _move_Two_Points;
     
     //攻撃種類
     private enum AttackKind {
@@ -39,7 +39,7 @@ public class NemunoAttack : MonoBehaviour {
         _attack_Func = GetComponent<NemunoAttackFunction>();
         _shoot = GetComponentInChildren<NemunoShoot>();
         _barrier = GetComponentInChildren<NemunoBarrier>();              
-        _move_Two_Points = GetComponent<MoveTwoPoints>();        
+        _move_Two_Points = GetComponent<MoveConstTime>();        
     }
 
 

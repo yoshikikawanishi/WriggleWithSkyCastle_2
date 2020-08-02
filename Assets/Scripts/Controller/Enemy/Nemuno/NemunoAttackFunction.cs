@@ -11,7 +11,7 @@ public class NemunoAttackFunction : MonoBehaviour {
     private NemunoShoot _shoot;
     private NemunoBarrier _barrier;
     private SpriteRenderer _sprite;
-    private MoveTwoPoints _move_Two_Points;
+    private MoveConstTime _move_Two_Points;
 
     private GameObject player;
     private CameraShake camera_Shake;    
@@ -26,7 +26,7 @@ public class NemunoAttackFunction : MonoBehaviour {
         _shoot = GetComponentInChildren<NemunoShoot>();
         _barrier = GetComponentInChildren<NemunoBarrier>();        
         _sprite = GetComponent<SpriteRenderer>();
-        _move_Two_Points = GetComponent<MoveTwoPoints>();        
+        _move_Two_Points = GetComponent<MoveConstTime>();        
 
         player = GameObject.FindWithTag("PlayerTag");
         camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();

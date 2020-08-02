@@ -347,6 +347,11 @@ public class PlayerController : MonoBehaviour {
         _getting_On_Beetle.To_Enable();
     }
 
+    //カブトムシ乗れるかどうか
+    public bool Get_Can_Ride_Beetle() {
+        return _getting_On_Beetle.Is_Enable();
+    }
+
     //カブトムシ時の方向変更
     public void Change_Beetle_Direction(int scale_X) {
         _transition_Beetle.Change_Body_Direction(scale_X);

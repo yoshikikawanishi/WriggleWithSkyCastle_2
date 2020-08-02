@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54001b5de28925749b1cb3d1b4468072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 58020000
+  life: 8a020000
   power_Value: 10
   score_Value: 10
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kind: 3
   comment: 
-  play_On_Awake: 1
+  play_On_Awake: 0
   bullet: {fileID: 1319821717479526, guid: df2d8186c3523914da4b78b0b07105bf, type: 2}
   parent: {fileID: 0}
   max_Speed: 50

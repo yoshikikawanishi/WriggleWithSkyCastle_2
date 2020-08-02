@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdee5dc77a436d54281d251feac10d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  water_Display_Effect_Prefab: {fileID: 1326927864715110, guid: 05cd188f97643964cabdb4b1250b1cc6,
+  water_Screen_Effect_Prefab: {fileID: 1786386679809314, guid: 468045da7f3d81d4c9f81e480c480f4f,
     type: 2}
 --- !u!114 &114763338749267774
 MonoBehaviour:

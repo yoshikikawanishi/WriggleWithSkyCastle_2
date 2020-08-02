@@ -922,7 +922,7 @@ Prefab:
     - target: {fileID: 114219119795138416, guid: 19097015a7e3f224a826e4e4744b20eb,
         type: 2}
       propertyPath: next_Scene
-      value: Stage3_BossScene
+      value: DemoEndingScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19097015a7e3f224a826e4e4744b20eb, type: 2}
