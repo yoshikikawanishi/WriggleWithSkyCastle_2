@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e9097613b8f774b99955e1a2390e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleted_Obj_Tag:
-  - BombTag
+  deleted_Obj_Tag: []
   is_Delete_Invisible: 0
 --- !u!212 &212534290679902348
 SpriteRenderer:

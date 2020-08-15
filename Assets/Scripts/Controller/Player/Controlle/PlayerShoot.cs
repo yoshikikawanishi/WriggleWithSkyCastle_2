@@ -18,6 +18,7 @@ public class PlayerShoot : MonoBehaviour {
     [SerializeField] private GameObject mantis_Bullet;
     [SerializeField] private GameObject spider_Bullet;
     [SerializeField] private GameObject charge_Shoot_Obj;
+    [SerializeField] private GameObject charge_Shoot_Bomb;
     [SerializeField] private GameObject charge_Kick_Shoot_Obj;
 
     private float charge_Time = 0;
@@ -26,7 +27,7 @@ public class PlayerShoot : MonoBehaviour {
     //チャージ段階
     private int charge_Phase = 0;
     //チャージショットに必要なパワー
-    private readonly int essential_Power_In_Charge_Shoot = 30;
+    private readonly int essential_Power_In_Charge_Shoot = 40;
     //パワー
     private int player_Power = 0;
 
@@ -200,6 +201,9 @@ public class PlayerShoot : MonoBehaviour {
         var obj = Instantiate(charge_Shoot_Obj);
         obj.transform.position = transform.position + new Vector3(transform.localScale.x * 128f, 0);        
         ShootSystem[] shoots = obj.GetComponentsInChildren<ShootSystem>();
+        //ボム生成
+        var bomb = Instantiate(charge_Shoot_Bomb);
+        bomb.transform.position = transform.position;
 
         player_SE.Play_Charge_Shoot_Sound();
         camera_Shake.Shake(0.25f, new Vector2(0, 1.2f), false);
@@ -259,19 +263,19 @@ public class PlayerShoot : MonoBehaviour {
         player_Power = player_Manager.Get_Power();
 
         if (player_Power < 100) {
-            charge_Span = new float[3] { 0.3f, 1.0f, 2.0f };            
+            charge_Span = new float[3] { 0.42f, 1.27f, 1.95f };            
         }
         else if(player_Power < 200) {
-            charge_Span = new float[3] { 0.27f, 0.85f, 1.7f };
+            charge_Span = new float[3] { 0.39f, 1.18f, 1.65f };
         }
         else if(player_Power < 300) {
-            charge_Span = new float[3] { 0.24f, 0.7f, 1.4f };
+            charge_Span = new float[3] { 0.36f, 1.08f, 1.5f };
         }
         else if(player_Power < 400) {
-            charge_Span = new float[3] { 0.21f, 0.55f, 1.1f };
+            charge_Span = new float[3] { 0.33f, 0.99f, 1.35f };
         }
         else {
-            charge_Span = new float[3] { 0.2f, 0.4f, 0.8f };
+            charge_Span = new float[3] { 0.3f, 0.9f, 1.2f };
         }
     }
     #endregion

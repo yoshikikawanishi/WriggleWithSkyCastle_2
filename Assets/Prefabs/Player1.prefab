@@ -2399,7 +2399,9 @@ MonoBehaviour:
     type: 2}
   spider_Bullet: {fileID: 1587434127945356, guid: 8a4abdd0855d8b34587b69bc17b58e2a,
     type: 2}
-  charge_Shoot_Obj: {fileID: 1194738067102766, guid: e5fa98d782848274a8883f6f30815195,
+  charge_Shoot_Obj: {fileID: 1472081230772426, guid: e5fa98d782848274a8883f6f30815195,
+    type: 2}
+  charge_Shoot_Bomb: {fileID: 1584536366492308, guid: 7ed3fabc71ed9a1428b7016be96d27d1,
     type: 2}
   charge_Kick_Shoot_Obj: {fileID: 1683584142448316, guid: 0dab1b47c74fa6540ac234524b4afc35,
     type: 2}
