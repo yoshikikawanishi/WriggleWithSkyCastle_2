@@ -34,7 +34,9 @@ public class GeneratorSystemEditor : Editor {
             GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));
             GUILayout.Space(5);
 
-            obj.list[i].num = EditorGUILayout.IntField("Num", obj.list[i].num);                    
+            obj.list[i].num = EditorGUILayout.IntField("Num", obj.list[i].num);
+
+            obj.list[i].pos_Kind = (GeneratorSystem.PosKind)EditorGUILayout.EnumPopup("Position Type", obj.list[i].pos_Kind);
 
             if (obj.list[i].kind == GeneratorSystem.Kind.liner) {
                 obj.list[i].liner.initial_Pos = EditorGUILayout.Vector2Field("InitialPos", obj.list[i].liner.initial_Pos);
@@ -61,7 +63,8 @@ public class GeneratorSystemEditor : Editor {
 
             if (obj.list[i].num > 1)
                 obj.list[i].span = EditorGUILayout.FloatField("Span[s]", obj.list[i].span);
-            obj.list[i].is_Local_Position = EditorGUILayout.Toggle("LocalPosition", obj.list[i].is_Local_Position);
+
+            obj.list[i].after_Span = EditorGUILayout.FloatField("AfterSpan[s]", obj.list[i].after_Span);
             
             GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(1));            
 

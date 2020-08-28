@@ -9,7 +9,13 @@ public class GeneratorSystem : MonoBehaviour {
 
     public enum Kind {
         liner,
-        rotate,
+        rotate,        
+    }
+
+    public enum PosKind {
+        global,
+        local,
+        generator
     }
 
     [System.Serializable]
@@ -18,10 +24,11 @@ public class GeneratorSystem : MonoBehaviour {
         public Kind kind;
         public GameObject obj;
         public GameObject parent;
-        public bool is_Local_Position;
         public bool is_Object_Pool;
         public int num = 1;
-        public float span;              
+        public float span;
+        public float after_Span;
+        public PosKind pos_Kind = PosKind.global;
         public LinerParam liner = new LinerParam();
         public RotateParam rotate = new RotateParam();
     }
@@ -113,11 +120,11 @@ public class GeneratorSystem : MonoBehaviour {
         if (param.obj == null) {
             Debug.LogWarning("Generator System Error\n obj is not set in inspector");
             yield break;            
-        }
-            
+        }                   
 
         GameObject obj;
         Vector2 position = Vector2.zero;
+        Vector2 generator_Position = transform.position;        
 
         for (int i = 0; i < param.num; i++) {
             //生成
@@ -128,16 +135,21 @@ public class GeneratorSystem : MonoBehaviour {
                 case Kind.rotate: position = Rotate_Formation_Position(param, i); break;
             }
             //座標を設定
-            if (param.is_Local_Position) {
+            if (param.pos_Kind == PosKind.local) {
                 obj.transform.localPosition = position;
                 obj.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y, 0);
+            }
+            else if(param.pos_Kind == PosKind.generator) {                
+                obj.transform.position = generator_Position + position;
             }
             else {
                 obj.transform.position = position;
             }
             yield return new WaitForSeconds(param.span);
         }
+
         //次
+        yield return new WaitForSeconds(param.after_Span);
         count++;
         StartCoroutine("Generate_Cor");
 
@@ -154,7 +166,8 @@ public class GeneratorSystem : MonoBehaviour {
         else {
             obj = Instantiate(prefab);
         }
-        obj.transform.SetParent(parent.transform);
+        if(parent != null)
+            obj.transform.SetParent(parent.transform);
         return obj;
     }
 

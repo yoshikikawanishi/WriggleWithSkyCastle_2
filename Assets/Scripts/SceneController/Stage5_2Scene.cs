@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Stage5_2Scene : MonoBehaviour {
 
-    [SerializeField] private MovieSystem soul_Enemy_Generator;
-    [SerializeField] private MovieSystem big_Fairy_Generator;
+    [SerializeField] private GeneratorSystem soul_Enemy_Generator;
+    [SerializeField] private GeneratorSystem big_Fairy_Generator;
     [Space]
     [SerializeField] private List<GenKind> gen_List = new List<GenKind>();
 
@@ -63,8 +63,13 @@ public class Stage5_2Scene : MonoBehaviour {
             switch (gen_List[i]) {
                 //亡霊編隊生成
                 case GenKind.soul_Enemy:
-                    soul_Enemy_Generator.Start_Movie();
+                    soul_Enemy_Generator.Start_Generate();
                     yield return new WaitForSeconds(Span(GenKind.soul_Enemy));
+                    break;
+                //ひまわり妖精生成
+                case GenKind.big_Fairy:
+                    big_Fairy_Generator.Start_Generate();
+                    yield return new WaitForSeconds(Span(GenKind.big_Fairy));
                     break;
             }
         }

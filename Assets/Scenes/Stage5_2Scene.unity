@@ -299,9 +299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8292b68bc39d546b23f4d89c65f3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soul_Enemy_Generator: {fileID: 0}
-  big_Fairy_Generator: {fileID: 0}
-  gen_List: 
+  soul_Enemy_Generator: {fileID: 1255626847}
+  big_Fairy_Generator: {fileID: 693028929}
+  gen_List: 0000000001000000
 --- !u!1001 &303631099
 Prefab:
   m_ObjectHideFlags: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   left_Side: 0
-  right_Side: 0
+  right_Side: 5000
   stage_Direction: 1
 --- !u!114 &465901428
 MonoBehaviour:
@@ -591,6 +591,8 @@ Transform:
   - {fileID: 1068585325}
   - {fileID: 1461411898}
   - {fileID: 305708130}
+  - {fileID: 1255626846}
+  - {fileID: 693028928}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -650,6 +652,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &693028927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 693028928}
+  - component: {fileID: 693028929}
+  m_Layer: 0
+  m_Name: SunFLowerFairyGenerator1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &693028928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693028927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 465901431}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693028929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 693028927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d045132b9d3eb5243a27f1ca2c95608e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - name: 
+    kind: 0
+    obj: {fileID: 1637831924255700, guid: 3e338ed7953e86b498039057e56455af, type: 2}
+    parent: {fileID: 0}
+    is_Object_Pool: 0
+    num: 1
+    span: 0
+    after_Span: 1.4
+    pos_Kind: 2
+    liner:
+      initial_Pos: {x: 160, y: 170}
+      inter_Vector: {x: 0, y: 0}
+    rotate:
+      center_Pos: {x: 0, y: 0}
+      radius: 0
+      spread_Radius: 0
+      initial_Angle_Deg: 0
+      inter_Angle_Deg: 0
+  - name: 
+    kind: 0
+    obj: {fileID: 1637831924255700, guid: 3e338ed7953e86b498039057e56455af, type: 2}
+    parent: {fileID: 0}
+    is_Object_Pool: 0
+    num: 2
+    span: 0
+    after_Span: 1.4
+    pos_Kind: 2
+    liner:
+      initial_Pos: {x: 160, y: 200}
+      inter_Vector: {x: 0, y: -48}
+    rotate:
+      center_Pos: {x: 0, y: 0}
+      radius: 0
+      spread_Radius: 0
+      initial_Angle_Deg: 0
+      inter_Angle_Deg: 0
 --- !u!1001 &699391749
 Prefab:
   m_ObjectHideFlags: 0
@@ -951,6 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1255626846}
+  - component: {fileID: 1255626847}
   m_Layer: 0
   m_Name: SoulEnemyGenerator
   m_TagString: Untagged
@@ -964,13 +1044,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1255626845}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 465901431}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1255626847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1255626845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d045132b9d3eb5243a27f1ca2c95608e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list:
+  - name: SoulEnemyGen
+    kind: 0
+    obj: {fileID: 1351786086718844, guid: cf52d378dab3aa649b7c87aac76fa85c, type: 2}
+    parent: {fileID: 0}
+    is_Object_Pool: 1
+    num: 6
+    span: 0.5
+    after_Span: 0
+    pos_Kind: 2
+    liner:
+      initial_Pos: {x: 32, y: 160}
+      inter_Vector: {x: 64, y: 0}
+    rotate:
+      center_Pos: {x: 0, y: 0}
+      radius: 0
+      spread_Radius: 0
+      initial_Angle_Deg: 0
+      inter_Angle_Deg: 0
 --- !u!1001 &1330157714
 Prefab:
   m_ObjectHideFlags: 0
