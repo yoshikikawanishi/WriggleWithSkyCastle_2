@@ -123,6 +123,8 @@ public class PlayerController : MonoBehaviour {
         //カブトムシに乗る
         if (input.GetKeyDown(Key.Fly) && BeetlePowerManager.Instance.Get_Beetle_Power() > 0) {
             _getting_On_Beetle.Get_On_Beetle();
+            shoot_Time = 0;             //ショットのインターバルをリセット
+            is_Buffered_Input = false;  //ショットの先行入力をリセット
             is_Played_Alert = false;    //警告音を鳴らしたかどうかをリセット
         }
 

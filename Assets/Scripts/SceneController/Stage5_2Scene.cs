@@ -6,6 +6,7 @@ public class Stage5_2Scene : MonoBehaviour {
 
     [SerializeField] private GeneratorSystem soul_Enemy_Generator;
     [SerializeField] private GeneratorSystem big_Fairy_Generator;
+    [SerializeField] private GeneratorSystem yin_Ball_Generator;
     [Space]
     [SerializeField] private List<GenKind> gen_List = new List<GenKind>();
 
@@ -19,12 +20,13 @@ public class Stage5_2Scene : MonoBehaviour {
     
     //敵生成開始・終了するカメラのx座標
     private const float START_GENERATE_ENEMY_LINE   = 120f;
-    private const float FINISH_GENERATE_ENEMY_LINE  = 3000f;    
+    private const float FINISH_GENERATE_ENEMY_LINE  = 4000f;    
 
     //生成の種類
     public enum GenKind {
         soul_Enemy,
         big_Fairy,
+        yin_Ball,
     }           
       
     //その他オブジェクト
@@ -71,16 +73,24 @@ public class Stage5_2Scene : MonoBehaviour {
                     big_Fairy_Generator.Start_Generate();
                     yield return new WaitForSeconds(Span(GenKind.big_Fairy));
                     break;
+                //陰陽玉生成
+                case GenKind.yin_Ball:
+                    yin_Ball_Generator.Start_Generate();
+                    yield return new WaitForSeconds(Span(GenKind.yin_Ball));
+                    break;
             }
         }
+
+        StartCoroutine("Generating_Flow_Cor");
     }
 
 
     //生成後、次の生成までの待ち時間
     public float Span(GenKind kind) {
         switch (kind) {
-            case GenKind.soul_Enemy: return 10.0f;
-            case GenKind.big_Fairy: return 4.0f;
+            case GenKind.soul_Enemy: return 7.0f;
+            case GenKind.big_Fairy: return 22.0f;
+            case GenKind.yin_Ball: return 15.0f;
         }
         return 0;
     }

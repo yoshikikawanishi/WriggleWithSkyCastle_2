@@ -169,7 +169,7 @@ MonoBehaviour:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -80
+        value: -148
         inSlope: -21.649137
         outSlope: -13.704693
         tangentMode: 1
@@ -178,8 +178,8 @@ MonoBehaviour:
         outWeight: 0.02094996
       - serializedVersion: 3
         time: 10
-        value: -160.50473
-        inSlope: -8.94497
+        value: -218
+        inSlope: -7.7777777
         outSlope: 0
         tangentMode: 5
         weightedMode: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   inter_Angle_Deg: 13
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 3
+  shoot_Rate: 2
   duration: 5
   connect_Bullet: 1
   connect_Num: 7

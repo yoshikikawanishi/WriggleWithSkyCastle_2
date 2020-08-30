@@ -2,3 +2,4 @@
 Stage1_1Scene
 Stage2_2Scene
 Stage5_2Scene
+Stage5_BossScene
