@@ -154,7 +154,136 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Disable_Controlle: 1
-  list: []
+  list:
+  - name: 
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1239609018}
+      component: {fileID: 1239609020}
+      function_Name: Start_Battle
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
 --- !u!1 &73549276
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +294,7 @@ GameObject:
   - component: {fileID: 73549277}
   - component: {fileID: 73549278}
   - component: {fileID: 73549279}
+  - component: {fileID: 73549280}
   m_Layer: 0
   m_Name: Satono
   m_TagString: Untagged
@@ -221,7 +351,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.6756029, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -243,6 +373,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss_Enemy_Class: {fileID: 1239609020}
+--- !u!114 &73549280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73549276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa50f45f8a5e7d41a8cccf482658f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  param:
+  - comment: "\u5206\u5272\u30FB\u634C\u3051\u308B\u7528"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.007888794
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1.6420063
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.018829405
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.02
+    arc_Size: -32
+    is_Local_Position: 0
+  - comment: "\u7A81\u9032\u7528"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.007888794
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1.6420063
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.018829405
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.02
+    arc_Size: -32
+    is_Local_Position: 0
 --- !u!1 &195885313
 GameObject:
   m_ObjectHideFlags: 0
@@ -9956,6 +10154,7 @@ GameObject:
   - component: {fileID: 618886287}
   - component: {fileID: 618886288}
   - component: {fileID: 618886289}
+  - component: {fileID: 618886290}
   m_Layer: 0
   m_Name: Mai
   m_TagString: Untagged
@@ -10012,7 +10211,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.1656568, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10034,6 +10233,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss_Enemy_Class: {fileID: 1239609020}
+--- !u!114 &618886290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618886286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa50f45f8a5e7d41a8cccf482658f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  param:
+  - comment: "\u5206\u5272\u30FB\u634C\u3051\u308B\u7528"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.007888794
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1.6420063
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.018829405
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.02
+    arc_Size: -32
+    is_Local_Position: 0
+  - comment: "\u7A81\u9032\u7528"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.007888794
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1.6420063
+        outSlope: 0
+        tangentMode: 1
+        weightedMode: 0
+        inWeight: 0.018829405
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.02
+    arc_Size: -32
+    is_Local_Position: 0
 --- !u!1 &854712652
 GameObject:
   m_ObjectHideFlags: 0
@@ -10461,6 +10728,7 @@ GameObject:
   - component: {fileID: 1239609022}
   - component: {fileID: 1239609020}
   - component: {fileID: 1239609019}
+  - component: {fileID: 1239609023}
   m_Layer: 0
   m_Name: SatoMai
   m_TagString: Untagged
@@ -10481,6 +10749,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss_Enemy: {fileID: 1239609020}
   melody_Manager: {fileID: 445076683}
+  satomai: {fileID: 0}
+  satono: {fileID: 0}
+  mai: {fileID: 0}
 --- !u!114 &1239609020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10569,6 +10840,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1239609023
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1239609018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63fa5952dcc719f4cac06f2196cfd330, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1260305201
 GameObject:
   m_ObjectHideFlags: 0
@@ -15441,7 +15730,136 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   is_Disable_Controlle: 1
-  list: []
+  list:
+  - name: 
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1239609018}
+      component: {fileID: 1239609020}
+      function_Name: Start_Battle
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
 --- !u!1 &2008669234
 GameObject:
   m_ObjectHideFlags: 0
@@ -15508,7 +15926,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 8e742691290345842b862fb1a3e2fe4a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7533744, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
