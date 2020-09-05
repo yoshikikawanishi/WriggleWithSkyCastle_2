@@ -48,4 +48,5 @@ public class SatoMai : BossEnemy {
         }
         _anim.SetBool(next_Bool, true);
     }
+    
 }
