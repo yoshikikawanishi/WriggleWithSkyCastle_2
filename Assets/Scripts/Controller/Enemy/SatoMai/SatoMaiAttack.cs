@@ -9,6 +9,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     [SerializeField] private GameObject mai;
 
     private SatoMai _controller;
+    private SatoMaiEffect _effect;
     private MoveConstTime satomai_Move;
     private MoveConstTime satono_Move;
     private MoveConstTime mai_Move;
@@ -19,6 +20,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     void Start() {
         //取得
         _controller = GetComponent<SatoMai>();
+        _effect = GetComponentInChildren<SatoMaiEffect>();
         satomai_Move = satomai.GetComponent<MoveConstTime>();
         satono_Move = satono.GetComponent<MoveConstTime>();
         mai_Move = mai.GetComponent<MoveConstTime>();
@@ -39,6 +41,9 @@ public class SatoMaiAttack : BossEnemyAttack {
 
     // ===================================================================
     #region Aメロ
+        /*
+         * Aメロ攻撃、里舞分かれて画面外から十字方向に突進
+         */
 
     private class ConfigA {
         public readonly Vector3 nutral_Pos = new Vector3(0, 0, 0);
@@ -114,10 +119,13 @@ public class SatoMaiAttack : BossEnemyAttack {
     #endregion
     // ===================================================================
     #region Bメロ
+        /*
+         * Bメロ攻撃、回転しながら画面左右から突進、最上段で突進するとき弾幕を出す
+         */
 
     private class ConfigB {
         public readonly Vector3 nutral_Pos = new Vector3(0, 0, 0);
-        public readonly float[] rush_Height = { -96f, 0f, 96f, 0 };
+        public readonly float[] rush_Height = { 0f, -96f, 0f, 96f };
     }
     private ConfigB configB = new ConfigB();
         
@@ -142,7 +150,7 @@ public class SatoMaiAttack : BossEnemyAttack {
             satomai.transform.position = new Vector3(270f * -direction, configB.rush_Height[count]);
             satomai_Move.Start_Move(new Vector3(270f * direction, configB.rush_Height[count]), 1);
             //最上段の時弾幕
-            if(count == 2) {
+            if(count == 3) {
 
                 yield return new WaitForSeconds(3.0f);
             }
@@ -165,14 +173,56 @@ public class SatoMaiAttack : BossEnemyAttack {
     #endregion
     // ===================================================================
     #region Cメロ
+        /*
+         * 弾幕前の移動、サビパートでもし移動先の座標にいなかった時も呼ばれる関数なので注意
+         */
+
+    private class ConfigC {        
+        public float power_Charge_Span = 2.0f;
+    }
+    private ConfigC configC = new ConfigC();
+
 
     protected override void Start_Melody_C() {
-        
+        StartCoroutine("Melody_C_Cor");
+    }
+
+
+    private IEnumerator Melody_C_Cor() {
+        base.Set_Can_Switch_Attack(false);
+        //移動
+        _controller.Change_Animation("IdleBool");
+        satomai.transform.localScale = new Vector3(1, 1, 1);
+        satomai_Move.Start_Move(configMain.pos_In_Shooting, 2);
+        yield return new WaitUntil(satomai_Move.End_Move);
+
+        //溜め
+        _effect.Play_Power_Charge_Effect(satomai.transform);
+        float time_Count = 0;
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.C) {
+            time_Count += Time.deltaTime;
+            yield return null;
+        }        
+        yield return new WaitForSeconds(configC.power_Charge_Span - time_Count);
+        _effect.Stop_Power_Charge_Effect();
+
+        base.Set_Can_Switch_Attack(true);
+        base.Restart_Attack();
     }
 
     #endregion
     // ===================================================================
     #region サビ
+        /*
+         * サビ弾幕攻撃、開始時特定の位置にいなかったらCメロの関数を呼んで移動
+         */
+
+    private class ConfigMain {
+        public Vector2 nutral_Pos = new Vector2(0, 0);
+        public Vector2 pos_In_Shooting = new Vector2(160f, 0);
+    }
+    private ConfigMain configMain = new ConfigMain();
+
 
     protected override void Start_Melody_Main() {
         
