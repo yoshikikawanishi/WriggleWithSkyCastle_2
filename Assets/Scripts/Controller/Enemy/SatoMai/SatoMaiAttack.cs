@@ -9,6 +9,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     [SerializeField] private GameObject mai;
 
     private SatoMai _controller;
+    private SatoMaiShoot _shoot;
     private SatoMaiEffect _effect;
     private MoveConstTime satomai_Move;
     private MoveConstTime satono_Move;
@@ -20,6 +21,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     void Start() {
         //取得
         _controller = GetComponent<SatoMai>();
+        _shoot = GetComponent<SatoMaiShoot>();
         _effect = GetComponentInChildren<SatoMaiEffect>();
         satomai_Move = satomai.GetComponent<MoveConstTime>();
         satono_Move = satono.GetComponent<MoveConstTime>();
@@ -31,19 +33,30 @@ public class SatoMaiAttack : BossEnemyAttack {
         
     }
 
+    // ===================================================================
+    #region フェーズ切り替え
+
     protected override void Action_In_Change_Phase() {
         
     }
 
+
+    private IEnumerator Change_Phase_Cor() {
+        yield return null;
+    }
+
+    #endregion
+    // ===================================================================
+    #region イントロ
     protected override void Start_Melody_Intro() {
 
     }
-
+    #endregion
     // ===================================================================
     #region Aメロ
-        /*
-         * Aメロ攻撃、里舞分かれて画面外から十字方向に突進
-         */
+    /*
+     * Aメロ攻撃、里舞分かれて画面外から十字方向に突進
+     */
 
     private class ConfigA {
         public readonly Vector3 nutral_Pos = new Vector3(0, 0, 0);
@@ -70,9 +83,10 @@ public class SatoMaiAttack : BossEnemyAttack {
         //突進攻撃        
         _controller.Change_Animation("CrossRushingBool");
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
-            Rush_By_Satono();
+            int direction = Random.Range(0, 2) == 0 ? 1 : -1;
+            Rush_By_Satono(direction);
             yield return new WaitForSeconds(0.32f);
-            Rush_By_Mai();
+            Rush_By_Mai(direction);
             yield return new WaitForSeconds(1.5f);
         }
         yield return new WaitForSeconds(1.0f);
@@ -95,22 +109,17 @@ public class SatoMaiAttack : BossEnemyAttack {
 
 
     //里乃突進攻撃
-    private void Rush_By_Satono() {
-        Vector2 pos = player.transform.position + new Vector3(Random.Range(-32f, 32f), 0);
-        int direction = (player.transform.position.x - pos.x).CompareTo(0);
-        if (direction == 0) direction = 1;
-
+    private void Rush_By_Satono(int direction) {
+        Vector2 pos = player.transform.position + new Vector3(direction * 16f, 0);      
         satono.transform.position = new Vector3(pos.x, 160f);
-        satono.transform.localScale = new Vector3(direction, 1, 1);
+        satono.transform.localScale = new Vector3(-direction, 1, 1);
         satono_Move.Start_Move(new Vector3(pos.x, -160f), 1);
     }
 
 
     //舞突進攻撃
-    private void Rush_By_Mai() {
-        Vector2 pos = player.transform.position + new Vector3(0, Random.Range(-8f, 40f));
-        int direction = Random.Range(0, 2) == 0 ? 1 : -1;
-
+    private void Rush_By_Mai(int direction) {
+        Vector2 pos = player.transform.position + new Vector3(0, Random.Range(-8f, 40f));        
         mai.transform.position = new Vector3(-270f * direction, pos.y);
         mai.transform.localScale = new Vector3(direction, 1, 1);
         mai_Move.Start_Move(new Vector3(270f * direction, pos.y), 1);
@@ -151,8 +160,9 @@ public class SatoMaiAttack : BossEnemyAttack {
             satomai_Move.Start_Move(new Vector3(270f * direction, configB.rush_Height[count]), 1);
             //最上段の時弾幕
             if(count == 3) {
-
+                _shoot.Shoot_In_Rolling_Rushing();
                 yield return new WaitForSeconds(3.0f);
+                _shoot.Stop_Rolling_Rushing_Shoot();
             }
             yield return new WaitUntil(satomai_Move.End_Move);            
             count = (count + 1) % configB.rush_Height.Length;
@@ -219,13 +229,67 @@ public class SatoMaiAttack : BossEnemyAttack {
 
     private class ConfigMain {
         public Vector2 nutral_Pos = new Vector2(0, 0);
-        public Vector2 pos_In_Shooting = new Vector2(160f, 0);
+        public Vector3 pos_In_Shooting = new Vector3(160f, 0);
+        public float laser_Span = 1.8f;
+        public float talismap_Shoot_Duration = 3.0f;
+
     }
     private ConfigMain configMain = new ConfigMain();
 
 
     protected override void Start_Melody_Main() {
-        
+        StartCoroutine("Melody_Main_Cor");
+    }
+
+
+    private IEnumerator Melody_Main_Cor() {
+        base.Set_Can_Switch_Attack(false);
+
+        //特定の位置にいなかったら移動
+        if (!Is_Equals_Pos(satomai.transform.position, configMain.pos_In_Shooting)) {
+            Start_Melody_C();
+            yield break;
+        }
+
+        _controller.Change_Animation("IdleBool");
+
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+            //レーザー
+            for (int i = 0; i < 3; i++) {
+                _shoot.Shoot_Phase1_Laser();
+                yield return new WaitForSeconds(configMain.laser_Span);
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.main)
+                    break;
+            }
+            //お札弾幕
+            _shoot.Shoot_Phase1_Talisman_Bullet();
+            for(float t = 0; t < configMain.talismap_Shoot_Duration; t += Time.deltaTime) {                
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.main)
+                    break;
+                yield return null;
+            }            
+            _shoot.Stop_Phase1_Talisman_Shoot();
+            yield return new WaitForSeconds(1.0f);
+        }
+
+        //元の位置に移動
+        _controller.Change_Animation("IdleBool");
+        yield return new WaitForSeconds(1.0f);
+        satomai_Move.Start_Move(configMain.nutral_Pos, 2);
+        yield return new WaitUntil(satomai_Move.End_Move);
+
+        //攻撃再開
+        base.Set_Can_Switch_Attack(true);
+        base.Restart_Attack();
+    }
+
+
+    //座標の比較
+    private bool Is_Equals_Pos(Vector3 a, Vector3 b) {
+        if(Mathf.Abs(a.x - b.x) < 16f && Mathf.Abs(a.y - b.y) < 16f) {
+            return true;
+        }
+        return false;
     }
 
     #endregion
