@@ -26,7 +26,7 @@ public class SatoMaiShoot : MonoBehaviour {
     //======================================================================
     public void Shoot_Phase1_Laser() {
         ShootSystem[] shoots = phase1_Laser_Shoot_Obj.GetComponents<ShootSystem>();
-        float center_Angle = Random.Range(0, 90f);
+        float center_Angle = Random.Range(170f, 190f);
         foreach(var s in shoots) {
             s.center_Angle_Deg = center_Angle;
             s.Shoot();

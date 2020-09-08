@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SatoMaiAttack : BossEnemyAttack {
 
-    [SerializeField] private GameObject satomai;
-    [SerializeField] private GameObject satono;
-    [SerializeField] private GameObject mai;
+    private GameObject satomai;
+    private GameObject satono;
+    private GameObject mai;
 
     private SatoMai _controller;
     private SatoMaiShoot _shoot;
@@ -19,30 +19,101 @@ public class SatoMaiAttack : BossEnemyAttack {
 
 
     void Start() {
-        //取得
+        //取得        
         _controller = GetComponent<SatoMai>();
         _shoot = GetComponent<SatoMaiShoot>();
         _effect = GetComponentInChildren<SatoMaiEffect>();
+        
+        player = GameObject.FindWithTag("PlayerTag");
+        satomai = _controller.satomai;
+        satono = _controller.satono;
+        mai = _controller.mai;
+
         satomai_Move = satomai.GetComponent<MoveConstTime>();
         satono_Move = satono.GetComponent<MoveConstTime>();
         mai_Move = mai.GetComponent<MoveConstTime>();
-        player = GameObject.FindWithTag("PlayerTag");
     }
 
     public override void Stop_Attack() {
-        
+        Stop_Melody_A();
+        Stop_Melody_B();
+        Stop_Melody_C();
+        Stop_Melody_Main();
+        satono_Move.Stop_Move();
+        mai_Move.Stop_Move();
+        satomai_Move.Stop_Move();
+        if (satomai.activeSelf) {
+            _controller.Change_Animation("IdleBool");
+        }
+        else {
+            _controller.Change_Animation("DivideBool");
+        }
+        mai.transform.localScale = new Vector3(1, 1, 1);
+        satono.transform.localScale = new Vector3(1, 1, 1);
+        satomai.transform.localScale = new Vector3(1, 1, 1);
     }
 
     // ===================================================================
     #region フェーズ切り替え
+    
+    private class ConfigChangePhase {
+        public readonly Vector2 nutral_Pos = new Vector2(0, 0);
+        public readonly Vector2 satono_Pos = new Vector2(-128f, 0);
+        public readonly Vector2 mai_Pos = new Vector2(128f, 0);
+    }
+    private ConfigChangePhase configCP = new ConfigChangePhase();
+
 
     protected override void Action_In_Change_Phase() {
-        
+        if (_controller.Get_Now_Phase() == 2) {            
+            Raise_Move_Speed();
+            Stop_Attack();
+            StartCoroutine("Change_Phase_Cor");
+        }        
     }
 
 
     private IEnumerator Change_Phase_Cor() {
-        yield return null;
+        base.Set_Can_Switch_Attack(false);        
+        _controller.Become_Invincible();        
+        yield return new WaitForSeconds(1.0f);
+        //移動
+        //一緒にいるときはまず中央に戻る
+        if (satomai.activeSelf) {
+            _controller.Change_Animation("IdleBool");
+            satomai_Move.Start_Move(configCP.nutral_Pos, 0);
+            yield return new WaitUntil(satomai_Move.End_Move);
+            satono.transform.position = configCP.nutral_Pos;
+            mai.transform.position = configCP.nutral_Pos;
+        }
+        //分裂して移動する
+        _controller.Change_Animation("DivideBool");
+        yield return new WaitForSeconds(0.5f);
+        satono_Move.Start_Move(configCP.satono_Pos, 0);
+        mai_Move.Start_Move(configCP.mai_Pos, 0);
+        yield return new WaitUntil(mai_Move.End_Move);
+        yield return new WaitUntil(satono_Move.End_Move);
+
+        yield return new WaitForSeconds(2.0f);
+
+        //戻る
+        satono_Move.Start_Move(configCP.nutral_Pos, 0);
+        mai_Move.Start_Move(configCP.nutral_Pos, 0);
+        yield return new WaitUntil(mai_Move.End_Move);
+        yield return new WaitUntil(satono_Move.End_Move);
+        _controller.Change_Animation("IdleBool");
+        yield return new WaitForSeconds(0.1f);
+        //戦闘再開
+        _controller.Release_Invincible();
+        base.Set_Can_Switch_Attack(true);
+        base.Restart_Attack();
+    }
+
+
+    private void Raise_Move_Speed() {
+        satomai_Move.Change_Paramter(0.012f, 0, 1); //回転突進用
+        satono_Move.Change_Paramter(0.014f, 0, 1);  //十字突進用
+        mai_Move.Change_Paramter(0.014f, 0, 1);     //十字突進用
     }
 
     #endregion
@@ -61,7 +132,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     private class ConfigA {
         public readonly Vector3 nutral_Pos = new Vector3(0, 0, 0);
         public readonly Vector3 satono_Outside_Pos = new Vector3(270f, 48f);
-        public readonly Vector3 mai_Outside_Pos = new Vector3(-270f, 48f);
+        public readonly Vector3 mai_Outside_Pos = new Vector3(-270f, 48f);        
     }
     private ConfigA configA = new ConfigA();
 
@@ -85,9 +156,13 @@ public class SatoMaiAttack : BossEnemyAttack {
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
             int direction = Random.Range(0, 2) == 0 ? 1 : -1;
             Rush_By_Satono(direction);
-            yield return new WaitForSeconds(0.32f);
+            _effect.Play_Satono_Cross_Rushing_Effect();
+            yield return new WaitForSeconds(0.4f);
             Rush_By_Mai(direction);
-            yield return new WaitForSeconds(1.5f);
+            _effect.Play_Mai_Cross_Rushing_Effect(direction);
+            yield return new WaitUntil(mai_Move.End_Move);
+            _effect.Stop_Satono_Cross_Rushing_Effect();
+            _effect.Stop_Mai_Cross_Rushing_Effect();
         }
         yield return new WaitForSeconds(1.0f);
 
@@ -113,7 +188,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         Vector2 pos = player.transform.position + new Vector3(direction * 16f, 0);      
         satono.transform.position = new Vector3(pos.x, 160f);
         satono.transform.localScale = new Vector3(-direction, 1, 1);
-        satono_Move.Start_Move(new Vector3(pos.x, -160f), 1);
+        satono_Move.Start_Move(new Vector3(pos.x, -380f), 1);
     }
 
 
@@ -123,6 +198,13 @@ public class SatoMaiAttack : BossEnemyAttack {
         mai.transform.position = new Vector3(-270f * direction, pos.y);
         mai.transform.localScale = new Vector3(direction, 1, 1);
         mai_Move.Start_Move(new Vector3(270f * direction, pos.y), 1);
+    }
+
+    
+    private void Stop_Melody_A() {
+        StopCoroutine("Melody_A_Cor");        
+        _effect.Stop_Mai_Cross_Rushing_Effect();
+        _effect.Stop_Satono_Cross_Rushing_Effect();        
     }
 
     #endregion
@@ -180,6 +262,12 @@ public class SatoMaiAttack : BossEnemyAttack {
 
     }
 
+
+    private void Stop_Melody_B() {
+        StopCoroutine("Melody_B_Cor");        
+        _shoot.Stop_Rolling_Rushing_Shoot();
+    }
+
     #endregion
     // ===================================================================
     #region Cメロ
@@ -218,6 +306,12 @@ public class SatoMaiAttack : BossEnemyAttack {
 
         base.Set_Can_Switch_Attack(true);
         base.Restart_Attack();
+    }
+
+
+    public void Stop_Melody_C() {
+        StopCoroutine("Melody_C_Cor");
+        _effect.Stop_Power_Charge_Effect();
     }
 
     #endregion
@@ -290,6 +384,12 @@ public class SatoMaiAttack : BossEnemyAttack {
             return true;
         }
         return false;
+    }
+
+
+    private void Stop_Melody_Main() {
+        StopCoroutine("Melody_Main_Cor");
+        _shoot.Stop_Phase1_Talisman_Shoot();
     }
 
     #endregion
