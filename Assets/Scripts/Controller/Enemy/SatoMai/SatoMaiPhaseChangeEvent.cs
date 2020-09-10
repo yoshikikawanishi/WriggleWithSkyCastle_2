@@ -7,9 +7,15 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
     [SerializeField] private AudioClip true_Answer_Sound;
     [SerializeField] private AudioClip false_Answer_Sound;
+    [Space]
+    [SerializeField] private Canvas event_Canvas;
+    [SerializeField] private GameObject selections1;
+    [SerializeField] private GameObject selections2;
 
-    private MessageDisplay _message;
+    private MessageDisplayCustom _message;
+    private AudioSource _audio;
     private PlayerController player_Controller;
+    private Rigidbody2D player_Rigid;
 
     private bool is_Selected_Answer = false;
     private bool is_Selected_True_Answer = false;
@@ -18,8 +24,13 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
     void Start () {
         //取得
-
-        player_Controller = GameObject.FindWithTag("PlayerTag").GetComponent<PlayerController>();                       
+        _message = GetComponent<MessageDisplayCustom>();
+        _audio = GetComponent<AudioSource>();
+        GameObject player = GameObject.FindWithTag("PlayerTag");
+        player_Controller = player.GetComponent<PlayerController>();
+        player_Rigid = player.GetComponent<Rigidbody2D>();
+        //メッセージ表示の初期設定
+        _message.Set_Canvas_And_Panel_Name("SatoMaiEventCanvas", new string[2] { "MessagePanelLeft", "MessagePanelRight" });
     }
 
 
@@ -34,34 +45,43 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
     private IEnumerator Event_Flow_Cor() {
         //初期設定
         PauseManager.Instance.Set_Is_Pausable(false);
+        while (!player_Controller.Get_Is_Playable()) {
+            yield return null;
+        }
         player_Controller.Set_Is_Playable(false);
-        //_message.Set_Canvas_And_Panel_Name( );
+        player_Controller.Change_Animation("IdleBool");
+        player_Rigid.velocity = new Vector2(0, 0);
 
         Appear_Window();        
 
         //全二問
         for (int i = 0; i < 2; i++) {
-            Display_Message(0, 0);                              //問題文1：口上
+            Display_Message(1, 2, i);                           //問題文1：口上
             yield return new WaitUntil(Is_End_Message);
 
             Display_Answer_Selection(i);                        //選択肢表示
 
-            Display_Message(0, 0);                              //問題文2：本文
-            yield return new WaitUntil(Is_End_Message);
+            Display_Message(3, 4, i);                           //問題文2：本文
+            yield return new WaitUntil(Is_End_Message);                        
+            yield return new WaitForSeconds(0.1f);
 
-            Enable_Selection_Cursol(null);                      //選択肢を選択可能に
+            Enable_Selection_Cursol(i);                         //選択肢を選択可能に
 
             yield return new WaitUntil(Is_Selected_Answer);     //選択されるまで待つ
 
             if (is_Selected_True_Answer) {                      //正解が押されたとき
                 PlayerManager.Instance.Add_Life();
-                Display_Message(0, 0);                              
+                Display_Message(5, 6, i);
+                _audio.PlayOneShot(true_Answer_Sound);
             }            
             else {                                              //不正解が押されたとき
                 PlayerManager.Instance.Reduce_Life();
-                Display_Message(0, 0);
+                Display_Message(7, 8, i);
+                _audio.PlayOneShot(false_Answer_Sound);
             }
             yield return new WaitUntil(Is_End_Message);
+
+            Disable_Answer_Selection();
         }
 
         Disappear_Window();
@@ -75,13 +95,15 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
     //問題用ウィンドウを表示
     private void Appear_Window() {
-
+        event_Canvas.gameObject.SetActive(true);
     }
 
 
     //セリフ開始
-    private void Display_Message(int beginID, int endID) {
-
+    //セリフのテキストは問題1と問題2で量を同じに、問題1はID:1～19, 問題2はID:21～39
+    private void Display_Message(int beginID, int endID, int question_Number) {
+        int i = question_Number;
+        _message.Start_Display("SatoMaiText", beginID + i * 20, endID + i * 20);
     }
 
 
@@ -93,13 +115,19 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
     //問題の選択肢を表示
     private void Display_Answer_Selection(int question_Number) {
-
+        if (question_Number == 0)
+            selections1.SetActive(true);
+        else if (question_Number == 1)
+            selections2.SetActive(true);
     }
 
 
-    //選択肢のカーソルを出す
-    private void Enable_Selection_Cursol(Button select_Button) {
-        select_Button.Select();
+    //選択肢のカーソルを出す    
+    private void Enable_Selection_Cursol(int question_Number) {
+        if (question_Number == 0)
+            selections1.GetComponentInChildren<Button>().Select();
+        else if(question_Number == 1)
+            selections2.GetComponentInChildren<Button>().Select();
     }
 
 
@@ -115,13 +143,14 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
     //問題の選択肢を消す
     private void Disable_Answer_Selection() {
-
+        selections1.SetActive(false);
+        selections2.SetActive(false);
     }
 
 
     //問題用ウィンドウを消す
     private void Disappear_Window() {
-
+        event_Canvas.gameObject.SetActive(false);
     }
 
 
@@ -132,25 +161,15 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 	
 
     //====================== ボタン ======================
-
-    //正解のボタンが押されたとき
-    //インスペクタで正解のボタンにセットすること
-    public void True_Answer_Button() {
+    
+    //インスペクタで選択肢ボタンにセットすること
+    //正解の場合は引数trueに
+    public void Selection_Button(bool correct_Answer) {
         if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
             is_Selected_Answer = true;
-            is_Selected_True_Answer = true;
+            is_Selected_True_Answer = correct_Answer;
         }
-    }
-
-
-    //不正解のボタンが押されたとき
-    //インスペクタで不正解のボタンにセットすること
-    public void False_Answer_Button() {
-        if (InputManager.Instance.GetKeyDown(MBLDefine.Key.Jump)) {
-            is_Selected_Answer = true;
-            is_Selected_True_Answer = false;
-        }
-    }
+    }    
 
 
 }

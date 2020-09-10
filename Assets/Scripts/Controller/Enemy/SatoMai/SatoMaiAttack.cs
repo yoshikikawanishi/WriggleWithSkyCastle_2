@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SatoMaiAttack : BossEnemyAttack {
 
+    [SerializeField] private SatoMaiPhaseChangeEvent change_Phase_Event;
+
     private GameObject satomai;
     private GameObject satono;
     private GameObject mai;
@@ -94,7 +96,9 @@ public class SatoMaiAttack : BossEnemyAttack {
         yield return new WaitUntil(mai_Move.End_Move);
         yield return new WaitUntil(satono_Move.End_Move);
 
-        yield return new WaitForSeconds(2.0f);
+        //クイズ開始
+        change_Phase_Event.Start_Event();
+        yield return new WaitUntil(change_Phase_Event.Is_End_Event);
 
         //戻る
         satono_Move.Start_Move(configCP.nutral_Pos, 0);
