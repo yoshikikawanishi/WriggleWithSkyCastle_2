@@ -13252,7 +13252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7226e2b508673247bf31f23e8393eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file_Name: 
+  file_Name: Stage5_1SceneEnemy
 --- !u!114 &245266299
 MonoBehaviour:
   m_ObjectHideFlags: 0

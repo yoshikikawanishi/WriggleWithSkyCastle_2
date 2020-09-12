@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SatoMaiPhaseChangeEvent : MonoBehaviour {
@@ -67,7 +68,8 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
             Enable_Selection_Cursol(i);                         //選択肢を選択可能に
 
-            yield return new WaitUntil(Is_Selected_Answer);     //選択されるまで待つ
+            yield return new WaitUntil(Is_Selected_Answer);     //選択されるまで待つ  
+            EventSystem.current.SetSelectedGameObject(null);
 
             if (is_Selected_True_Answer) {                      //正解が押されたとき
                 PlayerManager.Instance.Add_Life();
@@ -84,7 +86,7 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
             Disable_Answer_Selection();
         }
 
-        Disappear_Window();
+        Disappear_Window();        
 
         //終了設定
         PauseManager.Instance.Set_Is_Pausable(true);
@@ -103,7 +105,7 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
     //セリフのテキストは問題1と問題2で量を同じに、問題1はID:1～19, 問題2はID:21～39
     private void Display_Message(int beginID, int endID, int question_Number) {
         int i = question_Number;
-        _message.Start_Display("SatoMaiText", beginID + i * 20, endID + i * 20);
+        _message.Start_Display("SatoMaiEventText", beginID + i * 20, endID + i * 20);
     }
 
 
@@ -119,6 +121,7 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
             selections1.SetActive(true);
         else if (question_Number == 1)
             selections2.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
 

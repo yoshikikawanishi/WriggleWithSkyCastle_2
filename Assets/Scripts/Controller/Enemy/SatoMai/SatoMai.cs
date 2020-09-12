@@ -42,6 +42,7 @@ public class SatoMai : BossEnemy {
     protected override void Clear() {
         base.Clear();
         _attack.Stop_Attack();
+        Become_Invincible();
     }
 
 
