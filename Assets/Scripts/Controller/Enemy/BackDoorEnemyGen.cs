@@ -6,33 +6,35 @@ public class BackDoorEnemyGen : MonoBehaviour {
 
     [SerializeField] private GameObject generate_Enemy_Prefab;
     [SerializeField] private float start_Generate_Distance;
+    
 
     private enum State {
         wait,
         appear,
-        generate,
+        generate,        
         disapper
     }
     private State now_State = State.wait;
 
     private SpriteRenderer _sprite;
     private SpriteRenderer enemy_Sprite;
-    private GameObject player;
+    private GameObject main_Camera;
+
+    private float time = 0;
 
 
     void Start () {
         //取得
         _sprite = GetComponent<SpriteRenderer>();
-        player = GameObject.FindWithTag("PlayerTag");
+        main_Camera = GameObject.FindWithTag("MainCamera");
+        _sprite.color = new Color(1, 1, 1, 0);
 	}
 	
 	
 	void Update () {
         //自機が近付いたら現れる
         if(now_State == State.wait) {
-            if(Mathf.Abs(player.transform.position.x - transform.position.x) < start_Generate_Distance) {
-                now_State = State.appear;
-            }
+            Wait();
         }
         //現れる
         else if(now_State == State.appear) {
@@ -40,14 +42,31 @@ public class BackDoorEnemyGen : MonoBehaviour {
         }
         //生成
         else if(now_State == State.generate) {
-
-        }
+            Generate();
+        }        
         //消える
         else if(now_State == State.disapper) {
             Disappear();
         }
 	}
 
+
+    private void Wait() {
+        float distance = transform.position.x - main_Camera.transform.position.x;
+        //カメラの右側に出現する
+        if (start_Generate_Distance > 0) {
+            if(distance > 0 && distance < start_Generate_Distance) {
+                now_State = State.appear;
+            }
+        }
+        //カメラが通過した後左側から出現する
+        else {
+            if(start_Generate_Distance - 100f < distance && distance < start_Generate_Distance) {
+                now_State = State.appear;
+            }
+        }
+        
+    }
 
     private void Appear() {
         if (_sprite.color.a < 1.0f)
@@ -58,8 +77,10 @@ public class BackDoorEnemyGen : MonoBehaviour {
 
 
     private void Generate() {
-
-    }
+        GameObject enemy = Instantiate(generate_Enemy_Prefab);
+        enemy.transform.position = transform.position;
+        now_State = State.disapper;
+    }     
 
 
     private void Disappear() {
