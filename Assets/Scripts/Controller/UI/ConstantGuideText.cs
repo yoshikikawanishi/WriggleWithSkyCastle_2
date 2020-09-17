@@ -8,6 +8,7 @@ public class ConstantGuideText : MonoBehaviour {
         kick,
         quit_Fly,
         fly,
+        jump
     }
     [SerializeField] private Kind kind;
 
@@ -35,6 +36,14 @@ public class ConstantGuideText : MonoBehaviour {
             List<KeyCode> keys = InputManager.KeyConfigSetting.Instance.GetKeyCode(MBLDefine.Key.Fly);
             GetComponent<TextMesh>().text
                 = "Fly\n("
+                + keys[0].ToString() + " / "
+                + keys[1].ToString().Replace("Joystick", "")
+                + ")";
+        }
+        else if(kind == Kind.jump) {
+            List<KeyCode> keys = InputManager.KeyConfigSetting.Instance.GetKeyCode(MBLDefine.Key.Jump);
+            GetComponent<TextMesh>().text
+                = "Jump\n("
                 + keys[0].ToString() + " / "
                 + keys[1].ToString().Replace("Joystick", "")
                 + ")";

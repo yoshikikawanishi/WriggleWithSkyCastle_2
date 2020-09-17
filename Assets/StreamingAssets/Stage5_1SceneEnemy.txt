@@ -1,1 +1,11 @@
-#NAME	#ISEXIST
+Name	IsExist
+RedYinBallStrong	False
+RedYinBallStrong (1)	False
+RedYinBallStrong	False
+RedYinBallStrong (2)	False
+RedYinBallStrong	True
+RedYinBallStrong (3)	True
+RedYinBallStrong (4)	True
+RedYinBallStrong (7)	True
+RedYinBallStrong (5)	True
+RedYinBallStrong (6)	True

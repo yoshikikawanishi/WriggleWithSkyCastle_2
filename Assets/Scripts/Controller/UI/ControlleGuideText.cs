@@ -35,7 +35,7 @@ public class ControlleGuideText : MonoBehaviour {
                 + "\n"
                 + "[ "
                 + key_Setting.GetKeyCode(key)[0].ToString()
-                + " / "
+                + " ]\n[ "
                 + key_Setting.GetKeyCode(key)[1].ToString()
                 + comment
                 + " ]";                
@@ -138,7 +138,7 @@ public class ControlleGuideText : MonoBehaviour {
             switch (a) {
                 case Action.Jump:   guide_List.Add(new Guide(a, Key.Jump, ""));         break;
                 case Action.Attack: guide_List.Add(new Guide(a, Key.Attack, ""));       break;
-                case Action.Kick:   guide_List.Add(new Guide(a, Key.Attack, " + ↓"));  break;
+                case Action.Kick:   guide_List.Add(new Guide(a, Key.Attack, "+↓"));  break;
                 case Action.Fly:    guide_List.Add(new Guide(a, Key.Fly, ""));          break;
                 case Action.Shoot:  guide_List.Add(new Guide(a, Key.Shoot, ""));        break;
                 case Action.Slow:   guide_List.Add(new Guide(a, Key.Slow, ""));         break;

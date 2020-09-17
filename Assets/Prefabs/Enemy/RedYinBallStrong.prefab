@@ -256,7 +256,7 @@ MonoBehaviour:
   max_Speed: 180
   radius: 0
   speed_Noise: 0
-  angle_Noise: 15
+  angle_Noise: 2
   lifeTime: 5
   offset: {x: 0, y: 0}
   default_Shoot_Sound: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: 20
+  inter_Angle_Deg: 0
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30

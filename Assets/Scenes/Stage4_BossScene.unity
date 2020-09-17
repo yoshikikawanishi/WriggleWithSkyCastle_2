@@ -3949,7 +3949,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1346240011}
-  - {fileID: 2023807252}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19437,12 +19436,11 @@ MonoBehaviour:
     message:
       file_Name: NarumiText
       dual_Panel: 1
-      start_ID: 1
-      end_ID: 1
+      id: {x: 1, y: 1}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
-      anim_Parameter: 
+      apply_Root_Position: 0
       x_Move:
         serializedVersion: 2
         m_Curve:
@@ -19491,27 +19489,87 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     gen_Obj:
       obj: {fileID: 0}
       parent: {fileID: 0}
       position: {x: 0, y: 0}
     function:
+      obj: {fileID: 0}
       component: {fileID: 0}
-      function: 
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
+    is_Open_In_Inspector: 1
   - name: 
-    type: 4
+    type: 6
     message:
       file_Name: 
       dual_Panel: 1
-      start_ID: 0
-      end_ID: 0
+      id: {x: 0, y: 0}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
-      anim_Parameter: 
+      apply_Root_Position: 0
       x_Move:
         serializedVersion: 2
         m_Curve:
@@ -19560,27 +19618,87 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     gen_Obj:
       obj: {fileID: 0}
       parent: {fileID: 0}
       position: {x: 0, y: 0}
     function:
-      component: {fileID: 0}
-      function: 
+      obj: {fileID: 0}
+      component: {fileID: 1433110798}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 1
       wait_Time: 0
+    is_Open_In_Inspector: 1
   - name: 
-    type: 3
+    type: 5
     message:
       file_Name: 
       dual_Panel: 1
-      start_ID: 0
-      end_ID: 0
+      id: {x: 0, y: 0}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
-      anim_Parameter: 
+      apply_Root_Position: 0
       x_Move:
         serializedVersion: 2
         m_Curve:
@@ -19629,16 +19747,77 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
     gen_Obj:
       obj: {fileID: 0}
       parent: {fileID: 0}
       position: {x: 0, y: 0}
     function:
+      obj: {fileID: 1433110793}
       component: {fileID: 1433110798}
-      function: Start_Battle
+      function_Name: Start_Battle
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
+    is_Open_In_Inspector: 1
 --- !u!1001 &1374428956
 Prefab:
   m_ObjectHideFlags: 0
@@ -34731,117 +34910,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4479364483060002, guid: 9c3234d36948e8c428b31147bc7ce071,
     type: 2}
   m_PrefabInternal: {fileID: 2013300536}
---- !u!1 &2023807251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2023807252}
-  - component: {fileID: 2023807253}
-  m_Layer: 0
-  m_Name: StartMovieSkip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2023807252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023807251}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 642809400}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2023807253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2023807251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
-  list:
-  - name: 
-    type: 0
-    message:
-      file_Name: NarumiText
-      dual_Panel: 1
-      start_ID: 1
-      end_ID: 1
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      anim_Parameter: 
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      component: {fileID: 0}
-      function: 
-    wait:
-      wait_Message: 0
-      wait_Time: 0
 --- !u!1001 &2047136437
 Prefab:
   m_ObjectHideFlags: 0

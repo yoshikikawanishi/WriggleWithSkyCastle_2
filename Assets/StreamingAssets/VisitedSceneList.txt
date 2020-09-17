@@ -5,3 +5,6 @@ Stage5_2Scene
 Stage5_BossScene
 Stage6_1Scene
 TitleScene
+PlayGuideScene
+Stage5_1Scene
+Stage4_BossScene

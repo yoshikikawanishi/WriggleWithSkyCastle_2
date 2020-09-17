@@ -168,7 +168,7 @@ public class SatoMaiAttack : BossEnemyAttack {
             _effect.Stop_Satono_Cross_Rushing_Effect();
             _effect.Stop_Mai_Cross_Rushing_Effect();
         }
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.0f);        
 
         //入ってきて合流
         _controller.Change_Animation("GoInsideAndMergeBool");
@@ -199,9 +199,9 @@ public class SatoMaiAttack : BossEnemyAttack {
     //舞突進攻撃
     private void Rush_By_Mai(int direction) {
         Vector2 pos = player.transform.position + new Vector3(0, Random.Range(-8f, 40f));        
-        mai.transform.position = new Vector3(-270f * direction, pos.y);
+        mai.transform.position = new Vector3(-250f * direction, pos.y);
         mai.transform.localScale = new Vector3(direction, 1, 1);
-        mai_Move.Start_Move(new Vector3(270f * direction, pos.y), 1);
+        mai_Move.Start_Move(new Vector3(420f * direction, pos.y), 1);
     }
 
     
