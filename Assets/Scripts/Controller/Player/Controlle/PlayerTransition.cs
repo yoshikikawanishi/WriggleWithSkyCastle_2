@@ -11,7 +11,7 @@ public class PlayerTransition : MonoBehaviour {
     //速度、加速度
     private float max_Speed = 170f;
     private float min_Speed = 70f;
-    private float acc = 3f;
+    private float acc = 35f;
     private float charge_Kick_Speed = 350f;
 
     
@@ -27,7 +27,7 @@ public class PlayerTransition : MonoBehaviour {
         direction = direction > 0 ? 1 : -1;
 
         //地上と空中で加速度変える
-        acc = _controller.is_Landing ? 2f : 35f;
+        //acc = _controller.is_Landing ? 2f : 35f;
         
         //移動、加速
         if(direction == 1) {

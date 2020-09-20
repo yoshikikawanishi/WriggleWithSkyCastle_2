@@ -49,7 +49,7 @@ public class NarumiAttack : BossEnemyAttack {
     }
 
 
-    protected override void Start_Melody_A() {
+    protected override void Start_Melody_A1() {
         if(now_Phase == 1) {
             StartCoroutine("Attack_Melody_A_Phase1_Cor");            
         }
@@ -59,7 +59,7 @@ public class NarumiAttack : BossEnemyAttack {
     }
 
 
-    protected override void Start_Melody_B() {
+    protected override void Start_Melody_B1() {
         if (now_Phase == 1) {
             StartCoroutine("Attack_Melody_B_Phase1_Cor");            
         }
@@ -79,7 +79,7 @@ public class NarumiAttack : BossEnemyAttack {
     }
 
 
-    protected override void Start_Melody_Main() {
+    protected override void Start_Melody_Chorus1() {
         if (now_Phase == 1) {
             StartCoroutine("Attack_Melody_Main_Phase1_Cor");
         }
@@ -112,7 +112,7 @@ public class NarumiAttack : BossEnemyAttack {
         block_Barrier.Create_Barrier(12, 64f, 0.05f, -1);
         //地面移動開始
         ground_Blocks.Start_Random_Raise(1.0f);
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A1) {
             yield return null;
         }
         Stop_Melody_A_Phase1();
@@ -133,7 +133,7 @@ public class NarumiAttack : BossEnemyAttack {
 
         _main.Change_Animation("AttackBool", 1);        
         ground_Blocks.Start_Random_Shoot(1.5f);
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B1) {
             yield return null;
         }
         Stop_Melody_B_Phase1();
@@ -192,7 +192,7 @@ public class NarumiAttack : BossEnemyAttack {
         _effect.Stop_Power_Charge();
         _shoot.Shoot_Snow_Shoot();
         _effect.Play_Burst();
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) { yield return null; }
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) { yield return null; }
         _shoot.Stop_Snow_Shoot();                 
     }
 
@@ -245,7 +245,7 @@ public class NarumiAttack : BossEnemyAttack {
         scroll_Ground_Blocks_First.Start_Random_Raise(1.1f);
         scroll_Ground_Blocks_Second.Start_Random_Raise(1.1f);
         _shoot.Start_Jizo_Bullet_Dropping(2.0f);
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A1) {
             yield return null;
         }
         _shoot.Stop_Jizo_Bullet_Dropping();
@@ -272,7 +272,7 @@ public class NarumiAttack : BossEnemyAttack {
         //ブロック生成
         Vector3 pos = new Vector2(260f, -80f);
         
-        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B1) {
             yield return new WaitForSeconds(Random.Range(4.0f, 6.0f));
             rect_Block_Gen.Generate(main_Camera.transform.position + pos);            
         }
@@ -281,7 +281,7 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     private IEnumerator Yellow_Talisman_Shoot_Cor() {
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B1) {
             yield return new WaitForSeconds(2.0f);
             _effect.Play_Power_Charge_Small();
             yield return new WaitForSeconds(1.0f);
@@ -312,7 +312,7 @@ public class NarumiAttack : BossEnemyAttack {
     private IEnumerator Attack_Melody_Main_Phase2_Cor() {
         _effect.Play_Power_Charge_Red(1.0f);
 
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) {
             _effect.Play_Power_Charge_Small();
             yield return new WaitForSeconds(1.0f);
             Vector3 pos = new Vector3(Random.Range(-50f, 100f), Random.Range(-100f, 100f));
@@ -322,11 +322,29 @@ public class NarumiAttack : BossEnemyAttack {
         }
         yield return null;
     }
-
+    //====================================================================
 
     private void Stop_Melody_Main_Phase2() {
 
     }
 
+    protected override void Start_Melody_A2() {
+        throw new System.NotImplementedException();
+    }
 
+    protected override void Start_Melody_B2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Pre_Chorus() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Chorus2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Bridge() {
+        throw new System.NotImplementedException();
+    }
 }

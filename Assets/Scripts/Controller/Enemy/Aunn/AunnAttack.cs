@@ -42,10 +42,10 @@ public class AunnAttack : BossEnemyAttack {
 
 
     public override void Stop_Attack() {
-        Stop_Attack_A();
-        Stop_Attack_C();
+        Stop_Attack_A1();
+        Stop_Attack_Pre_Chorus();
         Stop_Attack_Intro();
-        Stop_Attack_Main();
+        Stop_Attack_Chorus1();
     }
 
 
@@ -160,13 +160,13 @@ public class AunnAttack : BossEnemyAttack {
 
     #endregion
     // =======================================================================================================
-    #region A
-    protected override void Start_Melody_A() {
-        StartCoroutine("Attack_In_Melody_A_Cor");
+    #region A1
+    protected override void Start_Melody_A1() {
+        StartCoroutine("Attack_In_Melody_A1_Cor");
     }
 
 
-    private IEnumerator Attack_In_Melody_A_Cor() {
+    private IEnumerator Attack_In_Melody_A1_Cor() {
         Set_Can_Switch_Attack(false);
 
         //自機のいない方の壁に飛びつく
@@ -245,8 +245,8 @@ public class AunnAttack : BossEnemyAttack {
     }
 
 
-    private void Stop_Attack_A() {
-        StopCoroutine("Attack_In_Melody_A_Cor");
+    private void Stop_Attack_A1() {
+        StopCoroutine("Attack_In_Melody_A1_Cor");
         StopCoroutine("Jump_On_Wall_Cor");
         _move_Const_Time.Stop_Move();
         _controller.Change_Land_Parameter();
@@ -259,20 +259,13 @@ public class AunnAttack : BossEnemyAttack {
 
     #endregion
     // =======================================================================================================
-    #region B
-    protected override void Start_Melody_B() {
-        
-    }
-
-    #endregion
-    // =======================================================================================================
-    #region C
-    protected override void Start_Melody_C() {
-        StartCoroutine("Attack_In_Melody_C_Cor");
+    #region PreChorus
+    protected override void Start_Melody_Pre_Chorus() {        
+        StartCoroutine("Attack_In_Melody_Pre_Chorus_Cor");
     }
 
 
-    private IEnumerator Attack_In_Melody_C_Cor() {
+    private IEnumerator Attack_In_Melody_Pre_Chorus_Cor() {
         Set_Can_Switch_Attack(false);
 
         //ジャンプ移動        
@@ -294,7 +287,7 @@ public class AunnAttack : BossEnemyAttack {
         //溜め
         _effect.Start_Charge_Effect(10);
 
-        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.C) { yield return null; }
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.pre_Chorus) { yield return null; }
 
         //TODO : 弾幕中止
         //ため中止
@@ -326,8 +319,8 @@ public class AunnAttack : BossEnemyAttack {
     }
 
 
-    private void Stop_Attack_C() {        
-        StopCoroutine("Attack_In_Melody_C_Cor");
+    private void Stop_Attack_Pre_Chorus() {        
+        StopCoroutine("Attack_In_Melody_Pre_Chorus_Cor");
         StopCoroutine("High_Jump_Move_Cor");
         _move_Const_Speed.Stop_Move();
         _effect.Stop_Charge_Effect();
@@ -337,15 +330,15 @@ public class AunnAttack : BossEnemyAttack {
     }
     #endregion
     // =======================================================================================================
-    #region main
-    protected override void Start_Melody_Main() {
-        StartCoroutine("Attack_In_Melody_Main_Cor");
+    #region Chorus1
+    protected override void Start_Melody_Chorus1() {
+        StartCoroutine("Attack_In_Melody_Chorus1_Cor");
     }
 
 
-    private IEnumerator Attack_In_Melody_Main_Cor() {
+    private IEnumerator Attack_In_Melody_Chorus1_Cor() {
         if(transform.position.x < 175f && Mathf.Abs(transform.position.y) > 5f) {
-            Start_Melody_C();
+            Start_Melody_Pre_Chorus();
             yield break;
         }
 
@@ -360,7 +353,7 @@ public class AunnAttack : BossEnemyAttack {
                 _shoot.Shoot_Dog_Bullet();
                 yield return new WaitForSeconds(15.0f);
 
-                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.main)
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
                     break;
 
                 _effect.Play_Yellow_Circle_Effect();
@@ -374,7 +367,7 @@ public class AunnAttack : BossEnemyAttack {
                 _shoot.Shoot_Long_Curve_Laser();
                 yield return new WaitForSeconds(9.0f);
             }
-        } while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main);
+        } while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1);
 
         //落下
         _controller.Change_Land_Parameter();
@@ -387,8 +380,8 @@ public class AunnAttack : BossEnemyAttack {
     }
 
 
-    private void Stop_Attack_Main() {        
-        StopCoroutine("Attack_In_Melody_Main_Cor");
+    private void Stop_Attack_Chorus1() {        
+        StopCoroutine("Attack_In_Melody_Chorus1_Cor");
         _shoot.Stop_Dog_Bullet();
         _shoot.Stop_Long_Curve_Laser();       
     }
@@ -440,7 +433,31 @@ public class AunnAttack : BossEnemyAttack {
         Set_Can_Switch_Attack(true);
         Restart_Attack();
     }
+
     #endregion
 
 
+    protected override void Start_Melody_A2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_B1() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_B2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Chorus2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Bridge() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_C() {
+        throw new System.NotImplementedException();
+    }
 }

@@ -37,10 +37,10 @@ public class SatoMaiAttack : BossEnemyAttack {
     }
 
     public override void Stop_Attack() {
-        Stop_Melody_A();
-        Stop_Melody_B();
+        Stop_Melody_A1();
+        Stop_Melody_B1();
         Stop_Melody_C();
-        Stop_Melody_Main();
+        Stop_Melody_Chorus1();
         satono_Move.Stop_Move();
         mai_Move.Stop_Move();
         satomai_Move.Stop_Move();
@@ -120,13 +120,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         mai_Move.Change_Paramter(0.014f, 0, 1);     //十字突進用
     }
 
-    #endregion
-    // ===================================================================
-    #region イントロ
-    protected override void Start_Melody_Intro() {
-
-    }
-    #endregion
+    #endregion   
     // ===================================================================
     #region Aメロ
     /*
@@ -141,12 +135,12 @@ public class SatoMaiAttack : BossEnemyAttack {
     private ConfigA configA = new ConfigA();
 
 
-    protected override void Start_Melody_A() {
-        StartCoroutine("Melody_A_Cor");
+    protected override void Start_Melody_A1() {
+        StartCoroutine("Melody_A1_Cor");
     }
 
 
-    private IEnumerator Melody_A_Cor() {
+    private IEnumerator Melody_A1_Cor() {
         base.Set_Can_Switch_Attack(false);
         //画面外に分かれて出る
         _controller.Change_Animation("DivideAndGoOutBool");
@@ -157,7 +151,7 @@ public class SatoMaiAttack : BossEnemyAttack {
 
         //突進攻撃        
         _controller.Change_Animation("CrossRushingBool");
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.A1) {
             int direction = Random.Range(0, 2) == 0 ? 1 : -1;
             Rush_By_Satono(direction);
             _effect.Play_Satono_Cross_Rushing_Effect();
@@ -205,8 +199,8 @@ public class SatoMaiAttack : BossEnemyAttack {
     }
 
     
-    private void Stop_Melody_A() {
-        StopCoroutine("Melody_A_Cor");        
+    private void Stop_Melody_A1() {
+        StopCoroutine("Melody_A1_Cor");        
         _effect.Stop_Mai_Cross_Rushing_Effect();
         _effect.Stop_Satono_Cross_Rushing_Effect();        
     }
@@ -225,12 +219,12 @@ public class SatoMaiAttack : BossEnemyAttack {
     private ConfigB configB = new ConfigB();
         
 
-    protected override void Start_Melody_B() {
-        StartCoroutine("Melody_B_Cor");
+    protected override void Start_Melody_B1() {
+        StartCoroutine("Melody_B1_Cor");
     }
 
 
-    private IEnumerator Melody_B_Cor() {
+    private IEnumerator Melody_B1_Cor() {
         base.Set_Can_Switch_Attack(false);
         yield return new WaitForSeconds(1.5f);
         //回転開始、画面外に出る
@@ -242,7 +236,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         //突進
         int count = 0;
         int direction = -1;
-        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B) {
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B1) {
             satomai.transform.position = new Vector3(270f * -direction, configB.rush_Height[count]);
             satomai_Move.Start_Move(new Vector3(270f * direction, configB.rush_Height[count]), 1);
             //最上段の時強弾幕
@@ -274,8 +268,8 @@ public class SatoMaiAttack : BossEnemyAttack {
     }
 
 
-    private void Stop_Melody_B() {
-        StopCoroutine("Melody_B_Cor");        
+    private void Stop_Melody_B1() {
+        StopCoroutine("Melody_B1_Cor");        
         _shoot.Stop_Rolling_Rushing_Shoot();
     }
 
@@ -303,7 +297,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         _controller.Change_Animation("IdleBool");
         yield return new WaitForSeconds(0.1f);
         satomai.transform.localScale = new Vector3(1, 1, 1);
-        satomai_Move.Start_Move(configMain.pos_In_Shooting, 2);
+        satomai_Move.Start_Move(configChorus1.pos_In_Shooting, 2);
         yield return new WaitUntil(satomai_Move.End_Move);
 
         //溜め
@@ -333,48 +327,48 @@ public class SatoMaiAttack : BossEnemyAttack {
          * サビ弾幕攻撃、開始時特定の位置にいなかったらCメロの関数を呼んで移動
          */
 
-    private class ConfigMain {
+    private class ConfigChorus1 {
         public Vector2 nutral_Pos = new Vector2(0, 0);
         public Vector3 pos_In_Shooting = new Vector3(160f, 0);
         public float laser_Span = 1.8f;
         public float talismap_Shoot_Duration = 3.0f;
 
     }
-    private ConfigMain configMain = new ConfigMain();
+    private ConfigChorus1 configChorus1 = new ConfigChorus1();
 
 
-    protected override void Start_Melody_Main() {
+    protected override void Start_Melody_Chorus1() {
         int phase = _controller.Get_Now_Phase();
         if (phase == 1)
-            StartCoroutine("Melody_Main_Phase1_Cor");
+            StartCoroutine("Melody_Chorus1_Phase1_Cor");
         else if (phase == 2)
-            StartCoroutine("Melody_Main_Phase2_Cor");
+            StartCoroutine("Melody_Chorus1_Phase2_Cor");
     }
 
 
-    private IEnumerator Melody_Main_Phase1_Cor() {
+    private IEnumerator Melody_Chorus1_Phase1_Cor() {
         base.Set_Can_Switch_Attack(false);
 
         //特定の位置にいなかったら移動
-        if (!Is_Equals_Pos(satomai.transform.position, configMain.pos_In_Shooting)) {
+        if (!Is_Equals_Pos(satomai.transform.position, configChorus1.pos_In_Shooting)) {
             Start_Melody_C();
             yield break;
         }
 
         _controller.Change_Animation("IdleBool");
 
-        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) {
             //レーザー
             for (int i = 0; i < 3; i++) {
                 _shoot.Shoot_Phase1_Laser();
-                yield return new WaitForSeconds(configMain.laser_Span);
-                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.main)
+                yield return new WaitForSeconds(configChorus1.laser_Span);
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
                     break;
             }
             //お札弾幕
             _shoot.Shoot_Phase1_Talisman_Bullet();
-            for(float t = 0; t < configMain.talismap_Shoot_Duration; t += Time.deltaTime) {                
-                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.main)
+            for(float t = 0; t < configChorus1.talismap_Shoot_Duration; t += Time.deltaTime) {                
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
                     break;
                 yield return null;
             }            
@@ -385,7 +379,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         //元の位置に移動
         _controller.Change_Animation("IdleBool");
         yield return new WaitForSeconds(1.0f);
-        satomai_Move.Start_Move(configMain.nutral_Pos, 2);
+        satomai_Move.Start_Move(configChorus1.nutral_Pos, 2);
         yield return new WaitUntil(satomai_Move.End_Move);
 
         //攻撃再開
@@ -394,11 +388,11 @@ public class SatoMaiAttack : BossEnemyAttack {
     }
 
 
-    private IEnumerator Melody_Main_Phase2_Cor() {
+    private IEnumerator Melody_Chorus1_Phase2_Cor() {
         base.Set_Can_Switch_Attack(false);
 
         //特定の位置にいなかったら移動
-        if (!Is_Equals_Pos(satomai.transform.position, configMain.pos_In_Shooting)) {
+        if (!Is_Equals_Pos(satomai.transform.position, configChorus1.pos_In_Shooting)) {
             Start_Melody_C();
             yield break;
         }
@@ -411,9 +405,9 @@ public class SatoMaiAttack : BossEnemyAttack {
         _shoot.Shoot_Phase2_Yinball_Bullet(false);
         yield return new WaitForSeconds(7.0f);
 
-        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.main) {
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) {
             _shoot.Shoot_Phase2_Laser();
-            yield return new WaitForSeconds(configMain.laser_Span);
+            yield return new WaitForSeconds(configChorus1.laser_Span);
         }
 
         //陰陽玉消す
@@ -422,7 +416,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         //元の位置に移動
         _controller.Change_Animation("IdleBool");
         yield return new WaitForSeconds(1.0f);
-        satomai_Move.Start_Move(configMain.nutral_Pos, 2);
+        satomai_Move.Start_Move(configChorus1.nutral_Pos, 2);
         yield return new WaitUntil(satomai_Move.End_Move);
 
         //攻撃再開
@@ -440,12 +434,37 @@ public class SatoMaiAttack : BossEnemyAttack {
     }
 
 
-    private void Stop_Melody_Main() {
-        StopCoroutine("Melody_Main_Phase1_Cor");
+    private void Stop_Melody_Chorus1() {
+        StopCoroutine("Melody_Chorus1_Phase1_Cor");
         _shoot.Stop_Phase1_Talisman_Shoot();
         _shoot.Delete_Yinball_Bullet();        
     }
 
     #endregion
     // ===================================================================
+
+    protected override void Start_Melody_Intro() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_A2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_B2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Pre_Chorus() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Chorus2() {
+        throw new System.NotImplementedException();
+    }
+
+    protected override void Start_Melody_Bridge() {
+        throw new System.NotImplementedException();
+    }
+
 }

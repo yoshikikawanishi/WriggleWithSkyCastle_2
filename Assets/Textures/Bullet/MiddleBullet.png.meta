@@ -1,9 +1,12 @@
 fileFormatVersion: 2
-guid: c8bd97d069e07bf45ba16be823065da4
+guid: 45774612a8cd1c54eb3bcd36fa994ad8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: KunaiBullet_0
-    21300002: KunaiBullet_1
+    21300000: MiddleBullet_0
+    21300002: MiddleBullet_1
+    21300004: MiddleBullet_2
+    21300006: MiddleBullet_3
+    21300008: MiddleBullet_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -33,7 +36,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -65,7 +68,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -76,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -87,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -98,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KunaiBullet_0
+      name: MiddleBullet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 14
-        height: 7
+        y: 0
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,19 +136,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b2cd5ca9c506a4f9dc89a65c8f78ec
+      spriteID: 7f8d8f4e10f277c4581c5b6817ad423a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KunaiBullet_1
+      name: MiddleBullet_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 29
         y: 0
-        width: 14
-        height: 7
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,7 +156,67 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fdf9b6058d05d943bb37dab048c9385
+      spriteID: 734fb2e320974b348bc762f10c7ceb79
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleBullet_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73fd7ee32216ad48999a40ae40ae7eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleBullet_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eae9a7a4a76552439772f36580ccc0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MiddleBullet_4
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1851fee254ebe094796bb9c3ed62ece9
       vertices: []
       indices: 
       edges: []
@@ -161,7 +224,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d98153b7d01a651468d420acf4a90ea7
+    spriteID: c176d7999eb925841a79265c6bf24f17
     vertices: []
     indices: 
     edges: []

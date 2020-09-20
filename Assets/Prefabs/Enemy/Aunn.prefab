@@ -2353,9 +2353,9 @@ MonoBehaviour:
   - span: {x: 26, y: 35}
     melody: 0
   - span: {x: 35, y: 46}
-    melody: 3
+    melody: 5
   - span: {x: 46, y: 72}
-    melody: 4
+    melody: 6
   - span: {x: 72, y: 81}
     melody: 1
 --- !u!114 &114392789584131402

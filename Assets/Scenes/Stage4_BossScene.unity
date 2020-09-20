@@ -3803,11 +3803,11 @@ MonoBehaviour:
   - span: {x: 0, y: 10}
     melody: 1
   - span: {x: 10, y: 20}
-    melody: 2
-  - span: {x: 20, y: 28}
     melody: 3
+  - span: {x: 20, y: 28}
+    melody: 9
   - span: {x: 28, y: 40}
-    melody: 4
+    melody: 6
 --- !u!4 &567795882
 Transform:
   m_ObjectHideFlags: 0

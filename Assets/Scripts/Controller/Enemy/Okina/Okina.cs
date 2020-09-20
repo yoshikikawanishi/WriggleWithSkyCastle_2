@@ -22,6 +22,7 @@ public class Okina : BossEnemy {
 
     public override void Start_Battle() {
         //BGMManager.Instance.Change_BGM()
+        Play_Battle_Effect();
         GetComponentInChildren<MelodyManager>().Start_Time_Count();
         base.Start_Battle();
     }
@@ -34,6 +35,7 @@ public class Okina : BossEnemy {
 
     protected override void Do_After_Clear_Process() {
         clear_Movie.Start_Movie();
+        Delete_Battle_Effect();
     }
 
     
@@ -48,4 +50,14 @@ public class Okina : BossEnemy {
         GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1f);
     }
 
+
+    //戦闘エフェクト(背景色、模様)
+    public void Play_Battle_Effect() {
+        BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 1);
+    }
+
+    //戦闘終了時の先頭エフェクト消す
+    public void Delete_Battle_Effect() {
+        BackGroundEffector.Instance.Change_Color_Default(1f);
+    }
 }

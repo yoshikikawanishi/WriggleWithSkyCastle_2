@@ -1521,6 +1521,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -1648,6 +1650,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -1775,6 +1779,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 1
@@ -1902,6 +1908,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -2029,6 +2037,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -2156,6 +2166,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -2283,6 +2295,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 1
       wait_Time: 0
@@ -2813,6 +2827,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -2940,6 +2956,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -3067,6 +3085,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 1
@@ -3194,6 +3214,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0
@@ -3321,6 +3343,8 @@ MonoBehaviour:
       obj: {fileID: 0}
       component: {fileID: 0}
       function_Name: 
+      component_Index: 0
+      method_Index: 0
     wait:
       wait_Message: 0
       wait_Time: 0

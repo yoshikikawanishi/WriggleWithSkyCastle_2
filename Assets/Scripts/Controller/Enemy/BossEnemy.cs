@@ -61,7 +61,7 @@ public class BossEnemy : MonoBehaviour {
     //========================戦闘開始、フェーズ切り替え時、クリア時の処理　：　行いたい処理を継承して追加すること====================
 
     //戦闘開始時の処理
-    public virtual void Start_Battle() {
+    public virtual void Start_Battle() {        
         state = State.battle;
     }
 
@@ -92,7 +92,7 @@ public class BossEnemy : MonoBehaviour {
     protected virtual void Do_After_Clear_Process() {
 
     }
-    
+       
 
     //=========================================================================================================================
 

@@ -7,10 +7,15 @@ public class MelodyManager : MonoBehaviour {
     //BGMの曲調
     public enum Melody {
        intro,
-       A,
-       B,
+       A1,
+       A2,
+       B1,
+       B2,
+       pre_Chorus,
+       chorus1,
+       chorus2,
+       bridge,
        C,
-       main,
        none,
     }
     private Melody now_Melody = Melody.none;

@@ -35,6 +35,7 @@ public class SatoMai : BossEnemy {
     public override void Start_Battle() {
         base.Start_Battle();
         melody_Manager.Start_Time_Count();
+        Play_Battle_Effect();
     }
 
 
@@ -51,6 +52,7 @@ public class SatoMai : BossEnemy {
     protected override void Do_After_Clear_Process() {
         base.Do_After_Clear_Process();
         clear_Movie.Start_Movie();
+        Delete_Battle_Effect();
     }
 
 
@@ -84,5 +86,15 @@ public class SatoMai : BossEnemy {
         satono.layer = LayerMask.NameToLayer("EnemyLayer");
         mai.layer = LayerMask.NameToLayer("EnemyLayer");
     }
-    
+
+
+    //戦闘エフェクト(背景色、模様)
+    public void Play_Battle_Effect() {
+        BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 1);
+    }
+
+    //戦闘終了時の先頭エフェクト消す
+    public void Delete_Battle_Effect() {
+        BackGroundEffector.Instance.Change_Color_Default(1f);
+    }
 }

@@ -34,11 +34,16 @@ public abstract class BossEnemyAttack : MonoBehaviour {
 
         //メロディ切り替え時
         switch (Switch_Melody_Trigger()) {
-            case MelodyManager.Melody.intro:    Start_Melody_Intro();   break;
-            case MelodyManager.Melody.A:        Start_Melody_A();       break;
-            case MelodyManager.Melody.B:        Start_Melody_B();       break;
-            case MelodyManager.Melody.C:        Start_Melody_C();       break;
-            case MelodyManager.Melody.main:     Start_Melody_Main();    break;
+            case MelodyManager.Melody.intro: Start_Melody_Intro(); break;
+            case MelodyManager.Melody.A1: Start_Melody_A1(); break;
+            case MelodyManager.Melody.A2: Start_Melody_A2(); break;
+            case MelodyManager.Melody.B1: Start_Melody_B1(); break;
+            case MelodyManager.Melody.B2: Start_Melody_B2(); break;
+            case MelodyManager.Melody.pre_Chorus: Start_Melody_Pre_Chorus(); break;
+            case MelodyManager.Melody.chorus1: Start_Melody_Chorus1(); break;
+            case MelodyManager.Melody.chorus2: Start_Melody_Chorus2(); break;
+            case MelodyManager.Melody.bridge: Start_Melody_Bridge(); break;
+            case MelodyManager.Melody.C: Start_Melody_C(); break;
         } 
     }
 
@@ -69,19 +74,30 @@ public abstract class BossEnemyAttack : MonoBehaviour {
             return;
         switch (melody_Manager.Get_Now_Melody()) {
             case MelodyManager.Melody.intro: Start_Melody_Intro(); break;
-            case MelodyManager.Melody.A: Start_Melody_A(); break;
-            case MelodyManager.Melody.B: Start_Melody_B(); break;
-            case MelodyManager.Melody.C: Start_Melody_C(); break;
-            case MelodyManager.Melody.main: Start_Melody_Main(); break;
+            case MelodyManager.Melody.A1: Start_Melody_A1(); break;
+            case MelodyManager.Melody.A2: Start_Melody_A2(); break;
+            case MelodyManager.Melody.B1: Start_Melody_B1(); break;
+            case MelodyManager.Melody.B2: Start_Melody_B2(); break;
+            case MelodyManager.Melody.pre_Chorus: Start_Melody_Pre_Chorus(); break;
+            case MelodyManager.Melody.chorus1: Start_Melody_Chorus1(); break;
+            case MelodyManager.Melody.chorus2: Start_Melody_Chorus2(); break;
+            case MelodyManager.Melody.bridge: Start_Melody_Bridge(); break;
+            case MelodyManager.Melody.C: Start_Melody_C(); break;            
         }
     }
     
 
     protected abstract void Start_Melody_Intro();
-    protected abstract void Start_Melody_A();
-    protected abstract void Start_Melody_B();
+    protected abstract void Start_Melody_A1();
+    protected abstract void Start_Melody_A2();
+    protected abstract void Start_Melody_B1();
+    protected abstract void Start_Melody_B2();
+    protected abstract void Start_Melody_Pre_Chorus();
+    protected abstract void Start_Melody_Chorus1();
+    protected abstract void Start_Melody_Chorus2();
+    protected abstract void Start_Melody_Bridge();
     protected abstract void Start_Melody_C();
-    protected abstract void Start_Melody_Main();
+    
 
     /// <summary>
     /// 全攻撃の終了
