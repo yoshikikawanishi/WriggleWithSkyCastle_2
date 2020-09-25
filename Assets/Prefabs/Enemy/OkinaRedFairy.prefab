@@ -208,7 +208,7 @@ MonoBehaviour:
   angle_Diff: 0
   looping: 1
   loop_Count: 10
-  span: 2
+  span: 3
   center_Angle_Diff: 0
 --- !u!114 &114492895781812276
 MonoBehaviour:

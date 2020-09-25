@@ -17,6 +17,7 @@ public class OkinaBlackBlueBullet : MonoBehaviour {
     void OnEnable() {
         time = 0;
         gameObject.layer = LayerMask.NameToLayer("InvincibleLayer");
+        _sprite.color = new Color(0.05f, 0.05f, 0.05f, 0.8f);
     }
 
 

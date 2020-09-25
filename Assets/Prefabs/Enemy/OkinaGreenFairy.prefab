@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kind: 0
+  kind: 2
   comment: 
   play_On_Awake: 0
   bullet: {fileID: 1742974461349758, guid: aee60bc3d16d58d4582e97f7de51b0a0, type: 2}
@@ -267,9 +267,9 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 1
+  num: 4
   inter_Angle_Deg: 30
-  center_Angle_Deg: 0
+  center_Angle_Deg: 45
   arc_Deg: 360
   shoot_Rate: 30
   duration: 5
@@ -279,7 +279,7 @@ MonoBehaviour:
   angle_Diff: 0
   looping: 1
   loop_Count: 10
-  span: 2
+  span: 3
   center_Angle_Diff: 0
 --- !u!212 &212010953349267424
 SpriteRenderer:
