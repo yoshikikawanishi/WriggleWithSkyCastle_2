@@ -48,14 +48,14 @@ public class FairyCrystal : MonoBehaviour {
         //待つ
         else if(state == State.idle) {
             //敵生成開始
-            if(time > 1.5f) {
+            if(time > 1.2f) {
                 state = State.converge;
                 converge_Effect.Play();
             }            
         }
         else if(state == State.converge) {
             //敵生成、消滅
-            if(time > 2.5f) {
+            if(time > 2.0f) {
                 state = State.disable;
                 Generate_Enemy();
                 Play_Burst_Effect();

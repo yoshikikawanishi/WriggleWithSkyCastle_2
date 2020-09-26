@@ -23,7 +23,7 @@ public class BossCollisionDetection : EnemyCollisionDetection {
         _boss_Enemy.Damaged(damage, key);
         //自機の緑ゲージ回復
         if (key != "PlayerBulletTag") {
-            BeetlePowerManager.Instance.StartCoroutine("Increase_Cor", 7);
+            BeetlePowerManager.Instance.StartCoroutine("Increase_Cor", 15);
         }
     }
 

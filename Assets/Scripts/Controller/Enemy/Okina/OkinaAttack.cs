@@ -11,23 +11,27 @@ public class OkinaAttack : BossEnemyAttack {
     private Okina _okina;
     private OkinaShoot _shoot;
     private OkinaEffect _effect;
+    private SEManager _se;
     private MoveConstTime _move_Const_Time;
     private GameObject player;
     private PlayerController player_Controller;
+    private CameraShake camera_Shake;
 
     private class Config {
         public readonly static Vector2 nutral_Pos = new Vector2(160f, 0);
     }    
 
 
-    void Start() {
+    void Start() {        
         //取得
         _okina = GetComponent<Okina>();
         _shoot = GetComponentInChildren<OkinaShoot>();
         _effect = GetComponentInChildren<OkinaEffect>();
+        _se = GetComponentInChildren<SEManager>();
         _move_Const_Time = GetComponent<MoveConstTime>();
         player = GameObject.FindWithTag("PlayerTag");
         player_Controller = player.GetComponent<PlayerController>();
+        camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
         //オブジェクトプール生成
         ObjectPoolManager.Instance.Create_New_Pool(fairy_Crystal_Red_Fairy, 3);
         ObjectPoolManager.Instance.Create_New_Pool(fairy_Crystal_Green_Fairy, 3);
@@ -37,19 +41,13 @@ public class OkinaAttack : BossEnemyAttack {
     public override void Stop_Attack() {
         Stop_Melody_A1();
         Stop_Melody_B1();
+        Stop_Melody_B2();
         Stop_Melody_Bridge();
         Stop_Melody_Chorus1();
-        Stop_Melody_Chorus2();
-        Stop_Melody_Bridge();
+        Stop_Melody_Chorus2();        
     }
 
-    //===========================================================================================
-    #region ChangePhase
-    protected override void Action_In_Change_Phase() {
-
-    }
-
-    #endregion
+    
     //===========================================================================================
     #region A1    
 
@@ -75,6 +73,8 @@ public class OkinaAttack : BossEnemyAttack {
             yield return new WaitForSeconds(2.0f);
             //クナイショット
             _shoot.Shoot_Kuani_Shoot1(pos);
+            _effect.Play_Burst_Effect_Green(pos);
+            UsualSoundManager.Instance.Play_Shoot_Sound();
             //移動
             Move_Random(48f);
             //5.5秒待つ、メロディ切り替わったら抜ける
@@ -105,7 +105,7 @@ public class OkinaAttack : BossEnemyAttack {
 
     private void Stop_Melody_A1() {
         StopCoroutine("Melody_A1_Cor");
-        Move_To_Nutral_Pos();
+        _move_Const_Time.Stop_Move();
         _shoot.Stop_Kunai_Shoot1();
         _effect.Delete_Back_Door_Effect();
     }
@@ -162,6 +162,7 @@ public class OkinaAttack : BossEnemyAttack {
         float span = ConfigB1.span;
         //無敵化
         _okina.Become_Invincible();
+        transform.position = new Vector3(1000f, 1000f, 0);
         //自機の飛行無効化
         _effect.Play_Small_Power_Charge_Effect();
         yield return new WaitForSeconds(1.5f);
@@ -204,6 +205,7 @@ public class OkinaAttack : BossEnemyAttack {
     private void Stop_Melody_B1() {
         StopCoroutine("Melody_B1_Cor");
         _okina.Release_Invincible();
+        transform.position = Config.nutral_Pos;
         _effect.Release_Ban_Flying_Effect();        
         player_Controller.To_Enable_Ride_Beetle();
     }
@@ -262,9 +264,6 @@ public class OkinaAttack : BossEnemyAttack {
                 break;
             }
         }
-        //戻る
-        _move_Const_Time.Start_Move(Config.nutral_Pos);
-        yield return new WaitUntil(_move_Const_Time.End_Move);
 
         base.Set_Can_Switch_Attack(true);
         Restart_Attack();
@@ -272,6 +271,7 @@ public class OkinaAttack : BossEnemyAttack {
 
     private void Stop_Melody_B2() {
         StopCoroutine("Molody_B2_Cor");
+        _move_Const_Time.Stop_Move();
     }
 
     #endregion
@@ -288,11 +288,14 @@ public class OkinaAttack : BossEnemyAttack {
     private IEnumerator Melody_Bridge_Cor() {
         base.Set_Can_Switch_Attack(false);
         while (true) {
-            //火柱生成
-            float pos_X = Random.Range(-160f, 160f);
+            //火柱予測線
+            float pos_X = player.transform.position.x;
             _effect.Play_Pre_Blue_Fire_Pillar_Effect(pos_X);
             yield return new WaitForSeconds(1.0f);
+            //火柱生成
             _shoot.Shoot_Blue_Pillar(pos_X);
+            _se.Play("FirePillar");
+            camera_Shake.Shake(2.0f, new Vector2(2f, 2f), true);
             yield return new WaitForSeconds(2.5f);
             //メロディ切り替わったら抜ける
             if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.bridge)
@@ -307,11 +310,40 @@ public class OkinaAttack : BossEnemyAttack {
     }
     #endregion
     //===========================================================================================
-    #region Chorus1
+    #region PreChorus
 
         /*
-         赤弾幕
+         サビ弾幕の位置に移動
          */
+    protected override void Start_Melody_Pre_Chorus() {
+        StartCoroutine("Melody_Pre_Chorus_Cor");
+    }
+
+    private IEnumerator Melody_Pre_Chorus_Cor() {        
+        //移動
+        _move_Const_Time.Start_Move(Config.nutral_Pos, 0);
+        //チャージ
+        _effect.Play_Power_Charge_Effect();
+        //少なくとも2秒は溜めること
+        yield return new WaitForSeconds(2.0f);
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.pre_Chorus) {            
+            yield return null;            
+        }        
+        _effect.Stop_Power_Charge_Effect();
+    }
+
+    private void Stop_Melody_Pre_Chorus() {
+        StopCoroutine("Melody_Pre_Chorus_Cor");
+        _move_Const_Time.Stop_Move();
+        _effect.Stop_Power_Charge_Effect();
+    }
+    #endregion
+    //===========================================================================================
+    #region Chorus1
+
+    /*
+     赤弾幕
+     */
     protected override void Start_Melody_Chorus1() {
         StartCoroutine("Melody_Chorus1_Cor");
     }
@@ -320,7 +352,8 @@ public class OkinaAttack : BossEnemyAttack {
         base.Set_Can_Switch_Attack(false);
         while (true) {
             //ショット
-            _shoot.Shoot_Red_Bullet();            
+            _shoot.Shoot_Red_Bullet();
+            _effect.Play_Burst_Effect_Red();
             yield return new WaitForSeconds(3.5f);
             //メロディ切り替わったら抜ける
             if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
@@ -345,6 +378,7 @@ public class OkinaAttack : BossEnemyAttack {
         base.Set_Can_Switch_Attack(false);
         //黒青弾幕
         _shoot.Shoot_Black_Blue_Bullet();
+        UsualSoundManager.Instance.Play_Shoot_Sound();
         while (true) {
             yield return null;
             //メロディ切り替わったら抜ける
@@ -352,6 +386,7 @@ public class OkinaAttack : BossEnemyAttack {
                 break;
         }
         _shoot.Stop_Black_Blue_Shoot();
+        yield return new WaitForSeconds(2.0f);
         base.Set_Can_Switch_Attack(true);
         Restart_Attack();
     }
@@ -362,22 +397,18 @@ public class OkinaAttack : BossEnemyAttack {
     }
     #endregion
     //===========================================================================================
-   
-    protected override void Start_Melody_C() {
-        throw new System.NotImplementedException();
-    }
 
     protected override void Start_Melody_Intro() {
         throw new System.NotImplementedException();
     }
-
-    protected override void Start_Melody_Pre_Chorus() {
-        throw new System.NotImplementedException();
-    }
-
-    //===============================================================
     protected override void Start_Melody_A2() {
         throw new System.NotImplementedException();
+    }
+    protected override void Start_Melody_C() {
+        throw new System.NotImplementedException();
+    }
+    protected override void Action_In_Change_Phase() {
+
     }
 
 }

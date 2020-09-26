@@ -9,8 +9,13 @@ public class Okina : BossEnemy {
     [SerializeField] private MovieSystem before_Movie_Skip;
     [SerializeField] private MovieSystem clear_Movie;
 
+    private OkinaAttack _attack;
+
 
     void Start() {
+        //取得
+        _attack = GetComponent<OkinaAttack>();
+        //ムービー
         if (SceneManagement.Instance.Is_First_Visit()) {
             before_Movie.Start_Movie();
         }
@@ -30,10 +35,12 @@ public class Okina : BossEnemy {
 
     protected override void Clear() {
         base.Clear();
+        _attack.Stop_Attack();
     }
 
 
     protected override void Do_After_Clear_Process() {
+        base.Do_After_Clear_Process();
         clear_Movie.Start_Movie();
         Delete_Battle_Effect();
     }

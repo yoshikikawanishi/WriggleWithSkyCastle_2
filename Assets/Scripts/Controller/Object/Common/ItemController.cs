@@ -41,13 +41,14 @@ public class ItemController : MonoBehaviour {
 
     //P取得時
     private void Gain_Power_Item() {
-        PlayerManager.Instance.Add_Power();
+        for(int i = 0; i < value; i++)
+            PlayerManager.Instance.Add_Power();
         UsualSoundManager.Instance.Play_Get_Small_Item_Sound();
     }
 
     //点取得時
     private void Gain_Score_Item() {
-        PlayerManager.Instance.Add_Score(100);
+        PlayerManager.Instance.Add_Score(value);
         UsualSoundManager.Instance.Play_Get_Small_Item_Sound();
     }
 

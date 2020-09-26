@@ -7,6 +7,7 @@ public class OkinaEffect : MonoBehaviour {
     [SerializeField] private GameObject power_Charge_Effect_Obj;
     [SerializeField] private ParticleSystem small_Power_Charge_Effect;
     [SerializeField] private ParticleSystem burst_Effect_Green;
+    [SerializeField] private ParticleSystem burst_Effect_Red;
     [SerializeField] private GameObject ban_Player_Flying_Effect_Obj;
     [SerializeField] private Animator disable_Flying_Screen_Effect;
     [SerializeField] private GameObject blue_Fire_Pillar_Pre_Effect;
@@ -43,6 +44,16 @@ public class OkinaEffect : MonoBehaviour {
         burst_Effect_Green.Play();
     }
 
+    public void Play_Burst_Effect_Green(Vector2 pos) {
+        var obj = Instantiate(burst_Effect_Green.gameObject);
+        obj.transform.position = pos;
+        obj.GetComponent<ParticleSystem>().Play();
+        Destroy(obj, 3.0f);
+    }
+
+    public void Play_Burst_Effect_Red() {
+        burst_Effect_Red.Play();
+    }
     //================================飛行不可エフェクト====================================
     public void Play_Ban_Flying_Effect() {
         ban_Player_Flying_Effect_Obj.GetComponent<AudioSource>().Play();
