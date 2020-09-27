@@ -7,7 +7,7 @@ public class BossCollisionDetection : EnemyCollisionDetection {
     protected BossEnemy _boss_Enemy;
     
 
-    private void Awake() {
+    void Awake() {
         _boss_Enemy = GetComponent<BossEnemy>();
         //ダメージ量変更
         damaged_Tag_Dictionary["PlayerAttackTag"] = 30;

@@ -31,6 +31,7 @@ public class BGMManagerEditor : Editor {
             EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.Space();
+            GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(2));
         }
 
         EditorUtility.SetDirty(obj);

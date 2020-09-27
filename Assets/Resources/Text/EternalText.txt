@@ -1,2 +1,2 @@
 #ID	#NAME	#PANELNUMBER	#MESSAGE
-1	おきな	0	ああああ
+1	ラルバ	1	ああああ

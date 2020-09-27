@@ -10,11 +10,13 @@ public class Okina : BossEnemy {
     [SerializeField] private MovieSystem clear_Movie;
 
     private OkinaAttack _attack;
+    private Animator _anim;
 
 
     void Start() {
         //取得
         _attack = GetComponent<OkinaAttack>();
+        _anim = GetComponent<Animator>();
         //ムービー
         if (SceneManagement.Instance.Is_First_Visit()) {
             before_Movie.Start_Movie();
@@ -23,11 +25,12 @@ public class Okina : BossEnemy {
             before_Movie_Skip.Start_Movie();
         }
     }
-
+    
 
     public override void Start_Battle() {
         //BGMManager.Instance.Change_BGM()
         Play_Battle_Effect();
+        Change_Animation("AttackBool");
         GetComponentInChildren<MelodyManager>().Start_Time_Count();
         base.Start_Battle();
     }
@@ -36,6 +39,7 @@ public class Okina : BossEnemy {
     protected override void Clear() {
         base.Clear();
         _attack.Stop_Attack();
+        Change_Animation("IdleBool");
     }
 
 
@@ -66,5 +70,15 @@ public class Okina : BossEnemy {
     //戦闘終了時の先頭エフェクト消す
     public void Delete_Battle_Effect() {
         BackGroundEffector.Instance.Change_Color_Default(1f);
+    }
+
+
+    //アニメーション変更
+    public void Change_Animation(string next_Parameter) {        
+        _anim.SetBool("IdleBool", false);
+        _anim.SetBool("AttackBool", false);
+        _anim.SetBool("DisappearBool", false);
+
+        _anim.SetBool(next_Parameter, true);
     }
 }

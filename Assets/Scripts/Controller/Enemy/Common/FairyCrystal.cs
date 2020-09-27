@@ -19,7 +19,6 @@ public class FairyCrystal : MonoBehaviour {
     private SpriteRenderer _sprite;
 
     private float time = 0;
-    private float blink_Time = 0;
 
 	
 	void Awake () {

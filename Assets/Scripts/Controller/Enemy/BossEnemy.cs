@@ -159,8 +159,8 @@ public class BossEnemy : MonoBehaviour {
 
     //点滅
     private IEnumerator Blink(Color blink_Color) {
-        _sprite.color = blink_Color;
-        yield return new WaitForSeconds(0.1f);
+        _sprite.color = blink_Color;        
+        yield return new WaitForSeconds(0.1f);        
         if (_sprite.color == blink_Color)
             _sprite.color = new Color(0.5f, 0.5f, 0.5f);
     }

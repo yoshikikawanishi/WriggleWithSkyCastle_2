@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: fb9534f97b662244d8ed131ebe247eb1
+guid: f2072025a9540e141b0f2c2406853937
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Nitori_0
-    21300002: Nitori_1
-    21300004: Nitori_2
-    21300006: Nitori_3
+    21300000: Okina_0
+    21300002: Okina_1
+    21300004: Okina_2
+    21300006: Okina_3
+    21300008: Okina_4
+    21300010: Okina_5
+    21300012: Okina_6
+    21300014: Okina_7
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -121,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nitori_0
+      name: Okina_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 20
-        height: 30
+        x: 0
+        y: 60
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,19 +139,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89db2a563d409747b1f06a622573617
+      spriteID: e926f54bc92eea94d9ebe3afee47db3b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nitori_1
+      name: Okina_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 0
-        width: 20
-        height: 30
+        x: 60
+        y: 60
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,19 +159,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed581c7377d14af40891db2beaa15b2f
+      spriteID: d729c5b0a5e65194b951b3ad20aca627
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nitori_2
+      name: Okina_2
       rect:
         serializedVersion: 2
-        x: 43
-        y: 0
-        width: 20
-        height: 30
+        x: 120
+        y: 60
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,19 +179,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ff3594b71a58d741925cdea7f259d92
+      spriteID: 4b13ce6e36dbad849b3cce74d546664f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nitori_3
+      name: Okina_3
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 20
-        height: 30
+        x: 180
+        y: 60
+        width: 60
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,7 +199,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f753a23ca402d54bb51c460592597e5
+      spriteID: 7fb8b5a50fe810947841278ba6937ad8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Okina_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7db4b68400f844b8d16f932f6569db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Okina_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f045965ba90d244bc026a4d73af96a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Okina_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d8c3ffd2db7dfb49b2c8e756e90ee9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Okina_7
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e186c37bb0981474da1e3d0b18da8487
       vertices: []
       indices: 
       edges: []
@@ -203,7 +287,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a76ed586256341b49a33a0430d7690ad
+    spriteID: a1bcf39db8342754ba0ecde580679bd8
     vertices: []
     indices: 
     edges: []

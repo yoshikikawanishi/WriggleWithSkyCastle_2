@@ -5,9 +5,11 @@ using UnityEngine;
 public class OkinaEffect : MonoBehaviour {
 
     [SerializeField] private GameObject power_Charge_Effect_Obj;
+    [SerializeField] private GameObject power_Charge_Effect_Blue_Obj;
     [SerializeField] private ParticleSystem small_Power_Charge_Effect;
     [SerializeField] private ParticleSystem burst_Effect_Green;
     [SerializeField] private ParticleSystem burst_Effect_Red;
+    [SerializeField] private ParticleSystem burst_Effect_Blue;
     [SerializeField] private GameObject ban_Player_Flying_Effect_Obj;
     [SerializeField] private Animator disable_Flying_Screen_Effect;
     [SerializeField] private GameObject blue_Fire_Pillar_Pre_Effect;
@@ -32,7 +34,16 @@ public class OkinaEffect : MonoBehaviour {
 
     public void Stop_Power_Charge_Effect() {
         power_Charge_Effect_Obj.SetActive(false);
-    }    
+    }
+
+    //================================大チャージ青====================================
+    public void Play_Power_Charge_Effect_Blue() {
+        power_Charge_Effect_Blue_Obj.SetActive(true);
+    }
+
+    public void Stop_Power_Charge_Effect_Blue() {
+        power_Charge_Effect_Blue_Obj.SetActive(false);
+    }
 
     //================================小チャージ====================================
     public void Play_Small_Power_Charge_Effect() {
@@ -53,6 +64,10 @@ public class OkinaEffect : MonoBehaviour {
 
     public void Play_Burst_Effect_Red() {
         burst_Effect_Red.Play();
+    }
+
+    public void Play_Burst_Effect_Blue() {
+        burst_Effect_Blue.Play();
     }
     //================================飛行不可エフェクト====================================
     public void Play_Ban_Flying_Effect() {

@@ -160,8 +160,11 @@ public class OkinaAttack : BossEnemyAttack {
     private IEnumerator Melody_B1_Cor() {
         base.Set_Can_Switch_Attack(false);
         float span = ConfigB1.span;
+        //消える
+        _okina.Change_Animation("DisappearBool");
+        yield return new WaitForSeconds(1.0f);
         //無敵化
-        _okina.Become_Invincible();
+        _okina.Become_Invincible();        
         transform.position = new Vector3(1000f, 1000f, 0);
         //自機の飛行無効化
         _effect.Play_Small_Power_Charge_Effect();
@@ -205,6 +208,7 @@ public class OkinaAttack : BossEnemyAttack {
     private void Stop_Melody_B1() {
         StopCoroutine("Melody_B1_Cor");
         _okina.Release_Invincible();
+        _okina.Change_Animation("AttackBool");
         transform.position = Config.nutral_Pos;
         _effect.Release_Ban_Flying_Effect();        
         player_Controller.To_Enable_Ride_Beetle();
@@ -288,11 +292,16 @@ public class OkinaAttack : BossEnemyAttack {
     private IEnumerator Melody_Bridge_Cor() {
         base.Set_Can_Switch_Attack(false);
         while (true) {
+            //溜め
+            _effect.Play_Power_Charge_Effect_Blue();
+            yield return new WaitForSeconds(0.5f);
             //火柱予測線
             float pos_X = player.transform.position.x;
             _effect.Play_Pre_Blue_Fire_Pillar_Effect(pos_X);
             yield return new WaitForSeconds(1.0f);
             //火柱生成
+            _effect.Stop_Power_Charge_Effect_Blue();
+            _effect.Play_Burst_Effect_Blue();
             _shoot.Shoot_Blue_Pillar(pos_X);
             _se.Play("FirePillar");
             camera_Shake.Shake(2.0f, new Vector2(2f, 2f), true);

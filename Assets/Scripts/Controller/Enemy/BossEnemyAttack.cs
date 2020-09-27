@@ -12,15 +12,13 @@ public abstract class BossEnemyAttack : MonoBehaviour {
 
     private MelodyManager.Melody now_Melody;
 
-
-    // Use this for initialization
+    
     void Start () {
         if (melody_Manager == null)
             this.enabled = false;
 	}
 
 	
-	// Update is called once per frame
 	protected void Update () {
         //フェーズ切り替え時
         if (now_Phase != boss_Enemy.Get_Now_Phase()) {

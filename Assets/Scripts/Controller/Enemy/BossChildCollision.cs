@@ -6,7 +6,10 @@ public class BossChildCollision : BossCollisionDetection {
 
     [SerializeField] private BossEnemy Boss_Enemy_Class;
 
-    private void Awake() {
+    private void Awake() {        
         _boss_Enemy = Boss_Enemy_Class;
     }
+
+
+    
 }
