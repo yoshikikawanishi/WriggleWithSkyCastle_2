@@ -20,7 +20,7 @@ public class Stage5_2Scene : MonoBehaviour {
     
     //敵生成開始・終了するカメラのx座標
     private const float START_GENERATE_ENEMY_LINE   = 120f;
-    private const float FINISH_GENERATE_ENEMY_LINE  = 4000f;    
+    private const float FINISH_GENERATE_ENEMY_LINE  = 3800f;    
 
     //生成の種類
     public enum GenKind {
@@ -59,6 +59,7 @@ public class Stage5_2Scene : MonoBehaviour {
 
     //大元の敵生成コルーチン
     private IEnumerator Generating_Flow_Cor() {
+        yield return new WaitForSeconds(1.0f);
         int list_Size = gen_List.Count;
         //特定の生成を順番に実行していく
         for(int i = 0; i < list_Size; i++) {

@@ -19,6 +19,7 @@ public class Narumi : BossEnemy {
         base.Start_Battle();
         _melody.Start_Time_Count();
         Play_Battle_Effect();
+        BGMManager.Instance.Change_BGM("Stage4_Boss");
     }
 
 

@@ -13295,6 +13295,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114129011430879730, guid: fc45abcca39c3d34ca7b6e6fc30f3d0b,
+        type: 2}
+      propertyPath: save_Point_Offset.x
+      value: -32
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc45abcca39c3d34ca7b6e6fc30f3d0b, type: 2}
   m_IsPrefabAsset: 0
