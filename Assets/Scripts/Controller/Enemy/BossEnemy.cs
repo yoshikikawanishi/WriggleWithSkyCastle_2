@@ -92,7 +92,19 @@ public class BossEnemy : MonoBehaviour {
     protected virtual void Do_After_Clear_Process() {
 
     }
-       
+
+
+    //被弾時のエフェクト
+    protected virtual void Play_Damaged_Effect(string damaged_Tag) {
+        StartCoroutine("Blink", new Color(0.5f, 0.25f, 0.25f));
+        //TODO: 被弾時のエフェクト
+        if (damaged_Tag == "PlayerBulletTag") {
+            if (life[now_Phase - 1] <= 30)
+                UsualSoundManager.Instance.Play_Enemy_Damaged_Sound();
+            else
+                UsualSoundManager.Instance.Play_Enemy_Damaged_Sound_Big();
+        }
+    }
 
     //=========================================================================================================================
 
@@ -135,19 +147,6 @@ public class BossEnemy : MonoBehaviour {
             else if (now_Phase == life.Count)
                 Clear();
         }        
-    }
-
-
-    //被弾時のエフェクト
-    private void Play_Damaged_Effect(string damaged_Tag) {
-        StartCoroutine("Blink", new Color(0.5f, 0.25f, 0.25f));
-        //TODO: 被弾時のエフェクト
-        if(damaged_Tag == "PlayerBulletTag") {
-            if(life[now_Phase-1] <= 30)
-                UsualSoundManager.Instance.Play_Enemy_Damaged_Sound();
-            else
-                UsualSoundManager.Instance.Play_Enemy_Damaged_Sound_Big();
-        }
     }
 
 

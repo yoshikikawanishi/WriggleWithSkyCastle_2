@@ -129,20 +129,44 @@ public class OkinaAttack : BossEnemyAttack {
 
     private class ConfigB1 {
         private static readonly Crystal[] crystal_Pos1 = {
-            new Crystal(new Vector2(128f, -72f), "red"),            
-            new Crystal(new Vector2(-128f, 48f), "green"),            
+            new Crystal(new Vector2(200f, -72f), "red"),
+            new Crystal(new Vector2(48f, -72f), "red"),
+            new Crystal(new Vector2(-48f, -72f), "red"),
+            new Crystal(new Vector2(200f, -72f), "red"),
+            new Crystal(new Vector2(-200f, 24f), "green"),
+            new Crystal(new Vector2(-96f, 48f), "green"),
+            new Crystal(new Vector2(200f, 48f), "green"),
+            new Crystal(new Vector2(96f, 24f), "green"),
         };
         private static readonly Crystal[] crystal_Pos2 = {
-            new Crystal(new Vector2(-128f, -72f), "red"),
-            new Crystal(new Vector2(128f, 48f), "green"),            
+            new Crystal(new Vector2(-200f, -72f), "red"),
+            new Crystal(new Vector2(-48f, -72f), "red"),
+            new Crystal(new Vector2(48f, -72f), "red"),
+            new Crystal(new Vector2(0f, -8f), "red"),
+            new Crystal(new Vector2(128f, 28f), "green"),
+            new Crystal(new Vector2(96f, 48f), "green"),
+            new Crystal(new Vector2(64f, 28f), "green"),
+            new Crystal(new Vector2(32f, 48f), "green"),            
         };
         private static readonly Crystal[] crystal_Pos3 = {
-            new Crystal(new Vector2(128f, 48f), "green"),
-            new Crystal(new Vector2(-128f, 48f), "green"),                        
+            new Crystal(new Vector2(128f, -72f), "red"),
+            new Crystal(new Vector2(48f, -72f), "red"),
+            new Crystal(new Vector2(-48f, -72f), "red"),
+            new Crystal(new Vector2(0f, -8f), "red"),
+            new Crystal(new Vector2(-128f, 64f), "green"),
+            new Crystal(new Vector2(-96f, 48f), "green"),
+            new Crystal(new Vector2(-64f, 24f), "green"),
+            new Crystal(new Vector2(-32f, 48f), "green"),
         };
         private static readonly Crystal[] crystal_Pos4 = {
-            new Crystal(new Vector2(128f, -72f), "red"),
-            new Crystal(new Vector2(-128f, -72f), "red"),
+            new Crystal(new Vector2(64f, -72f), "red"),
+            new Crystal(new Vector2(21f, -72f), "red"),
+            new Crystal(new Vector2(-21f, -72f), "red"),
+            new Crystal(new Vector2(64f, -72f), "red"),
+            new Crystal(new Vector2(-64f, 63f), "green"),
+            new Crystal(new Vector2(-21f, 24f), "green"),
+            new Crystal(new Vector2(64f, 48f), "green"),
+            new Crystal(new Vector2(21f, 48f), "green"),
         };
         public static readonly Crystal[][] positions = {
             crystal_Pos1,
@@ -177,7 +201,7 @@ public class OkinaAttack : BossEnemyAttack {
             //敵生成
             int r = Random.Range(0, 4);
             Crystal[] c = ConfigB1.positions[r];
-            for(int i = 0; i < 2; i++) {
+            for(int i = 0; i < 8; i++) {
                 Generate_Fairy_Crystal(c[i]);
                 yield return new WaitForSeconds(span);
             }
@@ -291,10 +315,10 @@ public class OkinaAttack : BossEnemyAttack {
 
     private IEnumerator Melody_Bridge_Cor() {
         base.Set_Can_Switch_Attack(false);
+        //溜め
+        _effect.Play_Power_Charge_Effect_Blue();
+        yield return new WaitForSeconds(1.0f);
         while (true) {
-            //溜め
-            _effect.Play_Power_Charge_Effect_Blue();
-            yield return new WaitForSeconds(0.5f);
             //火柱予測線
             float pos_X = player.transform.position.x;
             _effect.Play_Pre_Blue_Fire_Pillar_Effect(pos_X);
@@ -305,7 +329,7 @@ public class OkinaAttack : BossEnemyAttack {
             _shoot.Shoot_Blue_Pillar(pos_X);
             _se.Play("FirePillar");
             camera_Shake.Shake(2.0f, new Vector2(2f, 2f), true);
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(1.0f);
             //メロディ切り替わったら抜ける
             if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.bridge)
                 break;

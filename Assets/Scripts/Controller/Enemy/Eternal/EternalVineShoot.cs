@@ -6,9 +6,10 @@ public class EternalVineShoot : MonoBehaviour {
 
     [SerializeField] private Bullet vine_Bullet;
 
-    private readonly float shoot_Span = 0.1f;
+    private readonly float shoot_Span = 0.05f;
     private readonly float bullet_Lifetime = 2f;
     private readonly int bullet_Num = 50;    
+
 
     void Start() {
         ObjectPoolManager.Instance.Create_New_Pool(vine_Bullet.gameObject, 30);
@@ -42,7 +43,7 @@ public class EternalVineShoot : MonoBehaviour {
             if (count % divide_Count == 0) {
                 divide_Count += 5;
                 VineList v = new VineList();
-                float initial_Angle = Random.Range(0.3f * Mathf.PI, 1.8f * Mathf.PI);
+                float initial_Angle = Random.Range(0.5f * Mathf.PI, 1.5f * Mathf.PI);
                 v.Create_List(bullet_Num, pos, initial_Angle, Random.Range(-0.1f, 0.1f));
                 StartCoroutine(Vine_Shoot_Cor(v, divide_Count));
             }

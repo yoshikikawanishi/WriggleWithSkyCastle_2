@@ -7,7 +7,7 @@ public class EternalShoot : MonoBehaviour {
 
     [SerializeField] private EternalVineShoot vine_Shoot;
     [SerializeField] private ShootSystem ripples_Shoot;
-
+    [SerializeField] private GameObject master_Spark;
 
     //================================ Vine Shoot =========================================
     public void Shoot_Vine_Shoot(int divide_Count) {
@@ -24,5 +24,5 @@ public class EternalShoot : MonoBehaviour {
         ripples_Shoot.inter_Angle_Deg = 360f / num;
         ripples_Shoot.Shoot();
     }
-    
+    //================================== Master Spark =======================================
 }

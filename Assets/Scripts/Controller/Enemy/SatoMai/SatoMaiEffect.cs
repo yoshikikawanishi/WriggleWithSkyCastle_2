@@ -8,6 +8,8 @@ public class SatoMaiEffect : MonoBehaviour {
     [SerializeField] private GameObject mai_Cross_Rushing_Effect_Right;
     [SerializeField] private GameObject mai_Cross_Rushing_Effect_Left;
     [SerializeField] private GameObject satono_Cross_Rushing_Effect;
+    [SerializeField] private GameObject rolling_Rush_Pre_Effect_Right;
+    [SerializeField] private GameObject rolling_Rush_Pre_Effect_Left;
 
     private List<GameObject> power_Charge_Effects = new List<GameObject>();
 
@@ -55,5 +57,21 @@ public class SatoMaiEffect : MonoBehaviour {
 
     public void Stop_Satono_Cross_Rushing_Effect() {
         satono_Cross_Rushing_Effect.SetActive(false);
+    }
+
+
+    //direciont > 0 : 右向き
+    public void Play_Rolling_Rush_Effect(int direction, float height) {
+        GameObject effect;
+        if (direction > 0) {
+            effect = Instantiate(rolling_Rush_Pre_Effect_Right);
+            effect.transform.position = new Vector3(-260f, height);                        
+        }
+        else {
+            effect = Instantiate(rolling_Rush_Pre_Effect_Left);
+            effect.transform.position = new Vector3(260f, height);
+        }
+        effect.SetActive(true);
+        Destroy(effect, 3.0f);
     }
 }

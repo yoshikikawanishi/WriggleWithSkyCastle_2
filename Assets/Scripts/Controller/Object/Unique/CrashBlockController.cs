@@ -23,11 +23,13 @@ public class CrashBlockController : MonoBehaviour {
     [Space]
     [SerializeField] private Sprite damaged_Sprite;
 
+    private Sprite default_Sprite;
     private int default_Life;
     private Color default_Color;
 
     //Awake
     private void Awake() {
+        default_Sprite = GetComponent<SpriteRenderer>().sprite;
         default_Life = life;
         default_Color = GetComponent<SpriteRenderer>().color;
     }
@@ -35,6 +37,7 @@ public class CrashBlockController : MonoBehaviour {
 
     //OnEnable
     private void OnEnable() {
+        GetComponent<SpriteRenderer>().sprite = default_Sprite;
         life = default_Life;
     }
 
@@ -103,15 +106,13 @@ public class CrashBlockController : MonoBehaviour {
         }
         GameObject effect = transform.GetChild(0).gameObject;
         if (is_Pooled) {
-            Instantiate(effect);
-            effect.transform.position = transform.position;
-            Destroy(effect, 1.0f);
+            effect = Instantiate(effect);            
         }
-        else {
-            effect.transform.SetParent(null);
-            effect.SetActive(true);
-            Destroy(effect, 1.0f);
-        }
+        effect.transform.position = transform.position;
+        effect.transform.SetParent(null);
+        effect.SetActive(true);
+        Destroy(effect, 1.0f);
+        
     }
 
 
@@ -124,6 +125,16 @@ public class CrashBlockController : MonoBehaviour {
         GetComponent<SpriteRenderer>().color = default_Color + new Color(0.2f, 0.2f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         GetComponent<SpriteRenderer>().color = default_Color;
+    }
+
+
+    //プログラムから壊す
+    public void Crash() {
+        Play_Effect();
+        if (is_Pooled)
+            gameObject.SetActive(false);
+        else
+            Destroy(gameObject);
     }
 
 }

@@ -31,6 +31,22 @@ public class SatoMai : BossEnemy {
     }
 
 
+    protected override void Play_Damaged_Effect(string damaged_Tag) {
+        base.Play_Damaged_Effect(damaged_Tag);
+        StartCoroutine("Blink_Cor");
+    }
+
+    private IEnumerator Blink_Cor() {
+        satomai.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.25f, 0.25f, 1);
+        satono.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.25f, 0.25f, 1);
+        mai.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.25f, 0.25f, 1);
+        yield return new WaitForSeconds(0.1f);
+        satomai.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
+        satono.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
+        mai.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 1);
+    }
+
+
     //戦闘開始時の処理
     public override void Start_Battle() {
         base.Start_Battle();
@@ -57,6 +73,18 @@ public class SatoMai : BossEnemy {
 
 
     public void Change_Animation(string next_Bool) {
+        //座標そろえる
+        if(next_Bool == "IdleBool" || next_Bool == "RollingRushing") {
+            if (!satomai.activeSelf) {
+                satomai.transform.position = satono.transform.position;
+            }
+        }
+        else {
+            if (satomai.activeSelf) {
+                satono.transform.position = satomai.transform.position;
+                mai.transform.position = satomai.transform.position;
+            }
+        }
         foreach(AnimatorControllerParameter param in _anim.parameters) {
             if (param.name.Contains("Bool")) {
                 _anim.SetBool(param.name, false);

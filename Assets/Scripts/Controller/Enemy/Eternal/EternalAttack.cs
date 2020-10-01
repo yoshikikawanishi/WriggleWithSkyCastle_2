@@ -4,24 +4,54 @@ using UnityEngine;
 
 public class EternalAttack : BossEnemyAttack {
 
+    private Eternal _eternal;
     private EternalShoot _shoot;
+    private EternalEffect _effect;
+    private BossChildCollision _collision;
     private GameObject player;
 
     private class Config {
         public static readonly Vector2 nutral_Pos = new Vector2(160f, 0);
+        public static readonly Vector2 center_Pos = new Vector2(0, 0);
     }
+
+    private enum State {
+        idle,
+        warping,
+    }
+    private State state = State.idle;
 
 
     void Awake() {
         //取得
+        _eternal = GetComponent<Eternal>();
         _shoot = GetComponentInChildren<EternalShoot>();
+        _effect = GetComponentInChildren<EternalEffect>();
+        _collision = GetComponentInChildren<BossChildCollision>();
         player = GameObject.FindWithTag("PlayerTag");
     }
 
 
     //ワープする
     public void Warp(Vector2 next_Pos) {
-        transform.position = next_Pos;
+        if (state == State.warping)
+            return;
+        state = State.warping;
+        StartCoroutine("Warp_Cor", next_Pos);
+    }
+
+    private IEnumerator Warp_Cor(Vector2 next_Pos) {
+        _eternal.Change_Animation("CloseTrigger");
+        _collision.Become_Invincible();
+        yield return new WaitForSeconds(0.6f);
+        GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        transform.position = next_Pos;        
+        _eternal.Change_Animation("OpenTrigger");
+        GetComponent<SpriteRenderer>().enabled = true;
+        state = State.idle;
+        yield return new WaitForSeconds(0.5f);
+        _collision.Release_Invincible();        
     }
 
     //==========================================================
@@ -48,7 +78,7 @@ public class EternalAttack : BossEnemyAttack {
         base.Set_Can_Switch_Attack(false);
         //移動
         Warp(Config.nutral_Pos);
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
         //ショット
         while (true) {
             int divide_Count = boss_Enemy.Get_Now_Phase() == 1 ? 8 : 6;
@@ -87,10 +117,10 @@ public class EternalAttack : BossEnemyAttack {
 
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.B1) {
             //ワープ
-            Vector2 next_Pos = new Vector2(Random.Range(30f, 180f), Random.Range(-120f, 120f));
+            Vector2 next_Pos = new Vector2(Random.Range(130f, 180f), Random.Range(-120f, 120f));
             next_Pos = new Vector2(next_Pos.x * -player.transform.position.x.CompareTo(0), next_Pos.y);
             Warp(next_Pos);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);                        
             //ショット
             int num = boss_Enemy.Get_Now_Phase() == 1 ? 20 : 36;
             _shoot.Shoot_Ripples_Shoot(num);
@@ -110,6 +140,33 @@ public class EternalAttack : BossEnemyAttack {
     }
     #endregion
     //==========================================================
+    #region PreChorus
+        /*
+            ワープ移動　→　溜め
+         */
+    protected override void Start_Melody_Pre_Chorus() {
+        StartCoroutine("Melody_Pre_Chorus_Cor");
+    }
+
+    private IEnumerator Melody_Pre_Chorus_Cor() {
+        base.Set_Can_Switch_Attack(false);
+        //ワープ
+        Vector2 pos = boss_Enemy.Get_Now_Phase() == 1 ? Config.nutral_Pos : Config.center_Pos;
+        Warp(pos);
+        yield return new WaitForSeconds(1.5f);
+        //溜める
+        _effect.Play_Power_Charge_Effect(1000f);
+        yield return new WaitForSeconds(2.0f);
+        while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.pre_Chorus) {
+            yield return null;
+        }
+        _effect.Stop_Power_Charge_Effect();
+
+        base.Set_Can_Switch_Attack(true);
+        base.Restart_Attack();
+    }
+    #endregion
+    //===================================================================
     protected override void Start_Melody_A2() {
         throw new System.NotImplementedException();
     }
@@ -138,8 +195,5 @@ public class EternalAttack : BossEnemyAttack {
     protected override void Start_Melody_Intro() {
         throw new System.NotImplementedException();
     }
-
-    protected override void Start_Melody_Pre_Chorus() {
-        throw new System.NotImplementedException();
-    }
+    
 }

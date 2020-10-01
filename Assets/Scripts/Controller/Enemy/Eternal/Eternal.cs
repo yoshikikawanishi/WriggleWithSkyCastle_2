@@ -9,13 +9,15 @@ public class Eternal : BossEnemy {
     [SerializeField] private MovieSystem before_Movie_Skip;
     [SerializeField] private MovieSystem clear_Movie;
 
-    private EternalAttack _attack;
+    private Animator _anim;
+    private EternalAttack _attack;    
     private MelodyManager melody_Manager;
 
     void Start() {
         //取得
-        melody_Manager = GetComponentInChildren<MelodyManager>();
+        _anim = GetComponent<Animator>();        
         _attack = GetComponent<EternalAttack>();
+        melody_Manager = GetComponentInChildren<MelodyManager>();
         //ムービー
         if (SceneManagement.Instance.Is_First_Visit()) {
             before_Movie.Start_Movie();
@@ -54,5 +56,20 @@ public class Eternal : BossEnemy {
     //戦闘終了時の先頭エフェクト消す
     public void Delete_Battle_Effect() {
         
+    }
+
+
+    public void Change_Animation(string next_Parameter) {
+        foreach (AnimatorControllerParameter param in _anim.parameters) {
+            if (param.name.Contains("Bool")) {
+                _anim.SetBool(param.name, false);
+            }
+        }
+        if (next_Parameter.Contains("Bool")) {
+            _anim.SetBool(next_Parameter, true);
+        }
+        else if (next_Parameter.Contains("Trigger")) {            
+            _anim.SetTrigger(next_Parameter);            
+        }
     }
 }
