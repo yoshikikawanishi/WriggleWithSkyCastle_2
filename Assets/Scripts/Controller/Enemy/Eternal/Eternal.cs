@@ -10,9 +10,13 @@ public class Eternal : BossEnemy {
     [SerializeField] private MovieSystem clear_Movie;
 
     private EternalAttack _attack;
-
+    private MelodyManager melody_Manager;
 
     void Start() {
+        //取得
+        melody_Manager = GetComponentInChildren<MelodyManager>();
+        _attack = GetComponent<EternalAttack>();
+        //ムービー
         if (SceneManagement.Instance.Is_First_Visit()) {
             before_Movie.Start_Movie();
         }
@@ -25,6 +29,7 @@ public class Eternal : BossEnemy {
     public override void Start_Battle() {
         base.Start_Battle();
         Play_Battle_Effect();
+        melody_Manager.Start_Time_Count();
     }
 
 
