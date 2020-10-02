@@ -8,6 +8,8 @@ public class EternalShoot : MonoBehaviour {
     [SerializeField] private EternalVineShoot vine_Shoot;
     [SerializeField] private ShootSystem ripples_Shoot;
     [SerializeField] private GameObject master_Spark;
+    [SerializeField] private ShootSystem spiral_Shoot_Strong;
+    [SerializeField] private ShootSystem spiral_Shoot_Weak;
 
     //================================ Vine Shoot =========================================
     public void Shoot_Vine_Shoot(int divide_Count) {
@@ -25,4 +27,21 @@ public class EternalShoot : MonoBehaviour {
         ripples_Shoot.Shoot();
     }
     //================================== Master Spark =======================================
+
+    //================================== Spiral Shoot =======================================
+    public void Shoot_Spiral_Shoot_Strong() {
+        spiral_Shoot_Strong.Shoot();
+    }
+
+    public void Shoot_Spiral_Shoot_Weak() {
+        spiral_Shoot_Weak.Shoot();
+    }
+
+    public void Stop_Spiral_Shoot_Strong() {
+        spiral_Shoot_Strong.Stop_Shoot();
+    }
+
+    public void Stop_Spiral_Shoot_Weak() {
+        spiral_Shoot_Weak.Stop_Shoot();
+    }
 }

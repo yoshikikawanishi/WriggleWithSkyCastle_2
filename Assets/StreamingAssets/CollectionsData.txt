@@ -11,3 +11,4 @@ Hina	False
 Momizi	False
 Aya	False
 Saki	True
+Yamame	True

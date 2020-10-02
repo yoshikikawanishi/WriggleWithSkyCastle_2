@@ -195,6 +195,9 @@ public class OkinaAttack : BossEnemyAttack {
         yield return new WaitForSeconds(1.5f);
         _effect.Play_Ban_Flying_Effect();        
         yield return new WaitForSeconds(1.5f);
+        while (!player_Controller.Get_Can_Ride_Beetle()) {
+            yield return null;
+        }
         player_Controller.To_Disable_Ride_Beetle();
 
         while (true) {

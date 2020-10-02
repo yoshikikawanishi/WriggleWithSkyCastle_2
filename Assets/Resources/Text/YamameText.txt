@@ -1,0 +1,2 @@
+#ID	#NAME	#PANELNUMBER	#MESSAGE
+1	ヤマメ	0	ああああ

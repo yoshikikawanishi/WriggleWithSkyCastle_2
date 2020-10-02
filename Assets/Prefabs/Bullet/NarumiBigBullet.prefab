@@ -31,7 +31,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1720480413885822
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,10 +205,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: 20
+  inter_Angle_Deg: 18
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 5
+  shoot_Rate: 6
   duration: 5
   connect_Bullet: 0
   connect_Num: 1
@@ -375,10 +375,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: -20
+  inter_Angle_Deg: -18
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 5
+  shoot_Rate: 6
   duration: 5
   connect_Bullet: 0
   connect_Num: 1

@@ -318,7 +318,7 @@ public class NarumiAttack : BossEnemyAttack {
             Vector3 pos = new Vector3(Random.Range(-50f, 100f), Random.Range(-100f, 100f));
             _shoot.Shoot_Big_Bullet(pos);
             _effect.Play_Burst_Red();
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(4.0f);
         }
         yield return null;
     }
