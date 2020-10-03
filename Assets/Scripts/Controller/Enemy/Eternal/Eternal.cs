@@ -8,6 +8,7 @@ public class Eternal : BossEnemy {
     [SerializeField] private MovieSystem before_Movie;
     [SerializeField] private MovieSystem before_Movie_Skip;
     [SerializeField] private MovieSystem clear_Movie;
+    
 
     private Animator _anim;
     private EternalAttack _attack;    
@@ -31,7 +32,7 @@ public class Eternal : BossEnemy {
     public override void Start_Battle() {
         base.Start_Battle();
         Play_Battle_Effect();
-        melody_Manager.Start_Time_Count();
+        melody_Manager.Start_Time_Count();        
     }
 
 
@@ -43,8 +44,8 @@ public class Eternal : BossEnemy {
 
     protected override void Do_After_Clear_Process() {
         base.Do_After_Clear_Process();
-        clear_Movie.Start_Movie();
         Delete_Battle_Effect();
+        clear_Movie.Start_Movie();
     }
 
 

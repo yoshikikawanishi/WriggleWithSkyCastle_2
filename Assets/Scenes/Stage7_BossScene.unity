@@ -113,435 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &30656764
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 30656765}
-  - component: {fileID: 30656766}
-  m_Layer: 0
-  m_Name: beforeMovieSkip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &30656765
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 30656764}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 154237949}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &30656766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 30656764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
-  list:
-  - name: "\u4F1A\u8A71"
-    type: 0
-    message:
-      file_Name: EternalText
-      dual_Panel: 1
-      id: {x: 1, y: 1}
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      apply_Root_Position: 0
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    animation:
-      animator: {fileID: 0}
-      kind: 0
-      parameter: 
-      boolean: 0
-    localScale:
-      obj: {fileID: 0}
-      kind: 0
-      scale: {x: 0, y: 0}
-      x_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      obj: {fileID: 0}
-      component: {fileID: 0}
-      function_Name: 
-      component_Index: 0
-      method_Index: 0
-    wait:
-      wait_Message: 0
-      wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: "\u4F1A\u8A71\u5F85\u3061"
-    type: 6
-    message:
-      file_Name: 
-      dual_Panel: 1
-      id: {x: 0, y: 0}
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      apply_Root_Position: 0
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    animation:
-      animator: {fileID: 0}
-      kind: 0
-      parameter: 
-      boolean: 0
-    localScale:
-      obj: {fileID: 0}
-      kind: 0
-      scale: {x: 0, y: 0}
-      x_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      obj: {fileID: 0}
-      component: {fileID: 0}
-      function_Name: 
-      component_Index: 0
-      method_Index: 0
-    wait:
-      wait_Message: 1
-      wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: "\u6226\u95D8\u958B\u59CB"
-    type: 5
-    message:
-      file_Name: 
-      dual_Panel: 1
-      id: {x: 0, y: 0}
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      apply_Root_Position: 0
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    animation:
-      animator: {fileID: 0}
-      kind: 0
-      parameter: 
-      boolean: 0
-    localScale:
-      obj: {fileID: 0}
-      kind: 0
-      scale: {x: 0, y: 0}
-      x_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      obj: {fileID: 1014760609}
-      component: {fileID: 1014760611}
-      function_Name: Start_Battle
-      component_Index: 0
-      method_Index: 0
-    wait:
-      wait_Message: 0
-      wait_Time: 0
-    is_Open_In_Inspector: 1
 --- !u!1001 &48549323
 Prefab:
   m_ObjectHideFlags: 0
@@ -552,7 +123,7 @@ Prefab:
     - target: {fileID: 224256055338279390, guid: e55a7b4de938d0f47b148d991dd03597,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224256055338279390, guid: e55a7b4de938d0f47b148d991dd03597,
         type: 2}
@@ -592,7 +163,7 @@ Prefab:
     - target: {fileID: 224256055338279390, guid: e55a7b4de938d0f47b148d991dd03597,
         type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224256055338279390, guid: e55a7b4de938d0f47b148d991dd03597,
         type: 2}
@@ -647,306 +218,119 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e55a7b4de938d0f47b148d991dd03597, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &64613177
+--- !u!1 &89717410
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1886875275799854, guid: a1ea28094736e434a827aea05559829e,
+    type: 2}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 64613178}
-  - component: {fileID: 64613179}
-  m_Layer: 0
-  m_Name: ClearMovie
+  - component: {fileID: 89717415}
+  - component: {fileID: 89717414}
+  - component: {fileID: 89717413}
+  - component: {fileID: 89717412}
+  - component: {fileID: 89717411}
+  m_Layer: 5
+  m_Name: LastBattleCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &64613178
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 64613177}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 154237949}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &64613179
+--- !u!114 &89717411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 64613177}
+  m_GameObject: {fileID: 89717410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Script: {fileID: 11500000, guid: e46db61a4dc79744e848d5dcf5a88568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
-  list:
-  - name: "\u4F1A\u8A71"
-    type: 0
-    message:
-      file_Name: EternalText
-      dual_Panel: 1
-      id: {x: 1, y: 1}
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      apply_Root_Position: 0
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    animation:
-      animator: {fileID: 0}
-      kind: 0
-      parameter: 
-      boolean: 0
-    localScale:
-      obj: {fileID: 0}
-      kind: 0
-      scale: {x: 0, y: 0}
-      x_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      obj: {fileID: 0}
-      component: {fileID: 0}
-      function_Name: 
-      component_Index: 0
-      method_Index: 0
-    wait:
-      wait_Message: 0
-      wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: "\u4F1A\u8A71\u5F85\u3061"
-    type: 6
-    message:
-      file_Name: 
-      dual_Panel: 1
-      id: {x: 0, y: 0}
-      is_Auto: 0
-    motion:
-      obj: {fileID: 0}
-      apply_Root_Position: 0
-      x_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Move:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    animation:
-      animator: {fileID: 0}
-      kind: 0
-      parameter: 
-      boolean: 0
-    localScale:
-      obj: {fileID: 0}
-      kind: 0
-      scale: {x: 0, y: 0}
-      x_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      y_Curve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    gen_Obj:
-      obj: {fileID: 0}
-      parent: {fileID: 0}
-      position: {x: 0, y: 0}
-    function:
-      obj: {fileID: 0}
-      component: {fileID: 0}
-      function_Name: 
-      component_Index: 0
-      method_Index: 0
-    wait:
-      wait_Message: 1
-      wait_Time: 0
-    is_Open_In_Inspector: 1
+  eternal_Last_Attack: {fileID: 1014760616}
+  time_Count_Text: {fileID: 194095197}
+--- !u!114 &89717412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114641740019586482, guid: a1ea28094736e434a827aea05559829e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89717410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &89717413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 114034038496506220, guid: a1ea28094736e434a827aea05559829e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89717410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &89717414
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 223804862135640914, guid: a1ea28094736e434a827aea05559829e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89717410}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &89717415
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 224725051437596266, guid: a1ea28094736e434a827aea05559829e,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 89717410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 194095195}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &154237948
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,11 +357,291 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2121648307}
-  - {fileID: 30656765}
-  - {fileID: 64613178}
+  - {fileID: 816850166}
+  - {fileID: 1848938600}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &180986347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 180986348}
+  - component: {fileID: 180986350}
+  - component: {fileID: 180986349}
+  m_Layer: 9
+  m_Name: WingShootInToOut
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &180986348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180986347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 570821075}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &180986349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180986347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 5
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1652427562277480, guid: 4be1c75ba24ab7b49a94256e538d26e5, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 140
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 5
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: -10
+  center_Angle_Deg: 170
+  arc_Deg: 360
+  shoot_Rate: 10
+  duration: 1
+  connect_Bullet: 1
+  connect_Num: 5
+  speed_Diff: 10
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &180986350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 180986347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 5
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1652427562277480, guid: 4be1c75ba24ab7b49a94256e538d26e5, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 140
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 5
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 1
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 10
+  center_Angle_Deg: 190
+  arc_Deg: 360
+  shoot_Rate: 10
+  duration: 1
+  connect_Bullet: 1
+  connect_Num: 5
+  speed_Diff: 10
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 2
+  center_Angle_Diff: 0
+--- !u!1 &194095194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194095195}
+  - component: {fileID: 194095198}
+  - component: {fileID: 194095197}
+  - component: {fileID: 194095196}
+  m_Layer: 5
+  m_Name: TimeCountText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &194095195
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194095194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 89717415}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -48}
+  m_SizeDelta: {x: 160, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &194095196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194095194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.9339623, g: 0.039649326, b: 0.039649326, a: 1}
+  m_EffectDistance: {x: 1.5, y: 1.5}
+  m_UseGraphicAlpha: 1
+--- !u!114 &194095197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194095194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f08d8e6e029469844806fba12b0a7f72, type: 3}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 100
+--- !u!222 &194095198
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 194095194}
+  m_CullTransparentMesh: 0
 --- !u!1 &195885313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &245266295
 GameObject:
@@ -1054,6 +718,7 @@ GameObject:
   - component: {fileID: 245266299}
   - component: {fileID: 245266297}
   - component: {fileID: 245266296}
+  - component: {fileID: 245266298}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -1086,6 +751,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+--- !u!114 &245266298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 245266295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de8b9b55e4a94c46a35e94acd3c76ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &245266299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,7 +813,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &287692840
 GameObject:
@@ -1169,6 +845,7 @@ Transform:
   - {fileID: 1103737335}
   - {fileID: 415715778}
   - {fileID: 1273842488}
+  - {fileID: 474133994}
   m_Father: {fileID: 1014760613}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1188,6 +865,7 @@ MonoBehaviour:
   burst_Effect_White: {fileID: 415715779}
   ban_Player_Flying_Effect_Obj: {fileID: 1273842487}
   disable_Flying_Screen_Effect: {fileID: 393216146}
+  roaring_Effect_Obj: {fileID: 1739309587}
 --- !u!1 &305708129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,7 +1096,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -6161,6 +5839,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &474133993
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 287692841}
+    m_Modifications:
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327469712354716, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 33664be22cf6b0c46b985c5b86ae75b6, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &474133994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4192179850564440, guid: 33664be22cf6b0c46b985c5b86ae75b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 474133993}
 --- !u!1 &570821074
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,6 +5920,8 @@ Transform:
   - {fileID: 678309047}
   - {fileID: 1984970508}
   - {fileID: 1810246298}
+  - {fileID: 180986348}
+  - {fileID: 2046005910}
   m_Father: {fileID: 1014760613}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6207,9 +5938,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vine_Shoot: {fileID: 570821077}
   ripples_Shoot: {fileID: 678309048}
-  master_Spark: {fileID: 0}
+  master_Spark_Prefab: {fileID: 1221592029715424, guid: 442cc8b559600c94593436a1aee977db,
+    type: 2}
   spiral_Shoot_Strong: {fileID: 1984970509}
   spiral_Shoot_Weak: {fileID: 1810246299}
+  wing_Shoot_Obj: {fileID: 2046005909}
+  wing_Shoot_Reverse_Obj: {fileID: 180986347}
 --- !u!114 &570821077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6259,6 +5993,8 @@ MonoBehaviour:
     melody: 5
   - span: {x: 30, y: 40}
     melody: 6
+  - span: {x: 40, y: 80}
+    melody: 7
 --- !u!4 &584384194
 Transform:
   m_ObjectHideFlags: 0
@@ -6270,7 +6006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1014760613}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &678309046
 GameObject:
@@ -6317,7 +6053,7 @@ MonoBehaviour:
   play_On_Awake: 0
   bullet: {fileID: 1014375489027698, guid: 3b060a1bd16b6b447a4a2c2eecb7671d, type: 2}
   parent: {fileID: 0}
-  max_Speed: 180
+  max_Speed: 140
   radius: 4
   speed_Noise: 0
   angle_Noise: 0
@@ -6417,6 +6153,1155 @@ MonoBehaviour:
   loop_Count: 1
   span: 1
   center_Angle_Diff: 0
+--- !u!1 &816850165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816850166}
+  - component: {fileID: 816850167}
+  m_Layer: 0
+  m_Name: LastBattleMovie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &816850166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816850165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 154237949}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &816850167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 816850165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_Disable_Controlle: 1
+  list:
+  - name: "\u30BF\u30A4\u30DE\u30FC\u30AB\u30A6\u30F3\u30C8\u8868\u793A"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1014760609}
+      component: {fileID: 1014760616}
+      function_Name: Enable_Time_Count_UI
+      component_Index: 2
+      method_Index: 1
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u30DF\u30CB\u30E9\u30EB\u30D0\u8868\u793A"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1014760609}
+      component: {fileID: 1014760616}
+      function_Name: Enable_Mini_Larva
+      component_Index: 2
+      method_Index: 2
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u30DF\u30CB\u30E9\u30EB\u30D0\u79FB\u52D5"
+    type: 1
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 904077895}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 250
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 2
+          value: -170
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 2
+          value: 106
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u79FB\u52D5\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 2
+    is_Open_In_Inspector: 1
+  - name: "\u30BF\u30A4\u30E0\u30AB\u30A6\u30F3\u30C8\u5909\u52D5"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1014760609}
+      component: {fileID: 1014760616}
+      function_Name: Increase_Time_Count
+      component_Index: 2
+      method_Index: 3
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u30BF\u30A4\u30E0\u30AB\u30A6\u30F3\u30C8\u5909\u52D5\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 2
+    is_Open_In_Inspector: 1
+  - name: "\u30DF\u30CB\u30E9\u30EB\u30D0\u79FB\u52D5"
+    type: 1
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 904077895}
+      apply_Root_Position: 1
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 2
+          value: 160
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u6226\u95D8\u958B\u59CB"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1014760609}
+      component: {fileID: 1014760616}
+      function_Name: Start_Battle
+      component_Index: 2
+      method_Index: 4
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+--- !u!1 &904077893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904077895}
+  - component: {fileID: 904077894}
+  m_Layer: 0
+  m_Name: MiniLarva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &904077894
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904077893}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: fc6239414e6b2ed4b8e29974db3abb7d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300000, guid: b601f854d6873ac48ab0d1c44adfc9f3, type: 3}
+  m_Color: {r: 0.6, g: 0.6, b: 0.7, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &904077895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 904077893}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 250, y: 0, z: 0}
+  m_LocalScale: {x: -2, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &908943741
 Prefab:
   m_ObjectHideFlags: 0
@@ -6427,7 +7312,7 @@ Prefab:
     - target: {fileID: 224379619594495172, guid: ba7ab5083dd516242b153c02d4bd24ea,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224379619594495172, guid: ba7ab5083dd516242b153c02d4bd24ea,
         type: 2}
@@ -6467,7 +7352,7 @@ Prefab:
     - target: {fileID: 224379619594495172, guid: ba7ab5083dd516242b153c02d4bd24ea,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224379619594495172, guid: ba7ab5083dd516242b153c02d4bd24ea,
         type: 2}
@@ -6559,11 +7444,53 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4045680127513410, guid: e8dfe19369eb1ee44b5f0fc1710efccc, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8dfe19369eb1ee44b5f0fc1710efccc, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &966577460
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 966577461}
+  - component: {fileID: 966577462}
+  m_Layer: 9
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &966577461
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966577460}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1014760613}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966577462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 966577460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f7ac0995c9cbf4b96c8690ede1e7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  s_Larva_Prefab: {fileID: 114939288787631188, guid: 3f4802358e61d4e489a134ccea900343,
+    type: 2}
 --- !u!1 &1014760609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,6 +7502,8 @@ GameObject:
   - component: {fileID: 1014760612}
   - component: {fileID: 1014760611}
   - component: {fileID: 1014760610}
+  - component: {fileID: 1014760616}
+  - component: {fileID: 1014760615}
   - component: {fileID: 1014760614}
   m_Layer: 9
   m_Name: Eternal
@@ -6607,9 +7536,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b964834a31459a4a9da98b1ca7a0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: e8030000e803000001000000
+  life: 01000000e8030000
   power_Value: 0
-  score_Value: 0
+  score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
     type: 2}
   clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
@@ -6618,8 +7547,8 @@ MonoBehaviour:
     type: 2}
   state: 0
   before_Movie: {fileID: 2121648308}
-  before_Movie_Skip: {fileID: 30656766}
-  clear_Movie: {fileID: 64613179}
+  before_Movie_Skip: {fileID: 2121648308}
+  clear_Movie: {fileID: 1848938601}
 --- !u!212 &1014760612
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6680,9 +7609,10 @@ Transform:
   - {fileID: 287692841}
   - {fileID: 1742013174}
   - {fileID: 570821075}
+  - {fileID: 966577461}
   - {fileID: 584384194}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1014760614
 Animator:
@@ -6702,6 +7632,61 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1014760615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014760609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa50f45f8a5e7d41a8cccf482658f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  param:
+  - comment: "\u30DE\u30B9\u30D1\u524D\u79FB\u52D5"
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    speed: 0.03
+    arc_Size: 0
+    is_Local_Position: 0
+--- !u!114 &1014760616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1014760609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc0901e704755064c870133854d2b1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  last_Battle_Movie: {fileID: 816850167}
+  time_Count_UI: {fileID: 194095194}
+  mini_Larva: {fileID: 904077893}
+  time_Count: 100
 --- !u!1001 &1068585324
 Prefab:
   m_ObjectHideFlags: 0
@@ -11469,7 +12454,7 @@ Transform:
   m_Children:
   - {fileID: 2015367703}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1273842487
 GameObject:
@@ -16630,6 +17615,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1566282585368206, guid: f6a0ef85ab25cff49a038bb966246933,
     type: 2}
   m_PrefabInternal: {fileID: 1692206336}
+--- !u!1 &1739309587 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1327469712354716, guid: 33664be22cf6b0c46b985c5b86ae75b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 474133993}
 --- !u!1 &1742013173
 GameObject:
   m_ObjectHideFlags: 0
@@ -16638,6 +17628,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1742013174}
+  - component: {fileID: 1742013176}
+  - component: {fileID: 1742013175}
   m_Layer: 9
   m_Name: SE
   m_TagString: Untagged
@@ -16658,6 +17650,117 @@ Transform:
   m_Father: {fileID: 1014760613}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1742013175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742013173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55eac993e2b2b7e4193d08dc439ba4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE_List:
+  - name: TimeCount
+    clip: {fileID: 8300000, guid: 3902986c53682ac499264d8be2b2054a, type: 3}
+    volume: 0.1
+--- !u!82 &1742013176
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1742013173}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243373875129941320, guid: 99e0dad0e338c1f43a4b809f4ca302ab,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1810246297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16703,7 +17806,7 @@ MonoBehaviour:
   play_On_Awake: 0
   bullet: {fileID: 1632546210349180, guid: 3d2faf7ce32d60b48a386c00a166f105, type: 2}
   parent: {fileID: 0}
-  max_Speed: 140
+  max_Speed: 120
   radius: 16
   speed_Noise: 0
   angle_Noise: 0
@@ -16767,6 +17870,306 @@ MonoBehaviour:
   loop_Count: 3
   span: 0.5
   center_Angle_Diff: 0
+--- !u!1 &1848938599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848938600}
+  - component: {fileID: 1848938601}
+  m_Layer: 0
+  m_Name: ClearMovie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1848938600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848938599}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 154237949}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1848938601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848938599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_Disable_Controlle: 1
+  list:
+  - name: "\u4F1A\u8A71"
+    type: 0
+    message:
+      file_Name: EternalText
+      dual_Panel: 1
+      id: {x: 1, y: 1}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u4F1A\u8A71\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 1
+      wait_Time: 0
+    is_Open_In_Inspector: 1
 --- !u!1 &1984970507
 GameObject:
   m_ObjectHideFlags: 0
@@ -16812,7 +18215,7 @@ MonoBehaviour:
   play_On_Awake: 0
   bullet: {fileID: 1928252021186772, guid: 69b4b16bd320c134c8932e78acbb6d9d, type: 2}
   parent: {fileID: 0}
-  max_Speed: 140
+  max_Speed: 120
   radius: 16
   speed_Noise: 0
   angle_Noise: 0
@@ -17652,6 +19055,196 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+--- !u!1 &2046005909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046005910}
+  - component: {fileID: 2046005912}
+  - component: {fileID: 2046005911}
+  m_Layer: 9
+  m_Name: WingShootOutToIn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046005910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046005909}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 570821075}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2046005911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046005909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 5
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 140
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 5
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 0
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: -10
+  center_Angle_Deg: -100
+  arc_Deg: 360
+  shoot_Rate: 10
+  duration: 1
+  connect_Bullet: 1
+  connect_Num: 5
+  speed_Diff: 10
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
+--- !u!114 &2046005912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046005909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 5
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1462937219074526, guid: 7491302ffd1b0e14a865430ba2109e07, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 140
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 5
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 1
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 10
+  center_Angle_Deg: 100
+  arc_Deg: 360
+  shoot_Rate: 10
+  duration: 1
+  connect_Bullet: 1
+  connect_Num: 5
+  speed_Diff: 10
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1 &2121648306
 GameObject:
   m_ObjectHideFlags: 0
@@ -17951,6 +19544,264 @@ MonoBehaviour:
     wait:
       wait_Message: 1
       wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u5486\u54EE"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 287692840}
+      component: {fileID: 287692842}
+      function_Name: Play_Roaring_Effect
+      component_Index: 0
+      method_Index: 6
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 1
+  - name: "\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 2
     is_Open_In_Inspector: 1
   - name: "\u6226\u95D8\u958B\u59CB"
     type: 5

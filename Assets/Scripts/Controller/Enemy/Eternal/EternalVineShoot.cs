@@ -6,7 +6,7 @@ public class EternalVineShoot : MonoBehaviour {
 
     [SerializeField] private Bullet vine_Bullet;
 
-    private readonly float shoot_Span = 0.05f;
+    private readonly float shoot_Span = 0.08f;
     private readonly float bullet_Lifetime = 2f;
     private readonly int bullet_Num = 50;    
 
@@ -37,13 +37,13 @@ public class EternalVineShoot : MonoBehaviour {
         foreach(Vector2 pos in VList.list) {          
             Generate_Vine_Bullet(pos);
             //画面外に出たら終わる
-            if (Mathf.Abs(pos.x) > 250f || Mathf.Abs(pos.y) > 160f)
+            if (Mathf.Abs(pos.x) > 250f || Mathf.Abs(pos.y) > 140f)
                 yield break;
             //枝分かれを作る
             if (count % divide_Count == 0) {
-                divide_Count += 5;
+                divide_Count += 4;
                 VineList v = new VineList();
-                float initial_Angle = Random.Range(0.5f * Mathf.PI, 1.5f * Mathf.PI);
+                float initial_Angle = VList.Angle() + (Random.Range(0, 2) - 0.5f) * Mathf.PI; 
                 v.Create_List(bullet_Num, pos, initial_Angle, Random.Range(-0.1f, 0.1f));
                 StartCoroutine(Vine_Shoot_Cor(v, divide_Count));
             }
@@ -65,7 +65,8 @@ public class EternalVineShoot : MonoBehaviour {
     private class VineList {
 
         private readonly float bullet_Span = 10f;
-        public List<Vector2> list = new List<Vector2>();        
+        public List<Vector2> list = new List<Vector2>();
+        private float angle = 0;
 
         /// <summary>
         ///vine bulletを生成する座標を計算        
@@ -76,20 +77,20 @@ public class EternalVineShoot : MonoBehaviour {
         /// <param name="curve_Angle">カーブ角度[rad]</param>
         public void Create_List(int num, Vector2 initial_Pos, float initial_Angle, float curve_Angle) {
             list.Clear();
-            float angle = initial_Angle;
+            angle = initial_Angle;
             Vector2 pos = initial_Pos;
             list.Add(initial_Pos);
 
             for (int i = 0; i < num; i++) {
                 angle += curve_Angle;
-                curve_Angle *= 0.95f;
-                //if (Random.Range(0f, 1f) < 0.2f) {
-                //    angle += Random.Range(-1 / 12 * Mathf.PI, 1 / 12 * Mathf.PI);
-                //}
+                curve_Angle *= 0.95f;                
                 pos = pos + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * bullet_Span;
                 list.Add(pos);
             }
+        }
 
+        public float Angle() {
+            return angle;
         }
     }
 }

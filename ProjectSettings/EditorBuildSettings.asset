@@ -83,4 +83,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage7_BossScene.unity
     guid: 765d075a6c9a8c54aa76be49fae3963e
+  - enabled: 1
+    path: Assets/Scenes/BadEndingScene.unity
+    guid: d257864eaf32a654dbde8277e6fb60be
   m_configObjects: {}

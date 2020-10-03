@@ -18,6 +18,8 @@ public class MasterSpark : MonoBehaviour {
     //始まり
     private bool start_Action = false;
 
+    private float max_Size = 0.6f;
+
 	
 	void Start () {
         //取得        
@@ -54,14 +56,13 @@ public class MasterSpark : MonoBehaviour {
         }
         //当たり判定を濃くしながら広げる
         laser_Core.SetActive(true);
-        while(transform.localScale.x <= 1.0f) {
-            if (core_Sprite.color.a < 0.6f) {
-                core_Sprite.color += new Color(0, 0, 0, 0.005f);
+        while(transform.localScale.x <= max_Size) {
+            if (core_Sprite.color.a < 0.9f) {
+                core_Sprite.color += new Color(0, 0, 0, 0.01f);
             }
             transform.localScale += new Vector3(0.008f, 0);
             yield return new WaitForSeconds(0.016f);
-        }
-        yield return new WaitForSeconds(1.5f);
+        }        
         //狭める
         while(transform.localScale.x >= 0) {
             if(core_Sprite.color.a >= 0) {

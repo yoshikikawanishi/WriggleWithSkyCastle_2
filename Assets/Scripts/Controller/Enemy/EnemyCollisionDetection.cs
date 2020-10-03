@@ -55,7 +55,7 @@ public class EnemyCollisionDetection : MonoBehaviour {
         _enemy.Damaged(damage, key);
         //自機の緑ゲージの回復
         if(key != "PlayerBulletTag") {
-            BeetlePowerManager.Instance.StartCoroutine("Increase_Cor", 8);
+            BeetlePowerManager.Instance.StartCoroutine("Increase_Cor", 20);
         }
     }
 
