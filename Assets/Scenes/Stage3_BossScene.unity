@@ -225,7 +225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4915536675750920, guid: 595d2baf562ae0d468bcd4b8c8f6c6dc, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 114669456970191142, guid: 595d2baf562ae0d468bcd4b8c8f6c6dc,
         type: 2}
@@ -1350,7 +1350,7 @@ Transform:
   - {fileID: 29899277}
   - {fileID: 488418047}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &354515707
 MonoBehaviour:
@@ -1526,7 +1526,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -1655,7 +1655,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 6
     message:
@@ -1784,7 +1784,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 1
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -1913,7 +1913,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -2042,7 +2042,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 0
     message:
@@ -2430,7 +2430,7 @@ Transform:
   - {fileID: 1960573864}
   - {fileID: 148977295}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &593678092
 Prefab:
@@ -2832,7 +2832,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -2961,7 +2961,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 6
     message:
@@ -3090,7 +3090,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 1
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -3219,7 +3219,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
   - name: 
     type: 2
     message:
@@ -3348,7 +3348,7 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 0
+    is_Open_In_Inspector: 1
 --- !u!4 &886949809
 Transform:
   m_ObjectHideFlags: 0
@@ -3414,6 +3414,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91,
     type: 2}
   m_PrefabInternal: {fileID: 1115657664}
+--- !u!1 &1116105178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116105180}
+  - component: {fileID: 1116105179}
+  m_Layer: 0
+  m_Name: ClearMovie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1116105179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1116105178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_Disable_Controlle: 1
+  list: []
+--- !u!4 &1116105180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1116105178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122802671
 GameObject:
   m_ObjectHideFlags: 0

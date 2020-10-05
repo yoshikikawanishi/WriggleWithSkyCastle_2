@@ -1537,6 +1537,12 @@ Prefab:
       propertyPath: is_Change_Life_Up_Item
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 212307917471595424, guid: ad841176ffea4c14cb8b8908df271e4f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb9a38be922b5f642b1e1090591429f5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}
   m_IsPrefabAsset: 0
@@ -2207,8 +2213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fileName: YamameText
   start_ID: 1
-  end_ID: 1
-  baloon_Pos: {x: 12, y: 24}
+  end_ID: 7
+  baloon_Pos: {x: 4, y: 12}
   dual_Panel: 1
   talk_Type: 0
 --- !u!1001 &275555354
@@ -25119,7 +25125,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -6
+  m_SortingOrder: -7
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 15, y: 15, z: 0}
   m_MaxChunkCount: 16

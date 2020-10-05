@@ -31,6 +31,7 @@ public class Eternal : BossEnemy {
 
     public override void Start_Battle() {
         base.Start_Battle();
+        BGMManager.Instance.Change_BGM("Stage7_Boss");
         Play_Battle_Effect();
         melody_Manager.Start_Time_Count();        
     }

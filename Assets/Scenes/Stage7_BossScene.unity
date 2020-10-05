@@ -208,8 +208,8 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 7
-  inter_Angle_Deg: 51.4
+  num: 9
+  inter_Angle_Deg: 40
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
@@ -433,8 +433,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!114 &57055055
@@ -513,8 +513,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!1 &89717410
@@ -725,8 +725,8 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 8
-  inter_Angle_Deg: 45
+  num: 10
+  inter_Angle_Deg: 36
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
@@ -1282,6 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 297905565}
+  - component: {fileID: 297905566}
   m_Layer: 0
   m_Name: EternalLastShoots
   m_TagString: Untagged
@@ -1296,7 +1297,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297905564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -128, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2063723677}
@@ -1307,6 +1308,22 @@ Transform:
   m_Father: {fileID: 1014760613}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297905566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297905564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d50dd429cf2a04a900468929bc74c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wing_Shoot_Obj: {fileID: 2063723676}
+  first_Shoot_Obj: {fileID: 1868811231}
+  second_Shoot_Obj: {fileID: 545984707}
+  third_Shoot_Obj: {fileID: 384292576}
+  forth_Shoot_Obj: {fileID: 413446096}
 --- !u!1 &305708129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,8 +1648,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!114 &395760635
@@ -1711,8 +1728,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!1 &413446096
@@ -6686,8 +6703,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!114 &479118471
@@ -6766,8 +6783,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!1 &545984707
@@ -7013,8 +7030,8 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 8
-  inter_Angle_Deg: 45
+  num: 10
+  inter_Angle_Deg: 36
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
@@ -7267,8 +7284,8 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 7
-  inter_Angle_Deg: 51.4
+  num: 9
+  inter_Angle_Deg: 40
   center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
@@ -7430,7 +7447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
+  is_Disable_Controlle: 0
   list:
   - name: "\u30BF\u30A4\u30DE\u30FC\u30AB\u30A6\u30F3\u30C8\u8868\u793A"
     type: 5
@@ -7713,7 +7730,7 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 2
+          time: 3
           value: -170
           inSlope: 0
           outSlope: 0
@@ -7737,8 +7754,17 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 2
-          value: 106
+          time: 0.86439675
+          value: 4.6413784
+          inSlope: 62.001328
+          outSlope: 62.001328
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 3
+          value: 105.22122
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -7946,7 +7972,7 @@ MonoBehaviour:
       method_Index: 0
     wait:
       wait_Message: 0
-      wait_Time: 2
+      wait_Time: 3
     is_Open_In_Inspector: 1
   - name: "\u30BF\u30A4\u30E0\u30AB\u30A6\u30F3\u30C8\u5909\u52D5"
     type: 5
@@ -8882,7 +8908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b964834a31459a4a9da98b1ca7a0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 01000000e8030000
+  life: e8030000e8030000
   power_Value: 0
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
@@ -13853,7 +13879,7 @@ MonoBehaviour:
   speed_Noise: 0
   angle_Noise: 0
   lifeTime: 10
-  offset: {x: 0, y: 64}
+  offset: {x: 0, y: 0}
   default_Shoot_Sound: 1
   is_Acceleration: 0
   velocity_Forward:
@@ -13898,9 +13924,9 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 6
+  num: 20
   inter_Angle_Deg: 0
-  center_Angle_Deg: 160
+  center_Angle_Deg: 0
   arc_Deg: 360
   shoot_Rate: 30
   duration: 5
@@ -13911,7 +13937,7 @@ MonoBehaviour:
   looping: 1
   loop_Count: 100
   span: 2.8
-  center_Angle_Diff: 0
+  center_Angle_Diff: 5
 --- !u!1 &1273842487
 GameObject:
   m_ObjectHideFlags: 0
@@ -18792,8 +18818,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!114 &1290456765
@@ -18872,8 +18898,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!1 &1461411897
@@ -19622,8 +19648,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!114 &1833093628
@@ -19702,8 +19728,8 @@ MonoBehaviour:
   connect_Num: 1
   speed_Diff: 10
   angle_Diff: 0
-  looping: 1
-  loop_Count: 100
+  looping: 0
+  loop_Count: 1
   span: 3.2
   center_Angle_Diff: 0
 --- !u!1 &1848938599

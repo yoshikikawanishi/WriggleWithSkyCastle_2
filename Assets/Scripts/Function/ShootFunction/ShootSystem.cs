@@ -170,7 +170,7 @@ public class ShootSystem : MonoBehaviour {
         }
 
         AngleCalculater _angle = new AngleCalculater();
-        center_Angle_Deg = _angle.Cal_Angle_Two_Points(transform.position, player.transform.position);
+        center_Angle_Deg = _angle.Cal_Angle_Two_Points(transform.position + (Vector3)offset, player.transform.position);
         float angle = center_Angle_Deg - num / 2 * inter_Angle_Deg;        
 
         for (int i = 0; i < num; i++) {
@@ -198,7 +198,7 @@ public class ShootSystem : MonoBehaviour {
         }
 
         AngleCalculater _angle = new AngleCalculater();
-        center_Angle_Deg = _angle.Cal_Angle_Two_Points(transform.position, player.transform.position);
+        center_Angle_Deg = _angle.Cal_Angle_Two_Points(transform.position + (Vector3)offset, player.transform.position);
         float angle = center_Angle_Deg - ((num - 1) * 0.5f * inter_Angle_Deg);        
 
         for (int i = 0; i < num; i++) {     

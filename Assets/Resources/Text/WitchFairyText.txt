@@ -3,7 +3,7 @@
 2		non	ようせいの　だんまく　こうけぎ！
 3		non	リグルは　こうげきを　かわした！
 4	 	non	てきの　ようせいは　たおれた！
-5	 	non	リグルは/ 8 パワーを　もらった！
+5	 	non	リグルは/ 8 パワーを　うばいとった！
 6	non	non	non
 7	non	non	non
 8	non	non	non

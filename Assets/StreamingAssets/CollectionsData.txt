@@ -10,5 +10,7 @@ Nitori	False
 Hina	False
 Momizi	False
 Aya	False
-Saki	True
-Yamame	True
+Saki	False
+Yamame	False
+Kisume	False
+Hourai	True

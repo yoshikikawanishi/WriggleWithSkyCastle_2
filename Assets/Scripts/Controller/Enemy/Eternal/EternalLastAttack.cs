@@ -8,6 +8,8 @@ public class EternalLastAttack : MonoBehaviour {
     [SerializeField] private GameObject time_Count_UI;
     [SerializeField] private GameObject mini_Larva;
 
+    private Eternal _eternal;
+    private EternalLastShoot _last_Shoot;
     private SEManager _se;
     private EternalEffect _effect;
 
@@ -15,6 +17,8 @@ public class EternalLastAttack : MonoBehaviour {
 
 
     void Start() {
+        _eternal = GetComponent<Eternal>();
+        _last_Shoot = GetComponentInChildren<EternalLastShoot>();
         _se = GetComponentInChildren<SEManager>();
         _effect = GetComponentInChildren<EternalEffect>();
     }
@@ -65,12 +69,49 @@ public class EternalLastAttack : MonoBehaviour {
     //戦闘開始、last_Battle_Movieで呼ぶ
     public void Start_Battle() {
         StartCoroutine("Last_Attack_Cor");
+        StartCoroutine("Time_Count_Cor");
     }
     #endregion
 
+
+    private IEnumerator Time_Count_Cor() {
+        while(time_Count > 0) {
+            yield return new WaitForSeconds(1.0f);
+            time_Count--;
+            if(time_Count < 6)
+                _se.Play("TimeCount");
+        }
+    }
+
+
     private IEnumerator Last_Attack_Cor() {
-        _effect.Play_Roaring_Effect();
-        yield return null;
+        _effect.Play_Roaring_Effect();        
+        yield return new WaitForSeconds(2.0f);
+
+        _last_Shoot.Start_Wing_Shoot();
+        _last_Shoot.Start_First_Shoot();
+        _effect.Play_Burst_Effect_White();
+
+        while(time_Count > 70) { yield return null; }
+
+        _last_Shoot.Start_Second_Shoot();
+        _effect.Play_Burst_Effect_White();
+
+        while (time_Count > 50) { yield return null; }
+
+        _last_Shoot.Start_Third_Shoot();
+        _effect.Play_Burst_Effect_White();
+
+        while (time_Count > 30) { yield return null; }
+
+        _last_Shoot.Start_Forth_Shoot();
+        _effect.Play_Burst_Effect_White();
+
+        while(time_Count > 0) { yield return null; }
+
+        _last_Shoot.Stop_Shoot();
+        _eternal.Damaged(1000, "");
+
     }
 
     

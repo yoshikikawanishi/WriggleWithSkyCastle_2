@@ -47,8 +47,11 @@ public class PlayerDataButton : MonoBehaviour {
         { "Hina", "お札\n敵を倒した時お札が飛び散る" },
         { "Nitori", "河童の腕\n攻撃範囲が広がる" },
         { "Momizi", "文果真報の袋とじ\nよかった。" },
-        { "Aya", "天狗の羽団扇\nキックの速度が上昇する" }
-
+        { "Aya", "天狗の羽団扇\nキックの速度が上昇する" },
+        { "Yamame", "ダーマ" },
+        { "Saki", "ワザのまきもの\nチャージキックを会得する" },
+        { "Kisume", "ドスン" },
+        { "Hourai", "" },
     };
 
 }

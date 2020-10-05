@@ -60,9 +60,12 @@ public class PlayerGettingOnBeetle : MonoBehaviour {
 
         Change_To_Beetle_Status();
         yield return new WaitForSeconds(0.4f);
-        player_Effect.Stop_Ridding_Beetle_Effect();        
-        
+        player_Effect.Stop_Ridding_Beetle_Effect();
         can_Get_On_Beetle = true;
+        //切り替え中に操作不可にしたとき降りる
+        if (!_controller.Get_Is_Playable() || !_controller.Get_Can_Ride_Beetle()) {
+            Get_Off_Beetle();
+        }                
     }
 
 

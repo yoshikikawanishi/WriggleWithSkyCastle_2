@@ -124,6 +124,8 @@ public class SceneManagement : SingletonMonoBehaviour<SceneManagement> {
         { "Stage7_1Scene", true },
         { "Stage7_BossScene", true },
 
+        { "RakuenScene", false },
+
         { "GameOverScene", false },
 
         { "DemoEndingScene", true },        

@@ -148,7 +148,7 @@ public class EternalAttack : BossEnemyAttack {
         //ショット
         while (true) {
             _effect.Play_Power_Charge_Effect_Small();
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.0f);
             _effect.Play_Burst_Effect_White();
             _shoot.Shoot_Vine_Shoot(7);
             //待つ、メロディ切り替わったら抜ける
@@ -300,11 +300,13 @@ public class EternalAttack : BossEnemyAttack {
         yield return new WaitForSeconds(1.5f);
         //溜める
         _effect.Play_Power_Charge_Effect(1000f);
+        _eternal.Change_Animation("CloseTrigger");
         yield return new WaitForSeconds(2.0f);
         while(melody_Manager.Get_Now_Melody() == MelodyManager.Melody.pre_Chorus) {
             yield return new WaitForSeconds(0.016f);
         }
         _effect.Stop_Power_Charge_Effect();
+        _eternal.Change_Animation("OpenTrigger");
 
         base.Set_Can_Switch_Attack(true);
         base.Restart_Attack();
@@ -362,6 +364,7 @@ public class EternalAttack : BossEnemyAttack {
 
     private void Stop_Melody_Chorus1() {
         StopCoroutine("Melody_Chorus1_Cor");
+        StopCoroutine("Ban_Player_Flying_Cor");
         Release_Player_Flying();
         _shoot.Stop_Spiral_Shoot_Strong();
         _shoot.Stop_Spiral_Shoot_Weak();
