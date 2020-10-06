@@ -46,6 +46,7 @@ public class AunnAttack : BossEnemyAttack {
         Stop_Attack_Pre_Chorus();
         Stop_Attack_Intro();
         Stop_Attack_Chorus1();
+        Stop_Change_Phase();
     }
 
 
@@ -432,6 +433,10 @@ public class AunnAttack : BossEnemyAttack {
         //攻撃再開
         Set_Can_Switch_Attack(true);
         Restart_Attack();
+    }
+
+    private void Stop_Change_Phase() {
+        StopCoroutine("Phase_Change_Attack_Cor");        
     }
 
     #endregion

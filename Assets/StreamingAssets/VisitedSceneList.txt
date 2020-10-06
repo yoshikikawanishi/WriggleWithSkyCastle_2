@@ -1,5 +1,1 @@
 #SceneName
-TitleScene
-Stage5_1Scene
-RakuenScene
-Stage5_2Scene

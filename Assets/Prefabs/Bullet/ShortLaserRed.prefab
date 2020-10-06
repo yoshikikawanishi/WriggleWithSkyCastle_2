@@ -149,8 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserMat: {fileID: 2100000, guid: c72746730f3894a42a1bcd7697ce6271, type: 2}
   laserWidth: 5
-  quality: 3
+  quality: 2
   length: 50
+  sortingOrder: 5
   play_On_Awake: 1
 --- !u!114 &114306853434308694
 MonoBehaviour:

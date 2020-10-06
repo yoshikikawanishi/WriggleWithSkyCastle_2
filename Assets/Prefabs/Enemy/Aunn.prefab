@@ -2303,7 +2303,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 10
+  num: 8
   inter_Angle_Deg: 20
   center_Angle_Deg: 0
   arc_Deg: 360
@@ -3045,7 +3045,7 @@ MonoBehaviour:
   radius: 0
   speed_Noise: 0
   angle_Noise: 0
-  lifeTime: 10
+  lifeTime: 8
   offset: {x: 0, y: 0}
   default_Shoot_Sound: 0
   is_Acceleration: 1
@@ -3315,7 +3315,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 10
+  num: 8
   inter_Angle_Deg: 20
   center_Angle_Deg: 0
   arc_Deg: 360

@@ -87,8 +87,7 @@ public class Aunn : BossEnemy {
                 _collider.size = collider_Size_Squat;
                 _collider.offset = collider_Offset_Squat;
                 break;
-        }
-        
+        }        
     }
 
 

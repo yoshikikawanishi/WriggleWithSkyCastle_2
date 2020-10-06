@@ -6,7 +6,11 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
 
     private List<Vector2> points;
-    List<CircleCollider2D> colliders = new List<CircleCollider2D>();    
+    List<CircleCollider2D> colliders = new List<CircleCollider2D>();
+
+    private CircleColliderPool colliders_Pool;
+    private MeshFilter mf;
+    private MeshRenderer mr;
 
     private struct section {
         public Vector2 direction;   // 方向ベクトル.
@@ -35,7 +39,10 @@ public class Laser : MonoBehaviour {
     void Awake() {
         appendDistance = 8f - quality;
         appendSqrDistance = Mathf.Pow(appendDistance, 2);
-        maxPointCount = (int)(length / appendDistance);       
+        maxPointCount = (int)(length / appendDistance);
+        colliders_Pool = GetComponent<CircleColliderPool>();
+        mf = GetComponent<MeshFilter>();
+        mr = GetComponent<MeshRenderer>();
     }
 
     void OnEnable() {        
@@ -120,32 +127,31 @@ public class Laser : MonoBehaviour {
 
     void createMesh() {
         if (points == null || points.Count <= 1) return;
-
-        MeshFilter mf = GetComponent<MeshFilter>();
-        MeshRenderer mr = GetComponent<MeshRenderer>();
+        
         Mesh mesh = mf.mesh = new Mesh();
 
         mesh.name = "CurveLaserMesh";
 
         int meshCount = points.Count - 1;                   // 四角メッシュ生成数はセクション - 1.
+        var step = (float)1 / meshCount;
 
         Vector3[] vertices = new Vector3[(meshCount) * 4];  // 四角なので頂点数は1つのメッシュに付き4つ.
         Vector2[] uvs = new Vector2[vertices.Length];       //マテリアルのuv座標
         int[] triangles = new int[(meshCount) * 2 * 3];     // 1つの四角メッシュには2つ三角メッシュが必要. 三角メッシュには3つの頂点インデックスが必要.
+        int i_4;
 
         // ----- 頂点座標の割り当て -----
         for (int i = 0; i < meshCount; i++) {
-            vertices[i * 4 + 0] = sections[i].left;
-            vertices[i * 4 + 1] = sections[i].right;
-            vertices[i * 4 + 2] = sections[i + 1].left;
-            vertices[i * 4 + 3] = sections[i + 1].right;
-
-            var step = (float)1 / meshCount;
+            i_4 = i * 4;
+            vertices[i_4 + 0] = sections[i].left;
+            vertices[i_4 + 1] = sections[i].right;
+            vertices[i_4 + 2] = sections[i + 1].left;
+            vertices[i_4 + 3] = sections[i + 1].right;            
             
-            uvs[i * 4 + 0] = new Vector2(0f, i * step);
-            uvs[i * 4 + 1] = new Vector2(1f, i * step);
-            uvs[i * 4 + 2] = new Vector2(0f, (i + 1) * step);
-            uvs[i * 4 + 3] = new Vector2(1f, (i + 1) * step);
+            uvs[i_4 + 0] = new Vector2(0f, i * step);
+            uvs[i_4 + 1] = new Vector2(1f, i * step);
+            uvs[i_4 + 2] = new Vector2(0f, (i + 1) * step);
+            uvs[i_4 + 3] = new Vector2(1f, (i + 1) * step);
             
         }
 
@@ -153,13 +159,14 @@ public class Laser : MonoBehaviour {
         int positionIndex = 0;
 
         for (int i = 0; i < meshCount; i++) {
-            triangles[positionIndex++] = (i * 4) + 1;
-            triangles[positionIndex++] = (i * 4) + 0;
-            triangles[positionIndex++] = (i * 4) + 2;
+            i_4 = i * 4;
+            triangles[positionIndex++] = (i_4) + 1;
+            triangles[positionIndex++] = (i_4) + 0;
+            triangles[positionIndex++] = (i_4) + 2;
 
-            triangles[positionIndex++] = (i * 4) + 2;
-            triangles[positionIndex++] = (i * 4) + 3;
-            triangles[positionIndex++] = (i * 4) + 1;
+            triangles[positionIndex++] = (i_4) + 2;
+            triangles[positionIndex++] = (i_4) + 3;
+            triangles[positionIndex++] = (i_4) + 1;
         }
         
         mesh.vertices = vertices;
@@ -184,7 +191,7 @@ public class Laser : MonoBehaviour {
 
 
     void addCollider(Vector2 point) {
-        CircleCollider2D cc = GetComponent<CircleColliderPool>().Get_Collider();
+        CircleCollider2D cc = colliders_Pool.Get_Collider();
         colliders.Add(cc);
         cc.offset = point - (Vector2)start_Pos;
     }
@@ -203,7 +210,7 @@ public class Laser : MonoBehaviour {
         sections = null;
         points = null;
         colliders.Clear();
-        GetComponent<CircleColliderPool>().Set_Inactive_All();
+        colliders_Pool.Set_Inactive_All();
     }
 
 

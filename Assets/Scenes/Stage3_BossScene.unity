@@ -225,7 +225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4915536675750920, guid: 595d2baf562ae0d468bcd4b8c8f6c6dc, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114669456970191142, guid: 595d2baf562ae0d468bcd4b8c8f6c6dc,
         type: 2}
@@ -1350,7 +1350,7 @@ Transform:
   - {fileID: 29899277}
   - {fileID: 488418047}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &354515707
 MonoBehaviour:
@@ -1398,7 +1398,136 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Disable_Controlle: 1
   list:
-  - name: 
+  - name: "\u30D5\u30A7\u30FC\u30C9\u30A4\u30F3"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Fade_In
+      component_Index: 5
+      method_Index: 3
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5"
     type: 1
     message:
       file_Name: 
@@ -1526,8 +1655,8 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
     type: 2
     message:
       file_Name: 
@@ -1655,8 +1784,137 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
+    type: 2
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 1301577054}
+      kind: 0
+      parameter: IdleBool
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u79FB\u52D5\u5F85\u3061"
     type: 6
     message:
       file_Name: 
@@ -1784,8 +2042,8 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 1
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u6B62\u307E\u308B\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
     type: 2
     message:
       file_Name: 
@@ -1913,8 +2171,8 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u6B62\u307E\u308B\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
     type: 2
     message:
       file_Name: 
@@ -2042,8 +2300,8 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u4F1A\u8A71"
     type: 0
     message:
       file_Name: AunnText
@@ -2171,8 +2429,8 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u4F1A\u8A71\u5F85\u3061"
     type: 6
     message:
       file_Name: 
@@ -2307,12 +2565,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 472628180}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -110.1, y: 80.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1459788592}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &488418046
 GameObject:
@@ -2430,7 +2688,7 @@ Transform:
   - {fileID: 1960573864}
   - {fileID: 148977295}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &593678092
 Prefab:
@@ -2675,28 +2933,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &886949807
+--- !u!1001 &1115657664
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1357466683}
+    m_Modifications:
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61045921329819530, guid: edb84fc88380a2a4f9cc757a229e0e91,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 272
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1115657665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91,
+    type: 2}
+  m_PrefabInternal: {fileID: 1115657664}
+--- !u!1 &1116105178
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 886949809}
-  - component: {fileID: 886949808}
+  - component: {fileID: 1116105180}
+  - component: {fileID: 1116105179}
   m_Layer: 0
-  m_Name: BeforeBossMovieSkip
+  m_Name: ClearMovie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &886949808
+--- !u!114 &1116105179
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 886949807}
+  m_GameObject: {fileID: 1116105178}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
@@ -2704,16 +3014,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   is_Disable_Controlle: 1
   list:
-  - name: 
-    type: 1
+  - name: "\u4F1A\u8A71"
+    type: 0
     message:
-      file_Name: 
+      file_Name: AunnText
       dual_Panel: 1
-      id: {x: 0, y: 0}
+      id: {x: 6, y: 8}
       is_Auto: 0
     motion:
-      obj: {fileID: 1301577042}
-      apply_Root_Position: 1
+      obj: {fileID: 0}
+      apply_Root_Position: 0
       x_Move:
         serializedVersion: 2
         m_Curve:
@@ -2721,17 +3031,17 @@ MonoBehaviour:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 120
-          tangentMode: 65
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
           time: 1
-          value: 120
-          inSlope: 120
+          value: 0
+          inSlope: 0
           outSlope: 0
-          tangentMode: 5
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
@@ -2832,9 +3142,9 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
-    type: 2
+    is_Open_In_Inspector: 0
+  - name: "\u4F1A\u8A71\u5F85\u3061"
+    type: 6
     message:
       file_Name: 
       dual_Panel: 1
@@ -2892,10 +3202,10 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     animation:
-      animator: {fileID: 1301577054}
+      animator: {fileID: 0}
       kind: 0
-      parameter: DashBool
-      boolean: 1
+      parameter: 
+      boolean: 0
     localScale:
       obj: {fileID: 0}
       kind: 0
@@ -2959,10 +3269,139 @@ MonoBehaviour:
       component_Index: 0
       method_Index: 0
     wait:
+      wait_Message: 1
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u63FA\u3089\u3059\u5927"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Shake_Camera_Strong
+      component_Index: 5
+      method_Index: 2
+    wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
+    is_Open_In_Inspector: 0
+  - name: "\u632F\u52D5\u5F85\u3061"
     type: 6
     message:
       file_Name: 
@@ -3089,10 +3528,10 @@ MonoBehaviour:
       method_Index: 0
     wait:
       wait_Message: 0
-      wait_Time: 1
-    is_Open_In_Inspector: 1
-  - name: 
-    type: 2
+      wait_Time: 0.8
+    is_Open_In_Inspector: 0
+  - name: "\u63FA\u3089\u3059"
+    type: 5
     message:
       file_Name: 
       dual_Panel: 1
@@ -3150,9 +3589,138 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     animation:
-      animator: {fileID: 1301577054}
+      animator: {fileID: 0}
       kind: 0
-      parameter: DashBool
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Shake_Camera
+      component_Index: 5
+      method_Index: 3
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u632F\u52D5\u5F8C\u4F1A\u8A71"
+    type: 0
+    message:
+      file_Name: AunnText
+      dual_Panel: 1
+      id: {x: 9, y: 14}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
       boolean: 0
     localScale:
       obj: {fileID: 0}
@@ -3219,9 +3787,9 @@ MonoBehaviour:
     wait:
       wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
-  - name: 
-    type: 2
+    is_Open_In_Inspector: 0
+  - name: "\u4F1A\u8A71\u5F85\u3061"
+    type: 6
     message:
       file_Name: 
       dual_Panel: 1
@@ -3279,10 +3847,268 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
     animation:
-      animator: {fileID: 1301577054}
+      animator: {fileID: 0}
       kind: 0
-      parameter: IdleBool
-      boolean: 1
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 1
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u30D5\u30A7\u30FC\u30C9\u30A2\u30A6\u30C8"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Fade_Out
+      component_Index: 5
+      method_Index: 3
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u30D5\u30A7\u30FC\u30C9\u30A2\u30A6\u30C8\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
     localScale:
       obj: {fileID: 0}
       kind: 0
@@ -3347,114 +4173,149 @@ MonoBehaviour:
       method_Index: 0
     wait:
       wait_Message: 0
+      wait_Time: 1.5
+    is_Open_In_Inspector: 0
+  - name: "\u30B7\u30FC\u30F3\u9077\u79FB"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Change_Scene_To_Stage4
+      component_Index: 5
+      method_Index: 4
+    wait:
+      wait_Message: 0
       wait_Time: 0
-    is_Open_In_Inspector: 1
---- !u!4 &886949809
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 886949807}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1115657664
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1357466683}
-    m_Modifications:
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61045921329819530, guid: edb84fc88380a2a4f9cc757a229e0e91,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: 272
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: edb84fc88380a2a4f9cc757a229e0e91, type: 2}
-  m_IsPrefabAsset: 0
---- !u!4 &1115657665 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4062482196416734, guid: edb84fc88380a2a4f9cc757a229e0e91,
-    type: 2}
-  m_PrefabInternal: {fileID: 1115657664}
---- !u!1 &1116105178
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1116105180}
-  - component: {fileID: 1116105179}
-  m_Layer: 0
-  m_Name: ClearMovie
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1116105179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1116105178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
-  list: []
+    is_Open_In_Inspector: 0
 --- !u!4 &1116105180
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1116105178}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -110.1, y: 80.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1459788592}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122802671
 GameObject:
@@ -3651,6 +4512,7 @@ GameObject:
   - component: {fileID: 1292355556}
   - component: {fileID: 1292355555}
   - component: {fileID: 1292355557}
+  - component: {fileID: 1292355558}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -3736,7 +4598,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aunn: {fileID: 2066341012}
   before_Boss_Movie: {fileID: 472628181}
-  before_Boss_Movie_Skip: {fileID: 886949808}
+  before_Boss_Movie_Skip: {fileID: 2009719661}
+  clear_Movie: {fileID: 1116105179}
 --- !u!114 &1292355556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3761,6 +4624,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 0
+--- !u!82 &1292355558
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1292355549}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243373875129941320, guid: 99e0dad0e338c1f43a4b809f4ca302ab,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 1355202b95ce6254ab12d1b265ec1668, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1301577042 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4045680127513410, guid: e8dfe19369eb1ee44b5f0fc1710efccc,
@@ -3987,6 +4946,37 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ea28094736e434a827aea05559829e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1459788591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459788592}
+  m_Layer: 0
+  m_Name: Movies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459788592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459788591}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 110.1, y: -80.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 472628182}
+  - {fileID: 2009719662}
+  - {fileID: 1116105180}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1565141223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,7 +5061,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4045680127513410, guid: e8dfe19369eb1ee44b5f0fc1710efccc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -259.3
+      value: -240
       objectReference: {fileID: 0}
     - target: {fileID: 4045680127513410, guid: e8dfe19369eb1ee44b5f0fc1710efccc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4473,6 +5463,951 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2009719660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009719662}
+  - component: {fileID: 2009719661}
+  m_Layer: 0
+  m_Name: BeforeBossMovieSkip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009719661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009719660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  is_Disable_Controlle: 1
+  list:
+  - name: "\u30D5\u30A7\u30FC\u30C9\u30A4\u30F3"
+    type: 5
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 1292355549}
+      component: {fileID: 1292355555}
+      function_Name: Fade_In
+      component_Index: 5
+      method_Index: 3
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5"
+    type: 1
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 1301577042}
+      apply_Root_Position: 1
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 120
+          tangentMode: 65
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 120
+          inSlope: 120
+          outSlope: 0
+          tangentMode: 5
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
+    type: 2
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 1301577054}
+      kind: 0
+      parameter: DashBool
+      boolean: 1
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u79FB\u52D5\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
+    type: 2
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 1301577054}
+      kind: 0
+      parameter: IdleBool
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u79FB\u52D5\u5F85\u3061"
+    type: 6
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 0}
+      kind: 0
+      parameter: 
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 1
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u6B62\u307E\u308B\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
+    type: 2
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 1301577054}
+      kind: 0
+      parameter: DashBool
+      boolean: 0
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+  - name: "\u81EA\u6A5F\u6B62\u307E\u308B\u30A2\u30CB\u30E1\u30FC\u30B7\u30E7\u30F3"
+    type: 2
+    message:
+      file_Name: 
+      dual_Panel: 1
+      id: {x: 0, y: 0}
+      is_Auto: 0
+    motion:
+      obj: {fileID: 0}
+      apply_Root_Position: 0
+      x_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Move:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    animation:
+      animator: {fileID: 1301577054}
+      kind: 0
+      parameter: IdleBool
+      boolean: 1
+    localScale:
+      obj: {fileID: 0}
+      kind: 0
+      scale: {x: 0, y: 0}
+      x_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      y_Curve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    gen_Obj:
+      obj: {fileID: 0}
+      parent: {fileID: 0}
+      position: {x: 0, y: 0}
+    function:
+      obj: {fileID: 0}
+      component: {fileID: 0}
+      function_Name: 
+      component_Index: 0
+      method_Index: 0
+    wait:
+      wait_Message: 0
+      wait_Time: 0
+    is_Open_In_Inspector: 0
+--- !u!4 &2009719662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009719660}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -110.1, y: 80.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1459788592}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2066341012 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114027360449559808, guid: 595d2baf562ae0d468bcd4b8c8f6c6dc,
