@@ -33,6 +33,7 @@ public class NarumiAttack : BossEnemyAttack {
 
 
     public override void Stop_Attack() {
+        Stop_Starting_Phase2();
         Stop_Melody_A_Phase1();
         Stop_Melody_B_Phase1();
         Stop_Melody_C_Phase1();
@@ -40,8 +41,7 @@ public class NarumiAttack : BossEnemyAttack {
         Stop_Melody_A_Phase2();
         Stop_Melody_B_Phase2();
         Stop_Melody_C_Phase2();
-        Stop_Melody_Main_Phase2();
-        Stop_Starting_Phase2();
+        Stop_Melody_Main_Phase2();        
         scroll.Stop_Scroll();
     }
 
