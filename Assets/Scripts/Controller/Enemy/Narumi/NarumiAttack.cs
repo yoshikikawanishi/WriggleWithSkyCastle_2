@@ -41,6 +41,7 @@ public class NarumiAttack : BossEnemyAttack {
         Stop_Melody_B_Phase2();
         Stop_Melody_C_Phase2();
         Stop_Melody_Main_Phase2();
+        Stop_Starting_Phase2();
         scroll.Stop_Scroll();
     }
 
@@ -238,7 +239,9 @@ public class NarumiAttack : BossEnemyAttack {
         _main.Change_Animation("MoveBackBool", 1);
     }
 
-
+    private void Stop_Starting_Phase2() {
+        StopCoroutine("Start_Phase2_Cor");
+    }
     //====================================================================
     private IEnumerator Attack_Melody_A_Phase2_Cor() {
         yield return new WaitForSeconds(2.0f);

@@ -7,6 +7,7 @@ public class Narumi : BossEnemy {
     private Animator _anim;
     private NarumiAttack _attack;
     [SerializeField] private MelodyManager _melody;
+    [SerializeField] private MovieSystem clear_Movie;
 
 
     void Start() {
@@ -32,6 +33,7 @@ public class Narumi : BossEnemy {
     protected override void Do_After_Clear_Process() {
         base.Do_After_Clear_Process();
         Delete_Battle_Effect();
+        clear_Movie.Start_Movie();
     }
 
 
