@@ -82,7 +82,9 @@ public class BossEnemy : MonoBehaviour {
 
 
     //クリア時の処理
-    protected virtual void Clear() {        
+    protected virtual void Clear() {
+        if (state == State.cleared)
+            return;
         state = State.cleared;
         StartCoroutine("Clear_Cor");
     }

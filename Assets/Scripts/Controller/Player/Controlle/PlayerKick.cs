@@ -122,12 +122,12 @@ public class PlayerKick : MonoBehaviour {
     private IEnumerator Kick_Cor(Kind kind) {        
         accept_Input = false;
 
-        //入力受付後30フレーム以内にキック可能になればキック
+        //入力受付後500フレーム以内にキック可能になればキック
         float loop_Count = 0;
         while (!_controller.can_Attack) {
             yield return null;
             loop_Count++;
-            if (loop_Count > 30) {
+            if (loop_Count > 500) {
                 accept_Input = true;
                 yield break;
             }

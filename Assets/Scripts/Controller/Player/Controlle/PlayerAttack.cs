@@ -37,6 +37,8 @@ public class PlayerAttack : MonoBehaviour {
     private float attack_Span = 0.17f;
     private bool knock_Back = true;
 
+    private bool accept_Input = true;
+
 
     private void Set_Attack_Status(float attack_Time, float attack_Span, bool knock_Back) {
         this.attack_Time = attack_Time;
@@ -47,14 +49,14 @@ public class PlayerAttack : MonoBehaviour {
 
     //攻撃
     public void Attack() {
-        if (_controller.can_Attack) {
+        if (accept_Input) {
             //オプションによって変える
             switch (player_Manager.Get_Option()) {
-                case PlayerManager.Option.none:     Set_Attack_Status(0.18f, 0.17f, true); break;
-                case PlayerManager.Option.bee:      Set_Attack_Status(0.18f, 0.01f, true); break;
-                case PlayerManager.Option.butterfly: Set_Attack_Status(0.18f, 0.08f, false); break;
-                case PlayerManager.Option.mantis:   Set_Attack_Status(0.24f, 0.17f, true); break;
-                case PlayerManager.Option.spider:   Set_Attack_Status(0.18f, 0.17f, true); break;
+                case PlayerManager.Option.none:     Set_Attack_Status(0.15f, 0.15f, true); break;
+                case PlayerManager.Option.bee:      Set_Attack_Status(0.10f, 0.10f, true); break;
+                case PlayerManager.Option.butterfly: Set_Attack_Status(0.15f, 0.15f, false); break;
+                case PlayerManager.Option.mantis:   Set_Attack_Status(0.25f, 0.15f, true); break;
+                case PlayerManager.Option.spider:   Set_Attack_Status(0.15f, 0.15f, true); break;
             }
             StartCoroutine("Attack_Cor");
         }
@@ -63,7 +65,20 @@ public class PlayerAttack : MonoBehaviour {
 
     //攻撃用コルーチン
     public IEnumerator Attack_Cor() {
-        _controller.can_Attack = false;       
+        accept_Input = false;
+
+        //入力受付後500フレーム以内にキック可能になればキック
+        float loop_Count = 0;
+        while (!_controller.can_Attack) {
+            yield return null;
+            loop_Count++;
+            if (loop_Count > 500) {
+                accept_Input = true;
+                yield break;
+            }
+        }
+        _controller.can_Attack = false;
+
         _anim.SetTrigger("AttackTrigger");
         attack_Collision.Make_Collider_Appear(attack_Time);        
         player_SE.Play_Attack_Sound();
@@ -86,8 +101,9 @@ public class PlayerAttack : MonoBehaviour {
             yield return null;
         }
 
+        accept_Input = true;
         yield return new WaitForSeconds(attack_Span);
-        _controller.can_Attack = true;
+        _controller.can_Attack = true;        
     }
 
 

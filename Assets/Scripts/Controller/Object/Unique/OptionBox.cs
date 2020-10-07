@@ -31,6 +31,7 @@ public class OptionBox : MonoBehaviour {
             if(collision.tag == tag && !is_Opened) {
                 StartCoroutine("Open_Cor");
                 is_Opened = true;
+                Destroy(gameObject, 5.0f);
             }
         }        
     }

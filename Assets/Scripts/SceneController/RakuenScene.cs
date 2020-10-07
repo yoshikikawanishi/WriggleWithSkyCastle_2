@@ -12,7 +12,7 @@ public class RakuenScene : MonoBehaviour {
 	void Start () {
         player = GameObject.FindWithTag("PlayerTag");
         FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.02f);
-        //BGMManager.Instance.Change_BGM("Hourai");
+        BGMManager.Instance.Change_BGM("Hourai");
 	}
 	
 	

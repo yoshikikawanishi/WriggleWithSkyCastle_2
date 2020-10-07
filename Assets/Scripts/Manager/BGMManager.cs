@@ -4,7 +4,8 @@ using UnityEngine;
 
 [System.Serializable]
 public class BGM {
-    public readonly string name;
+    public bool is_Folding = false; //Editor用
+    public string name;
     public AudioClip clip;
     public float volume;
 
@@ -167,5 +168,15 @@ public class BGMManager : MonoBehaviour{
 
         //本体をループ再生
         Play_BGM(next_BGM);
+    }
+
+
+    //===================== Editor用 =========================
+    public void Add_BGM() {
+        BGM_List.Add(new BGM("name"));
+    }
+    
+    public void Remove(int index) {
+        BGM_List.RemoveAt(index);
     }
 }

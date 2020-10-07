@@ -13,4 +13,4 @@ Aya	False
 Saki	False
 Yamame	False
 Kisume	False
-Hourai	False
+Hourai	True

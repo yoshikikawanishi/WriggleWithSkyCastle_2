@@ -14,6 +14,7 @@ public class SatoMaiAttack : BossEnemyAttack {
     private SatoMai _controller;
     private SatoMaiShoot _shoot;
     private SatoMaiEffect _effect;
+    private SEManager _se;
     private SatoMaiBlockWall _block_Wall_Attack;
     private MoveConstTime satomai_Move;
     private MoveConstTime satono_Move;
@@ -27,6 +28,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         _controller = GetComponent<SatoMai>();
         _shoot = GetComponent<SatoMaiShoot>();
         _effect = GetComponentInChildren<SatoMaiEffect>();
+        _se = GetComponentInChildren<SEManager>();
         _block_Wall_Attack = GetComponent<SatoMaiBlockWall>();
         
         player = GameObject.FindWithTag("PlayerTag");
@@ -199,13 +201,15 @@ public class SatoMaiAttack : BossEnemyAttack {
         mai.transform.position = new Vector3(-250f * direction, pos.y);
         mai.transform.localScale = new Vector3(direction, 1, 1);
         mai_Move.Start_Move(new Vector3(420f * direction, pos.y), 1);
+        _se.Play("Attack");
     }
 
     
     private void Stop_Melody_A1() {
         StopCoroutine("Melody_A1_Cor");        
         _effect.Stop_Mai_Cross_Rushing_Effect();
-        _effect.Stop_Satono_Cross_Rushing_Effect();        
+        _effect.Stop_Satono_Cross_Rushing_Effect();
+        _se.Play("Attack");
     }
 
     #endregion

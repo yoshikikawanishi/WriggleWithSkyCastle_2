@@ -149,59 +149,93 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BGM_List:
-  - clip: {fileID: 8300000, guid: 45b539613836e2341be5cdd6cdf47319, type: 3}
+  - is_Folding: 1
+    name: Stage1
+    clip: {fileID: 8300000, guid: 45b539613836e2341be5cdd6cdf47319, type: 3}
     volume: 0.25
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 996ba4caf6ba3774690d553ea0782233, type: 3}
+  - is_Folding: 1
+    name: Stage1_Boss
+    clip: {fileID: 8300000, guid: 996ba4caf6ba3774690d553ea0782233, type: 3}
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 053d2c1b44ec9a449881df06fb567a54, type: 3}
+  - is_Folding: 1
+    name: Stage2
+    clip: {fileID: 8300000, guid: 053d2c1b44ec9a449881df06fb567a54, type: 3}
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 2ff738d5f7db22045b960fc04d78a369, type: 3}
+  - is_Folding: 1
+    name: Stage2_Boss
+    clip: {fileID: 8300000, guid: 2ff738d5f7db22045b960fc04d78a369, type: 3}
     volume: 0.22
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 13e3cc5d7f06afa43aec8ffcc8b98af8, type: 3}
+  - is_Folding: 1
+    name: Stage3
+    clip: {fileID: 8300000, guid: 13e3cc5d7f06afa43aec8ffcc8b98af8, type: 3}
     volume: 0.23
     have_Intoro: 1
     intoro_Clip: {fileID: 8300000, guid: 09354ad43f0b48441a8a895d5c492b38, type: 3}
-  - clip: {fileID: 8300000, guid: 94f530cc3e5e97a4d8787cb421d0d30f, type: 3}
+  - is_Folding: 1
+    name: Stage3_Boss
+    clip: {fileID: 8300000, guid: 94f530cc3e5e97a4d8787cb421d0d30f, type: 3}
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 8300000, guid: 8f613759e39931e439e25df60321fd75, type: 3}
-  - clip: {fileID: 8300000, guid: 454bfa22f24bdb6428bd5129cbd8bf59, type: 3}
+  - is_Folding: 1
+    name: Stage4
+    clip: {fileID: 8300000, guid: 454bfa22f24bdb6428bd5129cbd8bf59, type: 3}
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 31913c7f9adffa041af9e0bb76e071f2, type: 3}
+  - is_Folding: 1
+    name: Stage4_Boss
+    clip: {fileID: 8300000, guid: 31913c7f9adffa041af9e0bb76e071f2, type: 3}
     volume: 0.23
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 0}
+  - is_Folding: 0
+    name: Stage5
+    clip: {fileID: 0}
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 0}
+  - is_Folding: 0
+    name: Stage5_Boss
+    clip: {fileID: 0}
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 0}
+  - is_Folding: 0
+    name: Stage6
+    clip: {fileID: 0}
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 0}
+  - is_Folding: 0
+    name: Stage6_Boss
+    clip: {fileID: 0}
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - clip: {fileID: 8300000, guid: af5d5a72655f1ac4cabd9aa659df8baf, type: 3}
+  - is_Folding: 1
+    name: Stage7_Boss
+    clip: {fileID: 8300000, guid: af5d5a72655f1ac4cabd9aa659df8baf, type: 3}
     volume: 0.15
     have_Intoro: 1
     intoro_Clip: {fileID: 8300000, guid: b7301230aa3057245a708fb82172502b, type: 3}
-  - clip: {fileID: 8300000, guid: 64ecb13341ae7e34e912bb5be0ca0351, type: 3}
+  - is_Folding: 1
+    name: Title
+    clip: {fileID: 8300000, guid: 64ecb13341ae7e34e912bb5be0ca0351, type: 3}
     volume: 0.15
+    have_Intoro: 0
+    intoro_Clip: {fileID: 0}
+  - is_Folding: 1
+    name: Hourai
+    clip: {fileID: 8300000, guid: 5b29ef0f6c797e241b29bffc86cba17f, type: 3}
+    volume: 0.1
     have_Intoro: 0
     intoro_Clip: {fileID: 0}

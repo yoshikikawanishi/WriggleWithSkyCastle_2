@@ -42,4 +42,5 @@ public class OptionItem : MonoBehaviour {
         effect.transform.position = transform.position;
         Destroy(effect, 2.0f);
     }
+  
 }

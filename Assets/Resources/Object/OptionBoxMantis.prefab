@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114520929928724328}
   - component: {fileID: 114826354620613950}
   - component: {fileID: 61889590612333968}
+  - component: {fileID: 114235432074656602}
   m_Layer: 0
   m_Name: OptionItem
   m_TagString: Untagged
@@ -103,7 +104,7 @@ Transform:
   m_GameObject: {fileID: 1598233563750336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.7000046, y: 15.9, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: -2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4068482688533540}
   m_RootOrder: 0
@@ -317,6 +318,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114235432074656602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598233563750336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ac3fa6a26bc9649abde22be0977aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start_Blink_Time: 4
+  is_Pooled_Object: 0
 --- !u!114 &114334848146760516
 MonoBehaviour:
   m_ObjectHideFlags: 1

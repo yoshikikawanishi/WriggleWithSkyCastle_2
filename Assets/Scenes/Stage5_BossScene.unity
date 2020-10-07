@@ -771,7 +771,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f08d8e6e029469844806fba12b0a7f72, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -783,7 +783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: "\u7C73\u65AF\u8482\u5A05\u30FB\u841D\u857E\u62C9"
 --- !u!222 &76529751
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6155,7 +6155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: Riggle Nightbug
 --- !u!222 &324333309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16116,7 +16116,8 @@ AudioSource:
   m_GameObject: {fileID: 766764433}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243373875129941320, guid: 99e0dad0e338c1f43a4b809f4ca302ab,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: ec4cb9cc0fd0c7b46b25d75690ddd3bc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.01
@@ -16379,7 +16380,7 @@ MonoBehaviour:
     message:
       file_Name: SatoMaiText
       dual_Panel: 1
-      id: {x: 1, y: 1}
+      id: {x: 5, y: 10}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -22910,7 +22911,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B63\u89E3"
+  m_Text: Wriggle Nightbug
 --- !u!222 &1020608142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32698,7 +32699,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: Wriggle Nightbag
 --- !u!222 &1280088487
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33017,7 +33018,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f08d8e6e029469844806fba12b0a7f72, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -33029,7 +33030,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: "\u6C34\u6865\u30FB\u5E15\u9732\u897F"
 --- !u!222 &1412012611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38930,7 +38931,7 @@ MonoBehaviour:
     message:
       file_Name: SatoMaiText
       dual_Panel: 1
-      id: {x: 1, y: 1}
+      id: {x: 1, y: 4}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -43972,8 +43973,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97a08dac1e31c24e9dab8526f0057bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  true_Answer_Sound: {fileID: 8300000, guid: 09f3becdcdc9da74c8da18086cf2e474, type: 3}
-  false_Answer_Sound: {fileID: 8300000, guid: 09f3becdcdc9da74c8da18086cf2e474, type: 3}
+  quiz_Sound: {fileID: 8300000, guid: fefefcef69d08b44199e0dba6c2541ca, type: 3}
+  true_Answer_Sound: {fileID: 8300000, guid: 6ff08117be0af1044b65315c3e481c0d, type: 3}
+  false_Answer_Sound: {fileID: 8300000, guid: 098e1e02bc455284f85eecc55988a319, type: 3}
   event_Canvas: {fileID: 766764436}
   selections1: {fileID: 1915984235}
   selections2: {fileID: 1055637463}
@@ -54111,7 +54113,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: Riggle Nightbag
 --- !u!222 &1967948272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60183,7 +60185,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f08d8e6e029469844806fba12b0a7f72, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -60195,7 +60197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6B63\u89E3"
+  m_Text: "\u8389\u683C\u9732\u30FB\u5948\u7279\u5DF4\u683C"
 --- !u!222 &2055749889
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -60339,7 +60341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eac993e2b2b7e4193d08dc439ba4d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE_List: []
+  SE_List:
+  - name: Attack
+    clip: {fileID: 8300000, guid: 6f190392cf3691e458c463804cf2793f, type: 3}
+    volume: 0
 --- !u!1 &2075134820
 GameObject:
   m_ObjectHideFlags: 0
@@ -60395,7 +60400,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f08d8e6e029469844806fba12b0a7f72, type: 3}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 0
@@ -60407,7 +60412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u3042\u3042\u3042"
+  m_Text: "\u857E\u8FEA\u30FB\u970D\u74E6\u7279\u7F57\u514B"
 --- !u!222 &2075134823
 CanvasRenderer:
   m_ObjectHideFlags: 0

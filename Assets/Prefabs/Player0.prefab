@@ -151,8 +151,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4344298528032556}
-  - component: {fileID: 198574177781625706}
-  - component: {fileID: 199200724288109026}
+  - component: {fileID: 199142891333020372}
+  - component: {fileID: 198429509259486326}
+  - component: {fileID: 114762880636135400}
   m_Layer: 8
   m_Name: ChargeKickChargeEffect
   m_TagString: Untagged
@@ -2274,7 +2275,7 @@ MonoBehaviour:
   ride_Beetle: {fileID: 198127356404357138}
   dark_Powder: {fileID: 198983505680815470}
   jump_Effect: {fileID: 1227652882705200}
-  charge_Kick_Charge_Effect: {fileID: 198574177781625706}
+  charge_Kick_Charge_Effect: {fileID: 198429509259486326}
 --- !u!114 &114495240637864774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2360,6 +2361,23 @@ MonoBehaviour:
   charge_Kick_Shoot_Obj: {fileID: 1683584142448316, guid: 0dab1b47c74fa6540ac234524b4afc35,
     type: 2}
   shoot_Interval: 0.25
+--- !u!114 &114762880636135400
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363138437532354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de26d0d93bf55c47bebc65becb5cb48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spread_Speed: 0
+  default_Size: 1
+  max_Size: 1
+  life_Time: 0
+  angler_Velocity: 5
+  in_Fixed_Update: 1
 --- !u!114 &114800450731055106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16194,7 +16212,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!198 &198574177781625706
+--- !u!198 &198429509259486326
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -16273,7 +16291,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -16326,7 +16344,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -50
+      scalar: -70
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -16379,8 +16397,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6863209, g: 1, b: 0.5424528, a: 1}
+      minColor: {r: 0.091236316, g: 0.3301887, b: 0, a: 1}
+      maxColor: {r: 0.16749148, g: 0.5377358, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -16442,7 +16460,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -16600,7 +16618,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -16653,7 +16671,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -16706,8 +16724,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -16848,7 +16866,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 32
+      value: 48
       mode: 0
       spread: 0
       speed:
@@ -17077,7 +17095,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 100
+        scalar: 20
         minScalar: 0
         maxCurve:
           serializedVersion: 2
@@ -17292,10 +17310,10 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   RotationModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -17348,7 +17366,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -17401,9 +17419,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 1.0471976
+      minScalar: 0.7853981
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -17454,7 +17472,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -17462,7 +17480,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -17478,7 +17496,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
+        atime0: 578
         atime1: 65535
         atime2: 0
         atime3: 0
@@ -43752,7 +43770,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!199 &199200724288109026
+--- !u!199 &199142891333020372
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 1
@@ -43768,7 +43786,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a33f30bf620e5d54eb1d199c77a90be1, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -43788,7 +43806,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -4
+  m_SortingOrder: -3
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

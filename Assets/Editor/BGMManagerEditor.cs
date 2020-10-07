@@ -11,8 +11,19 @@ public class BGMManagerEditor : Editor {
         BGMManager obj = target as BGMManager;        
 
         for (int i = 0; i < obj.BGM_List.Count; i++) {
-            
-            EditorGUILayout.LabelField(obj.BGM_List[i].name);
+            EditorGUILayout.BeginHorizontal();
+            {
+                if(obj.BGM_List[i].is_Folding = EditorGUILayout.Toggle("", obj.BGM_List[i].is_Folding, GUILayout.Width(10))) {
+                    EditorGUILayout.LabelField(obj.BGM_List[i].name);
+                    EditorGUILayout.EndHorizontal();
+                    GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(2));
+                    continue;
+                }
+                GUI.color = new Color(0.5f, 1f, 0.5f);
+                obj.BGM_List[i].name = EditorGUILayout.TextField("", obj.BGM_List[i].name, GUILayout.Width(200), GUILayout.Height(15));
+                GUI.color = Color.white;
+            }
+            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginHorizontal();
             {
@@ -30,8 +41,22 @@ public class BGMManagerEditor : Editor {
             }
             EditorGUILayout.EndHorizontal();
 
+            EditorGUILayout.BeginHorizontal();
+            {
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button("Remove", GUILayout.Width(100), GUILayout.Height(10))) {
+                    obj.Remove(i);
+                }
+                GUILayout.FlexibleSpace();
+            }
+            EditorGUILayout.EndHorizontal();
+
             EditorGUILayout.Space();
             GUILayout.Box("", GUILayout.ExpandWidth(true), GUILayout.Height(2));
+        }
+
+        if (GUILayout.Button("Add", GUILayout.Width(200), GUILayout.Height(20))) {
+            obj.Add_BGM();
         }
 
         EditorUtility.SetDirty(obj);

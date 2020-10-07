@@ -67,7 +67,7 @@ public class SatoMai : BossEnemy {
     //ムービー開始
     protected override void Do_After_Clear_Process() {
         base.Do_After_Clear_Process();
-        clear_Movie.Start_Movie();
+        clear_Movie.Start_Movie();        
         Delete_Battle_Effect();
     }
 

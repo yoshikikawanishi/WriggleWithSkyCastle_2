@@ -3,6 +3,7 @@ RedYinBallStrong	True
 RedYinBallStrong (1)	True
 RedYinBallStrong	True
 RedYinBallStrong (2)	True
+RedYinBallStrong (8)	True
 RedYinBallStrong	True
 RedYinBallStrong (3)	True
 RedYinBallStrong (4)	True

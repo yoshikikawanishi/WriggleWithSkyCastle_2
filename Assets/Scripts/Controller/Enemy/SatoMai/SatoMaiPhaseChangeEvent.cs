@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
+    [SerializeField] private AudioClip quiz_Sound;
     [SerializeField] private AudioClip true_Answer_Sound;
     [SerializeField] private AudioClip false_Answer_Sound;
     [Space]
@@ -53,16 +54,17 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
         player_Controller.Change_Animation("IdleBool");
         player_Rigid.velocity = new Vector2(0, 0);
 
-        Appear_Window();        
+        Appear_Window();
 
-        //全二問
+        //全二問               
         for (int i = 0; i < 2; i++) {
-            Display_Message(1, 2, i);                           //問題文1：口上
+            Display_Message(1, 4, i);                               //口上
             yield return new WaitUntil(Is_End_Message);
+            _audio.PlayOneShot(quiz_Sound);
 
             Display_Answer_Selection(i);                        //選択肢表示
 
-            Display_Message(3, 4, i);                           //問題文2：本文
+            Display_Message(5, 5, i);                           //問題文
             yield return new WaitUntil(Is_End_Message);                        
             yield return new WaitForSeconds(0.1f);
 
@@ -73,18 +75,20 @@ public class SatoMaiPhaseChangeEvent : MonoBehaviour {
 
             if (is_Selected_True_Answer) {                      //正解が押されたとき
                 PlayerManager.Instance.Add_Life();
-                Display_Message(5, 6, i);
+                Display_Message(6, 7, i);
                 _audio.PlayOneShot(true_Answer_Sound);
             }            
             else {                                              //不正解が押されたとき
                 PlayerManager.Instance.Reduce_Life();
-                Display_Message(7, 8, i);
+                Display_Message(8, 9, i);
                 _audio.PlayOneShot(false_Answer_Sound);
             }
             yield return new WaitUntil(Is_End_Message);
 
             Disable_Answer_Selection();
         }
+        _message.Start_Display("SatoMaiEventText", 38, 38);           //クイズ終了
+        yield return new WaitUntil(Is_End_Message);
 
         Disappear_Window();        
 
