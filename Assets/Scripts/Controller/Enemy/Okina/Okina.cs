@@ -8,6 +8,8 @@ public class Okina : BossEnemy {
     [SerializeField] private MovieSystem before_Movie;
     [SerializeField] private MovieSystem before_Movie_Skip;
     [SerializeField] private MovieSystem clear_Movie;
+    [Space]
+    [SerializeField] private GameObject back_Design;
 
     private OkinaAttack _attack;
     private Animator _anim;
@@ -27,11 +29,11 @@ public class Okina : BossEnemy {
     }
     
 
-    public override void Start_Battle() {
-        //BGMManager.Instance.Change_BGM()
+    public override void Start_Battle() {        
         Play_Battle_Effect();
         Change_Animation("AttackBool");
         GetComponentInChildren<MelodyManager>().Start_Time_Count();
+        BGMManager.Instance.Change_BGM("Stage6_Boss");
         base.Start_Battle();
     }
 
@@ -65,11 +67,14 @@ public class Okina : BossEnemy {
     //戦闘エフェクト(背景色、模様)
     public void Play_Battle_Effect() {
         BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 1);
+        back_Design.transform.localScale = new Vector3(0, 0, 0);
+        back_Design.SetActive(true);
     }
 
     //戦闘終了時の先頭エフェクト消す
     public void Delete_Battle_Effect() {
         BackGroundEffector.Instance.Change_Color_Default(1f);
+        back_Design.SetActive(false);
     }
 
 

@@ -83,11 +83,12 @@ public class SatoMaiAttack : BossEnemyAttack {
     private IEnumerator Change_Phase_Cor() {
         base.Set_Can_Switch_Attack(false);        
         _controller.Become_Invincible();        
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         //移動
         //一緒にいるときはまず中央に戻る
         if (satomai.activeSelf) {
             _controller.Change_Animation("IdleBool");
+            yield return new WaitForSeconds(0.5f);
             satomai_Move.Start_Move(configCP.nutral_Pos, 0);
             yield return new WaitUntil(satomai_Move.End_Move);
             satono.transform.position = configCP.nutral_Pos;
@@ -149,7 +150,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         base.Set_Can_Switch_Attack(false);        
         //画面外に分かれて出る
         _controller.Change_Animation("DivideAndGoOutBool");
-        yield return new WaitForSeconds(1.5f);  
+        yield return new WaitForSeconds(0.5f);  
         satono_Move.Start_Move(configA.satono_Outside_Pos, 0);
         mai_Move.Start_Move(configA.mai_Outside_Pos, 0);
         yield return new WaitForSeconds(2.0f);
@@ -160,7 +161,7 @@ public class SatoMaiAttack : BossEnemyAttack {
             int direction = UnityEngine.Random.Range(0, 2) == 0 ? 1 : -1;
             Rush_By_Satono(direction);
             _effect.Play_Satono_Cross_Rushing_Effect();
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.348f);
             Rush_By_Mai(direction);
             _effect.Play_Mai_Cross_Rushing_Effect(direction);
             yield return new WaitUntil(mai_Move.End_Move);
@@ -192,6 +193,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         satono.transform.position = new Vector3(pos.x, 160f);
         satono.transform.localScale = new Vector3(-direction, 1, 1);
         satono_Move.Start_Move(new Vector3(pos.x, -380f), 1);
+        _se.Play("Attack");
     }
 
 
@@ -223,7 +225,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         public readonly Vector3 nutral_Pos = new Vector3(0, 64, 0);
         public readonly Vector3 satono_Pos = new Vector3(-220f, 0, 0);
         public readonly Vector3 mai_Pos = new Vector3(220f, 0, 0);
-        public readonly float span = 1.5f;
+        public readonly float span = 0.697f;
     }
     private ConfigB configB = new ConfigB();
         
@@ -235,7 +237,7 @@ public class SatoMaiAttack : BossEnemyAttack {
 
     private IEnumerator Melody_B1_Cor() {
         base.Set_Can_Switch_Attack(false);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         //移動
         //一緒にいるとき
         if (satomai.activeSelf) {
@@ -248,9 +250,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         satono_Move.Start_Move(configB.satono_Pos, 0);
         mai_Move.Start_Move(configB.mai_Pos, 0);
         yield return new WaitUntil(mai_Move.End_Move);
-        yield return new WaitUntil(satono_Move.End_Move);
-        
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitUntil(satono_Move.End_Move);                
 
         //ブロック生成
         int loop_Count = 0;
@@ -260,9 +260,12 @@ public class SatoMaiAttack : BossEnemyAttack {
             }
             SatoMaiBlockWall.Kind kind = (SatoMaiBlockWall.Kind)Enum.ToObject(typeof(SatoMaiBlockWall.Kind), loop_Count);
             _block_Wall_Attack.Generate_And_Move(true, kind);
-            _block_Wall_Attack.Generate_And_Move(false, kind);            
+            _block_Wall_Attack.Generate_And_Move(false, kind);
+            UsualSoundManager.Instance.Play_Shoot_Sound();
+            _effect.Play_Mai_Circle_Effect();
+            _effect.Play_Satono_Circle_Effect();
             yield return new WaitForSeconds(configB.span);
-            yield return new WaitForSeconds(configB.span);
+            yield return new WaitForSeconds(configB.span);            
             loop_Count = (loop_Count + 1) % 3;
         }
         //戻って合流する
@@ -304,7 +307,7 @@ public class SatoMaiAttack : BossEnemyAttack {
         base.Set_Can_Switch_Attack(false);
         //移動
         _controller.Change_Animation("IdleBool");
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         satomai.transform.localScale = new Vector3(1, 1, 1);
         satomai_Move.Start_Move(configChorus1.pos_In_Shooting, 2);
         yield return new WaitUntil(satomai_Move.End_Move);
@@ -366,19 +369,22 @@ public class SatoMaiAttack : BossEnemyAttack {
             yield break;
         }
 
-        _controller.Change_Animation("IdleBool");
+        _controller.Change_Animation("RollingRushingBool");
 
         while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) {
             //レーザー
             for (int i = 0; i < 3; i++) {
                 _shoot.Shoot_Phase1_Laser();
+                _effect.Play_Burst_Effect();
                 yield return new WaitForSeconds(configChorus1.laser_Span);
                 if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
                     break;
             }
             //お札弾幕
             _shoot.Shoot_Phase1_Talisman_Bullet();
-            for(float t = 0; t < configChorus1.talisman_Shoot_Duration; t += Time.deltaTime) {                
+            _effect.Play_Burst_Effect();
+            UsualSoundManager.Instance.Play_Shoot_Sound();
+            for (float t = 0; t < configChorus1.talisman_Shoot_Duration; t += Time.deltaTime) {                
                 if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
                     break;
                 yield return null;
@@ -408,7 +414,9 @@ public class SatoMaiAttack : BossEnemyAttack {
             yield break;
         }
 
-        _controller.Change_Animation("IdleBool");       
+        _controller.Change_Animation("IdleBool");
+        UsualSoundManager.Instance.Play_Shoot_Sound();
+        _effect.Play_Burst_Effect();
 
         while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.chorus1) {
             _shoot.Shoot_Phase2_Laser_Pink(UnityEngine.Random.Range(0, 80f));

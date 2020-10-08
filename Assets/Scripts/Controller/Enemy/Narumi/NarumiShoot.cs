@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class NarumiShoot : MonoBehaviour {
 
+    [SerializeField] private ShootSystem red_Bullet_Shoot;
     [SerializeField] private GameObject snow_Shoot_Obj;
     [SerializeField] private ShootSystem yellow_Talisman_Shoot;
     [SerializeField] private ShootSystem yellow_Talisman_Shoot_Strong;
@@ -15,6 +16,15 @@ public class NarumiShoot : MonoBehaviour {
 
     void Start() {
         ObjectPoolManager.Instance.Create_New_Pool(jizo_Bullet.gameObject, 5);
+    }
+
+
+    public void Start_Red_Bullet_Shoot() {        
+        red_Bullet_Shoot.Shoot();
+    }
+
+    public void Stop_Red_Bullet_Shoot() {
+        red_Bullet_Shoot.Stop_Shoot();
     }
 
 

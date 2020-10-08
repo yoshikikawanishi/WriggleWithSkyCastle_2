@@ -203,22 +203,22 @@ MonoBehaviour:
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - is_Folding: 0
+  - is_Folding: 1
     name: Stage5_Boss
-    clip: {fileID: 0}
-    volume: 0
-    have_Intoro: 0
-    intoro_Clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 18f6dd52bcea3db4d908017d49cfc1e3, type: 3}
+    volume: 0.2
+    have_Intoro: 1
+    intoro_Clip: {fileID: 8300000, guid: b4950b0f64272704c90d33435a45cbd5, type: 3}
   - is_Folding: 0
     name: Stage6
     clip: {fileID: 0}
     volume: 0
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - is_Folding: 0
+  - is_Folding: 1
     name: Stage6_Boss
-    clip: {fileID: 0}
-    volume: 0
+    clip: {fileID: 8300000, guid: 85642d88a370b1e429c0983a28d67510, type: 3}
+    volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
   - is_Folding: 1

@@ -12,7 +12,7 @@ public class NarumiBlockBarrier : MonoBehaviour {
     //回転するブロック
     private List<GameObject> blocks = new List<GameObject>();
     private int num = 0;                        //数
-    private float radius = 32f;                 //半径
+    private float radius = 48f;                 //半径
     private float angle_Velocity_Rad = 0.1f;    //回転速度
     private float center_Angle_Rad = 0;         //0番目のブロックの角度
     private float inter_Angle_Rad;              //ブロック間の角度

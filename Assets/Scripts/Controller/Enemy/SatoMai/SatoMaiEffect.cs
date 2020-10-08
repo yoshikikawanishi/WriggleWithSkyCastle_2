@@ -10,6 +10,9 @@ public class SatoMaiEffect : MonoBehaviour {
     [SerializeField] private GameObject satono_Cross_Rushing_Effect;
     [SerializeField] private GameObject rolling_Rush_Pre_Effect_Right;
     [SerializeField] private GameObject rolling_Rush_Pre_Effect_Left;
+    [SerializeField] private GameObject satono_Circle_Effect;
+    [SerializeField] private GameObject mai_Circle_Effect;
+    [SerializeField] private ParticleSystem burst_Effect;
 
     private List<GameObject> power_Charge_Effects = new List<GameObject>();
 
@@ -73,5 +76,22 @@ public class SatoMaiEffect : MonoBehaviour {
         }
         effect.SetActive(true);
         Destroy(effect, 3.0f);
+    }
+
+
+    public void Play_Mai_Circle_Effect() {
+        var obj = Instantiate(mai_Circle_Effect);
+        obj.SetActive(true);
+    }
+
+
+    public void Play_Satono_Circle_Effect() {
+        var obj = Instantiate(satono_Circle_Effect);
+        obj.SetActive(true);
+    }
+
+
+    public void Play_Burst_Effect() {
+        burst_Effect.Play();
     }
 }

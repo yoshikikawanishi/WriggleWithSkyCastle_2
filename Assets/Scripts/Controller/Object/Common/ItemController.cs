@@ -58,9 +58,10 @@ public class ItemController : MonoBehaviour {
         UsualSoundManager.Instance.Play_Get_Small_Item_Sound();
         //エフェクト
         GameObject main_Camera = GameObject.FindWithTag("MainCamera");
-        ReleaseAndConvergePlayer RC = transform.GetChild(0).GetComponent<ReleaseAndConvergePlayer>();        
+        var effect = Instantiate(transform.GetChild(0).gameObject);
+        ReleaseAndConvergePlayer RC = effect.GetComponent<ReleaseAndConvergePlayer>();        
         RC.Play_Release_And_Converge(6, transform.position, new Vector2(208f, -140f), main_Camera);
-        transform.GetChild(0).SetParent(null);
+        effect.transform.SetParent(null);
 
         if (GetComponent<Bullet>() == null)
             Destroy(gameObject);

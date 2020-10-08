@@ -35,7 +35,8 @@ public class Stage5_2Scene : MonoBehaviour {
 
     void Start () {
         //取得
-        main_Camera = GameObject.FindWithTag("MainCamera");       
+        main_Camera = GameObject.FindWithTag("MainCamera");
+        BGMManager.Instance.Change_BGM("Stage4");
     }
 
 

@@ -17,10 +17,11 @@ public class SatoMaiBlockWall : MonoBehaviour {
     private readonly float block_Size = 32f;
     private readonly int block_Num = 9;
     private readonly float bottom_Height = -128f;
-    private readonly float center_Pos = 16f;
+    private readonly float center_Pos = 17f;
 
-    private float move_Speed = 2f;
+    private float move_Speed = 1.5f;
 
+    private SEManager _se;
     private CameraShake camera_Shake;
 
 
@@ -30,6 +31,7 @@ public class SatoMaiBlockWall : MonoBehaviour {
         ObjectPoolManager.Instance.Create_New_Pool(shoot_Crash_Block, block_Num);
         ObjectPoolManager.Instance.Create_New_Pool(charge_Kick_Crash_Block, block_Num);
         //取得
+        _se = GetComponentInChildren<SEManager>();
         camera_Shake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
@@ -74,10 +76,11 @@ public class SatoMaiBlockWall : MonoBehaviour {
             foreach(var block in blocks) {
                 block.transform.position += new Vector3(move_Speed * direction, 0, 0);
             }
-            yield return new WaitForSeconds(0.016f);
+            yield return new WaitForSeconds(0f);
         }
         //真ん中に着いた
         camera_Shake.Shake(0.5f, new Vector2(1f, 1f), true);
+        _se.Play("Impact");
         yield return new WaitForSeconds(1.0f);
 
         //ブロックを消す

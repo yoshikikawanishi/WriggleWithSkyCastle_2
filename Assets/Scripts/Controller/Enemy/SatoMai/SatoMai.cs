@@ -12,6 +12,8 @@ public class SatoMai : BossEnemy {
     [SerializeField] public GameObject satomai;
     [SerializeField] public GameObject satono;
     [SerializeField] public GameObject mai;
+    [Space]
+    [SerializeField] private GameObject back_Design;
 
     private SatoMaiAttack _attack;
     private Animator _anim;
@@ -52,6 +54,7 @@ public class SatoMai : BossEnemy {
         base.Start_Battle();
         melody_Manager.Start_Time_Count();
         Play_Battle_Effect();
+        BGMManager.Instance.Change_BGM("Stage5_Boss");
     }
 
 
@@ -119,10 +122,13 @@ public class SatoMai : BossEnemy {
     //戦闘エフェクト(背景色、模様)
     public void Play_Battle_Effect() {
         BackGroundEffector.Instance.Start_Change_Color(new Color(0.4f, 0.4f, 0.4f), 1);
+        back_Design.transform.localScale = new Vector3(0, 0, 0);
+        back_Design.SetActive(true);
     }
 
     //戦闘終了時の先頭エフェクト消す
     public void Delete_Battle_Effect() {
         BackGroundEffector.Instance.Change_Color_Default(1f);
+        back_Design.SetActive(false);
     }
 }

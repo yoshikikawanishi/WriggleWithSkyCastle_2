@@ -205,10 +205,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: 18
+  inter_Angle_Deg: 15
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 6
+  shoot_Rate: 8
   duration: 5
   connect_Bullet: 0
   connect_Num: 1
@@ -375,10 +375,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: -18
+  inter_Angle_Deg: -15
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 6
+  shoot_Rate: 8
   duration: 5
   connect_Bullet: 0
   connect_Num: 1

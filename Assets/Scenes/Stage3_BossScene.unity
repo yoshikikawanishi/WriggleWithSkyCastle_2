@@ -2306,7 +2306,7 @@ MonoBehaviour:
     message:
       file_Name: AunnText
       dual_Panel: 1
-      id: {x: 1, y: 5}
+      id: {x: 1, y: 6}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -3019,7 +3019,7 @@ MonoBehaviour:
     message:
       file_Name: AunnText
       dual_Panel: 1
-      id: {x: 6, y: 8}
+      id: {x: 7, y: 9}
       is_Auto: 0
     motion:
       obj: {fileID: 0}
@@ -3664,7 +3664,7 @@ MonoBehaviour:
     message:
       file_Name: AunnText
       dual_Panel: 1
-      id: {x: 9, y: 14}
+      id: {x: 10, y: 15}
       is_Auto: 0
     motion:
       obj: {fileID: 0}

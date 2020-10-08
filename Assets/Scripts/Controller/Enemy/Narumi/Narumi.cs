@@ -8,6 +8,8 @@ public class Narumi : BossEnemy {
     private NarumiAttack _attack;
     [SerializeField] private MelodyManager _melody;
     [SerializeField] private MovieSystem clear_Movie;
+    [Space]
+    [SerializeField] private GameObject back_Design;
 
 
     void Start() {
@@ -27,6 +29,7 @@ public class Narumi : BossEnemy {
     protected override void Clear() {
         base.Clear();
         _attack.Stop_Attack();
+        _attack.Set_Can_Switch_Attack(false);
     }
 
 
@@ -61,10 +64,13 @@ public class Narumi : BossEnemy {
     //戦闘エフェクト(背景色、模様)
     public void Play_Battle_Effect() {
         BackGroundEffector.Instance.Start_Change_Color(new Color(0.3f, 0.3f, 0.38f), 1);
+        back_Design.transform.localScale = new Vector3(0, 0, 0);
+        back_Design.SetActive(true);
     }
 
     //戦闘終了時の先頭エフェクト消す
     public void Delete_Battle_Effect() {
         BackGroundEffector.Instance.Change_Color_Default(1f);
+        back_Design.SetActive(false);
     }
 }

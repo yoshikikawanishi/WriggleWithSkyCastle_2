@@ -112,7 +112,6 @@ public class CrashBlockController : MonoBehaviour {
         effect.transform.SetParent(null);
         effect.SetActive(true);
         Destroy(effect, 1.0f);
-        
     }
 
 
