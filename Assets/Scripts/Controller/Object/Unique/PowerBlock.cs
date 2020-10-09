@@ -21,7 +21,7 @@ public class PowerBlock : MonoBehaviour {
 
     void Start () {
         power_Prefab = Resources.Load("Object/Power") as GameObject;
-        ObjectPoolManager.Instance.Create_New_Pool(power_Prefab, 50);
+        ObjectPoolManager.Instance.Create_New_Pool(power_Prefab, 100);
         default_Pos = transform.position;
         _sprite = GetComponent<SpriteRenderer>();
 	}
@@ -37,7 +37,7 @@ public class PowerBlock : MonoBehaviour {
 
     private void Damaged() {
         //パワー出す
-        int num = 100 - damaged_Count * 10;
+        int num = 100;
         float angle;
         float power;
         for(int i = 0; i < num; i++) {            
@@ -52,8 +52,11 @@ public class PowerBlock : MonoBehaviour {
         //揺らす
         StartCoroutine(Shake_Cor());
         //色を下げる
-        _sprite.color -= new Color(0.05f, 0.05f, 0.05f, 0);
+        _sprite.color -= new Color(0.05f, 0.05f, 0.05f, 0);        
         damaged_Count++;
+        if (damaged_Count > 5) {
+            Crash();
+        }
     }
 
     //揺れる
@@ -63,6 +66,13 @@ public class PowerBlock : MonoBehaviour {
             yield return null;
         }
         transform.position = default_Pos;
+    }
+
+
+    private void Crash() {
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(0).SetParent(null);
+        Destroy(gameObject);
     }
 
 }

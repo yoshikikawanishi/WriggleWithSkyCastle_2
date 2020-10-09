@@ -29,7 +29,7 @@ public class PlayerDamaged : MonoBehaviour {
 
         PlayerBodyCollision body_Collision = GetComponentInChildren<PlayerBodyCollision>();
 
-        invincible_Time_Length = 1.0f;
+        invincible_Time_Length = 2.0f;
         if (GetComponent<PlayerController>().Get_Is_Ride_Beetle()) {
             invincible_Time_Length = 3.0f;
         }

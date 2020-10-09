@@ -1433,7 +1433,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initial_State: 0
-  span: 2
 --- !u!19719996 &1596973063
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2747,7 +2746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initial_State: 1
-  span: 2
 --- !u!19719996 &1734173681
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -7612,6 +7610,14 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 239891465b020fd47b93515cccd98278, type: 2}
   - m_RefCount: 169
     m_Data: {fileID: 11400000, guid: e961670896d8bf54891baa7d9ddc76de, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 19
     m_Data: {fileID: 21300014, guid: f41f1cfd6166aea479e79e196c1ad81b, type: 3}
@@ -7635,6 +7641,14 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 94f2ce17b99d7de479ad1f44297a7e97, type: 3}
   - m_RefCount: 169
     m_Data: {fileID: 21300008, guid: 4be2de1ea2d97ea459d2f13cde67742a, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 422
     m_Data:

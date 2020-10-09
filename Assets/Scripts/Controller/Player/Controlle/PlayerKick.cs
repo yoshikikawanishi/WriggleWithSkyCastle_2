@@ -258,7 +258,7 @@ public class PlayerKick : MonoBehaviour {
 
         //文のアイテムを持っていたら上げる
         if (CollectionManager.Instance.Is_Collected("Aya"))
-            speed *= 1.5f;
+            speed *= 1.2f;
 
         return speed;
     }

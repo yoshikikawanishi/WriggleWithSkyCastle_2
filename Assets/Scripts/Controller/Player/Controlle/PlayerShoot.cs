@@ -27,9 +27,11 @@ public class PlayerShoot : MonoBehaviour {
     //チャージ段階
     private int charge_Phase = 0;
     //チャージショットに必要なパワー
-    private readonly int essential_Power_In_Charge_Shoot = 40;
+    private readonly int essential_Power_In_Charge_Shoot = 30;
     //パワー
     private int player_Power = 0;
+
+    int shoot_Count = 0;
 
 
 	// Use this for initialization
@@ -40,6 +42,10 @@ public class PlayerShoot : MonoBehaviour {
         ObjectPoolManager.Instance.Create_New_Pool(butterfly_Bullet, 5);
         ObjectPoolManager.Instance.Create_New_Pool(mantis_Bullet, 5);
         ObjectPoolManager.Instance.Create_New_Pool(spider_Bullet, 5);
+        charge_Shoot_Obj = Instantiate(charge_Shoot_Obj);
+        charge_Shoot_Obj.SetActive(false);
+        charge_Kick_Shoot_Obj = Instantiate(charge_Kick_Shoot_Obj);
+        charge_Kick_Shoot_Obj.SetActive(false);
         //取得
         player_Manager = PlayerManager.Instance;
         player_Controller = GetComponent<PlayerController>();
@@ -105,8 +111,10 @@ public class PlayerShoot : MonoBehaviour {
             }
             yield return new WaitForSeconds(s.span);
         }
+        shoot_Count = (shoot_Count + 1) % 2;
         //パワーの減少
-        BeetlePowerManager.Instance.Decrease(1);
+        if(shoot_Count == 0)
+            BeetlePowerManager.Instance.Decrease(1);
     }
 
 
@@ -197,17 +205,22 @@ public class PlayerShoot : MonoBehaviour {
             yield break;
         //パワー減らす
         BeetlePowerManager.Instance.Decrease(essential_Power_In_Charge_Shoot);
-        //生成
-        var obj = Instantiate(charge_Shoot_Obj);
-        obj.transform.position = transform.position + new Vector3(transform.localScale.x * 128f, 0);        
-        ShootSystem[] shoots = obj.GetComponentsInChildren<ShootSystem>();
+        //効果音
+        player_SE.Play_Charge_Shoot_Sound();
+        camera_Shake.Shake(0.25f, new Vector2(0, 1.2f), false);
         //ボム生成
         var bomb = Instantiate(charge_Shoot_Bomb);
         bomb.transform.position = transform.position;
 
-        player_SE.Play_Charge_Shoot_Sound();
-        camera_Shake.Shake(0.25f, new Vector2(0, 1.2f), false);
+        //ショット生成
+        if (charge_Shoot_Obj.activeSelf)
+            yield break;
 
+        var obj = charge_Shoot_Obj;
+        obj.transform.position = transform.position + new Vector3(transform.localScale.x * 128f, 0);
+        obj.SetActive(true);
+        ShootSystem[] shoots = obj.GetComponentsInChildren<ShootSystem>();
+        StartCoroutine("Inactive_Charge_Shoot_Obj_Cor", obj);        
         //ショット
         shoots[0].Shoot();
         yield return new WaitForSeconds(1f / 14f);
@@ -283,11 +296,20 @@ public class PlayerShoot : MonoBehaviour {
 
     //チャージキックのショット用
     public void Shoot_Charge_Kick_Shoot() {
-        var obj = Instantiate(charge_Kick_Shoot_Obj);
-        obj.transform.position = transform.position;
-        ShootSystem[] shoots = obj.GetComponentsInChildren<ShootSystem>();
+        if (charge_Kick_Shoot_Obj.activeSelf)
+            return;
+        charge_Kick_Shoot_Obj.SetActive(true);
+        charge_Kick_Shoot_Obj.transform.position = transform.position;
+        ShootSystem[] shoots = charge_Kick_Shoot_Obj.GetComponentsInChildren<ShootSystem>();
         for(int i = 0; i < shoots.Length; i++) {
             shoots[i].Shoot();
         }
+        StartCoroutine("Inactive_Charge_Shoot_Obj_Cor", charge_Kick_Shoot_Obj);
+    }
+
+
+    private IEnumerator Inactive_Charge_Shoot_Obj_Cor(GameObject obj) {
+        yield return new WaitForSeconds(10.0f);
+        obj.SetActive(false);
     }
 }

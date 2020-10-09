@@ -1015,6 +1015,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 513199345}
+  - {fileID: 2111339259}
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -30000,6 +30001,10 @@ Prefab:
       propertyPath: collection_Name
       value: Medicine
       objectReference: {fileID: 0}
+    - target: {fileID: 1679011891324796, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad841176ffea4c14cb8b8908df271e4f, type: 2}
   m_IsPrefabAsset: 0
@@ -32730,11 +32735,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2111339256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4005.7, y: -69.2, z: 0}
+  m_LocalPosition: {x: -10.9001465, y: 4.100006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_Father: {fileID: 86950589}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2112400568
 Prefab:

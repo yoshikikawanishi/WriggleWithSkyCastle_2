@@ -1273,9 +1273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d66c3cda971b142a0ccf14226963c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 480300004c040000
-  power_Value: 60
-  score_Value: 30
+  life: 840300004c040000
+  power_Value: 30
+  score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1212498252451088, guid: dec7555660d41c249bae666db35d812a,
     type: 2}
   clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,

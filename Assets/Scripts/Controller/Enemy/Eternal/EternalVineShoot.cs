@@ -7,7 +7,7 @@ public class EternalVineShoot : MonoBehaviour {
     [SerializeField] private Bullet vine_Bullet;
     [SerializeField] private GameObject vine_Shoot_Divide_Effect_Prefab;
 
-    private readonly float shoot_Span = 0.09f;
+    private readonly float shoot_Span = 0.08f;
     private readonly float bullet_Lifetime = 2f;
     private readonly int bullet_Num = 50;    
 
@@ -45,7 +45,8 @@ public class EternalVineShoot : MonoBehaviour {
                 yield break;            
             //枝分かれを作る
             if (count % divide_Count == 0) {
-                divide_Count += 4;
+                divide_Count += 3;
+                count = 0;
                 VineList v = new VineList();
                 float initial_Angle = VList.Angle() + (Random.Range(0, 2) - 0.5f) * Mathf.PI; 
                 v.Create_List(bullet_Num, pos, initial_Angle, Random.Range(-0.1f, 0.1f));

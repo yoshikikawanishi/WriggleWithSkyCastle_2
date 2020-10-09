@@ -152,7 +152,7 @@ public class EternalAttack : BossEnemyAttack {
             yield return new WaitForSeconds(1.0f);
             _effect.Play_Burst_Effect(Color.green);
             UsualSoundManager.Instance.Play_Shoot_Sound();
-            _shoot.Shoot_Vine_Shoot(10);
+            _shoot.Shoot_Vine_Shoot(7);
             //待つ、メロディ切り替わったら抜ける
             yield return new WaitForSeconds(2.0f);
             for(float t = 0; t < 4.0f; t += Time.deltaTime) {
@@ -184,9 +184,9 @@ public class EternalAttack : BossEnemyAttack {
             new Vector2(200f, 64f),            
             new Vector2(220f, -54f),
             new Vector2(-200f, 100f),
-            new Vector2(-220f, -96f),
+            new Vector2(-220f, -54f),
         };
-        public static readonly int bullet_Num = 18;
+        public static readonly int bullet_Num = 10;
     }
     
     protected override void Start_Melody_B1() {
@@ -358,6 +358,7 @@ public class EternalAttack : BossEnemyAttack {
             Ban_Player_Flying();
             _effect.Play_Burst_Effect(Color.blue);
             _shoot.Stop_Spiral_Shoot_Strong();
+            yield return new WaitForSeconds(1.41f);
             _shoot.Shoot_Spiral_Shoot_Weak();
             UsualSoundManager.Instance.Play_Shoot_Sound();
             //待ち
@@ -448,7 +449,7 @@ public class EternalAttack : BossEnemyAttack {
             yield break;
         }
         //ミニラルバ生成
-        _small_Larve_Gen.Start_Gen(2.5f);
+        _small_Larve_Gen.Start_Gen(1.7f);
         yield return new WaitForSeconds(4.0f);
         _small_Larve_Gen.Stop_Gen();
         _effect.Play_Power_Charge_Effect(2.0f);

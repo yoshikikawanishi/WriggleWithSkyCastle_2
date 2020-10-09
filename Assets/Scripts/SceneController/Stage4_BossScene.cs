@@ -9,6 +9,7 @@ public class Stage4_BossScene : MonoBehaviour {
 
 	
 	void Start () {
+        BGMManager.Instance.Stop_BGM();
         if (SceneManagement.Instance.Is_First_Visit()) {
             start_Movie.Start_Movie();
         }

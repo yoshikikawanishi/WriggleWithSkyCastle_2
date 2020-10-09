@@ -41,6 +41,7 @@ public class Laser : MonoBehaviour {
         appendSqrDistance = Mathf.Pow(appendDistance, 2);
         maxPointCount = (int)(length / appendDistance);
         colliders_Pool = GetComponent<CircleColliderPool>();
+        colliders_Pool.Create_Pool(50);
         mf = GetComponent<MeshFilter>();
         mr = GetComponent<MeshRenderer>();
 

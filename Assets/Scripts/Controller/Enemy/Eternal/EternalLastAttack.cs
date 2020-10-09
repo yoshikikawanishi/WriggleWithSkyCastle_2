@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EternalLastAttack : MonoBehaviour {
 
     [SerializeField] private MovieSystem last_Battle_Movie;
     [SerializeField] private GameObject time_Count_UI;
+    [SerializeField] private Text stock_UI_Text;
+    [SerializeField] private Text stock_UI_Text_Flying;
     [SerializeField] private GameObject mini_Larva;
 
     private Eternal _eternal;
@@ -50,7 +53,8 @@ public class EternalLastAttack : MonoBehaviour {
         if(stock >= 0) {
             for(int i = 0; i < stock; i++) {
                 time_Count--;
-                PlayerManager.Instance.Reduce_Stock();
+                stock_UI_Text.text = "× " + (stock - i - 1);
+                stock_UI_Text_Flying.text = "× " + (stock - i - 1);
                 _se.Play("TimeCount");
                 yield return new WaitForSeconds(0.1f);
             }
@@ -58,7 +62,8 @@ public class EternalLastAttack : MonoBehaviour {
         else {
             for(int i = 0; i < -stock; i++) {
                 time_Count += 5;
-                PlayerManager.Instance.Add_Stock();
+                stock_UI_Text.text = "× " + (stock + i + 1);
+                stock_UI_Text_Flying.text = "× " + (stock + i + 1);
                 _se.Play("TimeCount");
                 yield return new WaitForSeconds(0.1f);
             }

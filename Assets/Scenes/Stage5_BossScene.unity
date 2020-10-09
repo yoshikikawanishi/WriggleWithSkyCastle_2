@@ -16712,7 +16712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
+  is_Disable_Controlle: 0
   list:
   - name: "\u5F85\u3061"
     type: 6
@@ -28346,7 +28346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: f4010000f4010000
-  power_Value: 50
+  power_Value: 35
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
     type: 2}
@@ -33397,7 +33397,7 @@ MonoBehaviour:
   inter_Angle_Deg: -15
   center_Angle_Deg: 10
   arc_Deg: 360
-  shoot_Rate: 15
+  shoot_Rate: 10
   duration: 6
   connect_Bullet: 1
   connect_Num: 3
@@ -33477,7 +33477,7 @@ MonoBehaviour:
   inter_Angle_Deg: 15
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 15
+  shoot_Rate: 10
   duration: 6
   connect_Bullet: 1
   connect_Num: 3
@@ -33779,7 +33779,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 6
+  num: 5
   inter_Angle_Deg: 20
   center_Angle_Deg: 180
   arc_Deg: 360
@@ -33859,7 +33859,7 @@ MonoBehaviour:
   is_Fixed_Rotation: 0
   fixed_Angle: 0
   other_Param: 1
-  num: 6
+  num: 5
   inter_Angle_Deg: 20
   center_Angle_Deg: 180
   arc_Deg: 360
@@ -44524,7 +44524,8 @@ AudioSource:
   m_GameObject: {fileID: 1655768321}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243373875129941320, guid: 99e0dad0e338c1f43a4b809f4ca302ab,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.2

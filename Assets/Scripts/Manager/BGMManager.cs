@@ -53,12 +53,13 @@ public class BGMManager : MonoBehaviour{
         }
         //シーンを遷移してもオブジェクトを消さない
         DontDestroyOnLoad(gameObject);
+        //取得
+        audio_Source = GetComponent<AudioSource>();
     }
 
 
     // Use this for initialization
-    void Start () {
-        audio_Source = GetComponent<AudioSource>();
+    void Start () {        
 
         #if UNITY_EDITOR
         if (DebugModeManager.Instance.Is_Delete_BGM) 

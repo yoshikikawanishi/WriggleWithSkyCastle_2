@@ -19789,7 +19789,7 @@ MonoBehaviour:
   inter_Angle_Deg: 20
   center_Angle_Deg: 0
   arc_Deg: 360
-  shoot_Rate: 50
+  shoot_Rate: 40
   duration: 100
   connect_Bullet: 0
   connect_Num: 1
@@ -46512,9 +46512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b551be96d332444091ab4a391e710c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: d0070000
-  power_Value: 0
-  score_Value: 0
+  life: 08070000
+  power_Value: 35
+  score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,
     type: 2}
   clear_Converge_Effect_Prefab: {fileID: 1205548953361234, guid: 9ddf76b505b93354b90d8b070fead1d0,
@@ -57264,10 +57264,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: 12
+  inter_Angle_Deg: 15
   center_Angle_Deg: 60
   arc_Deg: 360
-  shoot_Rate: 50
+  shoot_Rate: 40
   duration: 0.3
   connect_Bullet: 0
   connect_Num: 1
@@ -58419,10 +58419,10 @@ MonoBehaviour:
   fixed_Angle: 0
   other_Param: 1
   num: 1
-  inter_Angle_Deg: -12
+  inter_Angle_Deg: -15
   center_Angle_Deg: -60
   arc_Deg: 360
-  shoot_Rate: 50
+  shoot_Rate: 40
   duration: 0.3
   connect_Bullet: 0
   connect_Num: 1

@@ -27,7 +27,7 @@ public class PlayerTransition : MonoBehaviour {
         direction = direction > 0 ? 1 : -1;
 
         //地上と空中で加速度変える
-        //acc = _controller.is_Landing ? 2f : 35f;
+        acc = _controller.is_Landing ? 5f : 35f;
         
         //移動、加速
         if(direction == 1) {

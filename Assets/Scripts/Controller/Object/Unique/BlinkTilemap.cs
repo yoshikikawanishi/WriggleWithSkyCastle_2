@@ -15,7 +15,7 @@ public class BlinkTilemap : MonoBehaviour {
     }
 
     [SerializeField] private State initial_State = State.normal;
-    [SerializeField] private float span = 2.0f;    
+    private float span = 2.093f;    
 
     private Tilemap _tilemap;
     private TilemapCollider2D _collider;

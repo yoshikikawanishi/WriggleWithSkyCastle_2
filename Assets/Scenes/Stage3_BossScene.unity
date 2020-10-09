@@ -3012,7 +3012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 363c852e99dc46744ae09a251383217b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  is_Disable_Controlle: 1
+  is_Disable_Controlle: 0
   list:
   - name: "\u4F1A\u8A71"
     type: 0

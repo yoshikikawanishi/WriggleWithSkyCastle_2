@@ -13,9 +13,9 @@ public class AudioConfigButton : MonoBehaviour {
     //設定するときの効果音
     [SerializeField] private AudioSource cirsol_Sound;
 
-    private bool can_Select = true;
+    private bool can_Select = true;    
 
-	// Use this for initialization
+	
 	void Start () {
         //初期設定
         AudioVolumeManager _manager = AudioVolumeManager.Instance;
@@ -61,16 +61,18 @@ public class AudioConfigButton : MonoBehaviour {
 
         while (true) {
             //ボリュームアップ
-            if (Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (Input.GetAxisRaw("Horizontal") > 0) {
                 _manager.Increase_Volume(group);
                 button_Text.text = ((int)_manager.Get_Volume(group)).ToString();
                 cirsol_Sound.Play();
+                yield return new WaitForSecondsRealtime(0.1f);
             }
             //ボリュームダウン
-            if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+            if (Input.GetAxisRaw("Horizontal") < 0) {
                 _manager.Decrease_Volume(group);
                 button_Text.text = ((int)_manager.Get_Volume(group)).ToString();
                 cirsol_Sound.Play();
+                yield return new WaitForSecondsRealtime(0.1f);
             }
 
             //決定ボタンで戻る

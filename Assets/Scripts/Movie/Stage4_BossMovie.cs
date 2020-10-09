@@ -28,6 +28,7 @@ public class Stage4_BossMovie : MonoBehaviour {
 
     public void Fade_Out() {
         FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
+        BGMManager.Instance.Fade_Out();
     }
 
 

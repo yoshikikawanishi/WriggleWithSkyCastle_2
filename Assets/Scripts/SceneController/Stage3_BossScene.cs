@@ -12,6 +12,7 @@ public class Stage3_BossScene : MonoBehaviour {
     private void Awake() {
         //取得
         _movie = GetComponent<Stage3_BossMovie>();
+        BGMManager.Instance.Stop_BGM();
     }
 
 

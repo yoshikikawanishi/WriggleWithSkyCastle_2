@@ -5,9 +5,15 @@ using UnityEngine;
 public class CircleColliderPool : MonoBehaviour {
 
     List<CircleCollider2D> pool;
-
-    public CircleColliderPool() {
+    
+    public void Create_Pool(int num) {
         pool = new List<CircleCollider2D>();
+        for (int i = 0; i < num; i++) {
+            CircleCollider2D cc = gameObject.AddComponent<CircleCollider2D>();
+            cc.isTrigger = true;
+            cc.radius = GetComponent<Laser>().laserWidth / 2 - 1;
+            pool.Add(cc);
+        }
     }
 
     public CircleCollider2D Get_Collider() {
