@@ -21,3 +21,4 @@ Stage7_1Scene
 Stage7_BossScene
 TitleScene
 RakuenScene
+PlayerDataScene

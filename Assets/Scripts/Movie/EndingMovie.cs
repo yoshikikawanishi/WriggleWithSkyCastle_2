@@ -11,7 +11,7 @@ public class EndingMovie : MonoBehaviour {
     [SerializeField] private Marisa marisa;
 
     private float scroll_Speed = 0.5f;
-    private float scroll_Height = 1400;
+    private float scroll_Height = 1700;
 
     void Start() {
         BGMManager.Instance.Stop_BGM();
@@ -27,7 +27,7 @@ public class EndingMovie : MonoBehaviour {
     private IEnumerator Staff_Roll_Cor() {
         while(back_Ground.color.r > 0.5f) {
             yield return null;
-            back_Ground.color -= new Color(0.02f, 0.02f, 0.02f, 0);
+            back_Ground.color -= new Color(0.01f, 0.01f, 0.01f, 0);
         }
         back_Ground.color = new Color(0.5f, 0.5f, 0.5f);
         back_Ground.sortingOrder = -10;
@@ -39,9 +39,9 @@ public class EndingMovie : MonoBehaviour {
             staff_Roll_Text.transform.position += new Vector3(0, scroll_Speed);
             yield return null;
         }
-        FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.02f);
+        FadeInOut.Instance.Start_Fade_Out(new Color(0, 0, 0), 0.01f);
         BGMManager.Instance.Fade_Out();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(4.0f);
         Change_Scene_To_Title();
     }
 
