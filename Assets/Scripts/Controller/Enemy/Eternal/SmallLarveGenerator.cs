@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SmallLarveGenerator : MonoBehaviour {
 
-    [SerializeField] private SmallLarva s_Larva_Prefab;
+    [SerializeField] private SmallLarva s_Larva_Prefab;    
 
     private float rate = 1f;
     private readonly float SCREEN_HEIGHT = 150f;
@@ -61,6 +61,8 @@ public class SmallLarveGenerator : MonoBehaviour {
         }
         return result;
     }
+
+
     
-    
+
 }

@@ -6,10 +6,10 @@ public class EternalEffect : MonoBehaviour {
 
     [SerializeField] private GameObject power_Charge_Effect;
     [SerializeField] private ParticleSystem power_Charge_Effect_Small;
-    [SerializeField] private ParticleSystem burst_Effect_White;
+    [SerializeField] private ParticleSystem burst_Effect;
     [SerializeField] private GameObject ban_Player_Flying_Effect_Obj;
     [SerializeField] private Animator disable_Flying_Screen_Effect;
-    [SerializeField] private GameObject roaring_Effect_Obj;
+    [SerializeField] private GameObject roaring_Effect_Obj;    
 
     //=========================== Power Charge Effect ============================
     public void Play_Power_Charge_Effect(float span) {
@@ -26,8 +26,10 @@ public class EternalEffect : MonoBehaviour {
         power_Charge_Effect_Small.Play();
     }
     //============================= Burst Effect ================================
-    public void Play_Burst_Effect_White() {
-        burst_Effect_White.Play();
+    public void Play_Burst_Effect(Color color) {
+        ParticleSystem.MainModule pm = burst_Effect.main;
+        pm.startColor = color;
+        burst_Effect.Play();
     }
     //================================飛行不可エフェクト====================================
     public void Play_Ban_Flying_Effect() {
@@ -50,5 +52,6 @@ public class EternalEffect : MonoBehaviour {
         obj.SetActive(true);        
         Destroy(obj, 3.0f);
         GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>().Shake(2.0f, new Vector2(1.5f, 1.5f), true);
-    }
+    }    
+    
 }

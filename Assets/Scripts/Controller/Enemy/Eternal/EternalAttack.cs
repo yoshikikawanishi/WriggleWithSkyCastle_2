@@ -109,6 +109,7 @@ public class EternalAttack : BossEnemyAttack {
         Stop_Melody_Chorus1();        
         Stop_Melody_Chorus2();
         Stop_Melody_Pre_Chorus();
+        Stop_Melody_C();
     }
     //==========================================================
     #region ChangePhase
@@ -149,17 +150,18 @@ public class EternalAttack : BossEnemyAttack {
         while (true) {
             _effect.Play_Power_Charge_Effect_Small();
             yield return new WaitForSeconds(1.0f);
-            _effect.Play_Burst_Effect_White();
-            _shoot.Shoot_Vine_Shoot(7);
+            _effect.Play_Burst_Effect(Color.green);
+            UsualSoundManager.Instance.Play_Shoot_Sound();
+            _shoot.Shoot_Vine_Shoot(10);
             //待つ、メロディ切り替わったら抜ける
-            yield return new WaitForSeconds(3.5f);
-            for(float t = 0; t < 2.0f; t += Time.deltaTime) {
-                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.A1) {
-                    Stop_Melody_A1();
+            yield return new WaitForSeconds(2.0f);
+            for(float t = 0; t < 4.0f; t += Time.deltaTime) {
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.A1) {                    
                     base.Set_Can_Switch_Attack(true);
                     base.Restart_Attack();
+                    Stop_Melody_A1();
                 }
-                yield return new WaitForSeconds(0.016f);
+                yield return new WaitForSeconds(0);
             }
         }
 
@@ -184,7 +186,7 @@ public class EternalAttack : BossEnemyAttack {
             new Vector2(-200f, 100f),
             new Vector2(-220f, -96f),
         };
-        public static readonly int bullet_Num = 24;
+        public static readonly int bullet_Num = 18;
     }
     
     protected override void Start_Melody_B1() {
@@ -211,7 +213,8 @@ public class EternalAttack : BossEnemyAttack {
             loop_Count++;
             if (loop_Count % 3 == 0)
                 yield return new WaitForSeconds(1.0f);
-            yield return new WaitForSeconds(0.2f);
+            else
+                yield return new WaitForSeconds(0.286f);
         }
 
         base.Set_Can_Switch_Attack(true);
@@ -244,7 +247,7 @@ public class EternalAttack : BossEnemyAttack {
 
         //移動してなかったら移動
         if (!Is_Equals_Vector2(transform.position, Config.nutral_Pos)) {
-            Start_Melody_Pre_Chorus();
+            Start_Melody_C();
             yield break;
         }
         int height_Index = -1;
@@ -295,7 +298,7 @@ public class EternalAttack : BossEnemyAttack {
     private IEnumerator Melody_Pre_Chorus_Cor() {
         base.Set_Can_Switch_Attack(false);
         //ワープ
-        Vector2 pos = boss_Enemy.Get_Now_Phase() == 1 ? Config.center_Pos : Config.nutral_Pos;
+        Vector2 pos = Config.center_Pos;
         Warp(pos);
         yield return new WaitForSeconds(1.5f);
         //溜める
@@ -336,30 +339,42 @@ public class EternalAttack : BossEnemyAttack {
         }
         while (true) {
             //強うずまき弾幕
-            _effect.Play_Burst_Effect_White();
+            _effect.Play_Burst_Effect(Color.red);
+            UsualSoundManager.Instance.Play_Shoot_Sound();
             _shoot.Shoot_Spiral_Shoot_Strong();
-            yield return new WaitForSeconds(2.0f);
-            if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
-                break;
+            //待ち
+            for(float t = 0; t < 2.857f; t += Time.deltaTime) {
+                if(melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
+                    base.Set_Can_Switch_Attack(true);
+                    Restart_Attack();
+                    Stop_Melody_Chorus1();
+                }
+                yield return new WaitForSeconds(0f);
             }
-            _effect.Play_Power_Charge_Effect(2.0f);
-            yield return new WaitForSeconds(2.0f);
+            //溜め
+            _effect.Play_Power_Charge_Effect(2.857f);
+            yield return new WaitForSeconds(2.857f);
             //飛行禁止と弱うずまき弾幕
             Ban_Player_Flying();
+            _effect.Play_Burst_Effect(Color.blue);
             _shoot.Stop_Spiral_Shoot_Strong();
-            _shoot.Shoot_Spiral_Shoot_Weak();            
-            yield return new WaitForSeconds(6.0f);            
-            _shoot.Stop_Spiral_Shoot_Weak();
-            Release_Player_Flying();
-            if(melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
-                break;
+            _shoot.Shoot_Spiral_Shoot_Weak();
+            UsualSoundManager.Instance.Play_Shoot_Sound();
+            //待ち
+            for (float t = 0; t < 6.429f; t += Time.deltaTime) {
+                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
+                    base.Set_Can_Switch_Attack(true);
+                    Restart_Attack();
+                    Stop_Melody_Chorus1();
+                }
+                yield return new WaitForSeconds(0f);
             }
-            _effect.Play_Power_Charge_Effect(2.0f);
-            yield return new WaitForSeconds(2.0f);
-        }
-
-        base.Set_Can_Switch_Attack(true);
-        Restart_Attack();
+            //開放
+            _shoot.Stop_Spiral_Shoot_Weak();
+            Release_Player_Flying();            
+            _effect.Play_Power_Charge_Effect(2.857f);
+            yield return new WaitForSeconds(2.857f);
+        }        
     }
 
     private void Stop_Melody_Chorus1() {
@@ -372,24 +387,56 @@ public class EternalAttack : BossEnemyAttack {
 
     #endregion
     //===================================================================
+    #region C
+    protected override void Start_Melody_C() {
+        StartCoroutine("Melody_C_Cor");
+    }
+
+    private IEnumerator Melody_C_Cor() {
+        base.Set_Can_Switch_Attack(false);
+        //ワープ
+        Vector2 pos = Config.nutral_Pos;
+        Warp(pos);
+        yield return new WaitForSeconds(1.5f);
+        //溜める
+        _effect.Play_Power_Charge_Effect(1000f);
+        _eternal.Change_Animation("CloseTrigger");
+        yield return new WaitForSeconds(2.0f);
+        while (melody_Manager.Get_Now_Melody() == MelodyManager.Melody.C) {
+            yield return new WaitForSeconds(0);
+        }
+        _effect.Stop_Power_Charge_Effect();
+        _eternal.Change_Animation("OpenTrigger");
+
+        base.Set_Can_Switch_Attack(true);
+        base.Restart_Attack();
+    }
+
+    private void Stop_Melody_C() {
+        StopCoroutine("Melody_C_Cor");
+        _effect.Stop_Power_Charge_Effect();
+    }
+    #endregion
+    //===================================================================
     #region Chorus2
 
-        /*
-            上側にワープ　→　弾幕
-         */
+    /*
+        上側にワープ　→　弾幕
+     */
     protected override void Start_Melody_Chorus2() {
         StartCoroutine("Melody_Chorus2_Cor");
     }
 
     private IEnumerator Melody_Chorus2_Cor() {
         base.Set_Can_Switch_Attack(false);
-        //ワープ、チャージエフェクト、バーストエフェクト
-        Warp(Config.nutral_Pos);
-        yield return new WaitForSeconds(1.5f);
-        _effect.Play_Power_Charge_Effect(2.0f);
-        yield return new WaitForSeconds(2.0f);
-        _effect.Play_Burst_Effect_White();
+        //移動してなかったらワープ
+        if (!Is_Equals_Vector2(Config.nutral_Pos, transform.position)) {
+            Start_Melody_C();
+            yield break;
+        }
         //ショット
+        _effect.Play_Burst_Effect(new Color(0.6f, 1f, 0.1f));
+        UsualSoundManager.Instance.Play_Shoot_Sound();
         _shoot.Shoot_Wing_Shoot(2.3f);
         _shoot.Shoot_Reverse_Wing_Shoot(3.7f);
         yield return new WaitForSeconds(7.0f);
@@ -404,6 +451,8 @@ public class EternalAttack : BossEnemyAttack {
         _small_Larve_Gen.Start_Gen(2.5f);
         yield return new WaitForSeconds(4.0f);
         _small_Larve_Gen.Stop_Gen();
+        _effect.Play_Power_Charge_Effect(2.0f);
+        yield return new WaitForSeconds(2.0f);
 
         base.Set_Can_Switch_Attack(true);
         base.Restart_Attack();
@@ -416,6 +465,7 @@ public class EternalAttack : BossEnemyAttack {
     }
     #endregion
     //===================================================================
+ 
     protected override void Start_Melody_A2() {
         throw new System.NotImplementedException();
     }    
@@ -423,10 +473,7 @@ public class EternalAttack : BossEnemyAttack {
     protected override void Start_Melody_Bridge() {
         throw new System.NotImplementedException();
     }
-
-    protected override void Start_Melody_C() {
-        throw new System.NotImplementedException();
-    }   
+   
 
     protected override void Start_Melody_Intro() {
         throw new System.NotImplementedException();

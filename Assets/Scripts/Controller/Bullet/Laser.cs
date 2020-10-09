@@ -43,6 +43,9 @@ public class Laser : MonoBehaviour {
         colliders_Pool = GetComponent<CircleColliderPool>();
         mf = GetComponent<MeshFilter>();
         mr = GetComponent<MeshRenderer>();
+
+        mr.material = laserMat;
+        mr.sortingOrder = sortingOrder;
     }
 
     void OnEnable() {        
@@ -70,6 +73,13 @@ public class Laser : MonoBehaviour {
     void LateUpdate() {
         //座標を固定する
         Fix_Body();
+    }
+
+
+    //消去時
+    void OnDisable() {
+        mf.mesh = null;
+        colliders_Pool.Set_Inactive_All();
     }
 
 
@@ -171,9 +181,7 @@ public class Laser : MonoBehaviour {
         
         mesh.vertices = vertices;
         mesh.uv = uvs;
-        mesh.triangles = triangles;
-        mr.material = laserMat;
-        mr.sortingOrder = sortingOrder;        
+        mesh.triangles = triangles;               
     }    
 
 

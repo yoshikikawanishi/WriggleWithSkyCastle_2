@@ -5,8 +5,9 @@ using UnityEngine;
 public class EternalVineShoot : MonoBehaviour {
 
     [SerializeField] private Bullet vine_Bullet;
+    [SerializeField] private GameObject vine_Shoot_Divide_Effect_Prefab;
 
-    private readonly float shoot_Span = 0.08f;
+    private readonly float shoot_Span = 0.09f;
     private readonly float bullet_Lifetime = 2f;
     private readonly int bullet_Num = 50;    
 
@@ -32,13 +33,16 @@ public class EternalVineShoot : MonoBehaviour {
     private IEnumerator Vine_Shoot_Cor(VineList VList, int divide_Count) {
         if (VList.list.Count == 0)
             VList.Create_List(bullet_Num, transform.position, Mathf.PI, Random.Range(-0.05f, 0.05f));
+        //エフェクト
+        Play_Divide_Effect(VList.list[0]);
+        yield return new WaitForSeconds(0.5f);
 
         int count = 1;        
         foreach(Vector2 pos in VList.list) {          
             Generate_Vine_Bullet(pos);
             //画面外に出たら終わる
             if (Mathf.Abs(pos.x) > 250f || Mathf.Abs(pos.y) > 140f)
-                yield break;
+                yield break;            
             //枝分かれを作る
             if (count % divide_Count == 0) {
                 divide_Count += 4;
@@ -64,7 +68,7 @@ public class EternalVineShoot : MonoBehaviour {
 
     private class VineList {
 
-        private readonly float bullet_Span = 10f;
+        private readonly float bullet_Span = 8f;
         public List<Vector2> list = new List<Vector2>();
         private float angle = 0;
 
@@ -92,5 +96,12 @@ public class EternalVineShoot : MonoBehaviour {
         public float Angle() {
             return angle;
         }
+    }
+
+
+    private void Play_Divide_Effect(Vector2 pos) {
+        var obj = Instantiate(vine_Shoot_Divide_Effect_Prefab);
+        obj.transform.position = pos;
+        Destroy(obj, 1.0f);
     }
 }

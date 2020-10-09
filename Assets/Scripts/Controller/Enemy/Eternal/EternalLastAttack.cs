@@ -85,27 +85,30 @@ public class EternalLastAttack : MonoBehaviour {
 
 
     private IEnumerator Last_Attack_Cor() {
+        float max_Time_Count = time_Count;
+        float[] time_Border = { time_Count * 0.8f, time_Count * 0.55f, time_Count * 0.3f, 0 };
+
         _effect.Play_Roaring_Effect();        
         yield return new WaitForSeconds(2.0f);
 
         _last_Shoot.Start_Wing_Shoot();
         _last_Shoot.Start_First_Shoot();
-        _effect.Play_Burst_Effect_White();
+        _effect.Play_Burst_Effect(Color.green);
 
-        while(time_Count > 70) { yield return null; }
+        while(time_Count > time_Border[0]) { yield return null; }
 
         _last_Shoot.Start_Second_Shoot();
-        _effect.Play_Burst_Effect_White();
+        _effect.Play_Burst_Effect(Color.yellow);
 
-        while (time_Count > 50) { yield return null; }
+        while (time_Count > time_Border[1]) { yield return null; }
 
         _last_Shoot.Start_Third_Shoot();
-        _effect.Play_Burst_Effect_White();
+        _effect.Play_Burst_Effect(Color.red);
 
-        while (time_Count > 30) { yield return null; }
+        while (time_Count > time_Border[2]) { yield return null; }
 
         _last_Shoot.Start_Forth_Shoot();
-        _effect.Play_Burst_Effect_White();
+        _effect.Play_Burst_Effect(new Color(1f, 0.2f, 1f));
 
         while(time_Count > 0) { yield return null; }
 

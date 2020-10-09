@@ -332,7 +332,7 @@ public class OkinaAttack : BossEnemyAttack {
             _shoot.Shoot_Blue_Pillar(pos_X);
             _se.Play("FirePillar");
             camera_Shake.Shake(2.0f, new Vector2(2f, 2f), true);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(1.13f);
             //メロディ切り替わったら抜ける
             if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.bridge)
                 break;
