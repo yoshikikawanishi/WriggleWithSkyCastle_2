@@ -221,7 +221,7 @@ MonoBehaviour:
     volume: 0.2
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
-  - is_Folding: 0
+  - is_Folding: 1
     name: Stage7_Boss
     clip: {fileID: 8300000, guid: af5d5a72655f1ac4cabd9aa659df8baf, type: 3}
     volume: 0.2
@@ -237,5 +237,11 @@ MonoBehaviour:
     name: Hourai
     clip: {fileID: 8300000, guid: 5b29ef0f6c797e241b29bffc86cba17f, type: 3}
     volume: 0.1
+    have_Intoro: 0
+    intoro_Clip: {fileID: 0}
+  - is_Folding: 0
+    name: Ending
+    clip: {fileID: 8300000, guid: d4f157aafc308ec4e8e63784d98802a9, type: 3}
+    volume: 0.15
     have_Intoro: 0
     intoro_Clip: {fileID: 0}
