@@ -40,6 +40,13 @@ public class Eternal : BossEnemy {
     protected override void Clear() {
         base.Clear();
         _attack.Stop_Attack();
+        //クリア記録の保存        
+        int score = PlayerManager.Instance.Get_Score();
+        int high_Score = -1;
+        if (PlayerPrefs.HasKey("HIGHSCORE")) {
+            high_Score = PlayerPrefs.GetInt("HIGHSCORE");
+        }
+        PlayerPrefs.SetInt("HIGHSCORE", Mathf.Max(score, high_Score));
     }
 
 

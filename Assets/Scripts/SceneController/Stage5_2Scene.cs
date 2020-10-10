@@ -37,6 +37,9 @@ public class Stage5_2Scene : MonoBehaviour {
         //取得
         main_Camera = GameObject.FindWithTag("MainCamera");
         BGMManager.Instance.Change_BGM("Stage4");
+        if (SceneManagement.Instance.Is_First_Visit()) {
+            FadeInOut.Instance.Start_Fade_In(new Color(0, 0, 0), 0.02f);
+        }
     }
 
 

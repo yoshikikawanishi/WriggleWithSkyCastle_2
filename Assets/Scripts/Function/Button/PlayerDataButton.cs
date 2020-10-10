@@ -9,12 +9,15 @@ public class PlayerDataButton : MonoBehaviour {
 
     public Button first_Select_Button;
     public Text item_Comment_Text;
-
-
-	// Use this for initialization
+    public GameObject high_Score;
+    public GameObject completed_Mark;
+	
 	void Start () {
-        first_Select_Button.Select();	
+        first_Select_Button.Select();
+        Display_High_Score();
+        Display_Completed_Mark();
 	}
+
 
     public void Back_Title_Button() {
         if (InputManager.Instance.GetKeyDown(Key.Jump)) {
@@ -34,6 +37,20 @@ public class PlayerDataButton : MonoBehaviour {
     }    
 
 
+    public void Display_High_Score() {
+        if (PlayerPrefs.HasKey("HIGHSCORE")) {
+            high_Score.SetActive(true);
+            high_Score.GetComponent<Text>().text = "ハイスコア：" + PlayerPrefs.GetInt("HIGHSCORE");
+        }
+    }
+
+
+    public void Display_Completed_Mark() {
+        if (CollectionManager.Instance.Is_Completed()) {
+            completed_Mark.SetActive(true);
+        }
+    }
+
 
     /*---------------------------------------アイテムとそのコメント----------------------------------------*/
     private Dictionary<string, string> item_Dic = new Dictionary<string, string>() {
@@ -48,10 +65,10 @@ public class PlayerDataButton : MonoBehaviour {
         { "Nitori", "河童の腕\n攻撃範囲が広がる" },
         { "Momizi", "文果真報の袋とじ\nよかった。" },
         { "Aya", "天狗の羽団扇\nキックの速度が上昇する" },
-        { "Yamame", "ダーマ" },
+        { "Yamame", "ダーマ\n?" },
         { "Saki", "ワザのまきもの\nチャージキックを会得する" },
-        { "Kisume", "ドスン" },
-        { "Hourai", "" },
+        { "Kisume", "ドスン\n???" },
+        { "Hourai", "楽園の人形" },
     };
 
 }

@@ -50,7 +50,7 @@ public class EternalVineShoot : MonoBehaviour {
                 VineList v = new VineList();
                 float initial_Angle = VList.Angle() + (Random.Range(0, 2) - 0.5f) * Mathf.PI; 
                 v.Create_List(bullet_Num, pos, initial_Angle, Random.Range(-0.1f, 0.1f));
-                StartCoroutine(Vine_Shoot_Cor(v, divide_Count));
+                StartCoroutine(Vine_Shoot_Cor(v, divide_Count-1));
             }
             count++;
             yield return new WaitForSeconds(shoot_Span);

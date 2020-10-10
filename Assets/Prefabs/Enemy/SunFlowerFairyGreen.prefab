@@ -211,7 +211,7 @@ MonoBehaviour:
   angle_Noise: 0
   lifeTime: 10
   offset: {x: 0, y: 0}
-  default_Shoot_Sound: 0
+  default_Shoot_Sound: 1
   is_Acceleration: 1
   velocity_Forward:
     serializedVersion: 2

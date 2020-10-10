@@ -10,8 +10,11 @@ public class EternalShoot : MonoBehaviour {
     [SerializeField] private GameObject master_Spark_Prefab;
     [SerializeField] private ShootSystem spiral_Shoot_Strong;
     [SerializeField] private ShootSystem spiral_Shoot_Weak;
+    [SerializeField] private ShootSystem shoot_With_Spiral_Shoot;
     [SerializeField] private GameObject wing_Shoot_Obj;
     [SerializeField] private GameObject wing_Shoot_Reverse_Obj;
+    [SerializeField] private ShootSystem shoot_With_Wing_Shoot;
+    [SerializeField] private ShootSystem beetle_Power_Shoot;
 
     //================================ Vine Shoot =========================================
     public void Shoot_Vine_Shoot(int divide_Count) {
@@ -36,6 +39,7 @@ public class EternalShoot : MonoBehaviour {
     //================================== Spiral Shoot =======================================
     public void Shoot_Spiral_Shoot_Strong() {
         spiral_Shoot_Strong.Shoot();
+        shoot_With_Spiral_Shoot.Shoot();
     }
 
     public void Shoot_Spiral_Shoot_Weak() {
@@ -44,6 +48,7 @@ public class EternalShoot : MonoBehaviour {
 
     public void Stop_Spiral_Shoot_Strong() {
         spiral_Shoot_Strong.Stop_Shoot();
+        shoot_With_Spiral_Shoot.Stop_Shoot();
     }
 
     public void Stop_Spiral_Shoot_Weak() {
@@ -67,6 +72,7 @@ public class EternalShoot : MonoBehaviour {
             shoots[1].center_Angle_Deg = angle + 80f;
             shoots[0].Shoot();
             shoots[1].Shoot();
+            shoot_With_Wing_Shoot.Shoot();
             yield return new WaitForSeconds(span);
         }
     }
@@ -105,5 +111,11 @@ public class EternalShoot : MonoBehaviour {
             s.Stop_Shoot();
         }
     }
+
+    //===========================================================
+    public void Shoot_Beetle_Power() {
+        beetle_Power_Shoot.Shoot();
+    }
+    
 
 }

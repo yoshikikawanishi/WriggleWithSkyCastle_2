@@ -8,6 +8,7 @@ public class EternalAttack : BossEnemyAttack {
     private EternalLastAttack _last_Attack;
     private EternalShoot _shoot;
     private EternalEffect _effect;
+    private SEManager _se;
     private SmallLarveGenerator _small_Larve_Gen;
     private BossChildCollision _collision;
     private MoveConstTime _move;
@@ -35,6 +36,7 @@ public class EternalAttack : BossEnemyAttack {
         _last_Attack = GetComponent<EternalLastAttack>();
         _shoot = GetComponentInChildren<EternalShoot>();
         _effect = GetComponentInChildren<EternalEffect>();
+        _se = GetComponentInChildren<SEManager>();
         _collision = GetComponentInChildren<BossChildCollision>();
         _small_Larve_Gen = GetComponentInChildren<SmallLarveGenerator>();
         _move = GetComponent<MoveConstTime>();
@@ -61,6 +63,7 @@ public class EternalAttack : BossEnemyAttack {
         _eternal.Change_Animation("OpenTrigger");
         GetComponent<SpriteRenderer>().enabled = true;
         state = State.idle;
+        _se.Play("Wing");
         yield return new WaitForSeconds(0.5f);
         _collision.Release_Invincible();        
     }
@@ -129,6 +132,8 @@ public class EternalAttack : BossEnemyAttack {
         GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         _collision.Become_Invincible();
         _last_Attack.Start_Last_Battle_Movie();
+        _shoot.Shoot_Beetle_Power();
+        
     }
 
     #endregion
@@ -152,10 +157,10 @@ public class EternalAttack : BossEnemyAttack {
             yield return new WaitForSeconds(1.0f);
             _effect.Play_Burst_Effect(Color.green);
             UsualSoundManager.Instance.Play_Shoot_Sound();
-            _shoot.Shoot_Vine_Shoot(7);
+            _shoot.Shoot_Vine_Shoot(6);
             //待つ、メロディ切り替わったら抜ける
             yield return new WaitForSeconds(2.0f);
-            for(float t = 0; t < 4.0f; t += Time.deltaTime) {
+            for(float t = 0; t < 3.0f; t += Time.deltaTime) {
                 if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.A1) {                    
                     base.Set_Can_Switch_Attack(true);
                     base.Restart_Attack();
@@ -186,7 +191,7 @@ public class EternalAttack : BossEnemyAttack {
             new Vector2(-200f, 100f),
             new Vector2(-220f, -54f),
         };
-        public static readonly int bullet_Num = 10;
+        public static readonly int bullet_Num = 15;
     }
     
     protected override void Start_Melody_B1() {
@@ -209,6 +214,7 @@ public class EternalAttack : BossEnemyAttack {
             yield return new WaitForSeconds(1.5f);                        
             //ショット            
             _shoot.Shoot_Ripples_Shoot(ConfigB1.bullet_Num);
+            _effect.Play_Burst_Effect(new Color(1f, 1f, 0.4f));
             //待つ
             loop_Count++;
             if (loop_Count % 3 == 0)
@@ -266,6 +272,7 @@ public class EternalAttack : BossEnemyAttack {
                 if (i == index)
                     continue;
                 _shoot.Shoot_Master_Spark(Config_B2.heights[i]);
+                _shoot.Shoot_Beetle_Power();
             }
             yield return new WaitForSeconds(1.5f);
             //目リディ切り替わってたら抜ける
@@ -343,14 +350,9 @@ public class EternalAttack : BossEnemyAttack {
             UsualSoundManager.Instance.Play_Shoot_Sound();
             _shoot.Shoot_Spiral_Shoot_Strong();
             //待ち
-            for(float t = 0; t < 2.857f; t += Time.deltaTime) {
-                if(melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
-                    base.Set_Can_Switch_Attack(true);
-                    Restart_Attack();
-                    Stop_Melody_Chorus1();
-                }
-                yield return new WaitForSeconds(0f);
-            }
+            yield return new WaitForSeconds(2.857f);
+            if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
+                break;
             //溜め
             _effect.Play_Power_Charge_Effect(2.857f);
             yield return new WaitForSeconds(2.857f);
@@ -358,24 +360,22 @@ public class EternalAttack : BossEnemyAttack {
             Ban_Player_Flying();
             _effect.Play_Burst_Effect(Color.blue);
             _shoot.Stop_Spiral_Shoot_Strong();
-            yield return new WaitForSeconds(1.41f);
+            yield return new WaitForSeconds(1.8f);
             _shoot.Shoot_Spiral_Shoot_Weak();
             UsualSoundManager.Instance.Play_Shoot_Sound();
             //待ち
-            for (float t = 0; t < 6.429f; t += Time.deltaTime) {
-                if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1) {
-                    base.Set_Can_Switch_Attack(true);
-                    Restart_Attack();
-                    Stop_Melody_Chorus1();
-                }
-                yield return new WaitForSeconds(0f);
-            }
+            yield return new WaitForSeconds(6.429f);
+            if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.chorus1)
+                break;
             //開放
-            _shoot.Stop_Spiral_Shoot_Weak();
             Release_Player_Flying();            
             _effect.Play_Power_Charge_Effect(2.857f);
             yield return new WaitForSeconds(2.857f);
-        }        
+        }
+
+        base.Set_Can_Switch_Attack(true);
+        Restart_Attack();
+        Stop_Melody_Chorus1();
     }
 
     private void Stop_Melody_Chorus1() {
@@ -449,7 +449,7 @@ public class EternalAttack : BossEnemyAttack {
             yield break;
         }
         //ミニラルバ生成
-        _small_Larve_Gen.Start_Gen(1.7f);
+        _small_Larve_Gen.Start_Gen(2.0f);
         yield return new WaitForSeconds(4.0f);
         _small_Larve_Gen.Stop_Gen();
         _effect.Play_Power_Charge_Effect(2.0f);

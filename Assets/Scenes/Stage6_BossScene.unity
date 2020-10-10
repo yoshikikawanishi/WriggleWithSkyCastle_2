@@ -46512,7 +46512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b551be96d332444091ab4a391e710c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 08070000
+  life: a4060000
   power_Value: 35
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,

@@ -10,9 +10,9 @@ public class BossCollisionDetection : EnemyCollisionDetection {
     void Awake() {
         _boss_Enemy = GetComponent<BossEnemy>();
         //ダメージ量変更        
-        damaged_Tag_Dictionary["PlayerAttackTag"] = 30;
-        damaged_Tag_Dictionary["PlayerKickTag"] = 30;
-        damaged_Tag_Dictionary["PlayerChargeAttackTag"] = 50;        
+        damaged_Tag_Dictionary["PlayerAttackTag"] = 20;
+        damaged_Tag_Dictionary["PlayerKickTag"] = 20;
+        damaged_Tag_Dictionary["PlayerChargeAttackTag"] = 28;        
     }
 
 

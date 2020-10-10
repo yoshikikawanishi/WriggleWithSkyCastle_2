@@ -6,7 +6,8 @@ using UnityEngine;
 public class CollectionManager : SingletonMonoBehaviour<CollectionManager> {
 
     private Dictionary<string, bool> collections_Data = new Dictionary<string, bool>();
-    private string FILEPATH;
+    private string FILEPATH;    
+
 
     private new void Awake() {
         base.Awake();
@@ -81,6 +82,16 @@ public class CollectionManager : SingletonMonoBehaviour<CollectionManager> {
         return false;
     }
     
+
+    public bool Is_Completed() {
+        foreach(string key in collections_Data.Keys) {
+            if (!collections_Data[key]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     //Getter
     public Dictionary<string, bool> Get_Collections_Data() {
