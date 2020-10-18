@@ -102,8 +102,7 @@ public class EternalAttack : BossEnemyAttack {
             return true;
         }
         return false;
-    }
-
+    }    
     //==========================================================
     public override void Stop_Attack() {
         Stop_Melody_A1();
@@ -157,9 +156,10 @@ public class EternalAttack : BossEnemyAttack {
             yield return new WaitForSeconds(1.0f);
             _effect.Play_Burst_Effect(Color.green);
             UsualSoundManager.Instance.Play_Shoot_Sound();
-            _shoot.Shoot_Vine_Shoot(6);
+            _shoot.Shoot_Vine_Shoot(8);
             //待つ、メロディ切り替わったら抜ける
-            yield return new WaitForSeconds(2.0f);
+            _shoot.Shoot_Bound_Shoot();
+            yield return new WaitForSeconds(2.0f);            
             for(float t = 0; t < 3.0f; t += Time.deltaTime) {
                 if (melody_Manager.Get_Now_Melody() != MelodyManager.Melody.A1) {                    
                     base.Set_Can_Switch_Attack(true);

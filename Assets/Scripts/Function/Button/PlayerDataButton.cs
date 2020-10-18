@@ -65,9 +65,9 @@ public class PlayerDataButton : MonoBehaviour {
         { "Nitori", "河童の腕\n攻撃範囲が広がる" },
         { "Momizi", "文果真報の袋とじ\nよかった。" },
         { "Aya", "天狗の羽団扇\nキックの速度が上昇する" },
-        { "Yamame", "ダーマ\n?" },
+        { "Yamame", "クモの糸\n地獄への救済" },
         { "Saki", "ワザのまきもの\nチャージキックを会得する" },
-        { "Kisume", "ドスン\n???" },
+        { "Kisume", "ドスン\n落下物界の大御所" },
         { "Hourai", "楽園の人形" },
     };
 

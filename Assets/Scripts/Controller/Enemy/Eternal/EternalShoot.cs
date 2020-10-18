@@ -15,6 +15,8 @@ public class EternalShoot : MonoBehaviour {
     [SerializeField] private GameObject wing_Shoot_Reverse_Obj;
     [SerializeField] private ShootSystem shoot_With_Wing_Shoot;
     [SerializeField] private ShootSystem beetle_Power_Shoot;
+    [SerializeField] private ShootSystem bound_Shoot;
+
 
     //================================ Vine Shoot =========================================
     public void Shoot_Vine_Shoot(int divide_Count) {
@@ -116,6 +118,9 @@ public class EternalShoot : MonoBehaviour {
     public void Shoot_Beetle_Power() {
         beetle_Power_Shoot.Shoot();
     }
-    
+    //===========================================================
+    public void Shoot_Bound_Shoot() {
+        bound_Shoot.Shoot();
+    }
 
 }

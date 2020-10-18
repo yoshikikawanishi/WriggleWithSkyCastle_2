@@ -1449,7 +1449,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 32, y: 32}
+  m_Size: {x: 32, y: 44}
   m_Direction: 0
 --- !u!114 &344065589
 MonoBehaviour:
@@ -6864,6 +6864,7 @@ Transform:
   - {fileID: 2046005910}
   - {fileID: 1569071297}
   - {fileID: 1416089021}
+  - {fileID: 974925529}
   m_Father: {fileID: 1014760613}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6889,6 +6890,7 @@ MonoBehaviour:
   wing_Shoot_Reverse_Obj: {fileID: 180986347}
   shoot_With_Wing_Shoot: {fileID: 1569071298}
   beetle_Power_Shoot: {fileID: 1416089022}
+  bound_Shoot: {fileID: 974925530}
 --- !u!114 &570821077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8895,6 +8897,115 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   s_Larva_Prefab: {fileID: 114939288787631188, guid: 3f4802358e61d4e489a134ccea900343,
     type: 2}
+--- !u!1 &974925528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 974925529}
+  - component: {fileID: 974925530}
+  m_Layer: 9
+  m_Name: BoundShoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &974925529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974925528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 570821075}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &974925530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 974925528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c010cd9f9233b49ad32f8e11513d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kind: 1
+  comment: 
+  play_On_Awake: 0
+  bullet: {fileID: 1897260149285762, guid: fe01874cc36cbf04fb0d50561deee8b7, type: 2}
+  parent: {fileID: 0}
+  max_Speed: 120
+  radius: 0
+  speed_Noise: 0
+  angle_Noise: 0
+  lifeTime: 12
+  offset: {x: 0, y: 0}
+  default_Shoot_Sound: 1
+  is_Acceleration: 0
+  velocity_Forward:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_Lateral:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  velocity_To_Player:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  is_Change_Sorting_Order: 0
+  sorting_Order: -5
+  sorting_Order_Diff: 0
+  is_Fixed_Rotation: 0
+  fixed_Angle: 0
+  other_Param: 1
+  num: 2
+  inter_Angle_Deg: 45
+  center_Angle_Deg: 0
+  arc_Deg: 360
+  shoot_Rate: 30
+  duration: 5
+  connect_Bullet: 0
+  connect_Num: 1
+  speed_Diff: 15
+  angle_Diff: 0
+  looping: 0
+  loop_Count: 1
+  span: 1
+  center_Angle_Diff: 0
 --- !u!1 &1014760609
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,7 +9051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b964834a31459a4a9da98b1ca7a0a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: a4060000e8030000
+  life: 72060000e8030000
   power_Value: 0
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1736861288342968, guid: 675f49615979bbc458f93a55dfd74bd8,

@@ -12,6 +12,7 @@ public class EternalLastAttack : MonoBehaviour {
     [SerializeField] private GameObject mini_Larva;
 
     private Eternal _eternal;
+    private EternalAttack _attack;
     private EternalLastShoot _last_Shoot;
     private SEManager _se;
     private EternalEffect _effect;
@@ -21,6 +22,7 @@ public class EternalLastAttack : MonoBehaviour {
 
     void Start() {
         _eternal = GetComponent<Eternal>();
+        _attack = GetComponent<EternalAttack>();
         _last_Shoot = GetComponentInChildren<EternalLastShoot>();
         _se = GetComponentInChildren<SEManager>();
         _effect = GetComponentInChildren<EternalEffect>();
@@ -31,6 +33,7 @@ public class EternalLastAttack : MonoBehaviour {
     //戦闘開始前ムービー、EternalAttackで呼ぶ
     public void Start_Last_Battle_Movie() {
         last_Battle_Movie.Start_Movie();
+        _attack.Stop_Attack();
     }
 
     //タイムカウントUI表示、last_Battle_Movieで呼ぶ、
@@ -90,6 +93,7 @@ public class EternalLastAttack : MonoBehaviour {
 
 
     private IEnumerator Last_Attack_Cor() {
+        _attack.Stop_Attack();
         float max_Time_Count = time_Count;
         float[] time_Border = { time_Count * 0.8f, time_Count * 0.55f, time_Count * 0.3f, 0 };
 

@@ -28098,7 +28098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468895e03e0a034428d3ff1c81f7edf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: ee020000e8030000
+  life: bc020000b6030000
   power_Value: 16
   score_Value: 20
   phase_Change_Bomb_Prefab: {fileID: 1493121116874872, guid: 20dc9e0b24cf99a4c902f6c82ea5650b,
